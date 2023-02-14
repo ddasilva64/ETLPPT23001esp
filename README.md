@@ -1,7 +1,7 @@
 ---
 description: >-
   Este documento son mis notas personales del curso de fundamentos de Python. Agradezco al
-  profesor Nicolas Molina este curso.x
+  profesor Nicolas Molina este curso.
 ---
 
 # Resumen
