@@ -42,6 +42,7 @@ Algunas herramientas de desarrollo son las siguientes:
 ![Hola mundo en Python](https://i.imgur.com/rPXhr1t.png)
 
 ````python
+
 '''
 Código:   primer ejemplo
 Utilidad: manejo del IDE
@@ -75,9 +76,10 @@ llenas
 
 El programa se adjunta en el repositorio como 01_print.py
 
-### Playgrounds: Te doy la bienvenida a los ejercicios interactivos
+### Playground: Te doy la bienvenida a los ejercicios interactivos
 
 ````python
+
 # Para ejecutar este código presionar el clic en el botón "Ejecutar"
 print("Te doy la bienvenida al Coding Playground")
 
@@ -94,6 +96,7 @@ print("30")
 ### Variables
 
 ````python
+
 '''
 Código:   segundo ejemplo
 Utilidad: manejo de variables
@@ -115,6 +118,7 @@ my_age = 12
 print("Mi edad es", my_age, "añitos")
 
 print("Encantado de conocerte", your_name)
+
 ````
 
 ![Ejecución programa en la consola](https://i.imgur.com/MDZBo4z.png)
@@ -125,6 +129,6 @@ Desde el prompt del shell se puede ejecutar un programa en concreto con el coman
 
 ![Ejecución programa desde el shell](https://i.imgur.com/N0wUxAI.png)
 
-### Playgrounds: Modifica el valor de una variable
+### Playground: Modifica el valor de una variable
 
 ![Resultado playground](https://i.imgur.com/cVPJ1TI.png)

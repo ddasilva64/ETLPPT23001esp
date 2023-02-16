@@ -8,4 +8,6 @@
 
 * [Pytho101 -  Python Repl - Replit](https://replit.com/@nicobytes/Python101?v=1#01_print.py)
 
-* [variables en Python](https://www.w3schools.com/python/python_variables.asp)
+* [Variables en Python](https://www.w3schools.com/python/python_variables.asp)
+
+* [Tipos de datos en Python](https://www.w3schools.com/python/python_datatypes.asp)
