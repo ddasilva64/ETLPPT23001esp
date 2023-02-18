@@ -11,3 +11,5 @@
 * [Variables en Python](https://www.w3schools.com/python/python_variables.asp)
 
 * [Tipos de datos en Python](https://www.w3schools.com/python/python_datatypes.asp)
+
+* [Operadores en Python](https://www.w3schools.com/python/python_operators.asp)

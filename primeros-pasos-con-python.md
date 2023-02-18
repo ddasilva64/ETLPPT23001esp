@@ -132,3 +132,120 @@ Desde el prompt del shell se puede ejecutar un programa en concreto con el coman
 ### Playground: Modifica el valor de una variable
 
 ![Resultado playground](https://i.imgur.com/cVPJ1TI.png)
+
+* **Operadores de asignación**
+
+| Operador	| Ejemplo |	Igual que   |
+| :------:  | :-----: | :---------: |
+| =	        | x = 5	  |             |
+| +=	    | x += 3  | x = x + 3   |
+| -=	    | x -= 3  | x = x - 3   |
+| *=	    | x *= 3  | x = x * 3   |
+| /=	    | x /= 3  | x = x / 3   |
+| %=	    | x %= 3  | x = x % 3   |
+| //=	    | x //= 3 | x = x // 3  |
+| **=	    | x **= 3 | x = x ** 3  |
+| &=	    | x &= 3  | x = x & 3   |
+| \|= 	    | x \|= 3  | x = x \| 3 |
+| ^=	    | x ^= 3  | x = x ^ 3   |
+| >>=	    | x >>= 3 | x = x >> 3  |
+| <<=	    | x <<= 3 | x = x << 3  |
+| ~=        | x ~=3   | x = x ~ 3   |
+
+
+
+````python
+
+# -------------
+
+x = 5
+
+x &= 3
+
+print(x)    # da 1 porque 00000101 AND 00000011 da 00000001
+
+# -------------
+
+x = 5
+
+x |= 3
+
+print(x)    # da 7 porque 00000101 OR 00000011 da 00000111
+
+x = 2
+y = 7
+
+print(x | y)    # da 7
+
+print(x ^ y)    # da 5
+
+print(x & y)    # da 2
+
+print(x << 1)   # da 4
+
+print(x >> 1)   # da 1
+
+print(~x)       # da -3
+
+print(bin(x))   # da 0b10
+print(bin(~x))  # da -0b11
+
+x = 0b0110 ^ 0b1010
+print(bin(x))
+# 0 xor 1 = 1
+# 1 xor 0 = 1
+# 1 xor 1 = 0
+# 0 xor 0 = 0
+# 0b1100
+
+````
+
+
+**Notas**: 
+
+* \|x compara bit a bit (en binario), con un OR
+
+$5=2^2+1$
+
+| bit 8 | bit 7 | bit 6 | bit 5 | bit 4 | bit 3 | bit 2 | bit 1 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0     | 0     | 0     | 0     | 0     | 1     | 0     | 1     |
+
+$3=2^1+1$
+
+| bit 8 | bit 7 | bit 6 | bit 5 | bit 4 | bit 3 | bit 2 | bit 1 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0     | 0     | 0     | 0     | 0     | 0     | 1     | 1     |
+
+$7=2^2+2^1+1$
+
+| bit 8 | bit 7 | bit 6 | bit 5 | bit 4 | bit 3 | bit 2 | bit 1 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0     | 0     | 0     | 0     | 0     | 1     | 1     | 1     |
+
+* \>> Desplaza x n bits a la derecha.
+
+$4=2^2$
+
+| bit 8 | bit 7 | bit 6 | bit 5 | bit 4 | bit 3 | bit 2 | bit 1 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0     | 0     | 0     | 0     | 0     | 0     | 1     | 0     |
+
+$1=2^0$
+
+| bit 8 | bit 7 | bit 6 | bit 5 | bit 4 | bit 3 | bit 2 | bit 1 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 0     | 0     | 0     | 0     | 0     | 0     | 0     | 1     |
+
+* x ^ y	or exclusivo (XOR) bit a bit de x e y 
+
+El operador XOR tiene como salida un 1 siempre que las entradas no coincidan
+
+0 XOR 0 = 0
+0 XOR 1 = 1
+1 XOR 0 = 1
+1 XOR 1 = 0
+
+* ~x = not x. Obtiene los bits de x invertidos, pero en Python es un poquito distinto (realmente es un complemento), en realidad, hace -x-1, luego si x=2, ~x=-x-1=-3 
+
+***Yes you're right, I'm blow-minded!!!, lol ;-), That's all folks!***
