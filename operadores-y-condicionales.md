@@ -159,7 +159,7 @@ print(x == y)     # 3.3 es diferente de 3.3000000000000003
 
 # formateo de la precisión de flotantes
 print('----------- formateo de la precisión de flotantes -----------')
-y_str = format(y, ".2g")
+y_str = format(y, ".2g")   # 2 dígitos en tipo string
 print('str =>', y_str)
 print(y_str == str(x))
 
@@ -215,3 +215,18 @@ print(round(num,3))             # da 2.377
 ![Ejecución programa desde el shell](https://i.imgur.com/RIBc4QW.png)
 
 El programa se adjunta en el repositorio como 10_float.py
+
+## Operadores lógicos
+
+| Operador | Descripción | Ejemplo |
+| :------: | :---------- | :-----: |
+| AND      | Devuelve True si ambas afirmaciones son verdaderas    | x < 5 and  x < 10 |
+| OR       | Devuelve True si una de las afirmaciones es verdadera | x < 5 or x < 4	   |
+| NOT      | Invierte el resultado, devuelve False si el resultado es verdadero | not(x < 5 and x < 10) |
+
+**Nota**: NOT(AND)=OR y NOT(OR)=AND
+
+![Ejecución programa desde el shell](https://i.imgur.com/DehGXFh.png)
+
+El programa se adjunta en el repositorio como 11_logic.py
+

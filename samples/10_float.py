@@ -17,7 +17,7 @@ print(x == y)     # 3.3 es diferente de 3.3000000000000003
 
 # formateo de la precisión de flotantes
 print('----------- formateo de la precisión de flotantes -----------')
-y_str = format(y, ".2g")
+y_str = format(y, ".2g")   # 2 dígitos en tipo string
 print('str =>', y_str)
 print(y_str == str(x))
 
