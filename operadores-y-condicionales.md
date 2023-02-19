@@ -581,3 +581,7 @@ while True:
 ![Ejecución programa desde el shell](https://i.imgur.com/j0oC9dK.png)
 
 El programa se adjunta en el repositorio como 14_main.py
+
+### Playground: Identifica si un número es par o impar
+
+![Resultado playground](https://i.imgur.com/3E3oKHN.png)
