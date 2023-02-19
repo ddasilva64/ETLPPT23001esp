@@ -222,7 +222,6 @@ El programa se adjunta en el repositorio como 10_float.py
 | :------: | :---------- | :-----: |
 | AND      | Devuelve True si ambas afirmaciones son verdaderas    | x < 5 and  x < 10 |
 | OR       | Devuelve True si una de las afirmaciones es verdadera | x < 5 or x < 4	   |
-| NOT      | Invierte el resultado, devuelve False si el resultado es verdadero | not(x < 5 and x < 10) |
 
 **Notas**: 
 1. OR es equivalente a la suma en el Álgebra de Boole  
@@ -235,10 +234,78 @@ El programa se adjunta en el repositorio como 10_float.py
     * $0*1=0$  
     * $1*0=0$  
     * $1*1=1$ 
-3. NOT(OR)=NOR, OR seguida de NOT   
-4. NOT(AND)=NAND, AND seguida de NOT
-5. NOT(A OR  B) = NOT(A+B)  = NOT(A) * NOT(B) = NOT(A) AND NOT(B)
-6. NOT(A AND B) = NOT(A\*B) = NOT(A) + NOT(B) = NOT(A) OR  NOT(B)
+
+### **Tablas de verdad de los operadores lógicos**
+
+| Afirmación 1 | Afirmación 2 | AND | OR   |
+| :----------: | :----------: | :-: |  :-: |
+| F            | F            | F   |  F   |
+| F            | V            | F   |  V   |
+| V            | F            | F   |  V   |
+| V            | V            | V   |  V   |
+
+Substituyendo V por 1 y F por 0, tenemos la siguiente tabla
+
+| Af. 1 | Af. 2 | *AND*  | *OR* |
+| :---: | :---: | :----: | :--: | 
+| 0     | 0     | *0*    | *0*  |
+| 0     | 1     | *0*    | *1*  | 
+| 1     | 0     | *0*    | *1*  | 
+| 1     | 1     | *1*    | *1*  |
+
+````python
+
+'''
+Código:   undécimo ejemplo
+Utilidad: manejo operadores lógicos
+
+'''
+
+# operador AND
+print('-' * 10, 'AND', '-' * 10)
+print('True and True =>', True and True)
+print('True and False =>', True and False)
+print('False and True =>', False and True)
+print('False and False =>', False and False)
+
+print(10 > 5 and 5 < 10)
+print(10 > 5 and 5 > 10)
+
+stock = input('Ingrese el numero de stock => ')
+stock = int(stock)
+
+print(stock >= 100 and stock <= 1000)
+
+# operador OR
+print('-' * 10, 'OR', '-' * 10)
+print('True or True =>', True or True)
+print('True or False =>', True or False)
+print('False or True =>', False or True)
+print('False or False =>', False or False)
+
+role = input('Digita el rol => ')
+
+print(role == 'admin' or role == 'seller')
+
+````
+
+![Ejecución programa desde el shell](https://i.imgur.com/8AwzBO1.png)
+
+El programa se adjunta en el repositorio como 11_logic.py
+
+## Operador NOT
+
+## Operadores lógicos
+
+| Operador | Descripción | Ejemplo |
+| :------: | :---------- | :-----: |
+| NOT      | Invierte el resultado, devuelve False si el resultado es verdadero | not(x < 5 and x < 10) |
+
+**Notas**:
+1. NOT(OR)=NOR, OR seguida de NOT   
+2. NOT(AND)=NAND, AND seguida de NOT
+3. NOT(A OR  B) = NOT(A+B)  = NOT(A) * NOT(B) = NOT(A) AND NOT(B)
+4. NOT(A AND B) = NOT(A\*B) = NOT(A) + NOT(B) = NOT(A) OR  NOT(B)
 
 ### **Tablas de verdad de los operadores lógicos**
 
@@ -276,45 +343,47 @@ Como se esperaba *NOT1 AND NOT2 = NOR*
 ````python
 
 '''
-Código:   undécimo ejemplo
-Utilidad: manejo operadores lógicos
+Código:   duodécimo ejemplo
+Utilidad: manejo operador not
 
 '''
+# operador NOT
+print('-' * 10, 'NOT', '-' * 10)
+print(not True)
+print(not False)
 
-# operador AND
-print('-' * 10, 'AND', '-' * 10)
-print('True and True =>', True and True)
-print('True and False =>', True and False)
-print('False and True =>', False and True)
-print('False and False =>', False and False)
-
-print(10 > 5 and 5 < 10)
-print(10 > 5 and 5 > 10)
+# operador NOT AND = NAND
+print('-' * 10, 'NAND', '-' * 10)
+print('not True and True =>', not (True and True))
+print('not True and False =>', not (True and False))
+print('not False and True =>', not (False and True))
+print('not False and False =>', not (False and False))
 
 stock = input('Ingrese el numero de stock => ')
 stock = int(stock)
 
-print(stock >= 100 and stock <= 1000)
-
-# operador OR
-print('-' * 10, 'OR', '-' * 10)
-print('True or True =>', True or True)
-print('True or False =>', True or False)
-print('False or True =>', False or True)
-print('False or False =>', False or False)
-
-role = input('Digita el rol => ')
-
-print(role == 'admin' or role == 'seller')
+print(not (stock >= 100 and stock <= 1000))
 
 # operador NOT
 print('-' * 10, 'NOT', '-' * 10)
 x = 5
 print(not(x > 3 and x < 10)) # devuelve False porque not se usa para invertir el resultado
 
+
+# operador NOT OR = NOR
+print('-' * 10, 'NOR', '-' * 10)
+print('not True or True =>', not (True or True))
+print('not True or False =>', not (True or False))
+print('not False or True =>', not (False or True))
+print('not False or False =>', not (False or False))
+
+stock = input('Ingrese el numero de stock => ')
+stock = int(stock)
+
+print(not (stock >= 100 or stock > 1000))
+
 ````
 
-![Ejecución programa desde el shell](https://i.imgur.com/DehGXFh.png)
+![Ejecución programa desde el shell](https://i.imgur.com/UO73nQE.png)
 
-El programa se adjunta en el repositorio como 11_logic.py
-
+El programa se adjunta en el repositorio como 12_not.py
