@@ -578,9 +578,9 @@ while True:
 
 ````
 
-![Ejecución programa desde el shell](https://i.imgur.com/j0oC9dK.png)
+![Ejecución programa desde el shell](https://i.imgur.com/GF9ea6B.png)
 
-El programa se adjunta en el repositorio como 14_main.py
+El programa se adjunta en el repositorio como main_13.py
 
 ### Playground: Identifica si un número es par o impar
 

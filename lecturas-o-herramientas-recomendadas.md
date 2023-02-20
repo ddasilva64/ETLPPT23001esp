@@ -15,3 +15,7 @@
 * [Operadores en Python](https://www.w3schools.com/python/python_operators.asp)
 
 * [Condicionales en Python](https://www.w3schools.com/python/python_conditions.asp)
+
+* [Métodos de strings en Python](https://www.w3schools.com/python/python_strings_methods.asp)
+
+* [Listas en Python](https://www.w3schools.com/python/python_lists.asp)
