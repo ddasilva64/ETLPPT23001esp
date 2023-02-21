@@ -19,3 +19,6 @@
 * [Métodos de strings en Python](https://www.w3schools.com/python/python_strings_methods.asp)
 
 * [Listas en Python](https://www.w3schools.com/python/python_lists.asp)
+
+* [Tuplas de Python](https://www.w3schools.com/python/python_tuples.asp)
+

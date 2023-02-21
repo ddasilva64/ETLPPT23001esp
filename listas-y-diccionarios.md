@@ -335,3 +335,322 @@ print(type(mylist))     # da <class 'list'>
 
 El programa se adjunta en el repositorio como 16_lists.py
 
+## Métodos de listas
+
+````python
+
+'''
+Código:   decimoséptimo ejemplo
+Utilidad: métodos de listas
+          CRUD = Create, Read, Update & Delete
+
+'''
+
+print('-' * 10, 'crear, añadir, modificar', '-' * 10)
+numbers = [1, 2 , 3 , 4 , 5]
+print(numbers[1])                # mostrar primer elemento
+numbers[-1] = 10                 # modificar último elemento
+print(numbers)
+numbers.append(700)              # añadimos un elemnto
+print(numbers)
+numbers.insert(0, 'hola')        # insertamos un string
+print(numbers)
+numbers.insert(3, 'change')      # insertamos otro string
+print(numbers)
+
+print('-' * 10, 'unir de dos listas, eliminar, jugar con orden ítems', '-' * 10)
+tasks = ['todo 1', 'todo 2', 'todo 3']
+new_list = numbers + tasks        # unimos dos listas
+print(new_list)
+index = new_list.index('todo 2')  # obtenemos el índice de 1 ítem
+new_list[index] = 'todo changed'  # modificamos el ítem     
+print(new_list)
+new_list.remove('todo 1')         # eliminamos un ítem
+print(new_list)
+new_list.pop()                    # eliminamos último ítem
+print(new_list)
+new_list.pop(0)                   # eliminamos primer ítem
+print(new_list)
+new_list.reverse()                # invertimos el orden de los ítems
+print(new_list)
+
+print('-' * 10, 'ordenar listas', '-' * 10)
+numbers_a = [1, 4, 6, 3]          # sort lista numérica
+numbers_a.sort()
+print(numbers_a)
+strings = ['re', 'ab', 'ed']      # sort lista alfabética
+strings.sort()
+print(strings)
+# new_list.sort()                   # no puede ordenar lista alfanumérica
+
+````
+
+![Ejecución programa desde el shell](https://i.imgur.com/gDdTJBr.png)
+
+El programa se adjunta en el repositorio como 17_crud.py
+
+### Playground: Agrega, modifica y elimina elementos de una lista
+
+![Resultado playground](https://i.imgur.com/9NwdJxL.png)
+
+## Tuplas
+
+### **Tupla##
+
+Las tuplas se utilizan para almacenar varios elementos en una sola variable.
+
+son uno de los 4 tipos de datos integrados en Python que se utilizan para almacenar colecciones de datos, los otros 3 son: Lista, Set y Diccionario, todos con diferentes calidades y usos.
+
+Es una colección ordenada e inmutable y se escriben con corchetes.
+
+````python
+
+thistuple = ("apple", "banana", "cherry")
+print(thistuple)
+
+````
+
+### **Elementos de tupla**
+
+Los elementos de tupla están ordenados, no se pueden modificar y permiten valores duplicados. Éstos están indexados, el primer elemento tiene índice [0], el segundo elemento tiene índice [1], etc.
+
+### **Ordenado**
+
+Cuando decimos que las tuplas están ordenadas, significa que los elementos tienen un orden definido y ese orden no cambiará.
+
+### **Inmutable**
+
+Las tuplas no se pueden cambiar, lo que significa que no podemos modificarlas ni agregar o eliminar elementos después de que se hayan creado.
+
+### **Permite duplicados**
+
+Dado que las tuplas están indexadas, pueden tener elementos con el mismo valor.
+
+````python
+
+thistuple = ("apple", "banana", "cherry", "apple", "cherry")
+print(thistuple)
+
+````
+
+### **Longitud de la tupla**
+
+Para determinar cuántos elementos tiene una tupla, usamos la función len().
+
+````python
+
+thistuple = ("apple", "banana", "cherry")
+print(len(thistuple))
+
+````
+
+### **Crear tupla con un elemento**
+
+Para crear una tupla con un solo elemento, debemos agregar una coma después del elemento, de lo contrario, Python no lo reconocerá como una tupla.
+
+````python
+
+thistuple = ("apple",)
+print(type(thistuple))
+
+# no es una Tupla
+thistuple = ("apple")
+print(type(thistuple))
+
+````
+
+### **Elementos de tupla: tipos de datos**
+
+Los elementos de tupla pueden ser de cualquier tipo de datos.
+
+````python
+
+tuple1 = ("apple", "banana", "cherry")
+tuple2 = (1, 5, 7, 9, 3)
+tuple3 = (True, False, False)
+
+````
+
+Una tupla puede contener diferentes tipos de datos.
+
+````python
+
+tuple1 = ("abc", 34, True, 40, "male")
+
+````
+
+### **Type()**
+
+Desde la perspectiva de Python, las tuplas se definen como objetos con el tipo de datos 'tupla'.
+
+````python
+
+mytuple = ("apple", "banana", "cherry")
+print(type(mytuple))    # retorna <class 'tuple'>
+
+````
+
+### **Constructor tupla()**
+
+También es posible usar el constructor tuple() para hacer una tupla.
+
+````python
+
+thistuple = tuple(("apple", "banana", "cherry")) # tener en cuenta los paréntesis dobles
+print(thistuple)
+
+````
+
+### **Colecciones de Python (arrays)**
+
+Hay cuatro tipos de datos de recolecciones en el Python:
+
+* **Lista** es una colección ordenada y modificable. Permite miembros duplicados.
+* **Tupla** es una colección ordenada e inmutable. Permite miembros duplicados.
+* **Set** es una colección desordenada, inmutable* y no indexada. No hay miembros duplicados.
+* **Dictionary** es una colección ordenada** y modificable. No hay miembros duplicados.
+
+*Los elementos establecidos no se pueden cambiar, pero se pueden eliminar y/o agregar elementos cuando se desee.
+
+**A partir de la versión 3.7 de Python, se ordenan los diccionarios. En Python 3.6 y versiones anteriores, los diccionarios están desordenados.
+
+Al elegir un tipo de colección, es útil comprender las propiedades de ese tipo. Elegir el tipo correcto para un conjunto de datos en particular podría significar la retención del significado y un aumento de la eficiencia o la seguridad.
+
+````python
+
+'''
+Código:   decimoséptimo ejemplo
+Utilidad: tuplas
+
+'''
+
+print('-' * 10, 'tuplas', '-' * 10)
+numbers = (1, 2, 3, 5)
+strings = ('nico', 'zule', 'santi', 'nico')
+print(numbers)
+print('0 =>', numbers[0])
+print('-1 =>', numbers[-1])
+print(type(numbers))
+
+print('-' * 10, 'tipo tupla', '-' * 10)
+print(strings)
+print(type(strings))
+
+# No es posible hacer CRUD sobre una tupla
+# numbers.append(10)
+print(numbers)
+# numbers[1] = 'change'
+
+print(strings)
+print(strings.index('zule'))
+print(strings.count('nico'))
+
+print('-' * 10, 'convertimos tupla a lista para modificar la tupla', '-' * 10)
+my_list = list(strings)
+print(my_list)
+print(type(my_list))
+
+print('-' * 10, 'modificamos la lista', '-' * 10)
+my_list[1] = 'juli'
+print(my_list)
+
+print('-' * 10, 'convertimos lista a tupla', '-' * 10)
+my_tuple = tuple(my_list)
+print(my_tuple)
+
+````
+
+![Ejecución programa desde el shell](https://i.imgur.com/YuzcMWR.png)
+
+El programa se adjunta en el repositorio como 18_tuples.py
+
+## Proyecto: tuplas
+
+````python
+
+'''
+Código:   proyecto
+Utilidad: tuplas
+
+'''
+
+import random
+
+options = ('piedra', 'papel', 'tijera')
+
+computer_wins = 0
+user_wins = 0
+
+rounds = 1
+
+while True:
+
+    print('*' * 10)
+    print('ROUND', rounds)
+    print('*' * 10)
+
+    print('computer_wins', computer_wins)
+    print('user_wins', user_wins)
+
+    user_option = input('piedra, papel o tijera => ')
+    user_option = user_option.lower()
+
+    rounds += 1
+
+    if not user_option in options:
+      print('esa opcion no es valida')
+      continue
+
+    computer_option = random.choice(options)
+
+    print('User option =>', user_option)
+    print('Computer option =>', computer_option)
+
+    if user_option == computer_option:
+        print('Empate!')
+    elif user_option == 'piedra':
+        if computer_option == 'tijera':
+            print('piedra gana a tijera')
+            print('user gano!')
+            user_wins += 1
+        else:
+            print('Papel gana a piedra')
+            print('computer gano!')
+            computer_wins += 1
+    elif user_option == 'papel':
+        if computer_option == 'piedra':
+            print('papel gana a piedra')
+            print('user gano')
+            user_wins += 1
+        else:
+            print('tijera gana a papel')
+            print('computer gano!')
+            computer_wins += 1
+    elif user_option == 'tijera':
+        if computer_option == 'papel':
+            print('tijera gana a papel')
+            print('user gano!')
+            user_wins += 1
+        else:
+            print('piedra gana a tijera')
+            print('computer gano!')
+            computer_wins += 1
+
+    if computer_wins == 2:
+      print('El ganador es la computadora')
+      break
+
+    if user_wins == 2:
+      print('El ganador es el usuario')
+      break
+
+````
+
+![Ejecución programa desde la consola](https://i.imgur.com/7NX59H3.png)
+
+El programa se adjunta en el repositorio como main_1.py
+
+## Diccionarios: definición y lectura
+
+
+
