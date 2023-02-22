@@ -868,3 +868,6 @@ print(person.values())
 
 El programa se adjunta en el repositorio como 20_dict.py
 
+## Playground: Agrega, modifica y elimina elementos de un diccionario
+
+![Resultado playground](https://i.imgur.com/rWa0yJm.png)
