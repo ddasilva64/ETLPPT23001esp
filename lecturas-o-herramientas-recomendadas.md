@@ -22,3 +22,5 @@
 
 * [Tuplas de Python](https://www.w3schools.com/python/python_tuples.asp)
 
+* [Bucles while en Python](https://www.w3schools.com/python/python_while_loops.asp)
+
