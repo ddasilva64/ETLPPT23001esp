@@ -652,5 +652,171 @@ El programa se adjunta en el repositorio como main_1.py
 
 ## Diccionarios: definición y lectura
 
+### **Diccionario**
+
+Los diccionarios se utilizan para almacenar valores de datos en pares clave:valor.
+
+Un diccionario es una colección ordenada*, modificable y que no admite duplicados.
+
+A partir de la versión 3.7 de Python, se ordenan los diccionarios. En Python 3.6 y versiones anteriores, los diccionarios están desordenados.
+
+se escriben entre corchetes y tienen claves y valores:
+
+````python
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict)
+
+````
+
+### **Elementos del diccionario**
+
+Los elementos del diccionario están ordenados, se pueden modificar y no permiten duplicados.
+
+Se presentan en pares clave:valor y se puede hacer referencia a ellos mediante el nombre de la clave.
+
+````python
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisdict["brand"])
+
+````
+
+### **¿Ordenado o Desordenado?**
+
+A partir de la versión 3.7 de Python, se ordenan los diccionarios. En Python 3.6 y versiones anteriores, los diccionarios están desordenados.
+
+Cuando decimos que los diccionarios están ordenados, significa que los elementos tienen un orden definido y ese orden no cambiará.
+
+Desordenado significa que los elementos no tienen un orden definido, no puede hacer referencia a un elemento mediante el uso de un índice.
+
+### **Cambiable**
+
+Los diccionarios se pueden cambiar, lo que significa que podemos cambiar, agregar o eliminar elementos después de que se haya creado el diccionario.
+
+### **No se permiten duplicados**
+
+Los diccionarios no pueden tener dos elementos con la misma clave:
+
+````python
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+  "year": 2020
+}
+print(thisdict)
+
+````
+
+### **Longitud del diccionario**
+
+Para determinar cuántos elementos tiene un diccionario, usamos la función len():
+
+````python
+
+print(len(thisdict))
+
+````
+
+### **Elementos del diccionario - Tipos de datos**
+
+Los valores en los elementos del diccionario pueden ser de cualquier tipo de datos:
+
+````python
+
+thisdict = {
+  "brand": "Ford",
+  "electric": False,
+  "year": 1964,
+  "colors": ["red", "white", "blue"]
+}
+
+````
+
+### **Type()**
+
+Desde la perspectiva de Python, los diccionarios se definen como objetos con el tipo de datos 'dict':
+
+````python
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(type(thisdict))   # retorna <class 'dict'>
+
+````
+
+### **El constructor dict()**
+
+También es posible usar el constructor dict() para hacer un diccionario.
+
+````python
+
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+
+````
+
+### **Colecciones de Python (matrices)**
+
+Hay cuatro tipos de datos de recopilación en Python:
+
+* **Lista** es una colección ordenada y modificable. Permite miembros duplicados.
+* **Tupla** es una colección ordenada e inmutable. Permite miembros duplicados.
+* **Set** es una colección desordenada, inmutable* y no indexada. No hay miembros duplicados.
+* **Diccionario** es una colección ordenada** y modificable. No hay miembros duplicados.
+
+*Los elementos establecidos no se pueden cambiar, pero se pueden eliminar y/o agregar elementos cuando se desee.
+
+**A partir de la versión 3.7 de Python, se ordenan los diccionarios. En Python 3.6 y versiones anteriores, los diccionarios están desordenados.
+
+````python
+
+'''
+Código:   decimonoveno ejemplo
+Utilidad: diccionarios
+
+'''
+
+print('-' * 10, 'diccionario', '-' * 10)
+my_dict = {}
+print(type(my_dict))
+
+my_dict = {
+  'avion': "bla bla bla",
+  'name': 'Nicolas',
+  'last_name': 'Molina Monroy',
+  'age': 87
+}
+
+print(my_dict)
+print(len(my_dict))
+
+print(my_dict['age'])
+print(my_dict['last_name'])
+print(my_dict.get('age'))
+
+print('avion' in my_dict)
+print('otroqueno' in my_dict)
+
+````
+
+![Ejecución programa desde el shell](https://i.imgur.com/69OXNAg.png)
+
+El programa se adjunta en el repositorio como 19_dict.py
+
+## Diccionarios: inserción y actualización
 
 

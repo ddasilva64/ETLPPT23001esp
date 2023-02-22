@@ -1,5 +1,5 @@
 '''
-Código:   decimoséptimo ejemplo
+Código:   decimooctavo ejemplo
 Utilidad: tuplas
 
 '''
