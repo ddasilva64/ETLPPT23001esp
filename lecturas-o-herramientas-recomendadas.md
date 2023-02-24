@@ -22,5 +22,10 @@
 
 * [Tuplas de Python](https://www.w3schools.com/python/python_tuples.asp)
 
+* [Sets en Python](https://www.w3schools.com/python/python_sets.asp)
+
+* [Diccionarios en Python](https://www.w3schools.com/python/python_dictionaries.asp)
+
 * [Bucles while en Python](https://www.w3schools.com/python/python_while_loops.asp)
 
+* [Bucles for en Python](https://www.w3schools.com/python/python_for_loops.asp)
