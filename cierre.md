@@ -1,6 +1,6 @@
 # Cierre
 
-Esta clase es especial. Antes de aplicarlo a nuestro juego, quiero que te tomes un tiempo para acceder y conocer algunos proyectos que han creado otros estudiantes, quienes ya finalizaron el curso.
+Versiones de estudiantes
 
 ````python
 
@@ -242,12 +242,6 @@ else:
 ![Ejecución del programa desde el shell][Imgur](https://i.imgur.com/FS792Y0.png)
 
 El programa se adjunta en el repositorio como main_4.py
-
-Proyectos que te permitirán reconocer tu propio avance, así como saber qué elementos o visiones no consideraste, siendo el momento indicado para incluirlos y una oportunidad de implementación hacia un proyecto o iniciativa a futuro en tu contexto más cercano.
-
-Recuerda que la experimentación, validación y ajustes te ayudan a entender constantemente tu proceso ¡Deja de lado el miedo a errar, que es parte de la experiencia, y disfruta experimentar en todo momento!
-
-No olvides compartir tu proyecto; los demás también podrán aprender de tu resultado
 
 ## Proyecto: aplicando ciclos
 
