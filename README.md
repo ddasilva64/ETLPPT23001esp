@@ -1,6 +1,6 @@
 ---
 description: >-
-  Este documento son mis notas personales del curso de fundamentos de Python. Agradezco al Platzi Team y especialmente al profesor Nicolas Molina este curso.
+  Este documento son mis notas personales del curso de fundamentos de Python. Agradezco al Platzi Team y especialmente al profesor Nicolás Molina este curso.
 ---
 
 # Resumen

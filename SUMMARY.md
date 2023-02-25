@@ -7,6 +7,5 @@
 * [Listas y diccionarios](listas-y-diccionarios.md)
 * [ciclos](ciclos.md)
 * [cierre](cierre.md)
-* [Cheat sheet](cheat-sheet.md)
 * [Lecturas o herramientas recomendadas](lecturas-o-herramientas-recomendadas.md)
 * [Libros interesantes](libros-interesantes.md)
