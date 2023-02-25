@@ -81,13 +81,6 @@ for x in range(6):
 else:
   print("Finally finished!")
 
-print('-' * 10, 'bucles for anidados', '-' * 10)
-adj = ["red", "big", "tasty"]
-fruits = ["apple", "banana", "cherry"]
-
-for x in adj:
-  for y in fruits:
-    print(x, y)
 
 print('-' * 10, 'bucles for con pass', '-' * 10)
 for x in [0, 1, 2]:

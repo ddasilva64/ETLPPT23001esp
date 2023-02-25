@@ -240,23 +240,6 @@ else:
 
 ````
 
-### **Bucles anidados**
-
-Un bucle anidado es un bucle dentro de un bucle.
-
-El "bucle interno" se ejecutará una vez para cada iteración del "bucle exterior":
-
-````python
-
-adj = ["red", "big", "tasty"]
-fruits = ["apple", "banana", "cherry"]
-
-for x in adj:
-  for y in fruits:
-    print(x, y)
-
-````
-
 ### **La istrucción pass**
 
 Los bucles for no pueden estar vacíos, pero si por alguna razón tenemos un bucle for sin contenido, colocaremos la instrucción pass para evitar el error.
@@ -353,7 +336,30 @@ for x in range(6):
 else:
   print("Finally finished!")
 
-print('-' * 10, 'bucles for anidados', '-' * 10)
+print('-' * 10, 'bucles for con pass', '-' * 10)
+for x in [0, 1, 2]:
+  pass
+
+````
+
+![Ejecución del programa desde el shell](https://i.imgur.com/2rkASgZ.png)
+
+El programa se adjunta en el repositorio como 22_for.py
+
+## Playground: Agrega solo los números positivos de una lista
+
+![Resultado playground](https://i.imgur.com/XFRpmVQ.png)
+
+## Ciclos anidados
+
+### **Bucles anidados**
+
+Un bucle anidado es un bucle dentro de un bucle.
+
+El "bucle interno" se ejecutará una vez para cada iteración del "bucle exterior":
+
+````python
+
 adj = ["red", "big", "tasty"]
 fruits = ["apple", "banana", "cherry"]
 
@@ -361,17 +367,40 @@ for x in adj:
   for y in fruits:
     print(x, y)
 
-print('-' * 10, 'bucles for con pass', '-' * 10)
-for x in [0, 1, 2]:
-  pass
+````
+
+````python
+
+'''
+Código:   vigésimotercer ejemplo
+Utilidad: for anidados
+
+'''
+
+print('-' * 10, 'bucle for anidado', '-' * 10)
+matriz = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+]
+print(matriz[0][1])
+
+for row in matriz:
+  print(row)
+  for column in row:
+    print(column)
+
+
+print('-' * 10, 'otro de bucles for anidados', '-' * 10)
+adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
+
+for x in adj:
+  for y in fruits:
+    print(x, y)
 
 ````
 
-![Ejecución 1 del programa desde el shell](https://i.imgur.com/2rkASgZ.png)
+![Ejecución del programa desde el shell](https://i.imgur.com/VNIkDCj.png)
 
-![Ejecución 2 del programa desde el shell](https://i.imgur.com/ISSmwjm.png)
-
-El programa se adjunta en el repositorio como 22_for.py
-
-
-
+El programa se adjunta en el repositorio como 23_loops.py
