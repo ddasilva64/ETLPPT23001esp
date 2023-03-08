@@ -9,3 +9,7 @@
 * [GitHub - pandas-dev/pandas: Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more](https://github.com/pandas-dev/pandas)
 
 * [El array.ipynb - Google Drive](https://drive.google.com/file/d/1TAArP7SwUo6jnk65pWRgBIP0GoJ-k9q2/view?usp=sharing)
+
+* [Indexing on ndarrays — NumPy v1.22 Manual](https://numpy.org/doc/stable/user/basics.indexing.html)
+
+* [NumPy: the absolute basics for beginners — NumPy v1.22 Manual](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
