@@ -1,23 +1,26 @@
 ---
 description: >-
-  Este documento son mis notas personales del curso de fundamentos de Python. Agradezco al Platzi Team y especialmente al profesor Nicolás Molina este curso.
+  Este documento son mis notas personales del curso básico de manipulación y tansformación de datos con Pandas y NumPy. Agradezco al Platzi Team y especialmente al profesor Carlos Alarcón este curso.
 ---
 
 # Resumen
 
 **¿Por qué debería aprender esto?**
 
-Para aprender Python desde cero. Elevar nuestras oportunidades con este lenguaje en gran crecimiento para áreas como data science, desarrollo backend, inteligencia artificial, IoT y más. Crear nuestros primeros programas utilizando variables, estructuras de datos, condicionales y ciclos.
+Para aprender a manipular y transformar grandes cantidades de datos numéricos y en tablas, con dos de las librerías más utilizadas en Data Science: Pandas y NumPy. Crear y utilizar DataFrames y Arrays que nos permitan analizar datos de forma sencilla
 
 **Desafío**
 
-* Guardar datos en listas y diccionarios para usarlos fácilmente.
-* Utilizar condicionales y ciclos para la lógica de nuestros programas.
-* Conocer distintos tipos de datos.
-* Aplicar diferentes conceptos de programación.
+* Agregar y manejar datos nulos en nuestros DataFrames
+* Leer, filtrar y combinar datos en forma tabular con Pandas
+* Utilizar condiciones para filtrar nuestros arrays de NumPy
+* Manejar arrays de diferentes dimensiones con NumPy
 
 **Lo que necesitamos saber**
 
+* Programación en Python
+* Jupyter Notebook
+* Fundamentos de Matemáticas
 * Lecturas interesantes
 * Libros interesantes
 
