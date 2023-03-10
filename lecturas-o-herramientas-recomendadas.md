@@ -14,7 +14,8 @@
 
 * [NumPy: the absolute basics for beginners — NumPy v1.22 Manual](https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array)
 
-
 * [Data types — NumPy v1.22 Manual](https://numpy.org/doc/stable/user/basics.types.html)
+
+* [numpy.ndarray.ndim — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.ndim.html)
 
 

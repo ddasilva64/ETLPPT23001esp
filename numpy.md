@@ -452,5 +452,222 @@ Hay 5 tipos numéricos básicos que representan:
 
 Los tipos de datos se pueden usar como funciones para convertir números de Python en escalares de matriz, secuencias de números de Python en matrices de ese tipo o como argumentos para la palabra clave dtype que aceptan muchas funciones o métodos NumPy  
 
+## Dimensiones
 
+Con las matrices podemos crear varias dimensiones, vamos a nombrarlas
+
+### ***Scalar***
+
+Es un solo dato o valor
+
+| Valor |
+| :---: |
+| 0     |
+
+````python
+scalar = np.array(42) # .ndim Nos muestra las dimensiones que tiene
+print(scalar) 
+scalar.ndim 
+
+42
+0
+````
+
+### ***Vector***
+
+Son listas de Python
+
+| Valor 1 | Valor 2 | Valor 3 | Valor 4 | Valor 5 |
+| :-----: | :-----: | :-----: | :-----: | :-----: |
+| 0       | 1       | 2       | 3       | 4       |
+
+````python
+vector = np.array([1, 2, 3]) # Declaración de un vector
+print(vector) 
+vector.ndim 
+
+[1 2 3]
+1
+````
+
+### ***Matriz***
+
+Son *como* hojas de cálculo
+
+| Color    | País     | Edad | Fruta   |
+| :------: | :------: | ---: | :-----: |
+| Rojo     | España   | 24   | Pera    |
+| Amarillo | Colombia | 30   | Manzana |
+
+````python
+matriz = np.array([[1, 2, 3], [4, 5, 6]]) # Declaración de una matriz
+print(matriz)
+matriz.ndim
+[[1 2 3]
+ [4 5 6]]
+2
+````
+
+### ***Tensor (cubo)***
+
+Son series de tiempo o imágenes
+
+![Tensor](https://i.imgur.com/hjZGVy5.png)
+
+````python
+# Declaración de un tensor
+tensor = np.array([[[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]],[[13, 13, 15], [16, 17, 18], [19, 20, 21], [22, 23, 24]]])
+print(tensor)
+tensor.ndim
+[[[ 1  2  3]
+  [ 4  5  6]
+  [ 7  8  9]
+  [10 11 12]]
+
+ [[13 13 15]
+  [16 17 18]
+  [19 20 21]
+  [22 23 24]]]	
+3
+````
+
+### ***Agregar o eliminar dimensiones***
+
+Se puede definir el número de dimensiones desde la declaración del array
+
+````python
+vector = np.array([1, 2, 3], ndmin = 10)
+print(vector) 
+vector.ndim 
+
+[[[[[[[[[[1 2 3]]]]]]]]]]
+10
+````
+
+Se pueden expandir dimensiones a los arrays ya existentes con expand_dims(). Axis = 0 hace referencia a las filas, mientras que axis = 1 a las columnas  
+
+````python
+expand = np.expand_dims(np.array([1, 2, 3]), axis = 0)
+print(expand)
+expand.ndim 
+
+[[1 2 3]]
+2
+````
+
+Remover/comprimir las dimensiones que no están siendo usadas  
+
+````python
+print(vector, vector.ndim) 
+vector_2 = np.squeeze(vector)
+print(vector_2, vector_2.ndim)
+
+[[[[[[[[[[1 2 3]]]]]]]]]] 10
+[1 2 3] 1
+````
+
+### ***Reto***
+
+1. Definir un tensor (cubo) de 5D  
+2. Sumarle una dimensión en cualquier eje  
+3. Borrar las dimensiones que no se usen  
+
+Cuéntanos, ¿Cómo te fue y cómo lo solucionaste?  
+
+
+
+````python
+# definición del tensor (cubo) de 5 dimensiones
+d5=np.array([
+    [[[[1,2,3],[4,5,6],[7,8,9]]]],
+    [[[[10,11,12],[13,14,15],[16,17,18]]]],
+    [[[[19,20,21],[22,23,24],[25,26,27]]]],
+    [[[[28,29,30],[31,32,33],[34,35,36]]]],
+    [[[[37,38,39],[40,41,42],[43,44,45]]]]
+    ])
+print(d5, d5.ndim)
+
+[[[[[ 1  2  3]
+    [ 4  5  6]
+    [ 7  8  9]]]]
+
+ [[[[10 11 12]
+    [13 14 15]
+    [16 17 18]]]]
+
+ [[[[19 20 21]
+    [22 23 24]
+    [25 26 27]]]]
+
+ [[[[28 29 30]
+    [31 32 33]
+    [34 35 36]]]]
+
+ [[[[37 38 39]
+    [40 41 42]
+    [43 44 45]]]]] 5
+````
+
+````python
+# Sumamos una dimensión a un eje 
+d5 = np.expand_dims(d5, axis=4)
+print(d5, d5.ndim)
+
+[[[[[[ 1  2  3]]
+
+    [[ 4  5  6]]
+
+    [[ 7  8  9]]]]]
+
+ [[[[[10 11 12]]
+
+    [[13 14 15]]
+
+    [[16 17 18]]]]]
+
+ [[[[[19 20 21]]
+
+    [[22 23 24]]
+
+    [[25 26 27]]]]]
+
+ [[[[[28 29 30]]
+
+    [[31 32 33]]
+
+    [[34 35 36]]]]]
+
+ [[[[[37 38 39]]
+
+    [[40 41 42]]
+
+    [[43 44 45]]]]]] 6
+`````
+
+````python
+# Borramos las dimensiones que no se usen  
+print(d5, d5.ndim)
+d5 = np.squeeze(d5)
+print(d5, d5.ndim)
+
+[[[ 1  2  3]
+  [ 4  5  6]
+  [ 7  8  9]]
+
+ [[10 11 12]
+  [13 14 15]
+  [16 17 18]]
+
+ [[19 20 21]
+  [22 23 24]
+  [25 26 27]]
+
+ [[28 29 30]
+  [31 32 33]
+  [34 35 36]]
+
+ [[37 38 39]
+  [40 41 42]
+  [43 44 45]]] 3
+````
 
