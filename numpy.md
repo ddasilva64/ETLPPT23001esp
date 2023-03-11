@@ -464,6 +464,8 @@ Es un solo dato o valor
 | :---: |
 | 0     |
 
+![Escalar](https://i.imgur.com/bjTQoDM.png)
+
 ````python
 scalar = np.array(42) # .ndim Nos muestra las dimensiones que tiene
 print(scalar) 
@@ -480,6 +482,8 @@ Son listas de Python
 | Valor 1 | Valor 2 | Valor 3 | Valor 4 | Valor 5 |
 | :-----: | :-----: | :-----: | :-----: | :-----: |
 | 0       | 1       | 2       | 3       | 4       |
+
+![Vector](https://i.imgur.com/BGRHSfK.png)
 
 ````python
 vector = np.array([1, 2, 3]) # Declaración de un vector
@@ -499,6 +503,8 @@ Son *como* hojas de cálculo
 | Rojo     | España   | 24   | Pera    |
 | Amarillo | Colombia | 30   | Manzana |
 
+![Matriz](https://i.imgur.com/0YrXkQ8.png)
+
 ````python
 matriz = np.array([[1, 2, 3], [4, 5, 6]]) # Declaración de una matriz
 print(matriz)
@@ -512,7 +518,7 @@ matriz.ndim
 
 Son series de tiempo o imágenes
 
-![Tensor](https://i.imgur.com/hjZGVy5.png)
+![Tensor o cubo](https://i.imgur.com/a82usp5.png)
 
 ````python
 # Declaración de un tensor
@@ -566,7 +572,7 @@ print(vector_2, vector_2.ndim)
 [1 2 3] 1
 ````
 
-### ***Reto***
+### ***Reto (dos soluciones)***
 
 1. Definir un tensor (cubo) de 5D  
 2. Sumarle una dimensión en cualquier eje  
@@ -574,7 +580,7 @@ print(vector_2, vector_2.ndim)
 
 Cuéntanos, ¿Cómo te fue y cómo lo solucionaste?  
 
-
+* ***Solución sin definir dimensiones con ndmin***
 
 ````python
 # definición del tensor (cubo) de 5 dimensiones
@@ -670,4 +676,99 @@ print(d5, d5.ndim)
   [40 41 42]
   [43 44 45]]] 3
 ````
+* ***Solución definiendo dimensiones con ndmin***
 
+````python
+# definición del tensor (cubo) de 3 dimensiones,  incrementadas a 5
+d5=np.array([
+    [[1,2,3],[4,5,6],[7,8,9]],
+    [[10,11,12],[13,14,15],[16,17,18]],
+    [[19,20,21],[22,23,24],[25,26,27]],
+    [[28,29,30],[31,32,33],[34,35,36]],
+    [[37,38,39],[40,41,42],[43,44,45]]
+   ],  ndmin = 5)
+print(d5, d5.ndim)
+
+[[[[[ 1  2  3]
+    [ 4  5  6]
+    [ 7  8  9]]
+
+   [[10 11 12]
+    [13 14 15]
+    [16 17 18]]
+
+   [[19 20 21]
+    [22 23 24]
+    [25 26 27]]
+
+   [[28 29 30]
+    [31 32 33]
+    [34 35 36]]
+
+   [[37 38 39]
+    [40 41 42]
+    [43 44 45]]]]] 5
+````
+
+````python
+# Sumamos una dimensión a un eje 
+d5 = np.expand_dims(d5, axis=4)
+print(d5, d5.ndim)
+
+[[[[[[ 1  2  3]]
+
+    [[ 4  5  6]]
+
+    [[ 7  8  9]]]]]
+
+ [[[[[10 11 12]]
+
+    [[13 14 15]]
+
+    [[16 17 18]]]]]
+
+ [[[[[19 20 21]]
+
+    [[22 23 24]]
+
+    [[25 26 27]]]]]
+
+ [[[[[28 29 30]]
+
+    [[31 32 33]]
+
+    [[34 35 36]]]]]
+
+ [[[[[37 38 39]]
+
+    [[40 41 42]]
+
+    [[43 44 45]]]]]] 6
+`````
+
+````python
+# Borramos las dimensiones que no se usen  
+print(d5, d5.ndim)
+d5 = np.squeeze(d5)
+print(d5, d5.ndim)
+
+[[[ 1  2  3]
+  [ 4  5  6]
+  [ 7  8  9]]
+
+ [[10 11 12]
+  [13 14 15]
+  [16 17 18]]
+
+ [[19 20 21]
+  [22 23 24]
+  [25 26 27]]
+
+ [[28 29 30]
+  [31 32 33]
+  [34 35 36]]
+
+ [[37 38 39]
+  [40 41 42]
+  [43 44 45]]] 3
+````
