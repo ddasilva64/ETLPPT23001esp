@@ -964,3 +964,108 @@ array([[ 4,  2,  9],
            [14, 14,  4]])
 ````
 
+## Shape y Reshape
+
+Hay 2 funciones muy importantes de los arreglos (Shape y Reshape). La forma de un arreglo nos va a decir, con que estructura se está trabajando (tamaño, manipular, ingresar).
+
+### ***Shape***
+
+La propiedad ````.shape```` generalmente se usa para obtener la forma actual de una matriz, pero también se puede usar para remodelar la matriz asignándole una tupla de dimensiones de la matriz. Al igual que con ````numpy.reshape````, una de las nuevas dimensiones de la forma puede ser -1, en cuyo caso, su valor se deduce del tamaño de la matriz y las dimensiones restantes. La remodelación de una matriz fallará si se hace con una copia  
+
+      ndarray.shape 
+
+Parámetros: 
+
+   * *Array*: array_like. Array de entrada  
+
+*Retorno*: Forma en forma de tupla de enteros. Los elementos de la tupla de forma dan las longitudes de las dimensiones de matriz correspondientes   
+
+````python
+arr = np.random.randint(1,10,(3,2))
+arr.shape
+(3, 2)
+arr
+array([[4, 2],
+       [4, 8],
+       [4, 3]])
+````
+
+### ***Reshape***
+
+Transforma una matriz que contiene los mismos elementos con una nueva forma  
+
+      ndarray.reshape(shape, order='C')
+
+Parámetros: 
+
+   * *Array*: array_like. Matriz a reformar
+   * *Nueva forma*: Entero o tupla de enteros. La nueva forma debe ser compatible con la forma original. Si es un número entero, el resultado será una matriz 1-D de esa longitud. Una dimensión de forma puede ser -1. En este caso, el valor se deduce de la longitud de la matriz y las dimensiones restantes    
+   * *Orden*: {'C', 'F', 'A'}, opcional. Lee los elementos usando este orden de índice y coloca los elementos en la matriz remodelada usando este orden de índice. 'C' significa leer / escribir los elementos usando un orden de índice similar a C, con el índice del último eje cambiando más rápido, de regreso al índice del primer eje cambiando más lento. 'F' significa leer / escribir los elementos usando un orden de índice similar a Fortran, con el primer índice cambiando más rápido y el último índice cambiando más lento. 'A' significa leer / escribir los elementos en un orden de índice similar a Fortran si a es contiguo a Fortran en la memoria, de lo contrario, en un orden similar a C  
+
+*Retorno*: Matriz_reformada ndarray. Este será un nuevo objeto que se verá si es posible; de lo contrario, será una copia   
+
+````python
+arr.reshape(1,6)              # de (3,2) a (1,6)
+array([[4, 2, 4, 8, 4, 3]])
+arr.reshape(2,3)              # de (1,6) a (2,3)
+array([[4, 2, 4],
+       [8, 4, 3]])
+np.reshape(arr,(1,6))         # de (2,3) a (1,6)
+array([[4, 2, 4, 8, 4, 3]])
+````
+
+````python
+np.reshape(arr,(2,3), 'C')    # ordenación like C
+array([[4, 2, 4],
+       [8, 4, 3]])
+````
+
+````python
+np.reshape(arr,(2,3), 'F')    # ordenación like Fortran
+array([[4, 4, 8],
+       [4, 2, 3]])
+````
+
+````python
+np.reshape(arr,(2,3), 'A')    # ordenación like Fortran, si es posible
+array([[4, 2, 4],
+       [8, 4, 3]])
+````
+
+No puedes cambiar la "forma" a la "forma" original del array, si tienes un (3,3) no lo puedes pasar a (4,2)  
+
+No respeta los 9 elementos del array original  
+
+### ***Reto***
+
+* Crear un array, de cualquier dimensión y cambiar sus dimensiones  
+* Intentar cambiar el array, de forma que no respete la estructura original  
+
+````python
+arrOrig = np.random.randint(0,100, (6,4))
+arrOrig
+array([[30, 49, 60, 79],
+       [85,  2, 70, 41],
+       [59, 65, 59, 46],
+       [62, 99, 92, 56],
+       [52, 30, 83, 47],
+       [53, 31, 49, 15]])
+arrOrig.reshape(1,24)
+array([[49, 17, 97, 43, 34, 44, 88, 35, 67, 53, 67, 63, 12, 32, 16, 53,
+        98, 36, 57, 18, 98, 81, 86, 62]])
+arrOrig.reshape(4,6)             # todavía respeta la estructura original
+array([[54, 57, 49, 93, 27, 28],
+       [ 3, 23, 12, 32, 94, 54],
+       [41, 39, 59, 46, 52, 43],
+       [94, 74, 66, 69, 75, 30]])
+arrOrig.reshape(3,3)             # no respeta la estructura original
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-29-c1adfccb2a81> in <module>
+      3 arrOrig.reshape(1,24)
+      4 arrOrig.reshape(4,6)
+----> 5 arrOrig.reshape(3,3)
+
+ValueError: cannot reshape array of size 24 into shape (3,3)
+````
