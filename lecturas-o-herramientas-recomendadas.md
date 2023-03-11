@@ -19,3 +19,4 @@
 * [numpy.ndarray.ndim — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.ndim.html)
 
 
+* [Array creation routines — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/routines.array-creation.html)

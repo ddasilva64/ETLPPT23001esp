@@ -126,6 +126,8 @@ Para crear un array se utiliza la siguiente función de NumPy
 
 **Nota**: Una matriz son varios **vectores** o **listas agrupadas** una encima de la otra, es como una tabla de Excel  
 
+![Ejemplo Excel como matriz](https://i.imgur.com/JS5lDwq.png)
+
 ### ***Conversión de una lista de Python en un array***
 
 ````python
@@ -516,7 +518,11 @@ matriz.ndim
 
 ### ***Tensor (cubo)***
 
-Son series de tiempo o imágenes
+Pueden ser series temporales o de imágenes, por ejemplo
+
+![Ejemplo de series temporales como tensor 3D](https://i.imgur.com/cM9PqgZ.png)
+
+![Ejemplo de series de imágenes como tensor 4D](https://i.imgur.com/dIyoyLP.png)
 
 ![Tensor o cubo](https://i.imgur.com/a82usp5.png)
 
@@ -772,3 +778,189 @@ print(d5, d5.ndim)
   [40 41 42]
   [43 44 45]]] 3
 ````
+
+## Creación de arrays
+
+### ***Método .arange()***
+
+Permite generar arrays sin definir previamente una lista o una tupla. Devuelve valores espaciados uniformemente dentro de un intervalo dado     
+
+      numpy.arange([start, ]stop, [step, ]dtype=None, *, like=None)
+
+Parámetros: 
+
+   * *Inicio*: Entero o real, opcional: Indica el comienzo del intervalo, que incluye este valor. El valor inicial predeterminado es 0  
+   * *Parada*: Entero o real. Indica el fin del intervalo, que no incluye este valor  
+   * *Paso*: Entero o real, opcional. Indica el espaciado entre valores    
+   * *Tipo*: dtype, opcional. Indica el tipo de la matriz de salida, si no se proporciona dtype, lo deduce de los datos de los otros argumentos de entrada
+   * *Like*: array_like, opcional. Indica el objeto de referencia para permitir la creación de matrices que no son matrices NumPy  
+
+*Retorno*: arangendarray. Matriz de valores espaciados uniformemente  
+
+````python
+np.arange(0,10) # Inicio y parada
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+````
+
+````python
+np.arange(0,20,2) # Inicio, parada y paso
+array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])
+````
+
+### ***Método .zeros()***
+
+Devuelve una nueva matriz de forma y tipo dados, llena de ceros
+
+      numpy.zeros(shape, dtype=float, order='C', *, like=None)
+
+Parámetros: 
+
+   * *Shape (forma)*: Entero o tupla de enteros. Forma de la nueva matriz, por ejemplo, (2, 3) o 2   
+   * *Tipo*: dtype, opcional. El tipo de datos deseado para la matriz, por ejemplo, numpy.int8. El valor predeterminado es numpy.float64  
+   * *Orden*: {'C', 'F'}, opcional, predeterminado: 'C'. Ya sea para almacenar datos multidimensionales en orden de fila principal (estilo C) o de columna principal (estilo Fortran) en la memoria  
+   * *Like*: array_like, opcional. Objeto de referencia para permitir la creación de matrices que no son matrices NumPy  
+
+*Retorno*: ndarray. Matriz de ceros con la forma, el tipo y el orden dados    
+
+````python
+np.zeros(3)
+array([0., 0., 0.])
+np.zeros((10,5))
+array([[0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.],
+       [0., 0., 0., 0., 0.]])
+````
+
+### ***Método .ones()***
+
+Devuelve una nueva matriz de forma y tipo dados, llena de unos  
+
+      numpy.ones(shape, dtype=None, order='C', *, like=None)
+
+Parámetros: 
+
+   * *Shape (forma)*: Entero o secuencia de enteros. Forma de la nueva matriz, por ejemplo, (2, 3) o 2  
+   * *Tipo*: dtype, opcional. El tipo de datos deseado para la matriz, por ejemplo, numpy.int8. El valor predeterminado es numpy.float64   
+   * *Orden*: {'C', 'F'}, opcional, predeterminado: C. Ya sea para almacenar datos multidimensionales en orden de fila principal (estilo C) o columna principal (estilo Fortran) en la memoria    
+   * *Like*: array_like, opcional. Objeto de referencia para permitir la creación de matrices que no son matrices NumPy  
+
+*Retorno*: ndarray. Matriz de unos con la forma, el tipo y el orden dados  
+
+````python
+np.ones(3)  
+array([1., 1., 1.])
+````
+
+### ***Método .linspace()***
+
+Permite generar una array definiendo un inicio, un final y cuantas divisiones tendrá. Devuelve números espaciados uniformemente en un intervalo específico.
+
+      numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
+
+Parámetros: 
+
+   * *Inicio*: array_like. Indica el valor inicial de la secuencia   
+   * *Parada*: array_like. Indica el valor final de la secuencia, a menos que el punto final se establezca en False. En ese caso, la secuencia consta de todas menos la última posición, espaciadas uniformemente, por lo que se excluye la parada. El tamaño del paso cambia cuando el punto final es False  
+   * *Número de muestras*: Entero, opcional. Número de muestras a generar. El valor predeterminado es 50. Debe ser no negativo  
+   * *Punto final*: Booleano, opcional. Si es True, la parada es la última muestra. De lo contrario, no está incluido. El valor predeterminado es True  
+   * *Pasos retornados*: Booleano, opcional. Si es True, devuelve (muestras, paso), donde paso es el espacio entre muestras  
+   * *Tipo*: dtype, opcional. Indica el tipo de la matriz de salida. Si no se proporciona dtype, el tipo de datos se infiere desde el inicio y la finalización. El dtype inferido nunca será un número entero; float se elige incluso si los argumentos producirían una matriz de enteros  
+   * *Eje*: Entero, opcional. El eje en el resultado para almacenar las muestras. Relevante solo si el *inicio* o la *parada* son similares a una matriz. Por defecto (0), las muestras estarán a lo largo de un nuevo eje insertado al principio. Usaremos -1 para obtener un eje al final    
+   * *Retorno*: ndarray. Hay un número de muestras espaciadas uniformemmente, entre el inicio y la parada  
+   * *Paso*: Opcional. Solo se devuelve si *número de muestras* es True. Indica el tamaño del espacio entre muestras  
+
+````python
+np.linspace(0, 10 , 10) # Inicio, parada y número de muestras
+array([ 0., 1.11111111, 2.22222222, 3.33333333, 4.44444444,
+        5.55555556, 6.66666667, 7.77777778, 8.88888889, 10.])
+````
+
+### ***Método .eye()***
+
+Permite crear una matriz con una **diagonal** de 1 y el resto de 0  
+
+      numpy.eye(N, M=None, k=0, dtype=<class 'float'>, order='C', *, like=None)
+
+Parámetros: 
+
+   * *N*: Entero. Número de filas en la salida    
+   * *M*: Entero, opcional. Número de columnas en la salida. Si no se especifica ninguna, el valor predeterminado es N    
+   * *K*: Entero, opcional. Es el índice de la diagonal, 0 (el valor predeterminado) se refiere a la diagonal principal, un valor positivo se refiere a una diagonal superior y un valor negativo a una diagonal inferior  
+   * *Tipo*: dtype, opcional. Tipo de datos de la matriz devuelta  
+   * *Orden*: {'C', 'F'}, opcional. Si la salida debe almacenarse en orden de fila principal (estilo C) o de columna principal (estilo Fortran) en la memoria  
+   * *Like*: array_like, opcional. Objeto de referencia para permitir la creación de matrices que no son matrices NumPy  
+
+*Retorno*: indarray de forma (N,M). Una matriz donde todos los elementos son iguales a cero, excepto la k-ésima diagonal, cuyos valores son iguales a uno  
+
+````python
+np.eye(4)
+array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+````
+
+### ***Método .rand()***
+
+Permite generar números aleatorios en una forma dada  
+
+      random.rand(d0, d1, ..., dn)
+
+Parámetros: 
+
+   * *d0, d1, …, dn*: Entero, opcional. Las dimensiones de la matriz devuelta deben ser no negativas. Si no se proporciona ningún argumento, se devuelve un solo flotante de Python      
+
+*Retorno*: ndarray de forma (d0, d1, ..., dn). Valores aleatorios 
+
+````python
+np.random.rand()     # sin dimensiones (escalar)
+0.37185218178880153
+````
+
+````python
+np.random.rand(4)    # con una dimensión (vector)
+array([0.77923054, 0.90495575, 0.12949965, 0.55974303])
+````
+
+````python
+np.random.rand(4,4)  # con dos dimensiones (matriz)
+array([[0.26920153, 0.24873544, 0.02278515, 0.08250538],
+       [0.16755087, 0.59570639, 0.83604996, 0.57717126],
+       [0.00161574, 0.27857138, 0.33982786, 0.19693596],
+       [0.69474123, 0.01208492, 0.38613157, 0.609117  ]])
+````
+
+### ***Método .randint()***
+
+Devuelve números enteros aleatorios desde el punto bajo (inclusivo) al alto (exclusivo)   
+
+      random.randint(low, high=None, size=None, dtype=int)
+
+Parámetros: 
+
+   * *Bajo*: Entero o tipo matriz de enteros. Números enteros más bajos (con signo) que se extraerán de la distribución (a menos que alto = None, en cuyo caso este parámetro es uno por encima del número entero más alto)  
+   * *Alto*: Entero o similar a una matriz de enteros, opcional. Si se proporciona, uno encima del entero más grande (con signo) que se extraerá de la distribución (ver arriba para el comportamiento si alto = None). Si es similar a una matriz, debe contener valores enteros  
+   * *Tamaño*: Entero o tupla de enteros, opcional. Forma de salida. Si la forma dada es, por ejemplo, (m, n, k), entonces se extraen m * n * k muestras. El valor predeterminado es None, en cuyo caso se devuelve un solo valor  
+   * *Tipo*: dtype, opcional. Tipo de resultado deseado. El orden de bytes debe ser nativo. El valor predeterminado es int.    
+
+*Retorno*: Entero o matriz de enteros. Matriz tamaño-forma de enteros aleatorios de la distribución adecuada, o un único int aleatorio si no se proporciona el tamaño  
+
+````python
+np.random.randint(1,15)             # sin tamaño (escalar)
+7
+```` 
+
+````python
+np.random.randint(1,15, (3,3))      # con tamaño (matriz de 3x3)
+array([[ 4,  2,  9],
+           [ 5,  7,  8],
+           [14, 14,  4]])
+````
+
