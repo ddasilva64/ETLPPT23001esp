@@ -21,3 +21,7 @@
 * [Array creation routines — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/routines.array-creation.html)
 
 * [numpy.ndarray.shape — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.shape.html)
+
+* [Statistics — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/routines.statistics.html)
+
+* [Mathematical functions — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/routines.math.html)

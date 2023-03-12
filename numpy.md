@@ -785,7 +785,7 @@ print(d5, d5.ndim)
 
 Permite generar arrays sin definir previamente una lista o una tupla. Devuelve valores espaciados uniformemente dentro de un intervalo dado     
 
-      numpy.arange([start, ]stop, [step, ]dtype=None, *, like=None)
+      numpy.arange([start, ]stop, [step, ]dtype=Ninguno, *, like=Ninguno)
 
 Parámetros: 
 
@@ -811,7 +811,7 @@ array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])
 
 Devuelve una nueva matriz de forma y tipo dados, llena de ceros
 
-      numpy.zeros(shape, dtype=float, order='C', *, like=None)
+      numpy.zeros(shape, dtype=float, order='C', *, like=Ninguno)
 
 Parámetros: 
 
@@ -842,7 +842,7 @@ array([[0., 0., 0., 0., 0.],
 
 Devuelve una nueva matriz de forma y tipo dados, llena de unos  
 
-      numpy.ones(shape, dtype=None, order='C', *, like=None)
+      numpy.ones(shape, dtype=Ninguno, order='C', *, like=Ninguno)
 
 Parámetros: 
 
@@ -862,7 +862,7 @@ array([1., 1., 1.])
 
 Permite generar una array definiendo un inicio, un final y cuantas divisiones tendrá. Devuelve números espaciados uniformemente en un intervalo específico.
 
-      numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
+      numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=Ninguno, axis=0)
 
 Parámetros: 
 
@@ -886,7 +886,7 @@ array([ 0., 1.11111111, 2.22222222, 3.33333333, 4.44444444,
 
 Permite crear una matriz con una **diagonal** de 1 y el resto de 0  
 
-      numpy.eye(N, M=None, k=0, dtype=<class 'float'>, order='C', *, like=None)
+      numpy.eye(N, M=Ninguno, k=0, dtype=<class 'float'>, order='C', *, like=Ninguno)
 
 Parámetros: 
 
@@ -941,13 +941,13 @@ array([[0.26920153, 0.24873544, 0.02278515, 0.08250538],
 
 Devuelve números enteros aleatorios desde el punto bajo (inclusivo) al alto (exclusivo)   
 
-      random.randint(low, high=None, size=None, dtype=int)
+      random.randint(low, high=Ninguno, size=Ninguno, dtype=int)
 
 Parámetros: 
 
-   * *Bajo*: Entero o tipo matriz de enteros. Números enteros más bajos (con signo) que se extraerán de la distribución (a menos que alto = None, en cuyo caso este parámetro es uno por encima del número entero más alto)  
-   * *Alto*: Entero o similar a una matriz de enteros, opcional. Si se proporciona, uno encima del entero más grande (con signo) que se extraerá de la distribución (ver arriba para el comportamiento si alto = None). Si es similar a una matriz, debe contener valores enteros  
-   * *Tamaño*: Entero o tupla de enteros, opcional. Forma de salida. Si la forma dada es, por ejemplo, (m, n, k), entonces se extraen m * n * k muestras. El valor predeterminado es None, en cuyo caso se devuelve un solo valor  
+   * *Bajo*: Entero o tipo matriz de enteros. Números enteros más bajos (con signo) que se extraerán de la distribución (a menos que alto = Ninguno, en cuyo caso este parámetro es uno por encima del número entero más alto)  
+   * *Alto*: Entero o similar a una matriz de enteros, opcional. Si se proporciona, uno encima del entero más grande (con signo) que se extraerá de la distribución (ver arriba para el comportamiento si alto = Ninguno). Si es similar a una matriz, debe contener valores enteros  
+   * *Tamaño*: Entero o tupla de enteros, opcional. Forma de salida. Si la forma dada es, por ejemplo, (m, n, k), entonces se extraen m * n * k muestras. El valor predeterminado es Ninguno, en cuyo caso se devuelve un solo valor  
    * *Tipo*: dtype, opcional. Tipo de resultado deseado. El orden de bytes debe ser nativo. El valor predeterminado es int.    
 
 *Retorno*: Entero o matriz de enteros. Matriz tamaño-forma de enteros aleatorios de la distribución adecuada, o un único int aleatorio si no se proporciona el tamaño  
@@ -1068,4 +1068,720 @@ ValueError                                Traceback (most recent call last)
 ----> 5 arrOrig.reshape(3,3)
 
 ValueError: cannot reshape array of size 24 into shape (3,3)
+````
+
+## Funciones principales de NumPy
+
+Estas son las funciones que se utilizan normalmente, con NumPy, cuando analizamos datos  
+
+* ***.randint()***
+
+````python
+import numpy as np
+
+arr    = np.random.randint(1, 20, 10)
+
+print('--- array ---')
+print('array :', arr)
+print('--- eof ---')
+
+--- array ---
+array : [12  3  7 16  2 15  9  6  1  1]
+--- eof ---
+````
+
+* ***.shape() y reshape()***
+
+````python
+import numpy as np
+
+arr    = np.random.randint(1, 20, 10)
+matriz = arr.reshape(2,5)
+
+print('--- array ---')
+print('array :', arr)
+print('shape :', arr.shape)
+print('--- matriz ---')
+print('matriz:', matriz)
+print('shape :', matriz.shape)
+print('--- eof ---')
+
+--- array ---
+array : [17 12  3 17 19 17 16  6 17  8]
+shape : (10,)
+--- matriz ---
+matriz: [[17 12  3 17 19]
+ [17 16  6 17  8]]
+shape : (2, 5)
+--- eof ---
+````
+
+* ***.max()***
+
+Retorna los máximos a lo largo de un eje dado  
+
+      ndarray.max(axis=Ninguno, out=Ninguno, keepdims=False, initial=<no value>, where=True)
+
+| 0   | Columnas |
+| :-: | :------: | 
+| 1	| Filas    |  
+
+````python
+import numpy as np
+
+arr    = np.random.randint(1, 20, 10)
+matriz = arr.reshape(2,5)
+
+print('--- array ---')
+print('array :', arr)
+print('shape :', arr.shape)
+print('max   :', arr.max())
+print('--- matriz ---')
+print('matriz:', matriz)
+print('shape :', matriz.shape)
+print('max   :', matriz.max())
+print('max-0 :', matriz.max(0))
+print('max-1 :', matriz.max(1))
+print('--- eof ---')
+
+--- array ---
+array : [ 3 17 11  5  9  3  4  1  6 17]
+shape : (10,)
+max   : 17
+--- matriz ---
+matriz: [[ 3 17 11  5  9]
+         [ 3  4  1  6 17]]
+shape : (2, 5)
+max   : 17
+max-0 : [ 3 17 11  6 17]
+max-1 : [17 17]
+--- eof ---
+````
+
+* ***.argmax()***
+
+Retorna los índices de los valores máximos a lo largo de un eje. Muestra con un 1 dónde se encuentra el máximo en las filas o las columnas 
+
+      numpy.argmax(array, axis=Ninguno, out=Ninguno, *, keepdims=<no value>)
+
+````python
+import numpy as np
+
+arr    = np.random.randint(1, 20, 10)
+matriz = arr.reshape(2,5)
+
+print('--- array ---')
+print('array   :', arr)
+print('shape   :', arr.shape)
+print('max     :', arr.max())
+print('argmax  :', arr.argmax())
+print('--- matriz ---')
+print('matriz  :', matriz)
+print('shape   :', matriz.shape)
+print('max     :', matriz.max())
+print('argmax  :', matriz.argmax())
+print('max-0   :', matriz.max(0))
+print('argmax-0:', matriz.argmax(0))
+print('max-1   :', matriz.max(1))
+print('argmax-1:', matriz.argmax(1))
+print('--- eof ---')
+
+--- array ---
+array   : [ 5 19 12 17 11 11 16  3 19 11]
+shape   : (10,)
+max     : 19
+argmax  : 1
+--- matriz ---
+matriz  : [[ 5 19 12 17 11]
+           [11 16  3 19 11]]
+shape   : (2, 5)
+max     : 19
+argmax  : 1
+max-0   : [11 19 12 19 11]    # máximos en las columnas
+argmax-0: [1 0 0 1 0]         # columnas con máximos
+max-1   : [19 19]             # máximos en las filas
+argmax-1: [1 3]               # filas con máximos
+--- eof ---
+````
+
+* ***.min() y .argmin()***
+
+De forma análoga tenemos .min() y .argmin()
+
+````python
+import numpy as np
+
+arr    = np.random.randint(1, 20, 10)
+matriz = arr.reshape(2,5)
+
+print('--- array ---')
+print('array   :', arr)
+print('shape   :', arr.shape)
+print('min     :', arr.min())
+print('argmin  :', arr.argmin())
+print('--- matriz ---')
+print('matriz  :', matriz)
+print('shape   :', matriz.shape)
+print('min     :', matriz.min())
+print('argmin  :', matriz.argmin())
+print('min-0   :', matriz.min(0))
+print('argmin-0:', matriz.argmin(0))
+print('min-1   :', matriz.min(1))
+print('argmin-1:', matriz.argmin(1))
+print('--- eof ---')
+
+--- array ---
+array   : [18 12 17 10  4 18 19  3  1 14]
+shape   : (10,)
+min     : 1
+argmin  : 8
+--- matriz ---
+matriz  : [[18 12 17 10  4]
+           [18 19  3  1 14]]
+shape   : (2, 5)
+min     : 1
+argmin  : 8
+min-0   : [18 12  3  1  4]    # mínimos en las columnas
+argmin-0: [0 0 1 1 0]         # columnas con mínimos
+min-1   : [4 1]               # mínimos en las filas
+argmin-1: [4 3]               # filas con mínimos
+--- eof ---
+````
+
+### ***.ptp()***
+
+Rango de valores (máximo - mínimo) a lo largo de un eje. El nombre de la función proviene del acrónimo de 'pico a pico'.
+  
+      numpy.ptp(a, axis=Ninguno, out=Ninguno, keepdims=<no value>)
+
+Parámetros: 
+
+   * *Array de entrada*: array_like. Array de entrada
+   * *Eje*: Ninguno o entero o tupla de enteros, opcional. Eje a lo largo del cual encontrar los picos. Por defecto, aplana la matriz. El eje puede ser negativo, en cuyo caso cuenta desde el último hasta el primer eje. Si se trata de una tupla de enteros, se realiza una reducción en varios ejes, en lugar de en un solo eje o en todos los ejes como antes    
+   * *Array de salida*: array_like. Matriz de salida alternativa, en la que colocar el resultado. Debe tener la misma forma y longitud de búfer que la salida esperada, pero el tipo de los valores de salida se convertirá si es necesario  
+   * *Mantener dimensiones (keepdims)*: booleano, opcional. Si se establece en True, los ejes que se reducen y se dejan en el resultado como dimensiones con tamaño uno. Con esta opción, el resultado se transmitirá correctamente contra la matriz de entrada. Si se pasa el valor predeterminado, los *keepdims* no se pasarán al método ````.ptp```` de las subclases de ndarray, sin embargo, se pasará cualquier valor no predeterminado. Si el método de la subclase no implementa *keepdims*, se generarán excepciones  
+
+*Retorno*: ndarray o escalar. El rango de una matriz dada: escalar si la matriz es unidimensional o una nueva matriz que contiene el resultado a lo largo del eje dado     
+
+````python
+import numpy as np
+
+arr    = np.random.randint(1, 20, 10)
+matriz = arr.reshape(2,5)
+
+print('--- array ---')
+print('array   :', arr)
+print('shape   :', arr.shape)
+print('min     :', arr.min())
+print('argmin  :', arr.argmin())
+print('max     :', arr.max())
+print('argmax  :', arr.argmax())
+print('ptp     :', arr.ptp())
+print('--- matriz ---')
+print('matriz  :', matriz)
+print('shape   :', matriz.shape)
+print('min     :', matriz.min())
+print('argmin  :', matriz.argmin())
+print('max     :', matriz.max())
+print('argmax  :', matriz.argmax())
+print('ptp     :', matriz.ptp())
+print('min-0   :', matriz.min(0))         
+print('argmin-0:', matriz.argmin(0))      
+print('max-0   :', matriz.max(0))         
+print('argmax-0:', matriz.argmax(0))      
+print('ptp-0   :', matriz.ptp(0))
+print('min-1   :', matriz.min(1))
+print('argmin-1:', matriz.argmin(1))
+print('max-1   :', matriz.max(1))
+print('argmax-1:', matriz.argmax(1))
+print('ptp-1   :', matriz.ptp(1))
+print('--- eof ---')
+````
+````python
+--- array ---
+array   : [13  3  2  5 19  9 11 16 19  7]
+shape   : (10,)
+min     : 2
+argmin  : 2
+max     : 19
+argmax  : 4
+ptp     : 17                     # max - min = ptp; 19-2=17
+````
+
+![Puntos del array](https://i.imgur.com/sleo3dY.png)  
+Puntos del array
+
+````python
+--- matriz ---
+matriz  : [[13  3  2  5 19]
+           [ 9 11 16 19  7]]
+shape   : (2, 5)
+min     : 2
+argmin  : 2
+max     : 19
+argmax  : 4
+ptp     : 17
+min-0   : [9 3 2 5 7]            # mínimos en las columnas
+argmin-0: [1 0 0 0 1]            # columnas con mínimos
+max-0   : [13 11 16 19 19]       # máximos en las columnas 
+argmax-0: [0 1 1 1 0]            # columnas con máximos
+ptp-0   : [ 4  8 14 14 12]       # 13-9=4;11-3=8;16-2=14;19-5=14;19-7=12
+min-1   : [2 7]                  # mínimos en las filas
+argmin-1: [2 4]                  # filas con mínimos
+max-1   : [19 19]                # máximos en las filas
+argmax-1: [4 3]                  # filas con máximos
+ptp-1   : [17 12]                # 19-2=17;19-7=12 
+--- eof ---
+````
+![Puntos de la primera fila de la matriz](https://i.imgur.com/1aXcjb4.png)  
+Puntos de la primera fila de la matriz
+
+![Puntos de la segunda fila de la matriz](https://i.imgur.com/JN71Egq.png)  
+Puntos de la segunda fila de la matriz
+
+### ***Análisis estadístico***
+
+### ***Ordenación - .sort() -*** 
+
+Retorna una copia ordenada de una matriz  
+
+      ndarray.sort(axis=-1, kind=Ninguno, order=Ninguno)
+
+Parámetros: 
+
+   * *Array de entrada*: array_like. Matriz a ordenar  
+   * *Eje*: Entero del eje o Ninguno, opcional. Eje a lo largo del cual ordenar. Si es Ninguno, la matriz se aplana antes de ordenar. El valor predeterminado es -1, que ordena a lo largo del último eje  
+   * *Tipo de ordenación*: {‘quicksort’, ‘mergesort’, ‘heapsort’, ‘stable’}, opcional. Algoritmo de clasificación. El valor predeterminado es ‘quicksort’. Tengamos en cuenta que tanto 'estable' como 'mergesort' usan timsort o radix sort bajo las cubiertas y en general, la implementación real variará con el tipo de datos. La opción 'mergesort' se mantiene por compatibilidad con versiones anteriores  
+   * *Orden*: Cadena o lista de cadenas, opcional. Cuando a es una matriz con campos definidos, este argumento especifica qué campos comparar primero, segundo, etc. Un solo campo se puede especificar como una cadena y no es necesario especificar todos los campos, pero los campos no especificados se seguirán utilizando, en el orden en que aparecen en el dtype, para desempatar  
+
+*Retorno*: ndarray. Matriz ordenada, del mismo tipo y forma que el *array de entrada*       
+
+````python
+import numpy as np
+
+arr    = np.random.randint(1, 20, 10)
+matriz = arr.reshape(2,5)
+
+print('--- array ---')
+print('array             :', arr) 
+print('ordenado          :', np.sort(arr))                   # ordena a lo largo del último eje
+print('--- matriz ---')
+print('matriz            :', matriz) 
+print('ordenada-sin eje -:', np.sort(matriz, axis=None))     # ordena la matriz aplanada
+print('ordenada-columnas-:', np.sort(matriz, axis=0))        # ordena a lo largo del eje y
+print('ordenada-filas   -:', np.sort(matriz, axis=1))        # ordena a lo largo del eje x
+print('--- eof ---')
+
+--- array ---
+array             : [ 6  2 18  3 13 14 12 18 18 12]
+ordenado          : [ 2  3  6 12 12 13 14 18 18 18]
+--- matriz ---
+matriz            : [[ 6  2 18  3 13]
+                     [14 12 18 18 12]]
+ordenada-sin eje -: [ 2  3  6 12 12 13 14 18 18 18]
+ordenada-columnas-: [[ 6  2 18  3 12]
+                     [14 12 18 18 13]]
+ordenada-filas   -: [[ 2  3  6 13 18]
+                     [12 12 14 18 18]]
+--- eof ---
+````
+````python
+import numpy as np
+
+tipos   = [('nombre', 'S10'), ('altura', float), ('edad', int)]
+valores = [('Arturo', 1.82, 41), ('Ramiro', 1.65, 39),
+          ('Patricio', 1.74, 38)]
+
+print('--- matriz ---')
+arr = np.array(valores, dtype=tipos)                                        # crea una matriz estructurada
+print('array                  :', arr) 
+print('ordenada-altura       -:', np.sort(arr, order='altura'))             # ordenación por altura   
+print('ordenada-edad y altura-:', np.sort(arr, order=['edad', 'altura']))   # ordenación por edad y altura   
+print('--- eof ---')
+
+--- matriz ---
+array                  : [(b'Arturo', 1.82, 41) (b'Ramiro', 1.65, 39) (b'Patricio', 1.74, 38)]
+ordenada-altura       -: [(b'Ramiro', 1.65, 39) (b'Patricio', 1.74, 38) (b'Arturo', 1.82, 41)]
+ordenada-edad y altura-: [(b'Patricio', 1.74, 38) (b'Ramiro', 1.65, 39) (b'Arturo', 1.82, 41)]
+--- eof ---
+````
+
+### ***Percentil - .percentile() -*** 
+
+Calcula el percentil n-ésimo de los datos a lo largo del eje especificado, retorna el(los) percentil(es) n-ésimo(s) de los elementos de la matriz  
+
+      numpy.percentile(a, n, axis=None, out=None, overwrite_input=False, method='linear', keepdims=False, *, interpolation=None)
+
+Parámetros: 
+
+   * *Array de entrada*: array_like. Matriz de entrada u objeto que se puede convertir en una matriz
+   * *n*: array_like de floats. Percentil o secuencia de percentiles a computar, que debe estar entre 0 y 100, ambos inclusive  
+   * *Eje*: {entero, tupla de enteros, Ninguno}, opcional. Eje o ejes a lo largo de los cuales se calculan los percentiles. El valor predeterminado, es calcular los percentiles a lo largo de una versión aplanada de la matriz  
+   * *Salida*: ndarray, opcional. Matriz de salida alternativa en la que colocar el resultado. Debe tener la misma forma y longitud de búfer que la salida esperada, pero el tipo (de la salida) se convertirá si es necesario 
+   * *Rescribir entrada*: Booleano, opcional. Si es Verdadero, permite que la matriz de entrada a sea modificada por cálculos intermedios, para ahorrar memoria. En este caso, el contenido del array de entrada  después de que se complete esta función no está definido  
+   * *Método*: Cadena, opcional. Este parámetro especifica el método a usar para estimar el percentil. Hay muchos métodos diferentes, algunos exclusivos de NumPy. Las opciones ordenadas por su tipo R son:  
+      1. Invertido (discontinuo)
+      2. Promedio invertido (discontinuo)
+      3. Observación más cercana (discontinuo)
+      4. Interpolación invertida  
+      5. Hazen  
+      6. Weibull  
+      7. Lineal (predeterminado)  
+         7.1. Más bajo  
+         7.2. Más alto  
+         7.3. Punto medio  
+         7.4. Más cercano   
+      8. Mediana imparcial  
+      9. Normal imparcial  
+   * *Mantener dimensiones (keepdims)*: Booleano, opcional. Si se establece en True, los ejes que se reducen y se dejan en el resultado como dimensiones con tamaño uno. Con esta opción, el resultado se transmitirá correctamente contra la matriz original *array de entrada*  
+   * *Interpolación*: Cadena, opcional. Nombre en desuso (*deprecated*) para el *método*  
+   
+*Retorno*: escalar, ndarray. Si *n* es un percentil único y eje=Ninguno, entonces el resultado es un escalar. Si se dan varios percentiles, el primer eje del resultado corresponde a los percentiles. Los otros ejes son los ejes que quedan después de la reducción de *array de entrada*. Si la entrada contiene números enteros o flotantes más pequeños que float64, el tipo de datos de salida es float64. De lo contrario, el tipo de datos de salida es el mismo que el de entrada. Si se especifica *salida*, se devuelve esa matriz en su lugar  
+
+**Notas**:
+   Dado un vector V de longitud l, el percentil n-ésimo de V es el valor n/100 del camino desde el mínimo al máximo en una copia ordenada de V. Los valores y distancias de los dos vecinos más cercanos, así como el *método* determinará el percentil si la clasificación normalizada no coincide exactamente con la ubicación de n. Esta función es igual a la mediana si n=50, igual al mínimo si n=0 y igual al máximo si n=100  
+
+   El *método* (opcional), especifica el modo a usar cuando el percentil deseado se encuentra entre dos índices i y j = i + 1. En ese caso, primero determinamos i + g, un índice virtual que se encuentra entre i y j, donde i es el piso y g es la parte fraccionaria del índice. El resultado final es, entonces, una interpolación de a[i] y a[j] a partir de g. Durante el cálculo de g, i y j se modifican utilizando las constantes de corrección alfa y beta cuyas opciones dependen del *método* utilizado. Finalmente, tengamos en cuenta que, dado que Python usa la indexación basada en 0, el código resta otro 1 del índice internamente  
+
+   La siguiente fórmula determina el índice virtual i + g, la ubicación del percentil en la muestra ordenada:
+
+     i+g=(n/100)*(n-alfa-beta+1)+alfa
+
+   Los diferentes *métodos* funcionan de la siguiente manera:  
+
+   1. Invertido:  
+      Este *método* da resultados discontinuos:      
+         * si g > 0; entonces toma j  
+         * si g = 0; entonces toma i  
+   2. Promedio invertido:  
+      Este *método* da resultados discontinuos:  
+         * si g > 0; entonces toma j  
+         * si g = 0; luego promedio entre límites  
+   3. Observación más cercana:  
+      Este *método* da resultados discontinuos:  
+         * si g > 0; entonces toma j  
+         * si g = 0 y el índice es impar; entonces toma j  
+         * si g = 0 y el índice es par; entonces toma i  
+   4. Interpolación invertida:
+      Este *método* da resultados continuos usando:  
+         * alfa = 0  
+         * beta = 1  
+   5. Hazen:  
+      Este *método* da resultados continuos usando:  
+         * alfa = 1/2  
+         * beta = 1/2  
+   6. Weibull:
+      Este *método* da resultados continuos usando:  
+         * alfa = 0  
+         * beta = 0  
+   7. Lineal:  
+      Este *método* da resultados continuos usando:  
+         * alfa = 1  
+         * beta = 1  
+   8. Mediana_imparcial:  
+      Este *método* es probablemente el mejor método si se desconoce la función de distribución de la muestra (ver referencia). Este método da resultados continuos usando:  
+         * alfa = 1/3  
+         * beta = 1/3  
+   9. Normal imparcial:  
+      Este *método* es probablemente el mejor si se sabe que la función de distribución de la muestra es normal. Este método da resultados continuos usando:  
+         * alfa = 3/8  
+         * beta = 3/8  
+   10. Más bajo:  
+      *Método* NumPy conservado por compatibilidad con versiones anteriores. Toma i como el punto de interpolación.  
+   11. Más alto:  
+      *Método* NumPy conservado por compatibilidad con versiones anteriores. Toma j como el punto de interpolación.  
+   12. Más cercano:  
+      *Método* NumPy conservado por compatibilidad con versiones anteriores. Toma i o j, lo que sea más cercano  
+   13. Punto medio:  
+      *Método* NumPy conservado por compatibilidad con versiones anteriores. Usa (i + j) / 2  
+
+````python
+import numpy as np
+
+print('--- matriz ---')
+arr = np.array([[10, 7, 4], [3, 2, 1]])
+print(arr)
+
+print('--- percentil 50 ---')
+print(np.percentile(arr, 50))
+
+print('--- percentil 50 sobre columnas ---')
+print(np.percentile(arr, 50, axis=0))
+
+print('--- percentil 50 sobre filas ---')
+print(np.percentile(arr, 50, axis=1))
+
+print('--- percentil 50 sobre filas, manteniendo dimensiones ---')
+print(np.percentile(arr, 50, axis=1, keepdims=True))
+print('--- eof ---')
+
+--- matriz ---
+[[10  7  4]
+ [ 3  2  1]]
+--- percentil 50 ---
+3.5
+--- percentil 50 sobre columnas ---
+[6.5 4.5 2.5]
+--- percentil 50 sobre filas ---
+[7. 2.]
+--- percentil 50 sobre filas, manteniendo dimensiones ---
+[[7.]
+ [2.]]
+--- eof ---
+````
+### ***Mediana - .median() -*** 
+
+Calcula la mediana a lo largo del eje especificado. Retorna la mediana de los elementos de la matriz.
+
+      numpy.median(a, axis=None, out=None, overwrite_input=False, keepdims=False)
+
+Parámetros: 
+
+   * *Array de entrada*: array_like. Matriz de entrada u objeto que se puede convertir en una matriz  
+   * *Eje*: {entero, secuencia de enteros, Ninguno}, opcional. Eje o ejes a lo largo de los cuales se calculan las medianas. El valor predeterminado es calcular la mediana a lo largo de una versión aplanada de la matriz  
+   * *Salida*: ndarray, opcional. Matriz de salida alternativa en la que colocar el resultado. Debe tener la misma forma y longitud de búfer que la salida esperada, pero el tipo (de la salida) se convertirá si es necesario  
+   * *Rescribir entrada*: Booleano, opcional. Si es Verdadero, entonces permita el uso de la memoria de la matriz de entrada a para los cálculos. La matriz de entrada será modificada por la llamada a la mediana. Esto ahorrará memoria cuando no necesite conservar el contenido de la matriz de entrada. Trate la entrada como indefinida, pero probablemente se ordenará total o parcialmente. El valor predeterminado es Falso. Si *rescribir entrada* es True y *array de entrada* no es ya un ndarray, se generará un error  
+   * *Mantener dimensiones (keepdims)*: Booleano, opcional. Si se establece en True, los ejes que se reducen se dejan en el resultado como dimensiones con tamaño uno. Con esta opción, el resultado se transmitirá correctamente contra el array original
+
+*Retorno*: mediana ndarray. Una nueva matriz que contiene el resultado. Si la entrada contiene números enteros o flotantes más pequeños que float64, el tipo de datos de salida es np.float64. De lo contrario, el tipo de datos de la salida es el mismo que el de la entrada. Si se especifica la *salida*, se devuelve esa matriz en su lugar  
+
+````python
+import numpy as np
+
+print('--- matriz ---')
+arr = np.array([[10, 7, 4], [3, 2, 1]])
+print(arr)
+
+print('mediana      :', np.median(arr))
+print('mediana eje y:', np.median(arr, axis=0))
+print('mediana eje x:', np.median(arr, axis=1))
+print('--- eof ---')
+
+--- matriz ---
+[[10  7  4]
+ [ 3  2  1]]
+mediana      : 3.5
+mediana eje y: [6.5 4.5 2.5]
+mediana eje x: [7. 2.]
+--- eof ---
+````
+### ***Desviación estándar - .std() -*** 
+
+Calcula la desviación estándar a lo largo del eje especificado. Retorna la desviación estándar, una medida de la dispersión de una distribución, de los elementos de la matriz. La desviación estándar se calcula para la matriz aplanada de forma predeterminada; de lo contrario, se calcula sobre el eje especificado.   
+
+      numpy.std(a, axis=None, dtype=None, out=None, ddof=0, keepdims=<no value>, *, where=<no value>)
+
+Parámetros: 
+
+   * *Array de entrada*: array_like. Calcula la desviación estándar de estos valores. Si se trata de una tupla de enteros, se realiza una desviación estándar sobre múltiples ejes, en lugar de un solo eje o todos los ejes como antes  
+   * *Tipo*: dtype, opcional. Tipo a usar en el cálculo de la desviación estándar. Para matrices de tipo entero, el valor predeterminado es float64, para matrices de tipo flotante es el mismo que el tipo de matriz  
+   * *Salida*: ndarray, opcional. Matriz de salida alternativa en la que colocar el resultado. Debe tener la misma forma que la salida esperada, pero el tipo (de los valores calculados) se convertirá si es necesario  
+   * *Grados Delta de libertad (ddof)*: Entero, opcional. El divisor utilizado en los cálculos es n-ddof, donde n representa el número de elementos. Por defecto, *ddof* es cero  
+   * *Mantener dimensiones (keepdims)*: Booleano, opcional. Si se establece en True, los ejes que se reducen se dejan en el resultado como dimensiones con tamaño uno. Con esta opción, el resultado se transmitirá correctamente contra la matriz de entrada. Si se pasa el valor predeterminado, los keepdims no se pasarán al método estándar de las subclases de ndarray, sin embargo, se pasará cualquier valor no predeterminado. Si el método de la subclase no implementa *keepdims*, se generarán excepciones  
+   * *Where*: array_like de booleanos, opcional. Elementos a incluir en la desviación estándar  
+
+*Retorno*: Desviación estándar ndarray. Si *salida* es Ninguno, devuelve una nueva matriz que contiene la desviación estándar; de lo contrario, devuelve una referencia a la matriz de salida  
+
+````python
+import numpy as np
+
+arr = np.array([[1, 2], [3, 4]])
+print('matriz                   :', arr)
+print('desviación estándar      :', np.std(arr))
+print('desviación estándar eje y:', np.std(arr, axis=0))
+print('desviación estándar eje x:', np.std(arr, axis=1))
+print('--- eof ---')
+
+matriz                   : [[1 2]
+                            [3 4]]
+desviación estándar      : 1.118033988749895
+desviación estándar eje y: [1. 1.]
+desviación estándar eje x: [0.5 0.5]
+--- eof ---
+````
+### ***Varianza - .var() -*** 
+
+Calcula la varianza a lo largo del eje especificado. Retorna la varianza de los elementos de la matriz, una medida de la dispersión de una distribución. La varianza se calcula para la matriz aplanada de forma predeterminada; de lo contrario, sobre el eje especificado
+
+      ndarray.var(axis=None, dtype=None, out=None, ddof=0, keepdims=False, *, where=True)
+
+Parámetros: 
+
+   * *Array de entrada*: array_like. Matriz que contiene números cuya varianza se desea. Si a no es una matriz, se intenta una conversión  
+   * *Eje*: Ninguno o entero o tupla de enteros, opcional. Eje o ejes a lo largo de los cuales se calcula la varianza. El valor predeterminado es calcular la varianza de la matriz aplanada. Si se trata de una tupla de enteros, se realiza una variación sobre múltiples ejes, en lugar de un solo eje o todos los ejes como antes  
+   * *Tipo*: dtype, opcional. Tipo a usar en el cálculo de la varianza. Para matrices de tipo entero, el valor predeterminado es float64; para matrices de tipos flotantes es lo mismo que el tipo de matriz  
+   * *Salida*: ndarray, opcional. Matriz de salida alternativa en la que colocar el resultado. Debe tener la misma forma que la salida esperada, pero el tipo se convierte si es necesario  
+   * *Grados Delta de libertad (ddof)*: Entero, opcional. El divisor utilizado en el cálculo es n-ddof, donde n representa el número de elementos. Por defecto ddof es cero  
+   * *Mantener dimensiones (keepdims)*: Booleano, opcional. Si se establece en True, los ejes que se reducen se dejan en el resultado como dimensiones con tamaño uno. Con esta opción, el resultado se transmitirá correctamente contra la matriz de entrada. Si se pasa el valor predeterminado, los *keepdims* no se pasarán al método ````.var()```` de las subclases de ndarray, sin embargo, se pasará cualquier valor no predeterminado. Si el método de la subclase no implementa *keepdims*, se generarán excepciones  
+   * *Where*: array_like de booleanos, opcional. Elementos a incluir en la varianza  
+
+*Retorno*: Varianza ndarray, consultar el parámetro *tipo* anterior. Si +*alida*=Ninguno, devuelve una nueva matriz que contiene la varianza; de lo contrario, se devuelve una referencia a la matriz de salida
+
+````python
+import numpy as np
+
+arr = np.array([[1, 2], [3, 4]])
+print('matriz         :', arr)
+print('varianza      :', np.var(arr))
+print('varianza eje y:', np.var(arr, axis=0))
+print('varianza eje x:', np.var(arr, axis=1))
+print('--- eof ---')
+
+matriz         : [[1 2]
+                  [3 4]]
+varianza      : 1.25
+varianza eje y: [1. 1.]
+varianza eje x: [0.25 0.25]
+--- eof ---
+````
+
+### ***Promedio - .mean() -*** 
+
+Calcula la media aritmética a lo largo del eje especificado. Retorna el promedio de los elementos de la matriz. El promedio se toma sobre la matriz aplanada de forma predeterminada; de lo contrario, sobre el eje especificado. Los valores intermedios y de retorno de float64 se utilizan para entradas enteras  
+      
+      numpy.mean(a, axis=None, dtype=None, out=None, keepdims=<no value>, *, where=<no value>)
+
+Parámetros: 
+
+   * *Array de entrada*: array_like. Matriz que contiene números cuya media se desea. Si a no es una matriz, se intenta una conversión  
+   * *Eje*: Ninguno o entero o tupla de enteros, opcional. Eje o ejes a lo largo de los cuales se calculan las medias. El valor predeterminado es calcular la media de la matriz aplanada. Si se trata de una tupla de enteros, se realiza una media sobre múltiples ejes, en lugar de un solo eje o todos los ejes como antes  
+   * *Tipo*: dtype, opcional. Tipo a usar en el cálculo de la media. Para entradas enteras, el valor predeterminado es float64; para entradas de punto flotante, es lo mismo que el tipo de entrada  
+   * *Salida*: ndarray, opcional. Matriz de salida alternativa en la que colocar el resultado. El valor predeterminado es Ninguno; si se proporciona, debe tener la misma forma que la salida esperada, pero el tipo se convertirá si es necesario  
+   * *Mantener dimensiones (keepdims)*: Booleano, opcional. Si se establece en True, los ejes que se reducen se dejan en el resultado como dimensiones con tamaño uno. Con esta opción, el resultado se transmitirá correctamente contra la matriz de entrada. Si se pasa el valor predeterminado, los *keepdims* no se pasarán al método medio de las subclases de ndarray, sin embargo, se pasará cualquier valor no predeterminado. Si el método de la subclase no implementa *keepdims*, se generarán excepciones  
+   * *Where*: array_like de booleanos, opcional. Elementos a incluir en la media  
+
+*Retorno*: Promedio ndarray, consultar el parámetro *tipo* anterior. Si out=Ninguno, devuelve una nueva matriz que contiene los valores medios; de lo contrario, se devuelve una referencia a la matriz de salida  
+
+````python
+import numpy as np
+
+arr = np.array([[1, 2], [3, 4]])
+print('matriz        :', arr)
+print('promedio      :', np.mean(arr))
+print('promedio eje y:', np.mean(arr, axis=0))
+print('promedio eje x:', np.mean(arr, axis=1))
+print('--- eof ---')
+
+matriz        : [[1 2]
+                 [3 4]]
+promedio      : 2.5
+promedio eje y: [2. 3.]
+promedio eje x: [1.5 3.5]
+--- eof ---
+````
+
+### ***Concatenación - concatenate() -***
+
+Concatena arrays
+
+      numpy.concatenate((a1, a2, ...), axis=0, out=None, dtype=None, casting="same_kind")
+
+````python
+import numpy as np
+
+arra = np.array([[1,2], [3,4]])
+arrb = np.array([5, 6])
+print('matriz-a        :', arra)
+print('matriz-b        :', arrab
+print('--- matrices concatenadas ---')
+np.concatenate((arra, arrb), axis = 0)
+
+matriz-a        : [[1 2]
+                   [3 4]]
+matriz-b        : [5 6]
+--- matrices concatenadas ---
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-13-59092354a6a9> in <module>
+      6 print('matriz-b        :', arrb)
+      7 print('--- matrices concatenadas ---')
+----> 8 np.concatenate((arra, arrb), axis = 0)
+
+/usr/local/lib/python3.9/dist-packages/numpy/core/overrides.py in concatenate(*args, **kwargs)
+
+ValueError: all the input arrays must have same number of dimensions, but the array at index 0 has 2 dimension(s) and the array at index 1 has 1 dimension(s)
+````
+
+El error anterior es debido a que ‘arra’ tiene 2 dimensiones, mientras que ‘arrb’ tiene 1. Debemos poner ‘b’ en 2 dimensiones también  
+
+````python
+import numpy as np
+
+arra = np.array([[1,2], [3,4]])
+arrb = np.array([5, 6])
+print('matriz-a        :', arra)
+arrb = np.expand_dims(arrb, axis = 0)
+print('matriz-b        :', arrb)
+print('--- matrices concatenadas ---')
+np.concatenate((arra,arrb), axis = 0)
+
+matriz-a        : [[1 2]
+                   [3 4]]
+matriz-b        : [[5 6]]
+--- matrices concatenadas ---
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+````
+
+De igual manera, podemos agregarlo en el otro eje
+
+````python
+import numpy as np
+
+arra = np.array([[1,2], [3,4]])
+arrb = np.array([5, 6])
+print('matriz-a        :', arra)
+arrb = np.expand_dims(arrb, axis = 0)
+print('matriz-b        :', arrb)
+print('--- matrices concatenadas ---')
+np.concatenate((arra,arrb), axis = 0)
+np.concatenate((arra,arrb), axis = 1)
+
+matriz-a        : [[1 2]
+                   [3 4]]
+matriz-b        : [[5 6]]
+--- matrices concatenadas ---
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-17-c74884262a58> in <module>
+      8 print('--- matrices concatenadas ---')
+      9 np.concatenate((arra,arrb), axis = 0)
+---> 10 np.concatenate((arra,arrb), axis = 1)
+
+/usr/local/lib/python3.9/dist-packages/numpy/core/overrides.py in concatenate(*args, **kwargs)
+
+ValueError: all the input array dimensions for the concatenation axis must match exactly, but along dimension 0, the array at index 0 has size 2 and the array at index 1 has size 1
+````
+
+Como ‘arrb’ es una fila y no una columna, no se puede concatenar a menos que se aplique la transpuesta.
+
+La transpuesta pone nuestro array en sentido opuesto, si el array original es (1,2), con la transpuesta quedará (2,1)
+
+````python
+import numpy as np
+
+arra = np.array([[1,2], [3,4]])
+arrb = np.array([5, 6])
+print('matriz-a            :', arra)
+arrb = np.expand_dims(arrb, axis = 0)
+print('matriz-b            :', arrb)
+print('--- matrices concatenadas ---')
+print('matriz concatenada 1:', np.concatenate((arra,arrb), axis = 0))
+print('matriz-b traspuesta:', arrb.T)
+print('matriz concatenada 2:', np.concatenate((arra,arrb.T), axis = 1))
+print('--- eof ---')
+
+matriz-a            : [[1 2]
+                       [3 4]]
+matriz-b            : [[5 6]]
+--- matrices concatenadas ---
+matriz concatenada 1: [[1 2]
+                       [3 4]
+                       [5 6]]
+matriz-b traspuesta:  [[5]
+                       [6]]
+matriz concatenada 2: [[1 2 5]
+                       [3 4 6]]
+--- eof ---
 ````
