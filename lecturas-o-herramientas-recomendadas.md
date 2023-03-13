@@ -25,3 +25,7 @@
 * [Statistics — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/routines.statistics.html)
 
 * [Mathematical functions — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/routines.math.html)
+
+* [numpy.copy — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/generated/numpy.copy.html)
+
+* [NumPy: the absolute basics for beginners — NumPy v1.22 Manual](https://numpy.org/doc/stable/user/absolute_beginners.html#basic-array-operations)

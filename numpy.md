@@ -1198,9 +1198,9 @@ shape   : (2, 5)
 max     : 19
 argmax  : 1
 max-0   : [11 19 12 19 11]    # máximos en las columnas
-argmax-0: [1 0 0 1 0]         # columnas con máximos
+argmax-0: [1 0 0 1 0]         # columnas con máximos (índices)
 max-1   : [19 19]             # máximos en las filas
-argmax-1: [1 3]               # filas con máximos
+argmax-1: [1 3]               # filas con máximos (índices)
 --- eof ---
 ````
 
@@ -1242,9 +1242,9 @@ shape   : (2, 5)
 min     : 1
 argmin  : 8
 min-0   : [18 12  3  1  4]    # mínimos en las columnas
-argmin-0: [0 0 1 1 0]         # columnas con mínimos
+argmin-0: [0 0 1 1 0]         # columnas con mínimos (índices)
 min-1   : [4 1]               # mínimos en las filas
-argmin-1: [4 3]               # filas con mínimos
+argmin-1: [4 3]               # filas con mínimos (índices)
 --- eof ---
 ````
 
@@ -1322,14 +1322,14 @@ max     : 19
 argmax  : 4
 ptp     : 17
 min-0   : [9 3 2 5 7]            # mínimos en las columnas
-argmin-0: [1 0 0 0 1]            # columnas con mínimos
+argmin-0: [1 0 0 0 1]            # columnas con mínimos (índices)
 max-0   : [13 11 16 19 19]       # máximos en las columnas 
-argmax-0: [0 1 1 1 0]            # columnas con máximos
+argmax-0: [0 1 1 1 0]            # columnas con máximos (índices)
 ptp-0   : [ 4  8 14 14 12]       # 13-9=4;11-3=8;16-2=14;19-5=14;19-7=12
 min-1   : [2 7]                  # mínimos en las filas
-argmin-1: [2 4]                  # filas con mínimos
+argmin-1: [2 4]                  # filas con mínimos (índices)
 max-1   : [19 19]                # máximos en las filas
-argmax-1: [4 3]                  # filas con máximos
+argmax-1: [4 3]                  # filas con máximos (índices)
 ptp-1   : [17 12]                # 19-2=17;19-7=12 
 --- eof ---
 ````
@@ -1785,3 +1785,190 @@ matriz concatenada 2: [[1 2 5]
                        [3 4 6]]
 --- eof ---
 ````
+
+## Copy
+
+Retorna una copia de matriz del objeto dado, para, entre otras cosas, poder trabajar con ella, con seguridad, de tal forma que al modificar el nuevo array, los cambios no se vean reflejados en array original  
+
+      numpy.copy(a, order='K', subok=False)
+
+Parámetros: 
+
+   * *Array de entrada*: array_like. Matriz de entrada      
+   * *Orden*: {'C', 'F', 'A', 'K'}, opcional. Controla el diseño de la memoria de la copia. 'C' significa orden C, 'F' significa orden F, 'A' significa 'F' si *array de entrada* es contigua en Fortran, 'C' en caso contrario. 'K' significa hacer coincidir el diseño de *Array de entrada* lo más cerca posible. Tengamos en cuenta que esta función y ````ndarray.copy```` son muy similares, pero tienen diferentes valores predeterminados en su ordenación    
+   * *subok*: Booleano, opcional. Si es Verdadero, las subclases se transferirán; de lo contrario, la matriz devuelta se verá obligada a ser una matriz de clase base (el valor predeterminado es Falso)   
+
+*Retorno*: ndarray. Interpretación de matriz del *array de entrada*  
+
+````python
+arr = np.arange(0, 11)
+print(arr)
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
+````
+
+Tomamos un segmento del array original
+
+````python
+print(arr[0:6])
+array([0, 1, 2, 3, 4, 5])
+segm_de_arr = arr[0:6]
+````
+
+Queremos pasar todas nuestras variables a 0
+
+````python
+segm_de_arr[:] = 0
+print(segm_de_arr)
+array([0, 0, 0, 0, 0, 0])
+````
+
+Se han modificado los datos del array original, porque seguía haciendo referencia a esa variable  
+
+````python
+print(arr)
+array([ 0,  0,  0,  0,  0,  0,  6,  7,  8,  9, 10])
+````
+
+Con ````.copy()```` creamos una copia para no dañar nuestro array original
+
+````python
+arr_copy = arr.copy()
+arr_copy[:] = 100
+print(arr_copy)
+array([100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100])
+print(arr)
+array([ 0,  0,  0,  0,  0,  0,  6,  7,  8,  9, 10])
+````
+
+Esta función nos ayudará a prevenir muchos errores y tener más confianza a la hora de manipular los datos  
+
+## Condiciones
+
+Las condiciones nos permiten hacer consultas más específicas  
+
+````python
+arr = np.linspace(1,10,10, dtype = 'int8')
+print(arr)
+array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=int8)
+````
+
+Retorna un array de booleanos dónde la condición se cumple  
+
+````python
+indices_cond = arr > 5
+print(indices_cond)
+array([False, False, False, False, False,  True,  True,  True,  True, True])
+````
+
+Retorna valores, dónde la condiciones True  
+
+````python
+print(arr[indices_cond])
+array([ 6,  7,  8,  9, 10], dtype=int8)
+````
+
+Múltiples condiciones  
+
+````python
+print(arr[(arr > 5) & (arr < 9)])
+array([6, 7, 8], dtype=int8)
+````
+
+Modificar los valores que cumplan la condición  
+
+````python
+arr[arr > 5] = 99
+print(arr)
+array([ 1,  2,  3,  4,  5, 99, 99, 99, 99, 99], dtype=int8)
+````
+## Operaciones
+
+Existen diferentes operaciones que se pueden hacer en NumPy  
+
+````python
+print(lista = [1,2])
+[1, 2]
+````
+
+Una lista de Python entiende que quieres duplicar los datos. No es lo que buscamos   
+
+````python
+print(lista * 2) 
+[1, 2, 1, 2]
+````
+
+Pero Numpy lo entiende mucho mejor
+
+````python
+arr = np.arange(0,10)
+arr2 = arr.copy()
+print(arr)
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+````
+
+Ahora multiplicamos por un vector:
+
+````python
+print(arr * 2)
+array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])
+````
+
+Operación suma de vectores:
+
+````python
+print(arr + 2) 
+array([ 2,  3,  4,  5,  6,  7,  8,  9, 10, 11])
+````
+
+División con un vector
+
+Como en este caso la primera posición del array es 0, muestra un error pero, no detiene el proceso  
+
+````python
+1 / arr
+
+RuntimeWarning: divide by zero encountered in true_divide
+  """Entry point for launching an IPython kernel.
+  
+array([    inf,   1.  , 0.5 , 0.33333333, 0.25 ,0.2, 0.16666667, 0.14285714, 0.125 , 0.11111111])
+````
+
+Elevar a un vector:
+
+````python
+print(arr**2)
+array([ 0,  1,  4,  9, 16, 25, 36, 49, 64, 81])
+````
+
+Sumar dos arrays de igual dimensiones las hace elemento por elemento:  
+
+````python
+print(arr + arr2)
+array([ 0,  2,  4,  6,  8, 10, 12, 14, 16, 18])
+````
+
+Lo mismo aplica para matrices  
+
+````python
+matriz = arr.reshape(2,5)
+matriz2 = matriz.copy()
+print(matriz)
+array([[0, 1, 2, 3, 4],
+       [5, 6, 7, 8, 9]])
+print(matriz - matriz2)
+array([[0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0]])
+````
+
+Una operación importante es la de punto por punto, aquí dos formas de hacerla:  
+
+````python
+print(np.matmul(matriz, matriz2.T))
+array([[ 30,  80],
+       [ 80, 255]])
+print(matriz @ matriz2.T)
+array([[ 30,  80],
+       [ 80, 255]])
+````
+
+
