@@ -1970,5 +1970,3 @@ print(matriz @ matriz2.T)
 array([[ 30,  80],
        [ 80, 255]])
 ````
-
-

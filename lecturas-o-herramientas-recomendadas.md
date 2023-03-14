@@ -29,3 +29,11 @@
 * [numpy.copy — NumPy v1.22 Manual](https://numpy.org/doc/stable/reference/generated/numpy.copy.html)
 
 * [NumPy: the absolute basics for beginners — NumPy v1.22 Manual](https://numpy.org/doc/stable/user/absolute_beginners.html#basic-array-operations)
+
+* [pandas.read_csv — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)
+
+* [pandas.read_json — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_json.html)
+
+* [Kaggle: Your Machine Learning and Data Science Community](https://kaggle.com)
+
+* [Kaggle: Your Machine Learning and Data Science Community](https://kaggle.com)
