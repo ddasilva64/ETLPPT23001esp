@@ -37,3 +37,11 @@
 * [Kaggle: Your Machine Learning and Data Science Community](https://kaggle.com)
 
 * [Kaggle: Your Machine Learning and Data Science Community](https://kaggle.com)
+
+* [pandas.DataFrame.iloc — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html)
+
+* [pandas.DataFrame.loc — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html)
+
+* [pandas.DataFrame.drop — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html)
+
+* [pandas.DataFrame.append — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.append.html)
