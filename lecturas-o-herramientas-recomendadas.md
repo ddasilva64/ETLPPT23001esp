@@ -45,3 +45,19 @@
 * [pandas.DataFrame.drop — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html)
 
 * [pandas.DataFrame.append — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.append.html)
+
+* [pandas.isnull — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.isnull.html)
+
+* [pandas.DataFrame.fillna — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.fillna.html)
+
+* [pandas.DataFrame.dropna — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html)
+
+* [10 minutes to pandas — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/user_guide/10min.html)
+
+* [pandas.DataFrame.groupby — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html)
+
+* [pandas.DataFrame.merge — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html)
+
+* [pandas.concat — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.concat.html)
+
+* [pandas.DataFrame.apply — pandas 1.4.1 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html)
