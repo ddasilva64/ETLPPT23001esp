@@ -271,5 +271,3 @@ La principal desventaja de un DLH es que todavía es una tecnología relativamen
 ### ***Herramientas custom***  
 
 ![Herramientas custom](https://i.imgur.com/LxsyTSN.png)  
-
-## Quiz: Introducción a ETL  
