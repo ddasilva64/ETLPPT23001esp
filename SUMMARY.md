@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Resumen](README.md)  
-* [Introducción a ETL](introduccion-a-etl)  
+* [Introducción a ETL](introduccion-a-etl.md)  
 * [Extracción de datos](extraccion-de-datos)  
 * [Transformación de datos](transformacion-de-datos)  
 * [carga de datos](carga-de-datos)  
