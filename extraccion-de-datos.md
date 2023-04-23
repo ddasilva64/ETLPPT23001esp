@@ -2,83 +2,95 @@
 
 ## Sources  
 
-* Formato: Es importante asegurarse de que los datos estén en un formato compatible con la herramienta de ETL que se está utilizando  
-* Calidad de los datos: Es necesario verificar la integridad y la precisión de los datos antes de cargarlos  
-* Frecuencia de actualización: Debemos determinar la frecuencia con la que los datos deben ser extraídos y actualizados  
-* Accesibilidad: Debemos tener acceso a las fuentes de datos para poder extraerlos y cargarlos en el sistema  
-* Seguridad: Debemos asegurarnos de que los datos estén protegidos y de que solo las personas autorizadas tengan acceso a ellos  
-* Eficiencia: Debemos buscar la manera más eficiente de extraer y cargar los datos, para evitar retrasos y errores  
-* Escalibilidad: Debemos tener en cuenta si la solución de ETL es escalable y si es posible manejar una cantidad creciente de datos en el futuro  
+* **_Formato_**: Es importante asegurarse de que los datos estén en un **_formato compatible con la herramienta de ETL_** que se está utilizando  
+* **_Calidad de los datos_**: Es necesario verificar la **_integridad y la precisión_** de los datos antes de cargarlos  
+* **_Frecuencia de actualización_**: Debemos determinar la frecuencia **_con la que los datos deben ser extraídos y actualizados_**  
+* **_Accesibilidad_**: Debemos tener acceso **_a las fuentes de datos_** para poder extraerlos y cargarlos en el sistema  
+* **_Seguridad_**: Debemos asegurarnos de que los datos estén protegidos y de que **_solo las personas autorizadas tengan acceso_** a ellos  
+* **_Eficiencia_**: Debemos buscar la manera más eficiente **_de extraer y cargar los datos, para evitar retrasos y errores_**  
+* **_Escalibilidad_**: Debemos tener en cuenta si la solución de ETL es escalable y si es posible **_manejar una cantidad creciente de datos en el futuro_**  
 
 ## Configuración de base de datos source y entorno para ETL en Python  
 
-En esta clase sabremos cómo configurar una BD SQL, que será una de las 3 fuentes para extraer datos en el proyecto de ETL. Las otras dos fuentes son un archivo .JSON y otro .CSV, que veremos posteriormente  
+En nuestro proyecto ETL usaremos 3 fuentes de datos:  
 
-Además, aprenderemos cómo conectarnos a esta base de datos OLTP con un software de administración de BD. Puede ser DataSpell, DBeaver o el de nuestra preferencia  
+* **_BD (PostgreSQL)_**, la cual configuraremos ahora  
+* **_Fichero .JSON_**, del cual nos ocuparemos posteriormente  
+* **_Fichero .CSV_**, del cual, también, nos ocuparemos posteriormente   
 
-**Sugerimos usar DataSpell**. Más adelante de este tutorial, veremos cómo configurarlo  
+Además, **_nos conectaremos_** a esta base de datos OLTP, **_con un software de administración de BD_**. Puede ser **_DataSpell_**, DBeaver o el de nuestra preferencia  
 
-Algo que tenemos que destacar, es que la BD SQL source no se tendría que crear en un proceso de ETL. Esta BD ya estaría creada en la infraestructura de sistemas y aplicaciones, de la empresa en la que estemos colaborando  
+**_Usaremos DataSpell_**. Más adelante, lo configuraremos  
 
-En este caso lo estamos haciendo por fines educativos para poder tener una BD de donde obtener datos y conocer el proceso de extracción  
+**_Nota_**: La BD no se tendría que crear en el proceso ETL (obviamente), dado que lo normal es que esta ya esté creada en la infraestructura de sistemas y aplicaciones, de la empresa con la que estemos colaborando. No obstante, en este caso, con fines educativos, la crearemos para poder tener una BD de la cual extraer datos  
 
-Para la configuración de nuestra BD source usaremos **PostgreSQL**. Podemos utilizarlo de dos formas, una instalación local de PostgreSQL o una configuración por Docker. **Sugerimos hacerlo por Docker**  
+Para la configuración de la BD usaremos **_PostgreSQL_**. Tenemos dos alternativas, para hecer la instalación:
+* Local  
+* **_Docker_** (recomendado)  
 
-### ***1. Crear contenedor en Docker***  
+No ostante, a efectos didácticos, instalaremos **_PostgreSQL_** de las dos formas  
 
-**Docker es un entorno de gestión de contenedores**, de manera que usaremos una imagen base con toda la configuración que requerimos sin instalar necesariamente en nuestra máquina. Solo utilizando los recursos del sistema para ejecutar dicha imagen, algo similar a una máquina virtual  
+### **_1. Creación del contenedor en Docker_**  
+
+**_Docker es un entorno de gestión de contenedores_**, de manera que **_usaremos una imagen base con toda la configuración_** que requerimos sin instalarla necesariamente en nuestra máquina. Solo utilizaremos los recursos del sistema para ejecutar dicha imagen, es decir, es algo **_similar a una máquina virtual_**  
 
 ----------------
 
-***Instalación de Docker***  
+#### **_1.1. Instalación de Docker_**  
 
-Según el SO que utilicemos puede variar la instalación, así que a continuación daremos las indicaciones base para la instalación según el SO:  
+La instalación varía, dependiendo del SO que utilicemos en nuestro ordenador  
 
-* ***Instalación en Windows con WSL (recomendada)***  
+##### **_1.1.1. Instalación en Windows con WSL (recomendado)_**  
 
-Debes descargar el instalador desde la página de [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)  
+* **_WSL_**: El subsistema de Windows para Linux, es una característica del SO Windows, el cual permite ejecutar un sistema de archivos Linux, junto con herramientas de línea de comandos y aplicaciones de GUI de Linux, directamente en Windows, junto con el escritorio y las aplicaciones tradicionales de Windows  
 
-Cuando ya tenemos instalado **Docker Desktop**, debmos abrirlo y asegurarnos de que la opción **“Use the WSL 2 based engine”** esté habilitada:  
+Primero, descargaremos el instalador de [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)  
 
-![Use the WSL 2 based engine](https://i.imgur.com/4bScjQK.png)
+Cuando hayamos instalado **_Docker Desktop_**, lo abriremos y nos aseguraremos de que la opción **_"Use the WSL 2 based engine"_** esté habilitada    
 
-Luego en la sección **“Resources > WSL Integration”**, debemos asegurarnos de que la opcion **“Enable integration with my default WSL distro”**, esté habilitada:  
+![Use the WSL 2 based engine](https://i.imgur.com/3mYqQY4.png)  
+Como podemos ver en la imagen, lo está (por defecto) y no es modificable  
 
-![Enable integration with my default WSL distro](https://i.imgur.com/mJxXzlB.png)  
+En la sección **_"Resources > WSL Integration"_**, nos aseguraremos de que la opcion **_"Enable integration with my default WSL distro"_**, esté habilitada    
 
-Podemos ver más detalles de Docker con WLS, [Docker Desktop WSL 2 backend](https://docs.docker.com/desktop/windows/wsl/)  
+![Enable integration with my default WSL distro](https://i.imgur.com/xtbjYsW.png)
 
-* ***Instalación en Windows***  
+Más detalles en [Docker Desktop WSL 2 backend](https://docs.docker.com/desktop/windows/wsl/)  
 
-Debemos descargar el instalador desde la página de [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)  
+##### **_1.1.2. Instalación en Windows_**  
 
-Cuando tengamos instalado Docker Desktop, debemos tener en cuenta que, en la instalación con Windows, debemos tener Windows 10 de 64 Bits o superior y debemos habilitar el [Hyper-V](https://docs.docker.com/desktop/install/windows-install/#system-requirements) de Windows  
+Descargaremos el instalador de [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)  
 
-Para más detalles, ir a **habilitar [ Hyper-V](https://docs.docker.com/desktop/install/windows-install/#system-requirements) desde la interfaz de Windows**  
+Cuando hayamos instalado **_Docker Desktop_**, teniendo en cuenta que nuestro SO sea Windows 10 o superior, de 64 Bits o superior, habilitarermos [Hyper-V](https://docs.docker.com/desktop/install/windows-install/#system-requirements) de Windows  
 
-![Habilitar Hyper-V desde la interfaz de Windows](https://i.imgur.com/mJxXzlB.png)
+Habilitaremos **_Hyper-V_** desde la interfaz de Windows  
 
-* ***Instalación en macOS***  
+![Habilitar Hyper-V desde la interfaz de Windows](https://i.imgur.com/xqFjQUA.png)
+
+![Habilitar Hyper-V desde la interfaz de Windows](https://i.imgur.com/deXctRv.png)
+
+##### **_1.1.3. Instalación en macOS_**  
 
 En Mac tenemos dos opciones. Todo dependerá si tenemos los nuevos chips M1 o Intel, ya que hay un instalable apropiado para ambas arquitecturas de chip. Podemos escoger el instalable desde [Install Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/)  
 
-Adicionalmente, si tenemos los nuevos chips M1, debmos ejecutar la siguiente instrucción en la terminal 
+Adicionalmente, si tenemos los nuevos chips M1, deberemos ejecutar la siguiente instrucción en la terminal 
 
 ````
 softwareupdate --install-rosetta
 ````
 
-Una vez descargado el instalador adecuado, solo debemos seguir los pasos y pasar Docker Desktop a nuestras aplicaciones  
+Una vez descargado el instalador adecuado, solo debemos seguir los pasos y pasar **_Docker Desktop_** a nuestras aplicaciones  
 
 ![Pasar Docker Desktop a nuestras aplicaciones](https://i.imgur.com/4Nwbwd0.png)
 
-* ***Instalación en Ubuntu***  
+##### **_1.1.4. Instalación en Ubuntu_**  
 
 Estos son los pasos para instalarlo en Ubuntu, sin embargo, también podemos ver directamente [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)  
 
 ````
 sudo apt-get update
 ````
+![paso 1](https://i.imgur.com/17yZfTT.png)
 ````
 sudo apt-get install \
     ca-certificates \
@@ -86,28 +98,49 @@ sudo apt-get install \
     gnupg \
     lsb-release
 ````
+![paso 2](https://i.imgur.com/xHJmy7p.png)
 ````
 sudo mkdir -p /etc/apt/keyrings
 ````
+![paso 3](https://i.imgur.com/hpnM0HD.png)
 ````
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ````
+![paso 5](https://i.imgur.com/lHv3VwY.png)
 ````
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ````
+![paso 6](https://i.imgur.com/2QxnqL1.png)
 ````
 sudo apt-get update
 ````
+![paso 7](https://i.imgur.com/FUgO4yJ.png)
 ````
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ````
+![paso 8](https://i.imgur.com/CBhgQJ6.png)   
+
 ````
 sudo docker run hello-world
 ````
+![paso 9](https://i.imgur.com/w2Y4NBA.png)  
+````
+docker info
+````
+![paso 10](https://i.imgur.com/Lvftm3M.png)  
 
-Para otras distribuciones de Linux:
+Verificamos las imágenes en **_Docker Desktop_**  
+
+![Verfifación](https://i.imgur.com/v4C22FY.png)  
+
+Intentamos acceder a la imagen de postgre SQL en Linux  
+
+
+![Verificación en Linux](https://i.imgur.com/FCb2cG1.png)   
+
+##### **_1.1.5. Para otras distribuciones de Linux_**  
 
 * [Install Docker Engine on CentOS](https://docs.docker.com/engine/install/centos/)  
 * [Install Docker Engine on Debian](https://docs.docker.com/engine/install/debian/)  
@@ -115,314 +148,430 @@ Para otras distribuciones de Linux:
 
 ----------------
 
+### **_2. Instalación de Postgre SQL en Docker_**
+
 Una vez que tengamos instalado Docker en nuestro ordenador, ejecutaremos este comando en la terminal:  
 
-***WSL 2, Linux o macOS***
+#### **_2.1. WSL 2, Linux o macOS_**
 
 ````
 sudo docker run -d --name=postgres -p 5432:5432 -v postgres-volume:/var/lib/postgresql/data -e POSTGRES_PASSWORD=mysecretpass postgres
 ````
 
-***Windows***
+#### **_2.2. Windows_**
 
 ````
 docker run -d --name=postgres -p 5432:5432 -v postgres-volume:/var/lib/postgresql/data -e POSTGRES_PASSWORD=mysecretpass postgres
 ````
 
+![Creación BD con Postgres en Docker](https://i.imgur.com/GNIOzlC.png)
+
 Como podemos notar, en este comando se especifica lo siguiente para la creación de la BD con Docker:
 
-* Nombre del ccontenedorontainer: --name=postgres  
+* Contenedor: --name=postgres  
 * Puerto a compartir con la máquina local: -p 5432:5432  
 * Volumen para el manejo de disco e información: -v postgres-volume:/var/lib/postgresql/data  
 * Password en PostgreSQL: POSTGRES_PASSWORD=mysecretpass  
 
+**_¡Atención!_**: Posteriormente revisaremos el puerto, por defecto, de la BD  
+
 ------------
 
-* ***Instalación local de PostgreSQL (opcional)***  
+### **_3. Instalación local de PostgreSQL (opcional)_**  
 
-Sugerimos intentarlo con Docker ya que puede agilizar nuestro flujo de trabajo, pero si no estas es la manera de instalarlo:  
+Docker puede agilizar nuestro flujo de trabajo, pero si queremos instalarlo localmente, ésta es la manera de hacerlo:  
 
-Primer paso: ir a https://www.postgresql.org/  
+#### **_3.1. Acceder a la página oficial, para obtener el instalador_**
 
-Actualmente, la página web oficial de postgres es esta:  
+Ir a la página web oficial de [Postgre SQL](https://www.postgresql.org/)    
 
-![Página web oficial de Postgres](https://i.imgur.com/xE2CDmp.jpg)
+![Página web oficial de Postgre SQL](https://i.imgur.com/iEU5s9u.png)
 
-Hacemos clic en el botón ***'Download’ (Descarga)*** que se encuentra en la parte inferior derecha. Veremos lo siguiente:
+Hacemos clic en el botón **_"Download"_** (Descarga) y veremos  
 
 ![Download](https://i.imgur.com/xROfeUL.png)
 
-Veremos lo siguiente:  
+Seleccionamos el instalador correspondiente a nuestro SO (Windows, en nuestro caso)  
 
-Seleccionamos la opción que corresponda con nuestro SO, para éste caso hacemos clic en “Windows”:  
+![Windows](https://i.imgur.com/sJT83jH.png)
 
-Veremos en la parte inferior:  
+Y hacemos clic en **_"Download the installer"_**. Esto nos va lleva a la Web de Enterprise DB o EDB, que es una empresa que ofrece servicios sobre el motor de BD Postgre SQL y un instalador gratuito  
 
-![Windows](https://i.imgur.com/aTzOgxO.png)  
+![Download the installer](https://i.imgur.com/vbVYOBa.png)
 
-Hazcemos clic en el enlace “Download the installer”. Esto nos va a llevar a la Web de Enterprise DB o EDB. EDB es una empresa que ofrece servicios sobre el motor de BD PostgreSQL y ofrece un instalador para Postgres de manera gratuita  
+**_Nota_**: Es recomendable seleccionar la penúltima o antepenúltima versión. Si bien la última versión estable está disponible, no es recomendable instalarla en nuestro equipo, ya que al momento de instalarla o usar un servicio en la Nube para Postgres, lo más seguro es que no esté disponible y sólo esté hasta la versión anterior. Esto es porque no todos los proveedores de Infraestructura disponen de la versión más actualizada siempre (tardan un poco en conseguir los nuevos lanzamientos)  
 
-![Download the installer](https://i.imgur.com/3fGQAsC.png)  
+Si nuestro SO es Linux, la instalación la podemos hacer directamente desde los repositorios de Linux, EDB ya no ofrece soporte para instaladores en este SO, debido a que se ha vuelto innecesario, el repositorio ofrece una manera mucho más sencilla y estándar para instalarlo  
 
-Es altamente recomendable seleccionar la penúltima o antepenúltima versión. Si bien la última versión estable está disponible, no es recomendable instalarla en nuestro equipo, ya que al momento de instalarla o usar un servicio en la Nube para Postgres, lo más seguro es que no esté disponible y sólo esté hasta la versión anterior. Esto es porque todos los proveedores de Infraestructura no disponen de la versión de Postgres más actualizada siempre (tardan un poco en conseguir los nuevos lanzamientos)  
+#### **_3.2. Decargar el instalador_**
 
-Si tenemos un equipo con Linux, la instalación la podemos hacer directamente desde los repositorios de Linux, EDB ya no ofrece soporte para instaladores en Linux debido a que se ha vuelto innecesario, el repositorio de Linux con PostgreSQL ofrece una manera mucho más sencilla y estándar para instalar PostgreSQL en Linux.
+Descargamos la versión **_"Windows x86-64"_** (64 bits)  
 
-Segundo paso: descargamos la versión “Windows x86-64” (porque nuestro sistema operativo es de 64 bits). En caso de que nuestro equipo sea de 32 bits debemos seleccionar la opción “Windows x86-32”.
+Hacemos clic en **_Download_** y guardamos el archivo   
 
-Hacemos clic en Download y guardamos el archivo que tendrá un nombre similar a:  
+#### **_3.3. Ejcutar el instalador_**
 
-“postgresql-11.5-2-windows-x64.exe”
+Vamos a la carpeta donde descargamos el instalador y lo ejecutamos  
 
-Ahora vamos a la carpeta donde descargamos el archivo .exe, debe ser de aproximadamente 190 MB, lo ejecutamos  
+![Ejecutamos instalador](https://i.imgur.com/xzzhyX0.png)
 
-Veremos lo siguiente:  
+Cambiamos la **_carpeta de destino_** (si lo deseamos) y hacemos clic en siguiente  
 
-![Ejecutamos instalador](https://i.imgur.com/TrVEFfj.png)  
+![Carpeta de destino](https://i.imgur.com/hhlnShg.png)
 
-Hacemos clic en siguiente. Si deseamos cambiar la carpeta de destino, ahora es el momento:  
+Seleccionamos los servicios que queremos instalar. En nuestro caso dejamos seleccionados todos menos "Stack Builder", ya que ofrece la instalación de servicios adicionales que no necesitamos. Luego hacemos clic en siguiente  
 
-![Carpeta de destino](https://i.imgur.com/owIqRkj.png)  
+![Servicios](https://i.imgur.com/c9hY9M0.png)
 
-Seleccionamos los servicios que queremos instalar. En este caso dejamos seleccionados todos menos “Stack Builder”, ya que ofrece la instalación de servicios adicionales que no necesitamos hasta ahora. Luego hacemos clic en siguiente:
+Indicamos la **_carpeta donde iran guardados los datos de la BD_**, la cual es diferente de la ruta de instalación del motor de Postgre SQL, pero que normalmente será una subcarpeta de la carpeta de instalación (podemos cambiarla, si lo deseamos). Hacemos clic en siguiente  
 
-![Servicios](https://i.imgur.com/gq61mTt.png)  
+![Carpeta donde iran guardados los datos de la BD](https://i.imgur.com/DWtwdXV.png)
 
-Ahora indicamos la carpeta donde iran guardados los datos de la BD, es diferente a la ruta de instalación del Motor de PostgreSQL, pero normalmente será una carpeta de nuestra carpeta de instalación. Podemos cambiar la ruta si queremos tener los datos en otra carpeta. Hacemos clic en siguiente  
+De manera predeterminada, Postgre SQL crea un super usuario (administrador) llamado **_"postgres"_**, el cual tiene todos los permisos de acceso (consulta y modificación), de la BD. Le indicamos la clave y hacemos clic en siguiente  
 
-![Carpeta donde iran guardados los datos de la BD](https://i.imgur.com/uF6GfW5.png)  
+**_Nota_**: Debemos poner una clave muy segura y guardarla porque la vamos a necesitar después  
 
-Ingresamos la contraseña del usuario administrador. De manera predeterminada, Postgres crea un usuario super administrador llamado postgres que tiene todos los permisos y acceso a toda la BD, tanto para consultarla como para modificarla. En éste paso indicamos la clave de ese usuario super administrador  
+![Contraseña segura](https://i.imgur.com/r1oyBWB.png)
 
-Debemos poner una clave muy segura y guardarla porque la vamos a necesitar después. Luego hacemos clic en siguiente  
+A continuación, podemos cambiar el puerto, por donde el servicio de Postgre SQL escuchará peticiones  
 
-![Contraseña segura](https://i.imgur.com/qAtoFr1.png)  
+![Puerto del servicio Postgresql](https://i.imgur.com/pp0iJZm.png)  
 
-Ahora si queremos cambiar el puerto por donde el servicio de Postgresql estará escuchando peticiones, podemos hacerlo en la siguiente pantalla, si queremos dejar el predeterminado simplemente hacemos clic en siguiente  
+**_Nota_**: Hemos hecho la instalación Docker en el puerto 5432, ahora propone el 5433. Lo tendremos en cuenta posteriormente  
 
-![Puerto del servicio Postgresql](https://i.imgur.com/nTvsD6x.png)  
+La **_configuración regional_** puede ser la predeterminada, no es necesario cambiarla. Es útil cambiarla cuando queramos dejar de soportar otras funciones de idiomas y lenguajes diferentes a uno específico. Luego hacemos clic en siguiente  
 
-La configuración regional puede ser la predeterminada, no es necesario cambiarla, incluso si vamos a usarla en español, ya que las tildes y las eñes estarán soportadas si dejamos la configuración regional predeterminada. Es útil cambiarla cuando queramos dejar de soportar otras funciones de idiomas y lenguajes diferentes a uno específico. Luego hacemos clic en siguiente:  
+![Configuración regional](https://i.imgur.com/F9lJdee.png)  
 
-![Configuración regional](https://i.imgur.com/pmkxdJl.png)  
+Ahora, aparecerá, en pantalla, el resumen de lo que se va a instalar  
 
-En pantalla aparecerá el resumen de lo que se va a instalar:  
+![Resumen](https://i.imgur.com/uerwtS7.png)  
 
-![Resumen](https://i.imgur.com/uiRrPsC.png)  
+Al hacer clic en siguiente, se muestra una pantalla que indica que Postgre SQL está listo para instalarlo en nuestro ordenador  
 
-Al hacer clic en siguiente se muestra una pantalla que indica que PostgreSQL está listo para instalar, al hacer clic de nuevo en siguiente iniciará la instalación, espera un par de minutos hasta que la aplicación termine  
+![Listo para instalar](https://i.imgur.com/jqlodjJ.png)
 
-Una vez terminada la instalación, aparecerá en pantalla un mensaje mostrando que PostgreSQL ha sido instalado correctamente  
+Al finalizar la instalación, aparecerá en pantalla un mensaje mostrando que Postgre SQL ha sido instalado correctamente  
 
-![PostgreSQL ha sido instalado correctamente](https://i.imgur.com/GBBrvzm.png)  
+![Postgre SQL ha sido instalado correctamente](https://i.imgur.com/7gSHJQO.png)
 
 Podemos cerrar ésta pantalla y proceder a comprobar que todo quedó instalado correctamente  
 
-Vamos a buscar el programa PgAdmin, el cual usaremos como editor favorito para ejecutar en él todas las operaciones sobre nuestra BD  
+#### **_3.4. Comprobación de la instalación local de Postgre SQL_**
 
-También vamos a buscar la consola. Tanto la consola como PgAdmin son útiles para gestionar nuestra BD, una nos permite ingresar comando por comandos y la otra nos ofrece una interfaz visual fácil de entender para realizar todas las operaciones  
+Tanto **_SQL Shell_** (consola) como **_PgAdmin_** son útiles para gestionar nuestra BD, una nos permite escribir comandos y la otra nos ofrece una interfaz visual fácil de entender, para realizar todas las operaciones   
 
-En el menú de Windows (o donde aparecen instalados todos los programas) buscamos “PgAdmin…”  
+Buscamos el programa **_PgAdmin_**, menú de Windows. Usaremos este programa como editor para ejecutar en él todas las operaciones sobre nuestra BD   
 
-![Menú de Windows](https://i.imgur.com/VqoUnuz.png)  
+![Menú de Windows](https://i.imgur.com/uPWcqNF.png)  
 
-Ahora buscamos “SQL Shell…”  
+Ahora buscamos la **_SQL Shell_** (consola)  
 
-![SQL Shell](https://i.imgur.com/TcBZ8yh.png)  
+![SQL Shell](https://i.imgur.com/k59rZgn.png)  
 
-Efectivamente, ahora aparecen las herramientas que vamos a utilizar  
+Ahora vamos a crear una BD de prueba usando **_SQL Shell_** y comprobaremos el resultado en **_PgAdmin_**, así validaremos que la conexión con el servicio de BD interno funciona correctamente  
 
-Ahora vamos a crear una BD de prueba usando la consola y comprobaremos si existe usando PgAdmin, la crearemos para validar que la conexión con el servicio de base de datos interno funciona correctamente  
+Abrimos **_SQL Shell_**  
 
-Para ello abrimos la consola, buscamos SQL Shell y lo ejecutamos. Veremos algo así:  
-
-![SQL Shell](https://i.imgur.com/xdXr3bD.png)  
+![SQL Shell](https://i.imgur.com/Uv9nevg.png)  
 
 Lo que vemos en pantalla es la consola esperando que ingresemos cada parámetro para la conexión  
 
-Primero está el nombre del parámetro. En éste caso es “Server” seguido de unos corchetes que contienen el valor predeterminado. Si presionamos “Enter” sin digitar nada la consola asumirá que te refieres al valor predeterminado, si en éste caso presionamos “Enter” el valor asumido será “Localhost”. Localhost se refiere a nuestra propia máquina, si hemos instalado la BD en el mismo pc que estamos usando para la consola, el valor correcto es Localhost o 127.0.0.1 (representan lo mismo)  
+El valor predetermonado (entre corchetes) del parámetro **_"Server"_** es "localhost". Si presionamos "Enter", sin teclear nada, la consola asumirá que nos referimos al valor predeterminado. Localhost se refiere a nuestra propia máquina, si hemos instalado la BD en el mismo ordenador en el que estamos usando para la consola, el valor correcto es Localhost o 127.0.0.1 (representan lo mismo)  
 
-Podemos dejar todos los valores predeterminados (presionando “Enter”) hasta que la consola pregunte por la clave del usuario maestro:  
+Podemos dejar todos los valores predeterminados (presionando "Enter") hasta que la consola pregunte por la clave del administrador (la que hemos puesto nostros en la instalación)  
 
-![Todos los valores predeterminados](https://i.imgur.com/gozZ5ju.png)  
+![Todos los valores predeterminados](https://i.imgur.com/1n1D0QQ.png) 
 
-Debemos poner la clave que usamos cuando estábamos instalando Postgres, de lo contrario no podremos acceder. Presionamos Enter y veremos a continuación una pantalla que nos indica que estamos logueados en la BD y estamos listos para hacer modificaciones  
+Presionamos "Enter" y vemos a continuación una pantalla que nos indica que estamos logueados y listos para hacer modificaciones en la BD   
 
 De manera predeterminada, la BD instalada es Postgres, la cual no debemos tocar, ya que ejecuta funciones propias del motor. Es usada por el Motor de PostgreSQL para interactuar con todas las BD que vayamos a crear en el futuro  
 
-La siguiente imagen indica que estamos conectados a la BD Postgres. Vamos a crear una BD nueva y luego saltar el cursor a esta BD recién creada  
+La siguiente imagen indica que estamos conectados a la BD Postgres   
 
-![Estamos conectados a la BD Postgres](https://i.imgur.com/jBAJpMw.png)  
+![Estamos conectados a la BD Postgres](https://i.imgur.com/AcbGUQ8.png)
 
-Para ello escribimos el comando “CREATE DATABASE transporte_publico;” y presionamos “Enter”. Veremos:  
+Vamos a crear una BD nueva y luego saltar el cursor a esta BD recién creada. Para ello escribimos el comando “CREATE DATABASE transporte_publico;” y presionamos "Enter"  
 
-![Creamos transporte_publico](https://i.imgur.com/5PdfJyW.png)  
+![Creamos transporte_publico](https://i.imgur.com/K5A51XI.png)
 
 El mensaje “CREATE DATABASE” justo después de la línea que acabamos de escribir indica que la BD fue creada correctamente  
 
-Para ir a la BD recién creada ejecutamos el comando “\c transporte_publico”, el cursor mostrará lo siguiente:  
+Para ir a la BD recién creada ejecutamos el comando “\c transporte_publico”, el cursor mostrará lo siguiente:   
 
-![I r a la BD recién creada](https://i.imgur.com/UUJJldp.png)  
+![Ir a la BD recién creada](https://i.imgur.com/0H37d4n.png)
 
-Ahora vamos a validar desde PgAdmin que la base de datos fué creada correctamente. Abrimos PgAdmin y nos encontramos con una lista de items a la izquierda, lo que significa que de manera predeterminada PgAdmin ha creado un acceso a nuestra BD local, el cual llamó “PostgreSQL XX”:  
+Ahora vamos a validar desde **_PgAdmin_** que la BD fse ha creado correctamente. Abrimos PgAdmin y nos encontramos con una lista de items a la izquierda, lo que significa que, de manera predeterminada, **_PgAdmin_** ha creado un acceso a nuestra BD local, el cual llamó “PostgreSQL XX”:  
 
-![Validación](https://i.imgur.com/uWUUvdM.png)  
+![Validación](https://i.imgur.com/c3VD2Kh.png)
 
-Al hacer hacer doble clic sobre éste elemento (“PostgreSQL XX”) nos pedirá poner la clave que hemos determinado para el super usuario postgres, al igual que la consola, hasta no ingresarla correctamente no nos podremos conectar:  
+Al hacer hacer doble clic sobre éste elemento (“PostgreSQL XX”) nos pedirá poner la clave que hemos determinado para el super usuario postgres, al igual que lo hemos hecho en la consola  
 
-![Poner la clave](https://i.imgur.com/vqVd9I3.png)  
+![Poner la clave](https://i.imgur.com/OuEs7ys.png)
 
-Ingresamos la clave. Recomendamos seleccionar la opción “Save Password” o “Guardar Contraseña”. Si la máquina sobre la que estemos trabajando es de confianza, que seamos sólo nostros o nuestro equipo quien tenga acceso a ella, de lo contrario, no debemos guardar la contraseña para mantenerla segura  
+Ahora veremos la lista de BD disponibles, la predeterminada “postgres” y la que acabamos de crear usando la consola, lo cual demuestra que la BD y la consola funcionan correctamente  
 
-Veremos la lista de BD disponibles, la predeterminada “postgres” y la que acabamos de crear usando la consola, lo que comprueba que la BD y la consola funcionan correctamente  
+![Lista de BD disponibles](https://i.imgur.com/6LOsYQx.png)  
 
-![Lista de BD disponibles](https://i.imgur.com/7OiChwL.png)  
+Ahora procedemos a eliminar la BD recién creada para comprobar que **_PgAdmin_** está correctamente configurada y que podemos hacer cambios en la BD  
 
-Ahora procedemos a eliminar la BD recién creada para comprobar que PgAdmin está correctamente configurada y si pueda realizar cambios sobre la BD  
+Para ello hacemos clic derecho sobre el elemento "transporte_publico" y seleccionamos la opción **_"Delete/Drop"_**. En el mensaje de confirmación le hacemos clic en OK  
 
-Para ello hacemos clic derecho sobre el elemento “transporte_publico” y seleccionamos la opción “Delete/Drop”. Al mensaje de confirmar hacemos clic en OK  
+![Drop database](https://i.imgur.com/2i4JvTP.png)
 
-Con ello, si el elemento “transporte_publico” desaparece del menú de la izquierda comprobamos que PgAdmin funcionan correctamente  
+La BD "transporte_publico" desaparece y con ello comprobamos que **_PgAdmin_** funciona correctamente  
+
+![La BD ha sido eliminada](https://i.imgur.com/c1ukyAU.png)
 
 --------------
 
-### ***2. Validar contenedor creado***  
+### **_4. Validar contenedor creado_**  
 
 Una vez que hayamos creado el contenedor de Docker, usaremos el comando docker ps en la terminal. Podremos ver todos los contenedores que se encuentran en ejecución actualmente y una descripción  
 
 Deberemos ver la **IMAGE postgres**  
 
-![IMAGE postgres](https://i.imgur.com/E4cXTAj.png)
+![IMAGE postgres](https://i.imgur.com/nQokprK.png)  
 
-* ***3. Configurar DataSpell***  
+**_Nota_**: Tal como se ha comentado anteriormente, el puerto de Postgre SQL en Docker es el 5432 (por defecto)  
 
-Para conectarnos a la BD usaremos un software de administración de BD. Existen varios que podemos utilizar. Para el seguimiento del curso sugerimos utilizar **DataSpell** o, en su defecto, **DBeaver**  
+### **_5. DataSpell_**  
 
-DataSpell es un **IDE completo para DS** donde, además de conectarnos y hacer consultas a BD, podremos ejecutar Jupyter Notebooks. **¡Todo en el mismo lugar!**  
+Para conectarnos a la BD usaremos un software de administración de BD. Existen varios que podemos utilizar. Sugerimos utilizar **_DataSpell_** o, en su defecto, **_DBeaver_**  
+
+**_DataSpell_** es un **_IDE completo para DS_** donde, además de conectarnos y hacer consultas a la BD, podremos ejecutar **_Jupyter Notebooks_**  
 
 ![IDE completo para DS](https://i.imgur.com/L7PeZcm.png)  
 
-Una de sus desventajas es que es de pago, pero tiene un período de prueba de 30 días para que lo probemos con este curso. Además existen ciertas opciones para obtener licencias para [estudiantes de bachillerato y universidad](https://www.jetbrains.com/community/education/#students)  
+Una de sus **_desventajas_**, no obstante, es que **_es de pago_**, pero tiene un período de prueba de 30 día. Además existen ciertas opciones para obtener licencias para [estudiantes de bachillerato y universidad](https://www.jetbrains.com/community/education/#students)  
 
-En caso de que decidamos usar DBeaver en lugar de DataSpell, utilizaremos nuestro entorno local de **Jupyter Notebooks con Anaconda** para la ejecución del código Python de las siguientes clases  
+En caso de que decidamos usar **_DBeaver_** en lugar de **_DataSpell_**, utilizaremos nuestro entorno local de **_Jupyter Notebooks_** con **_Anaconda_** para la ejecución del código **_Python_**  
 
-***Instalación de DataSpell***  
+#### **_5.1. Instalación de DataSpell_**  
 
-1. Para instalar DataSpell vamos a [su sitio web aquí](https://www.jetbrains.com/dataspell/) y descargamos la versión para nuestro SO  
+Vamos a [sitio web de DataSpell](https://www.jetbrains.com/dataspell/) y descargamos la versión adecuada para nuestro SO   
 
-2. Lo instalamos siguiendo las instrucciones que aparezcan en el instalador  
+Lo instalamos siguiendo las instrucciones  
 
-Cuando solicite actualizar PATH Variable aceptamos marcando la opción que indique. Esto es para evitar errores de ambientes en el futuro. En Windows se ve así:  
+![Setup DS](https://i.imgur.com/o0Znebc.png) 
 
-![Actualizar PATH Variable](https://i.imgur.com/q88cr5J.png)  
+Aceptamos la carpeta de instalación que propone  
 
-Al finalizar pedirá reiniciar el ordenador:
+![Path instalación](https://i.imgur.com/lotMOdf.png)
 
-![Pedirá reiniciar el ordenador](https://i.imgur.com/LgrOvXp.jpg)  
+Le decimos que modifique la variable de entorno **_PATH_**, para evitar errores de ambiente en el futuro  
 
-4. Abrimos DataSpell ya que se haya instalado. Al hacer esto por primera vez  pedirá iniciar sesión. Elegimos la versión free trial registrando nuestra cuenta para ello  
+![Actualizar PATH Variable](https://i.imgur.com/39xjG1j.png) 
 
-5. Una vez que tengamos nuestra cuenta configurada pedirá elegir un intérprete de Python  
+Al finalizar pedirá reiniciar el ordenador  
 
-Previamente deberemos tener instalado **Anaconda** en nuestro SO. Recomendamos crear un **ambiente de Anaconda (Conda environment)** único para el proyecto del curso. Llamaremos al ambiente fundamentos-etl.
+![Pedirá reiniciar el ordenador](https://i.imgur.com/DJullYb.png)  
 
-Elegimos el ambiente de Anaconda que usaremos para el proyecto y presionamos el botón **Launch DataSpell**  
+Abrimos **_DataSpell_**, que ya se ha instalado. Al hacer esto por primera vez pedirá iniciar sesión. Elegimos la versión free trial registrando nuestra cuenta para ello  
 
-![Elegimos el ambiente de Anaconda](https://i.imgur.com/pE6VkZJ.png) 
+![Seleccionamos start trial](https://i.imgur.com/oq5Suux.png)
 
-Elegimos un intérprete de Anaconda servirá para ejecutar Jupyter Notebooks en DataSpell  
+Una vez que tengamos nuestra cuenta configurada pedirá elegir un intérprete de Python  
 
-6. Creamos un nuevo Workspace en DataSpell. Presionamos el botón File en la barra superior y luego elegimos la opción New Workspace Directory  
+Previamente deberemos tener instalado **Anaconda** en nuestro SO. Recomendamos crear un **_Conda environment_** (ambiente de Anaconda) único para el proyecto del curso. Llamaremos al ambiente **_fundamentos-etl_**  
 
-![Creamos un nuevo Workspace](https://i.imgur.com/Nb3uRDC.jpg)  
+-------------------
 
-Llamamos fundamentos-etl al workspace y presionamos el botón azul Create  
+### **_6. Anaconda_**  
 
-![ImgLlamamos fundamentos-etl al workspaceur](https://i.imgur.com/fHH6EGX.jpg)  
+#### **_6.1. ¿Por qué Anaconda?_**  
 
-***Elegir ambiente de WSL2 (opcional si usamos WSL)***
+**_Anaconda_** provee una plataforma muy completa, para poder desarrollar proyectos de DS. Simplifica la tarea de instalación y configuración de las distintas aplicaciones que necesitamos usar. Podemos utilizarlo, tanto por terminal como por interfaz gráfica (GUI). Por el momento, avanzaremos con la segunda opción, porque es más amigable  
 
-Si queremos usar DataSpell en nuestro entorno de **Windows con WSL 2**, deberemos conectar DataSpell al ambiente de Anaconda que tenga nuestro WSL  
+**_Ventajas_** de utilizar **_Anaconda_**:  
 
-0. Creamos un ambiente de Anaconda en nuestro WSL dedicado al proyecto del curso si todavía no lo hemos hecho. Lo llamaremos fundamentos-etl
+* **_Manejar los entornos de trabajo_** con **_Conda_** (todas las dependencias de librerías se resuelven en el momento de instalación)  
+* Posibilidad de **_compartir, colaborar y reproducir proyectos_**  
+* Podemos **_pasar nuestro proyecto a producción solo con un click_** (una vez configurado)  
+
+Dentro de las variadas aplicaciones que nos ofrece Anaconda vamos a utilizar **_Jupyter Notebooks con Python_** X.X    
+
+#### **_6.2. Instalación_**  
+
+Vamos a [Distribución Anaconda](https://www.anaconda.com/distribution/)  
+
+Seleccionamos nuestro SO (**_Windows_**, macOS o Linux)  
+
+Hacemos click en **_"Download"_** (Descargar) la versión de 64-bits    
+
+![Download](https://i.imgur.com/IcBRTK6.png)  
+
+Después de descargar el instalador gráfico, lo abrimos y seguimos las instrucciones que se presentarán en pantalla. Estas son una serie de preguntas para realizar la instalación, las opciones por defecto están bien, no hay necesidad de cambiarlas  
+
+![Incio setup Anaconda](https://i.imgur.com/jClxi5u.png)  
+
+![Final setup Anaconda](https://i.imgur.com/3UWvmHX.png)  
+
+#### **_6.3. Iniciando Anaconda_**  
+
+Una vez que finalizada la instalación, abrimos el programa **_Anaconda Navigator_**, para que podamos crear el entorno y actualizar los paquetes necesarios  
+
+![Primera apertura Anaconda](https://i.imgur.com/JAdV0Fz.png)
+
+Hacemos click en **_Environments_** y despues click en **_+Create_**, con lo cual, se abrirá una ventana para crear un nuevo entorno  
+
+![Crear entorno](https://i.imgur.com/OMS6DUy.png)  
+
+Llamamos al entorno **_"fundamentos-etl"_**   
+
+![Nombre entorno en Python con Anaconda](https://i.imgur.com/7MJx3Is.png)  
+
+Se toma un instante para configurar el nuevo entorno y actualizarlo. Cuando termina vemos  
+
+![Setup Anaconta finalizado](https://i.imgur.com/H8w7kTo.png)  
+
+Los paquetes que vemos son los que están instalados por defecto, podemos instalar nuevos o desinstalar los que ya estén instalados, haciendo click en **_installed_** y cambiarlo a **_not installed_** o al reves  
+
+En el recuadro de **_search packages_** ponemos:  
+
+* **_Jupyter Notebook_**   
+* **_scipy_** (tambien instalará **_numpy_**)  
+* **_pillow_** (libreria para manejo de imágenes)  
+* **_imageio_** (lectura / escritura de imágenes)  
+* **_matplotlib_** (para representar gráficamente)  
+* **_seaborn_** (visualizaciones estadísticas)  
+* **_scikit-learn_** (ML)  
+
+En cada uno de los casos hacemos click en el recuadro para instalarlo. Una vez que los tengamoss seleccionados hacemos click en **_Apply_**. Anaconda procesa por nosotros todas las dependencias, abrirá una nueva ventana para que aceptemos los paquetes a instalar y hacemos click en **_Apply_** nuevamente  
+
+![ImgAplicamos la instalación de nuevos paquetes](https://i.imgur.com/RhTb6en.png)
+
+Una vez finalizada la instalacion y actualizacion de paquetes en el entorno **_"fundamentos-etl"_** hacemos click en **_Home_**, y **_Launch Jupyter Notebook_**  
+
+![Lanzamos Jupyter Notebook](https://i.imgur.com/FOijrMT.png)  
+
+Una nueva pestaña se abrirá en nuestro **_Jupyter Navigator_** y ya estamos listos para comenzar  
+
+![Podemos comenzar con Jupyter Notebook y Anaconda](https://i.imgur.com/qAgS81u.png)  
+
+-------------------
+
+### **_7. Ambiente Anaconda en DataSpell_**  
+
+Elegimos el ambiente de Anaconda que usaremos para el proyecto y presionamos el botón **_Launch DataSpell_**  
+
+![Elegimos el ambiente de Anaconda](https://i.imgur.com/AfDFAag.png) 
+
+También, para definir el ambiente **_DataSpell_**, elegimos un intérprete de Anaconda servirá para ejecutar **_Jupyter Notebooks_** en **_DataSpell_**    
+
+#### **_7.1. Creación de un nuevo Workspace en DataSpell_**   
+
+![dataSpell](https://i.imgur.com/mwge053.png)  
+
+![Creamos un nuevo Workspace](https://i.imgur.com/Y9EYEBN.png)  
+
+Elegimos el path del wokspace, llamamos "fundamentos-etl" al workspace y presionamos el botón azul **_Create_**  
+
+![Path del wokspace](https://i.imgur.com/cM7Qouw.png)e  
+
+#### **_7.2. Elección del ambiente de WSL2 (opcional si usamos WSL)_**
+
+Si queremos usar **_DataSpell_** en nuestro entorno de **_Windows con WSL 2_**, deberemos conectarlo al ambiente de **_Anaconda_** que tenga nuestro WSL  
+
+##### **_7.2.1. Creación un ambiente de Anaconda_**
+
+Creamos un ambiente de **_Anaconda_** en nuestro **_WSL_** dedicado al proyecto si todavía no lo hemos hecho. Lo llamaremos "fundamentos-etl"  
 
 ````
-conda create --name fundamentos-etl python=3.9
+conda create --name fundamentos-etl python=X.X
 ````
 
-1. Después vamos a DataSpell en su parte inferior donde aparece el intérprete. Presionamos la dirección que aparece y elegimos la opción **Interpreter Settings**  
+##### **_7.2.2. Opciones del intérprete_**  
 
-![Intérprete](https://i.imgur.com/mhjpHVE.jpg)
+En la parte inferior de la pantalla de **_DataSpell_** aparece el intérprete. Presionamos la dirección que aparece y elegimos la opción **_Interpreter Settings_**  
 
-2. Escogemos el workspace fundamentos-etl creado anteriormente en DataSpell  
+![Intérprete](https://i.imgur.com/XoHPcrv.png)  
 
-OJO: el workspace y el Anaconda Environment no son lo mismo. El Anaconda Environment lo vamos a cargar dentro del Workspace de DataSpell  
+##### **_7.2.3. Elección del intérprete_**  
 
-Después presionamos el botón **Add Interpreter** e inmediatamente selecciona la opción **On WSL**  
+Escogemos el workspace "fundamentos-etl" creado anteriormente en **_DataSpell_**  
 
-![Add Interpreter](https://i.imgur.com/bkuFqzT.jpg)  
+**_¡Atención!_**: El workspace y el **_Anaconda Environment_** no son lo mismo. El **_Anaconda Environment_** lo vamos a cargar dentro del Workspace de **_DataSpell_**  
 
-3. Elegimos la distribución de Linux a usar y hacemos clic en el botón Next cuando aparezca el mensaje "Instrospection completed succesfully!  
+Presionamos el botón **_Add Interpreter_** e inmediatamente seleccionamos la opción **_On WSL_**  
 
-![Elegimos la distribución de Linux](https://i.imgur.com/AJ4SueQ.jpg)  
+![Add Interpreter](https://i.imgur.com/UDUPSSd.png)  
 
-4. Elegimos el intérprete a usar. Este puede ser un **Virtualvenv Environment**, el **System Interpreter** o un **Conda Environment**. Elegimos la opción de **Conda Environment**  
+##### **_7.2.4. Elección de la distribución Linux_**  
 
-![Elegimos el intérprete a usar](https://i.imgur.com/eBD3Rtk.jpg)  
+Elegimos la distribución de Linux a usar y hacemos clic en el botón **_Next_** cuando aparezca el mensaje **_Instrospection completed succesfully!_**    
 
-5. Miramos la casilla **Use existing environment**. Elegimos el **Conda Environment** de WSL que usaremos en nuestro proyecto. Anteriormente debimos crearlo desde la terminal en WSL y llamarlo fundamentos-etl  
+![Elegimos la distribución de Linux](https://i.imgur.com/Nm7zYk4.png)  
 
-Finalmente, presionamos el botón azul **Create**  
+##### **_7.2.5. Elección de Conda Environment como intérprete_**  
 
-![Create](https://i.imgur.com/rydaN5Q.jpg)  
+Elegimos el intérprete a usar. Este puede ser un **_Virtualvenv Environment_**, el **_System Interpreter_** o un **_Conda Environment_**. Elegimos la opción de **Conda Environment**  
 
-6. Para terminar el proceso presionamos el botón azul **OK** en la parte inferior  
+![Elegimos el intérprete a usar](https://i.imgur.com/TIlkEvA.png)  
+
+##### **_7.2.6. Selección del Conda Environment como intérprete_** 
+
+La la casilla **_Use existing environment_** nos permite elegir el **_Conda Environment_** de WSL que usaremos en nuestro proyecto. Anteriormente debimos crearlo desde la terminal en WSL y llamarlo "fundamentos-etl"  
+
+Finalmente, presionamos el botón azul **_Create_**  
+
+![Create](https://i.imgur.com/cBGJnYN.png)  
+
+##### **_7.2.7. Terminar proceso de creación del intérprete_**  
+
+Para terminar el proceso presionamos el botón azul **_OK_** en la parte inferior  
 
 ![Terminar el proceso](https://i.imgur.com/INQLgEZ.jpg)  
 
-7. Listo, ya deberá aparecer nuestro entorno de Anaconda en WSL cargado en la parte inferior de DataSpell  
+##### **_7.2.8. Intérprete seleccionado intérprete_**  
+
+Listo, ya deberá aparecer nuestro entorno de **_Anaconda en WSL_** cargado en la parte inferior de **_DataSpell_**  
 
 ![Aparece entorno de Anaconda en WSL cargado](https://i.imgur.com/BORc7bM.jpg)  
 
-Si aparece un error que indique que el ambiente no puede ser usado como el intérprete del workspace es porque estamos intentando cargar el ambiente en el workspace general y no en un workspace de DataSpell que hemos creado  
+Si aparece un error, que indique que el ambiente no puede ser usado como el intérprete del workspace es porque estamos intentando cargar el ambiente en el workspace general y no en un workspace de **_DataSpell_** que hemos creado  
 
-[Aquí](https://www.jetbrains.com/help/dataspell/using-wsl-as-a-remote-interpreter.html) encuentramos la guía oficial de cómo conectar nuestro DataSpell al intérprete de Python o Anaconda en WSL, por si necesitamoss aprender a configurarlo a detalle  
+[Guía oficial de cómo conectar nuestro DataSpell al intérprete de Python o Anaconda en WSL](https://www.jetbrains.com/help/dataspell/using-wsl-as-a-remote-interpreter.html), por si necesitamos saber configurarlo en detalle  
 
-Recordemos que otra alternativa en Windows es instalar Anaconda para Windows y conectar DataSpell directamente a esta versión  
+**_Nota_**: Una alternativa en Windows es instalar **_Anaconda para Windows_** y conectar **_DataSpell_** directamente a esta versión  
 
-### ***4. Conexión a la BD PostgreSQL***  
+### **_8. Conexión a la Postgre SQL desde DataSpell_**  
 
-Sigueamos estos pasos para conectarnos a la BD postgres desde DataSpell  
+#### **_8.1. Abrimos DataSpell en nuestro ordenador_**  
 
-1. Abrimos DataSpell en nuestro ordenador  
+![Abrimos DataSpell](https://i.imgur.com/ZyAqcA2.png)  
 
-![Abrimos DataSpell](https://i.imgur.com/7GguiPy.jpg) 
+#### **_8.2. Selección de Postgre SQL_**  
 
-2. Vamos a la pestaña de **Database** y en ella hacemos clic en el **botón de signo de +**  
+Vamos a la pestaña de **_Database_** y en ella hacemos clic en el botón de signo de **_+_**  
 
-![Database](https://i.imgur.com/2HePsjV.jpg)  
+![Database](https://i.imgur.com/VcEWUNw.png)  
 
-3. Seleccionamos la opción de **Data Source** y dentro del menú desplegable elige la opción de **PostgreSQL**  
+Seleccionamos la opción de **Data Source** y dentro del menú desplegable elige la opción de **PostgreSQL**  
 
-![Data Source](https://i.imgur.com/o0hPU6M.jpg)  
+![Data Source](https://i.imgur.com/YW1wXgI.png)  
 
-4. Introducimos los datos siguientes en la conexión:  
+#### **_8.3. Parámetros de conexión Postgre SQL_**  
 
-* **Name**: local_postgres
-* **Host**: localhost
-* **Port**: 5432
-* **User**: postgres
-* **Database**: postgres
-* **Url (opcional)**: jdbc:postgresql://localhost:5432/postgres
-* **Password**: mysecretpass  
+Para ver la configuración de la instalación local de **_Postgre SQL_**, vamos a **_PgAdmin_** y hacemos clic con el botón derecho sobre el Servidor (**_PostgreSQL 15**_)  
 
-5. Hacemos clic en el botón de **Test Connection** para probar la conexión. Puede que solicite actualizar unos drivers, aceptamos. Una vez que indique que la conexión es exitosa, hecemos clic en el **botón OK**  
+![Parámetros Postgre SQL (pantalla 1)](https://i.imgur.com/1nq4EnH.png)  
 
-![Test Connection](https://i.imgur.com/YQTa057.jpg)  
+![Parámetros Postgre SQL (pantalla 2)](https://i.imgur.com/rGlwdUa.png)  
 
-6. Listo, ya tenemos nuestra BD conectada en DataSpell  
+Listo, ya tenemos nuestra BD conectada en **_DataSpell_**, pero ahora con los dos sistemas  
 
-![BD conectada en DataSpell](https://i.imgur.com/gyTRkB0.jpg) 
+![Conexión de la BD en Windows](https://i.imgur.com/eZFaLQZ.png)  
+
+![BD Windows conectada](https://i.imgur.com/cMjPMPY.png)
+
+Ahora repetimos la operación con la imagen **_Docker_** (puerto 5432) de Postgre SQL y nos conectamos   
+
+![Cargamos la imagen](https://i.imgur.com/FCb2cG1.png)  
+
+![Postgre SQL de la imagen Docker](https://i.imgur.com/BGo2SkG.png)  
+
+![Las dos configiraciones de Postgre SQL cargadas](https://i.imgur.com/IVcyMGL.png)  
 
 ### ***4. Cargar datos en la BD Postgres***  
 
@@ -440,7 +589,7 @@ Es posible que al intentar **ejecutar este script en DBeaver** no sea posible po
 
 ![Ejecutar este script en DBeaver](https://i.imgur.com/alGTJg9.jpg)  
 
-Una vez descargado el archivo ***postgres_public_trades.sql** debemos seguir estos pasos para cargar los datos con DataSpell:  
+Una vez descargado el archivo ***postgres_public_trades.sql*** debemos seguir estos pasos para cargar los datos con DataSpell:  
 
 1. Hacemos clic derecho sobre la BD de PostgreSQL  
 
@@ -466,7 +615,7 @@ Una vez terminada la ejecución del script, consultamos la tabla Trades ya carga
 SELECT * FROM trades;
 ````
 
-![SELECT](https://i.imgur.com/kMYD1l0.jpg)  
+![SELECT](https://i.imgur.com/kMYD1l0.jpg)
 
 
 **¡Listo!** Ya tenemos lo esencial para comenzar a extraer datos de una BD OLTP y ejecutar nuestros notebooks de Python    
