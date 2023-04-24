@@ -567,13 +567,67 @@ Listo, ya tenemos nuestra BD conectada en **_DataSpell_**, pero ahora con los do
 
 Ahora repetimos la operación con la imagen **_Docker_** (puerto 5432) de Postgre SQL y nos conectamos   
 
+````
+docker run -e POSTGRES_PASSWORD=xxxxx --rm -it -p 5432:5432/tcp postgres:latest
+````
+
 ![Cargamos la imagen](https://i.imgur.com/FCb2cG1.png)  
 
 ![Postgre SQL de la imagen Docker](https://i.imgur.com/BGo2SkG.png)  
 
 ![Las dos configiraciones de Postgre SQL cargadas](https://i.imgur.com/IVcyMGL.png)  
 
-### ***4. Cargar datos en la BD Postgres***  
+#### **_8.4. Conexión de Postgre SQL a Dbeaver_**  
+
+Ahora, que ha funcionado la conexión a la BD con **_Dataspell_**, descargamos y repetimos la operación con **_DBeaver_**  
+
+Vamos al sitio de descarga de [DBeaver Community](https://dbeaver.io/download/) (opción gratuita)  
+
+Una vez descargado el instalador para Windows lo ejecutamos  
+
+![Instalación DBeaver](https://i.imgur.com/cC6PIMl.png)  
+
+![Instalación DBeaver](https://i.imgur.com/hiPUNM6.png)  
+
+![Instalación DBeaver](https://i.imgur.com/LPJVIBx.png)
+
+Creamos una conexión a Postgre SQL  
+
+![Nueva conexión a BD](https://i.imgur.com/EptCWEB.png)  
+
+![Conectaremos a una BD Postgre SQL](https://i.imgur.com/pNT6Lzt.png)  
+
+![Conexión a la BD Posgre SQL en el puerto 5433](https://i.imgur.com/OuyJ21p.png)  
+
+**_DBeaver_** nos propone descargar los drivers necesarios para la conexión (JDBC)  
+
+![Drivers necearios ](https://i.imgur.com/NgTR8lh.png)  
+
+Probamos la conexión y funciona ok  
+
+![Prueba de conexión](https://i.imgur.com/yXGbGeM.png)  
+
+Nuestra BD Postgre SQL (**_PgAdmin_** en Windowsen el puesrto 5433) está bien conectada  
+
+![Postgre SQL en el puerto 5433](https://i.imgur.com/ANHNSFt.png)  
+
+Volvemos a arrancar la imagen **_Docker_** de la segunda instalación en Linux (puerto 5432)  
+
+````
+docker run -e POSTGRES_PASSWORD=xxxxx --rm -it -p 5432:5432/tcp postgres:latest
+````
+
+![Cargamos la imagen](https://i.imgur.com/FCb2cG1.png)  
+
+![Postgre SQL en el puerto 5432](https://i.imgur.com/ZP6p4v4.png)  
+
+Probamos la conexión y funciona ok    
+
+![Prueba de conexión](https://i.imgur.com/RMSv97Y.png)  
+
+Ahora ya tenemos los dos sistemas conectados, **_PgAdmin_** (Windows) y **_Docker_** (Linux), con  lo cual, ya podemos utilizar, tanto **_DataSpell_** como **_DBeaver_**  
+
+### **_9. Cargar datos en la BD Postgres_**  
 
 Dentro de DataSpell, ya con la conexión a la BD previamente creada, ejecutaremos el script 
 
