@@ -629,7 +629,7 @@ Ahora ya tenemos los dos sistemas conectados, **_PgAdmin_** (Windows) y **_Docke
 
 ### **_9. Cargar datos en la BD Postgres_**  
 
-Dentro de DataSpell, ya con la conexión a la BD previamente creada, ejecutaremos el script 
+Dentro de **_DataSpell_**, con la conexión a la BD previamente creada, ejecutaremos el script  
 
 ````
 postgres_public_trades.sql
@@ -645,23 +645,29 @@ Es posible que al intentar **ejecutar este script en DBeaver** no sea posible po
 
 Una vez descargado el archivo ***postgres_public_trades.sql*** debemos seguir estos pasos para cargar los datos con DataSpell:  
 
-1. Hacemos clic derecho sobre la BD de PostgreSQL  
+#### **_9.1. Despliegue pop-up para cargar script_**  
+
+Hacemos clic derecho sobre la BD de PostgreSQL  
 
 ![Clic derecho sobre la BD de PostgreSQL](https://i.imgur.com/Zb584gM.jpg)  
 
-2. Posteriormente hacemos clic en **SQL Script** y luego en **Run SQL Scripts**  
+#### **_9.2. Vamos a Run SQL Scripts_**  
+
+Posteriormente hacemos clic en **_SQL Script_** y luego en **_Run SQL Scripts_**  
 
 ![Run SQL Scripts](https://i.imgur.com/CtoXKie.jpg)  
 
-3. Ubicamos el script descargado en nuestro ordenador y hacemos clic en **OK**  
+#### **_9.3. Ubicación script_**  
 
-![OK](https://i.imgur.com/26sAnxg.jpg)  
+Ubicamos el script descargado en nuestro ordenador y hacemos clic en **_OK_**  
+
+![Ubicación script en DataSpell](https://i.imgur.com/j89NqZT.png) 
 
 La creación de la tabla y la carga de datos puede tardar cerca de 15-20 minutos en DataSpell  
 
 ![Carga de datos](https://i.imgur.com/fbmg74S.jpg)  
 
-### ***5. Prueba la tabla trades***  
+### **_10. Prueba la tabla trades_**  
 
 Una vez terminada la ejecución del script, consultamos la tabla Trades ya cargada. Abreimosel editor de queries desde nuestra BD en DataSpell y hacemos la siguiente consulta:
 
