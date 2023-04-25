@@ -645,38 +645,53 @@ Es posible que al intentar **ejecutar este script en DBeaver** no sea posible po
 
 Una vez descargado el archivo ***postgres_public_trades.sql*** debemos seguir estos pasos para cargar los datos con DataSpell:  
 
-#### **_9.1. Despliegue pop-up para cargar script_**  
+#### **_9.1. Despliegue pop-up para cargar script_** 
 
-Hacemos clic derecho sobre la BD de PostgreSQL  
+Vamos a la BD cargada a través de **_Docker_** y hacemos clic, con el botón derecho sobre la BD de PostgreSQL  
 
-![Clic derecho sobre la BD de PostgreSQL](https://i.imgur.com/Zb584gM.jpg)  
+![Clic derecho sobre la BD de PostgreSQL](https://i.imgur.com/W08YnLX.png)  
 
-#### **_9.2. Vamos a Run SQL Scripts_**  
-
-Posteriormente hacemos clic en **_SQL Script_** y luego en **_Run SQL Scripts_**  
-
-![Run SQL Scripts](https://i.imgur.com/CtoXKie.jpg)  
-
-#### **_9.3. Ubicación script_**  
+#### **_9.2. Ubicación script_**  
 
 Ubicamos el script descargado en nuestro ordenador y hacemos clic en **_OK_**  
 
 ![Ubicación script en DataSpell](https://i.imgur.com/j89NqZT.png) 
 
-La creación de la tabla y la carga de datos puede tardar cerca de 15-20 minutos en DataSpell  
+La creación de la tabla y la carga de datos ha tardado 6 minutos y 54 segundos en **_DataSpell_**  
 
-![Carga de datos](https://i.imgur.com/fbmg74S.jpg)  
+![Carga de datos Docker](https://i.imgur.com/57Ms4Yk.png)   
+
+Ahora repetimos la operación con la BD local (**_PgAdmin_**)  
+
+![Carga de datos PgAdmin](https://i.imgur.com/STlienJ.png)  
+
+La creación de la tabla y la craga de datos ha tardado 6 minutos y 58 segundos en **_DataSpell_**  
 
 ### **_10. Prueba la tabla trades_**  
 
-Una vez terminada la ejecución del script, consultamos la tabla Trades ya cargada. Abreimosel editor de queries desde nuestra BD en DataSpell y hacemos la siguiente consulta:
+Una vez terminada la ejecución del script, consultamos la tabla Trades ya cargada  
+
+Comprobamos que la estructura de la tabla está bien creada en ambas BD  
+
+![Estructura bien creada](https://i.imgur.com/MpLMBqk.png)
+
+Abrimos la **_consola SQL_** (editor de queries) desde nuestra BD en **_DataSpell_**  
+
+![Abrimos la consola SQL](https://i.imgur.com/tcnU8Y7.png)
+
+Hacemos la siguiente consulta SQL  
 
 ````
 SELECT * FROM trades;
 ````
 
-![SELECT](https://i.imgur.com/kMYD1l0.jpg)
+![SELECT 1](https://i.imgur.com/GRAdmhN.png)  
 
+Repetimos la Select en la otra BD  
+
+![SELECT 2](https://i.imgur.com/uoEH1ue.png)  
+
+A partir de este momento trabajaremos, como se recomienda en el curso, con la imagen **_Docker_**, de la BD y **_DataSpell_**  
 
 **¡Listo!** Ya tenemos lo esencial para comenzar a extraer datos de una BD OLTP y ejecutar nuestros notebooks de Python    
 
