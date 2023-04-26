@@ -18,21 +18,21 @@ En nuestro proyecto ETL usaremos 3 fuentes de datos:
 * **_Fichero .JSON_**, del cual nos ocuparemos posteriormente  
 * **_Fichero .CSV_**, del cual, también, nos ocuparemos posteriormente   
 
-Además, **_nos conectaremos_** a esta base de datos OLTP, **_con un software de administración de BD_**. Puede ser **_DataSpell_**, DBeaver o el de nuestra preferencia  
+Además, **_nos conectaremos_** a esta base de datos OLTP, **_con un software de administración de BD_**. Puede ser **_DataSpell_**, **_DBeaver_** o el de nuestra preferencia  
 
-**_Usaremos DataSpell_**. Más adelante, lo configuraremos  
+**_Usaremos DataSpell_** y **_DBeaver_**. Más adelante, los configuraremos  
 
-**_Nota_**: La BD no se tendría que crear en el proceso ETL (obviamente), dado que lo normal es que esta ya esté creada en la infraestructura de sistemas y aplicaciones, de la empresa con la que estemos colaborando. No obstante, en este caso, con fines educativos, la crearemos para poder tener una BD de la cual extraer datos  
+**_Nota_**: La BD no se tendría que crear en el proceso ETL (obviamente), dado que lo normal es que esta ya esté creada en la infraestructura de sistemas y aplicaciones, de la empresa con la que estemos colaborando. No obstante, en este caso y con fines educativos, la crearemos para poder tener una BD de la cual extraer datos  
 
 Para la configuración de la BD usaremos **_PostgreSQL_**. Tenemos dos alternativas, para hecer la instalación:
-* Local  
-* **_Docker_** (recomendado)  
+* **_PgAdmin_** (Windows)  
+* **_Docker_** (WSL)  
 
-No ostante, a efectos didácticos, instalaremos **_PostgreSQL_** de las dos formas  
+A efectos didácticos, instalaremos **_PostgreSQL_** de las dos formas  
 
 ### **_1. Creación del contenedor en Docker_**  
 
-**_Docker es un entorno de gestión de contenedores_**, de manera que **_usaremos una imagen base con toda la configuración_** que requerimos sin instalarla necesariamente en nuestra máquina. Solo utilizaremos los recursos del sistema para ejecutar dicha imagen, es decir, es algo **_similar a una máquina virtual_**  
+**_Docker es un entorno de gestión de contenedores_**, de tal manera que **_usaremos una imagen base con toda la configuración_** que requerimos. Si solo instalásemos la imagen **_Docker_**, no nos haría falta instalarla en nuestra máquina. Solo utilizaríamos los recursos del sistema para ejecutar dicha imagen, es decir, sería algo **_similar a una máquina virtual_**  
 
 ----------------
 
