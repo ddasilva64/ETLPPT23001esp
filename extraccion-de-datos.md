@@ -774,7 +774,7 @@ Carga completada
 
 **_CONCLUSIONES_**  
 
-* **_Docker_** es óptimo para manejar la imagen de la BD  
+* **_Docker_** es óptimo para manejar la BD, a través de la imagen, de la misma    
 * **_DataSpell_** es el sistema ideal para manejar grandes BD, con un entorno Python integrado  
 * **_DBeaver_** es un soft aceptable, pero no óptimo, para manejar grandes BD  
 
