@@ -1,4 +1,17 @@
-                                                                                                                                                                                                                                       
+# Extracción de datos  
+
+## Sources  
+
+* **_Formato_**: Es importante que nos aseguremos de que los datos estén en un formato compatible con la herramienta ETL que estemos utilizando  
+* **_Calidad_**: Es necesario verificar la integridad y precisión de los datos, antes de cargarlos  
+* **_Frecuencia_**: Debemos determinar la frecuencia con la que los datos deben ser extraídos y actualizados  
+* **_Accesibilidad_**: Debemos tener acceso a las fuentes de datos para poder extraerlos y cargarlos en el sistema  
+* **_Seguridad_**: Debemos asegurarnos de que los datos estén protegidos y de que solo las personas autorizadas tengan acceso a ellos  
+* **_Eficiencia_**: Debemos buscar la manera más eficiente de extraer y cargar los datos, para evitar retrasos y errores  
+* **_Escalibilidad_**: Debemos conseguir que la solución ETL sea escalable (cantidad creciente de datos en el futuro)  
+
+## Configuración de base de datos source y entorno para ETL en Python  
+
 Para la configuración de la BD usaremos **_PostgreSQL_**. Tenemos dos alternativas, para hecer la instalación:
 * **_PgAdmin_** (Windows)  
 * **_Docker_** (WSL)  
@@ -7,7 +20,9 @@ A efectos didácticos, instalaremos **_PostgreSQL_** de las dos formas
 
 ### **_1. Creación del contenedor en Docker_**  
 
-**_Docker es un entorno de gestión de contenedores_**, de tal manera que **_usaremos una imagen base con toda la configuración_** que requerimos. Si solo instalásemos la imagen **_Docker_**, no nos haría falta instalarla en nuestra máquina. Solo utilizaríamos los recursos del sistema para ejecutar dicha imagen, es decir, sería algo **_similar a una máquina virtual_**  
+**_Docker es un entorno de gestión de contenedores_**, en el que **_usaremos una imagen base con toda la configuración de la BD_**  
+
+Si solo instalásemos la imagen **_Docker_** de la BD, no nos haría falta instalarla en nuestra máquina. Solo utilizaríamos los recursos del sistema para ejecutar dicha imagen, es decir, sería algo **_similar a una máquina virtual_**  
 
 ----------------
 
@@ -19,14 +34,14 @@ La instalación varía, dependiendo del SO que utilicemos en nuestro ordenador
 
 * **_WSL_**: El subsistema de Windows para Linux, es una característica del SO Windows, el cual permite ejecutar un sistema de archivos Linux, junto con herramientas de línea de comandos y aplicaciones de GUI de Linux, directamente en Windows, junto con el escritorio y las aplicaciones tradicionales de Windows  
 
-Primero, descargaremos el instalador de [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)  
+Primero, descargamos el instalador de [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)  
 
-Cuando hayamos instalado **_Docker Desktop_**, lo abriremos y nos aseguraremos de que la opción **_"Use the WSL 2 based engine"_** esté habilitada    
+Una vez instalado **_Docker Desktop_**, lo abrimos y nos aseguramos de que la opción **_"Use the WSL 2 based engine"_** esté habilitada    
 
 ![Use the WSL 2 based engine](https://i.imgur.com/3mYqQY4.png)  
 Como podemos ver en la imagen, lo está (por defecto) y no es modificable  
 
-En la sección **_"Resources > WSL Integration"_**, nos aseguraremos de que la opcion **_"Enable integration with my default WSL distro"_**, esté habilitada    
+En la sección **_"Resources > WSL Integration"_**, nos aseguramos de que la opcion **_"Enable integration with my default WSL distro"_**, esté habilitada    
 
 ![Enable integration with my default WSL distro](https://i.imgur.com/xtbjYsW.png)
 
@@ -36,7 +51,7 @@ Más detalles en [Docker Desktop WSL 2 backend](https://docs.docker.com/desktop/
 
 Descargaremos el instalador de [Docker for Windows](https://docs.docker.com/desktop/install/windows-install/)  
 
-Cuando hayamos instalado **_Docker Desktop_**, teniendo en cuenta que nuestro SO sea Windows 10 o superior (de 64 Bits), habilitarermos [Hyper-V](https://docs.docker.com/desktop/install/windows-install/#system-requirements) de Windows  
+Una vez instalado **_Docker Desktop_**, teniendo en cuenta que nuestro SO sea Windows 10 o superior (de 64 Bits), habilitamos [Hyper-V](https://docs.docker.com/desktop/install/windows-install/#system-requirements) de Windows  
 
 Habilitaremos **_Hyper-V_** desde la interfaz de Windows  
 
@@ -111,15 +126,7 @@ sudo docker run hello-world
 ````
 docker info
 ````
-![paso 9](https://i.imgur.com/Lvftm3M.png)  
-
-Verificamos las imágenes en **_Docker Desktop_**  
-
-![Verfifación](https://i.imgur.com/v4C22FY.png)  
-
-Accedemos a la imagen de **_Postgre SQL_** en Linux  
-
-![Verificación en Linux](https://i.imgur.com/FCb2cG1.png)   
+![paso 9](https://i.imgur.com/Lvftm3M.png)   
 
 ##### **_1.1.5. Para otras distribuciones de Linux_**   
 
@@ -142,10 +149,22 @@ sudo docker run -d --name=postgres -p 5432:5432 -v postgres-volume:/var/lib/post
 #### **_2.2. Windows_**  
 
 ````
-docker run -d --name=postgres -p 5432:5432 -v postgres-volume:/var/lib/postgresql/data -e POSTGRES_PASSWORD=mysecretpass postgres
+docker run -d --name=postgres -p 5432:5432 -v postgres-volume:/var/lib/postgresql/data -e POSTGRES_PASSWORD=xxxx postgres
 ````
 
 ![Creación BD con Postgres en Docker](https://i.imgur.com/GNIOzlC.png)  
+
+Verificamos las imágenes en **_Docker Desktop_**  
+
+![Verfifación](https://i.imgur.com/v4C22FY.png)  
+
+Accedemos a la imagen de **_Postgre SQL_** en Linux  
+
+````
+docker run -e POSTGRES_PASSWORD=xxxxx --rm -it -p 5432:5432/tcp postgres:latest
+````
+
+![Verificación en Linux](https://i.imgur.com/FCb2cG1.png)  
 
 Como podemos notar, en este comando se especifica lo siguiente para la creación de la BD con **_Docker_**:   
 
@@ -360,7 +379,7 @@ Previamente instalamos **Anaconda** en nuestro SO. Recomendamos crear un **_Cond
 
 #### **_6.1. ¿Por qué Anaconda?_**  
 
-**_Anaconda_** provee una plataforma muy completa, para poder desarrollar proyectos de DS. Simplifica la tarea de instalación y configuración de las distintas aplicaciones que necesitamos usar. Podemos utilizarlo, tanto por la terminal como por interfaz gráfica (GUI). Por el momento, avanzaremos con la segunda opción, porque es más amigable  
+**_Anaconda_** provee una plataforma muy completa, para poder desarrollar proyectos de DS. Simplifica la tarea de instalación y configuración de las distintas aplicaciones que necesitamos. Podemos utilizarlo, tanto por la terminal, como por interfaz gráfica (GUI). Por el momento, avanzaremos con la segunda opción, porque es más amigable  
 
 **_Ventajas_** de utilizar **_Anaconda_**:  
 
@@ -432,21 +451,17 @@ Una nueva pestaña se abrirá en nuestro **_Jupyter Navigator_** y ya estamos li
 
 ### **_7. Ambiente Anaconda en DataSpell_**  
 
-Elegimos el ambiente de **_Anaconda_** que usaremos para el proyecto y presionamos el botón **_Launch DataSpell_**  
+Elegimos el ambiente de **_Anaconda_** que hemos creado y que usaremos para el proyecto y presionamos el botón **_Launch DataSpell_**  
 
-![Elegimos el ambiente de Anaconda](https://i.imgur.com/AfDFAag.png) 
+![Elegimos el ambiente de Anaconda](https://i.imgur.com/6rSX4vt.png)
 
 También, para definir el ambiente **_DataSpell_**, elegimos un intérprete de **_Anaconda_**, que servirá para ejecutar **_Jupyter Notebooks_** en **_DataSpell_**    
 
-#### **_7.1. Creación de un nuevo Workspace en DataSpell_**   
+#### **_7.1. Creación de un nuevo proyecto en el Workspace en DataSpell_**   
 
 ![dataSpell](https://i.imgur.com/mwge053.png)  
 
-![Creamos un nuevo Workspace](https://i.imgur.com/Y9EYEBN.png)  
-
-Elegimos el path del wokspace, llamamos "fundamentos-etl" al workspace y presionamos el botón azul **_Create_**  
-
-![Path del wokspace](https://i.imgur.com/cM7Qouw.png)e  
+![Creamos un nuevo proyecto en el Workspace](https://i.imgur.com/eshfdwK.png)  
 
 #### **_7.2. Elección del ambiente de WSL2 (opcional si usamos WSL)_**
 
@@ -464,7 +479,7 @@ conda create --name fundamentos-etl python=X.X
 
 En la parte inferior de la pantalla de **_DataSpell_** aparece el intérprete. Hacemos click en la dirección que aparece y elegimos la opción **_Interpreter Settings_**  
 
-![Intérprete](https://i.imgur.com/XoHPcrv.png)  
+![Intérprete](https://i.imgur.com/AGea2hG.png)  
 
 ##### **_7.2.3. Elección del intérprete_**  
 
@@ -474,7 +489,7 @@ Escogemos el workspace "fundamentos-etl" creado anteriormente en **_DataSpell_**
 
 Presionamos el botón **_Add Interpreter_** e inmediatamente seleccionamos la opción **_On WSL_**  
 
-![Add Interpreter](https://i.imgur.com/UDUPSSd.png)  
+![Add Interpreter](https://i.imgur.com/toVme4T.png)
 
 ##### **_7.2.4. Elección de la distribución Linux_**  
 
@@ -781,3 +796,140 @@ Carga completada
 :wink: :thumbsup:  
 
 ## Extracción de datos con Python y Pandas  
+
+Repetimos, como siempre, la operación de carga de la imagen **_Docker_** (puerto 5432) de **_Postgre SQL_** y nos conectamos   
+
+````
+docker run -e POSTGRES_PASSWORD=xxxxx --rm -it -p 5432:5432/tcp postgres:latest
+````
+
+![Cargamos la imagen](https://i.imgur.com/JP6f55k.png)  
+
+Tenemos nuestro ambiente, nuestro proyecto y nuestra imagen **_Docker_** de la BD  
+
+![Ambiente](https://i.imgur.com/Ch8FBm2.png)  
+
+Ahora vamos a cargar el Notebook de nuestro proyecto (lo colocamos en la carpeta del proyecto)  
+
+![Notebook del proyecto](https://i.imgur.com/YCK4qb7.png)  
+
+![Notebook cargado](https://i.imgur.com/aiHRtY3.png)  
+
+Ejecutamos, haciendo click en el triangulito verde y vemos que se generan errores porque hay librerías no instaladas  
+
+![Faltan librerías](https://i.imgur.com/qJqsfEh.png)
+
+Vamos a comprobar los paquetes instalados y vemos, que por ejemplo pandas no lo está. Necesitamos ver qué nos falta por instalar (haciendo click en la parte superior derecha) 
+
+![Lista de errores y warnings](https://i.imgur.com/Vwi5G31.png)  
+
+![Localizamos errores y warnings](https://i.imgur.com/koSnB5E.png)  
+
+Buscamos los paquetes que faltan para instalarlos  
+
+![Buscamos paquetes no instalados](https://i.imgur.com/xXc1qOn.png)  
+
+Encontramos **_Pandas_** en **_Conda_**  
+
+![Pandas](https://i.imgur.com/8WAZ8id.png)  
+
+![Pandas instalado](https://i.imgur.com/SB72Ii2.png)  
+Ya no está subrallado pandas y el número de errores ha pasado de 5 a 4  
+
+Seguimos solucionando errores, de la misma manera  
+
+![Seguimos solucionando errores](https://i.imgur.com/x7TGZpl.png)  
+
+Utilizamos el buscador de paquetes, para ir más rápido  
+
+![Buscador](https://i.imgur.com/RLw2Rrk.png)  
+
+![Solucionado otro error](https://i.imgur.com/hYB5laq.png)
+
+Vamos por el siguiente  
+
+![Siguientes errores](https://i.imgur.com/aAwS8PS.png)  
+
+![Otro error solucionado](https://i.imgur.com/2vR0eab.png)  
+
+Siguiente error  
+
+![Siguiente error](https://i.imgur.com/LEsyNBu.png)  
+
+![Buscamos el paquete](https://i.imgur.com/NHRVG9W.png)  
+
+Ya no hay errores, pero sí warnings  
+
+![Ya no hay errores](https://i.imgur.com/fN80Xh9.png)  
+
+Solo quedan warnings  
+
+![Solo warnigs](https://i.imgur.com/bKAg2Gr.png)  
+
+Ejecutamos la celda en el Notebook  
+
+![Ejecutamos celda](https://i.imgur.com/yFPrh5f.png)  
+
+![Imporatción de librerías sin problemas!](https://i.imgur.com/x6woKpp.png)  
+
+-----------------
+
+Antes de seguir adelante explicamos como nos conectamos a la BD  
+
+### **_Qué es SQLALchemy_**
+
+SQLAlchemy es una librería para Python que facilita el acceso a una BDR (BD relacional), así como las operaciones a realizar sobre la misma  
+
+Es independiente del motor de BD a utilizar, es decir, en principio, es compatible con la mayoría de BDR: PostgreSQL, MySQL, Oracle, Microsoft SQL Server, Sqlite, etc  
+
+Aunque se puede usar SQLAlchemy utilizando consultas en lenguaje SQL nativo, la principal ventaja de trabajar con esta librería se consigue haciendo uso de su ORM. El ORM de SQLAlchemy mapea tablas a clases Python y convierte automáticamente llamadas a funciones dentro de estas clases a sentencias SQL  
+
+Además, SQLAlchemy implementa múltiples patrones de diseño que te permiten desarrollar aplicaciones rápidamente y te abstrae de ciertas tareas, como manejar el pool de conexiones a la BD  
+
+-------------------
+
+Antes de seguir adelante y por claridad, borramos la conexión en **_DataSpell_** a la BD local (**_PgAdmin_**), dado que solo trabajaremos, como dijimos, con la imagen **_Docker_** de la BD  
+
+![Nos quedamos con la imagen Docker de la BD](https://i.imgur.com/L8EIYzK.png)  
+
+![Conexión a la imagen Docker de la BD](https://i.imgur.com/igsgnmS.png)  
+
+![Accesemos perfectamente a la tabla en la BD](https://i.imgur.com/tWA3UBX.png)
+
+Nos conectamos a la imagen **_Docker_**, para hacer una SELECT y nos da un error, porque falta el objeto **_psycopg2_**  
+
+![Ahora tenemos un error de ejecución](https://i.imgur.com/Ai3QuUq.png)  
+La contraseña de la BD está tachada entencionadamente  
+
+Para solucionar este problema, procedemos exactamente igual que en casos anteriores  
+
+![Solucionamos objeto no encontrado](https://i.imgur.com/1bpcriE.png)  
+
+![Instalado](https://i.imgur.com/lrxCupY.png)
+
+Lo volvemos a probar  
+
+![Cargamos correctamente la BD](https://i.imgur.com/okZkFNn.png)  
+
+Comprobamos el df (DataFrame)  
+
+![Comprobación del df](https://i.imgur.com/pPxz2ts.png)  
+
+![Comprobamos la salida del método info](https://i.imgur.com/1udIMVJ.png)  
+
+Ahora procedemos a extraer el resto de fuentes de datos. Comenzamos por el .JSON de paises  
+
+![Paises](https://i.imgur.com/3Rb2vfA.png)  
+
+![Comprobamos la salida del método info](https://i.imgur.com/SkQjfPR.png)  
+
+Seguimos por el .CSV de categorías de productos  
+
+![categorías](https://i.imgur.com/3Rb2vfA.png)  
+
+![Comprobamos la salida del método info](https://i.imgur.com/SkQjfPR.png)  
+
+![Categorías de productos](https://i.imgur.com/YLlHP4F.png)
+
+
+

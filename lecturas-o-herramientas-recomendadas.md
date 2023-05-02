@@ -11,3 +11,6 @@
 * [Pentaho from Hitachi Vantara - Browse Files at SourceForge.net](https://sourceforge.net/projects/pentaho/files/)
 
 * [Pentaho Data Integration - Hitachi Vantara Lumada and Pentaho Documentation](https://help.hitachivantara.com/Documentation/Pentaho/7.0/0D0/Pentaho_Data_Integration)
+
+* [JetBrains DataSpell: The IDE for Data Scientists](https://www.jetbrains.com/dataspell/)  
+
