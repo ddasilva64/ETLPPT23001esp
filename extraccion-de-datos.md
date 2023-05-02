@@ -797,7 +797,7 @@ Carga completada
 
 ## Extracción de datos con Python y Pandas  
 
-Repetimos, como siempre, la operación de carga de la imagen **_Docker_** (puerto 5432) de **_Postgre SQL_** y nos conectamos   
+Repetimos, como siempre, la operación de carga de la imagen **_Docker_** (puerto 5432) de **_Postgre SQL_**, después de arrancar **_Docker_** y nos conectamos   
 
 ````
 docker run -e POSTGRES_PASSWORD=xxxxx --rm -it -p 5432:5432/tcp postgres:latest
@@ -811,7 +811,7 @@ Tenemos nuestro ambiente, nuestro proyecto y nuestra imagen **_Docker_** de la B
 
 Ahora vamos a cargar el Notebook de nuestro proyecto (lo colocamos en la carpeta del proyecto)  
 
-![Notebook del proyecto](https://i.imgur.com/YCK4qb7.png)  
+![Notebook del proyecto](https://i.imgur.com/G3cJJ1N.png)  
 
 ![Notebook cargado](https://i.imgur.com/aiHRtY3.png)  
 
@@ -915,21 +915,74 @@ Comprobamos el df (DataFrame)
 
 ![Comprobación del df](https://i.imgur.com/pPxz2ts.png)  
 
-![Comprobamos la salida del método info](https://i.imgur.com/1udIMVJ.png)  
+![Comprobamos la salida del método info](https://i.imgur.com/1udIMVJ.png) 
+
+````postgres
+Data Source: postgres  
+Database: postgres  
+Schema: public  
+Table: trades  
+
+-- auto-generated definition
+create table trades
+(
+    country_code  varchar(4),
+    year          integer,
+    comm_code     integer,
+    flow          varchar(10),
+    trade_usd     numeric(12, 2),
+    kg            numeric(12, 2),
+    quantity      numeric(12, 2),
+    quantity_name varchar(30)
+);
+
+country_code    = código país  
+year            = año  
+comm_code       = código producto  
+flow            = flujo (exportación, importación, reexportación)  
+trade_usd       = costo operación en USD  
+kg              = peso (Kg)  
+quantity        = cantidad (unidades) 
+quantity_name   = unidad de medida (unidades o Kg) 
+
+alter table trades
+  owner to postgres;
+
+Rows: 6216353   
+Size: 526 MB
+````
 
 Ahora procedemos a extraer el resto de fuentes de datos. Comenzamos por el .JSON de paises  
 
 ![Paises](https://i.imgur.com/3Rb2vfA.png)  
 
-![Comprobamos la salida del método info](https://i.imgur.com/SkQjfPR.png)  
-
-Seguimos por el .CSV de categorías de productos  
-
-![categorías](https://i.imgur.com/3Rb2vfA.png)  
+![Comprobamos la salida del método info](https://i.imgur.com/SkQjfPR.png)    
 
 ![Comprobamos la salida del método info](https://i.imgur.com/SkQjfPR.png)  
 
-![Categorías de productos](https://i.imgur.com/YLlHP4F.png)
+El fichero tiene los campos:  
+1. Código de país  
+2. Nombre del país  
+3. Región de país  
+4. Subregión del país  
 
+Seguimos por el .CSV de productos  
 
+![Productos](https://i.imgur.com/YLlHP4F.png)
 
+![Productos](https://i.imgur.com/0F0B6MO.png)
+
+Estructura de campos del fichero:  
+
+1. Order                = orden
+2. Level                = nivel
+3. Code                 = código
+4. Parent               = padre
+5. Code_comm            = código producto
+6. Parent               = padre                 
+7. Description_complex  = descripción compleja 
+8. Description          = descripción  
+
+Creamos un nuevo df de categorías de productos, con los productos de nivel 2  
+
+![Categorías de productos](https://i.imgur.com/UKQinWy.png)  
