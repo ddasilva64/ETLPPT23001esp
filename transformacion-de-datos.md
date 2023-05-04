@@ -298,7 +298,7 @@ Para poder tener una tabla límpia de dimensiones, necesitamos que contenga:
 - Que estén definidas solo FK (foreign keys) a las tablas de dimensiones
 - Que estén definidas las métricas de nuestro sistema
 
-Como todavía tenemos columnas que no son de ninguno de los dos tipos, las convertimos en dimensiones, es decir, en dimensiones  
+Como todavía tenemos columnas que no son de ninguno de los dos tipos, las convertimos en dimensiones, es decir, en df. Para conseguir esta transformación creamos la siguiente función, la cual generará un id único y un valor asociado  
 
 ````python
 def create_dimension(data, id_name):
