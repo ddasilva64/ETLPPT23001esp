@@ -913,9 +913,32 @@ Lo volvemos a probar
 
 Comprobamos el df (DataFrame)  
 
-![Comprobación del df](https://i.imgur.com/pPxz2ts.png)  
+````python
+# Instalación de librerías base
+import pandas as pd
+from sqlalchemy import create_engine
+````
+````python
+engine = create_engine('postgresql+psycopg2://postgres:xxxxx@localhost/postgres')
+'''
+    Argumentos de la conexión a la BD
+        - Motor BD:     postgresql+psycopg2
+        - Usuario BD:   postgres
+        - Constraseña:  xxxxx
+        - Host:         localhost
+        - Nombre BD:    postgres
+'''
+df_trades = pd.read_sql("select * from trades", engine)
+df_trades.head()
+````
+|  | country\_code | year | comm\_code | flow | trade\_usd | kg | quantity | quantity\_name |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | SYC | 1998 | 890200 | Import | 1431426.0 | 0.0 | 23000.0 | Number of items |
+| 1 | SYC | 1998 | 890310 | Import | 31406.0 | 0.0 | 2545.0 | Number of items |
+| 2 | SYC | 1998 | 890310 | Export | 950.0 | 0.0 | 300.0 | Number of items |
+| 3 | SYC | 1998 | 890310 | Re-Export | 950.0 | 0.0 | 300.0 | Number of items |
+| 4 | SYC | 1998 | 890391 | Import | 18251.0 | 0.0 | 450.0 | Number of items |
 
-![Comprobamos la salida del método info](https://i.imgur.com/1udIMVJ.png) 
 
 ````postgres
 Data Source: postgres  
@@ -954,23 +977,46 @@ Size: 526 MB
 
 Ahora procedemos a extraer el resto de fuentes de datos. Comenzamos por el .JSON de paises  
 
-![Paises](https://i.imgur.com/3Rb2vfA.png)  
-
-![Comprobamos la salida del método info](https://i.imgur.com/SkQjfPR.png)    
-
-![Comprobamos la salida del método info](https://i.imgur.com/SkQjfPR.png)  
+````python
+df_countries = pd.read_json('src/country_data.json')
+df_countries.head()
+````
+|  | country | images\_file | image\_url | alpha-2 | alpha-3 | country-code | iso\_3166-2 | region | sub-region | intermediate-region | region-code | sub-region-code | intermediate-region-code |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | Afghanistan | Flag\_of\_Afghanistan.svg | https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag\_of\_Afghanistan.svg | AF | AFG | 4.0 | ISO 3166-2:AF | Asia | Southern Asia | None | 142.0 | 34.0 | NaN |
+| 1 | Albania | Flag\_of\_Albania.svg | https://upload.wikimedia.org/wikipedia/commons/3/36/Flag\_of\_Albania.svg | AL | ALB | 8.0 | ISO 3166-2:AL | Europe | Southern Europe | None | 150.0 | 39.0 | NaN |
+| 2 | Algeria | Flag\_of\_Algeria.svg | https://upload.wikimedia.org/wikipedia/commons/7/77/Flag\_of\_Algeria.svg | DZ | DZA | 12.0 | ISO 3166-2:DZ | Africa | Northern Africa | None | 2.0 | 15.0 | NaN |
+| 3 | Andorra | Flag\_of\_Andorra.svg | https://upload.wikimedia.org/wikipedia/commons/1/19/Flag\_of\_Andorra.svg | AD | AND | 20.0 | ISO 3166-2:AD | Europe | Southern Europe | None | 150.0 | 39.0 | NaN |
+| 4 | Angola | Flag\_of\_Angola.svg | https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag\_of\_Angola.svg | AO | AGO | 24.0 | ISO 3166-2:AO | Africa | Sub-Saharan Africa | Middle Africa | 2.0 | 202.0 | 17.0 |  
 
 El fichero tiene los campos:  
-1. Código de país  
-2. Nombre del país  
-3. Región de país  
-4. Subregión del país  
+1. país  
+2. imagen  
+3. url imagen  
+4. iso2  
+5. iso3  
+6. código numérico  
+7. iso2 (¿?)  
+8. región  
+9. sub-región  
+10. región intermedia  
+11. código de región  
+12. código sub-región  
+13. código región intermedia   
 
-Seguimos por el .CSV de productos  
+Seguimos por el .CSV de productos 
 
-![Productos](https://i.imgur.com/YLlHP4F.png)
-
-![Productos](https://i.imgur.com/0F0B6MO.png)
+````python
+df_codes = pd.read_csv('src/hs_codes.csv')
+df_codes.head()
+````
+|  | Order | Level | Code | Parent | Code\_comm | Parent.1 | Description\_complex | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 | 1654555 | 1 | 0 | NaN | NaN | NaN | This classification has been uploaded in RAMON for the specific needs of the "Correspondence tables" section of the server. The sole official versions of this classification are to be found on the... | This classification has been uploaded in RAMON for the specific needs of the "Correspondence tables" section of the server. The sole official versions of this classification are to be found on the... |
+| 1 | 1654556 | 1 | 10011000090 | NaN | I | NaN | SECTION I - LIVE ANIMALS; ANIMAL PRODUCTS | LIVE ANIMALS; ANIMAL PRODUCTS |
+| 2 | 1654557 | 2 | 10021000090 | 1.001100e+10 | 1 | I | CHAPTER 1 - LIVE ANIMALS | LIVE ANIMALS |
+| 3 | 1654558 | 3 | 10100000080 | 1.002100e+10 | 1.01 | 1 | Live horses, asses, mules and hinnies | Live horses, asses, mules and hinnies |
+| 4 | 1654559 | 4 | 10121000010 | 1.010000e+10 | NaN | 1.01 | - Horses | NaN |
 
 Estructura de campos del fichero:  
 
@@ -985,4 +1031,14 @@ Estructura de campos del fichero:
 
 Creamos un nuevo df de categorías de productos, con los productos de nivel 2  
 
-![Categorías de productos](https://i.imgur.com/UKQinWy.png)  
+````python
+df_parents = df_codes[df_codes['Level']==2].copy()
+df_parents.head()
+````
+|  | Order | Level | Code | Parent | Code\_comm | Parent.1 | Description\_complex | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2 | 1654557 | 2 | 10021000090 | 1.001100e+10 | 1 | I | CHAPTER 1 - LIVE ANIMALS | LIVE ANIMALS |
+| 52 | 1654607 | 2 | 20021000090 | 1.001100e+10 | 2 | I | CHAPTER 2 - MEAT AND EDIBLE MEAT OFFAL | MEAT AND EDIBLE MEAT OFFAL |
+| 140 | 1654695 | 2 | 30021000090 | 1.001100e+10 | 3 | I | CHAPTER 3 - FISH AND CRUSTACEANS, MOLLUSCS AND OTHER AQUATIC INVERTEBRATES | FISH AND CRUSTACEANS, MOLLUSCS AND OTHER AQUATIC INVERTEBRATES |
+| 416 | 1654971 | 2 | 40021000090 | 1.001100e+10 | 4 | I | CHAPTER 4 - DAIRY PRODUCE; BIRDS' EGGS; NATURAL HONEY; EDIBLE PRODUCTS OF ANIMAL ORIGIN, NOT ELSEWHERE SPECIFIED OR INCLUDED | DAIRY PRODUCE; BIRDS' EGGS; NATURAL HONEY; EDIBLE PRODUCTS OF ANIMAL ORIGIN, NOT ELSEWHERE SPECIFIED OR INCLUDED |
+| 463 | 1655018 | 2 | 50021000090 | 1.001100e+10 | 5 | I | CHAPTER 5 - PRODUCTS OF ANIMAL ORIGIN, NOT ELSEWHERE SPECIFIED OR INCLUDED | PRODUCTS OF ANIMAL ORIGIN, NOT ELSEWHERE SPECIFIED OR INCLUDED |
