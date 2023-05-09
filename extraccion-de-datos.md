@@ -160,7 +160,7 @@ Verificamos las imágenes en **_Docker Desktop_**
 
 Accedemos a la imagen de **_Postgre SQL_** en Linux  
 
-````
+````WSL
 docker run -e POSTGRES_PASSWORD=xxxxx --rm -it -p 5432:5432/tcp postgres:latest
 ````
 
@@ -878,7 +878,7 @@ Antes de seguir adelante explicamos como nos conectamos a la BD
 
 ### **_Qué es SQLALchemy_**
 
-SQLAlchemy es una librería para Python que facilita el acceso a una BDR (BD relacional), así como las operaciones a realizar sobre la misma  
+**_SQLAlchemy_** es una librería para Python que facilita el acceso a una BDR (BD relacional), así como las operaciones a realizar sobre la misma  
 
 Es independiente del motor de BD a utilizar, es decir, en principio, es compatible con la mayoría de BDR: PostgreSQL, MySQL, Oracle, Microsoft SQL Server, Sqlite, etc  
 

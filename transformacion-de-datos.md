@@ -298,22 +298,29 @@ Para poder tener una tabla límpia de dimensiones, necesitamos que contenga:
 - Que estén definidas solo FK (foreign keys) a las tablas de dimensiones
 - Que estén definidas las métricas de nuestro sistema
 
-Como todavía tenemos columnas que no son de ninguno de los dos tipos, las convertimos en dimensiones, es decir, en df. Para conseguir esta transformación creamos la siguiente función, la cual generará un id único y un valor asociado  
+Como todavía tenemos columnas que no son de ninguno de los dos tipos, las convertimos en dimensiones, es decir, en df. Para conseguir esta transformación creamos la siguiente función, la cual generará un id único y un valor asociado. De esta manera, dejaremos solo métricas y FK, en la tabla (df) de hechos (df_trades_clean o de transacciones límpias)  
 
 ````python
 def create_dimension(data, id_name):
-    list_keys = []
-    value = 1
-    for _ in data:
-        list_keys.append(value)
-        value = value + 1
-    return pd.DataFrame({id_name:list_keys, 'values':data})
+    list_keys = []  # lista vacía, de valores únicos de iteraciones, que serán FK
+    value = 1       # comenzamos por 1 el contador
+    for _ in data:  # iteramos los valores que queremos convertir en FK
+        list_keys.append(value)     # añadimos el valor del contador
+        value = value + 1           # incrementamos el contador
+    return pd.DataFrame({id_name:list_keys, 'values':data})     
 ````
+
+La cantidad (quantity), no es una métrica, por lo tanto obtenemos un a clave primaria, llamando a la función, para poder extraer el valor en una tabla de dimensiones y dejar, en la tabla de hechos, solamente la FK  
+
+Obviamente, nos interesa enviar a la función valores únicos (de los cuales queremos obtener una clave única), caso contrario, obtendríamos valores únicos para datos, que podrían ser duplicados y eso no tendría sentido  
+
+El resultado será una tabla (df) de dimensiones, en este caso df_quantity  
 
 ````python
 df_quantity =create_dimension(df_trades_clean['quantity_name'].unique(),'id_quantity')
 df_quantity.head()
 ````
+
 |  | id\_quantity | values |
 | :--- | :--- | :--- |
 | 0 | 1 | Number of items |
@@ -322,10 +329,15 @@ df_quantity.head()
 | 3 | 4 | Volume in litres |
 | 4 | 5 | Number of pairs |
 
+El flujo de la transacción (flow), tampoco es una métrica, por lo tanto hacemos la misma operación  
+
+El resultado será una tabla (df) de dimensiones, en este caso df_flow  
+
 ````python
 df_flow =create_dimension(df_trades_clean['flow'].unique(),'id_flow')
 df_flow.head()
 ````
+
 |  | id\_flow | values |
 | :--- | :--- | :--- |
 | 0 | 1 | Import |
@@ -333,10 +345,17 @@ df_flow.head()
 | 2 | 3 | Re-Export |
 | 3 | 4 | Re-Import |
 
+El año (year), tampoco es una métrica, por lo tanto hacemos la misma operación  
+
+El resultado será una tabla (df) de dimensiones, en este caso df_year
+
+**_¡Atención!_**: La **_dimensión de tiempo_**, es **_básica y fundamental_** en cualquier análisis de negocio  
+
 ````python
 df_year =create_dimension(df_trades_clean['year'].unique(),'id_year')
 df_year.head()
 ````
+
 |  | id\_year | values |
 | :--- | :--- | :--- |
 | 0 | 1 | 1998 |
@@ -345,10 +364,15 @@ df_year.head()
 | 3 | 4 | 1995 |
 | 4 | 5 | 1994 |
 
+Ahora, una vez obtenidas las nuevas dimensiones, debemos proceder a substituir los valores por la FK (que serán PK en las tablas de dimensión), en la tabla (df) de hechos. Para ello, en primer lugar, añadimos las PK, que aquí, serán FK, como hemos dicho  
+
+Añadimos la FK de cantidad (**_id\_quantity_**)  
+
 ````python
 df_trades_clean = df_trades_clean.merge(df_quantity, how='left',left_on='quantity_name', right_on='values')
 df_trades_clean.head()
 ````
+
 |  | country\_code | year | comm\_code | flow | trade\_usd | kg | quantity | quantity\_name | clean\_code | id\_code | alpha-3 | id\_country | id\_quantity | values |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 0 | SYC | 1998 | 890200 | Import | 1431426.0 | 0.0 | 23000.0 | Number of items | 890200 | 6929 | SYC | 155 | 1 | Number of items |
@@ -357,10 +381,13 @@ df_trades_clean.head()
 | 3 | SYC | 1998 | 890310 | Re-Export | 950.0 | 0.0 | 300.0 | Number of items | 890310 | 6931 | SYC | 155 | 1 | Number of items |
 | 4 | SYC | 1998 | 890391 | Import | 18251.0 | 0.0 | 450.0 | Number of items | 890391 | 6933 | SYC | 155 | 1 | Number of items |
 
+Hacemos lo mismo con la FK de flujo de transacción (**_id\_flow_**)  
+
 ````python
 df_trades_clean = df_trades_clean.merge(df_flow, how='left',left_on='flow', right_on='values')
 df_trades_clean.head()
 ````
+
 |  | country\_code | year | comm\_code | flow | trade\_usd | kg | quantity | quantity\_name | clean\_code | id\_code | alpha-3 | id\_country | id\_quantity | values\_x | id\_flow | values\_y |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 0 | SYC | 1998 | 890200 | Import | 1431426.0 | 0.0 | 23000.0 | Number of items | 890200 | 6929 | SYC | 155 | 1 | Number of items | 1 | Import |
@@ -369,10 +396,13 @@ df_trades_clean.head()
 | 3 | SYC | 1998 | 890310 | Re-Export | 950.0 | 0.0 | 300.0 | Number of items | 890310 | 6931 | SYC | 155 | 1 | Number of items | 3 | Re-Export |
 | 4 | SYC | 1998 | 890391 | Import | 18251.0 | 0.0 | 450.0 | Number of items | 890391 | 6933 | SYC | 155 | 1 | Number of items | 1 | Import |
 
+Hacemos lo mismo con la FK de año (**_id\_year_**)  
+
 ````python
 df_trades_clean = df_trades_clean.merge(df_year, how='left',left_on='year', right_on='values')
 df_trades_clean.head()
 ````
+
 |  | country\_code | year | comm\_code | flow | trade\_usd | kg | quantity | quantity\_name | clean\_code | id\_code | alpha-3 | id\_country | id\_quantity | values\_x | id\_flow | values\_y | id\_year | values |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 0 | SYC | 1998 | 890200 | Import | 1431426.0 | 0.0 | 23000.0 | Number of items | 890200 | 6929 | SYC | 155 | 1 | Number of items | 1 | Import | 1 | 1998 |
@@ -380,6 +410,8 @@ df_trades_clean.head()
 | 2 | SYC | 1998 | 890310 | Export | 950.0 | 0.0 | 300.0 | Number of items | 890310 | 6931 | SYC | 155 | 1 | Number of items | 2 | Export | 1 | 1998 |
 | 3 | SYC | 1998 | 890310 | Re-Export | 950.0 | 0.0 | 300.0 | Number of items | 890310 | 6931 | SYC | 155 | 1 | Number of items | 3 | Re-Export | 1 | 1998 |
 | 4 | SYC | 1998 | 890391 | Import | 18251.0 | 0.0 | 450.0 | Number of items | 890391 | 6933 | SYC | 155 | 1 | Number of items | 1 | Import | 1 | 1998 |
+
+Aprovechamos para generar una PK en nuestra tabla de hechos (**_id\_trades_**)  
 
 ````python
 df_trades_clean['id_trades'] = df_trades_clean.index + 1
@@ -393,10 +425,13 @@ df_trades_clean.head()
 | 3 | SYC | 1998 | 890310 | Re-Export | 950.0 | 0.0 | 300.0 | Number of items | 890310 | 6931 | SYC | 155 | 1 | Number of items | 3 | Re-Export | 1 | 1998 | 4 |
 | 4 | SYC | 1998 | 890391 | Import | 18251.0 | 0.0 | 450.0 | Number of items | 890391 | 6933 | SYC | 155 | 1 | Number of items | 1 | Import | 1 | 1998 | 5 |
 
+Ahora generamos una copia de la tabla de hechos **_df\_trades\_clean_**, solamente con las columnas que nos interesan (métricas y FK). Esta será nuestra nueva tabla de hechos límpia (**_df\_trades\_final_**)  
+
 ````python
 df_trades_final = df_trades_clean[['id_trades','trade_usd','kg','quantity','id_code','id_country','id_quantity','id_flow','id_year']].copy()
 df_trades_final.head()
 ````
+
 |  | id\_trades | trade\_usd | kg | quantity | id\_code | id\_country | id\_quantity | id\_flow | id\_year |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 0 | 1 | 1431426.0 | 0.0 | 23000.0 | 6929 | 155 | 1 | 1 | 1 |
@@ -404,6 +439,8 @@ df_trades_final.head()
 | 2 | 3 | 950.0 | 0.0 | 300.0 | 6931 | 155 | 1 | 2 | 1 |
 | 3 | 4 | 950.0 | 0.0 | 300.0 | 6931 | 155 | 1 | 3 | 1 |
 | 4 | 5 | 18251.0 | 0.0 | 450.0 | 6933 | 155 | 1 | 1 | 1 |
+
+Dejamos límpia la dimensión de paises (**_df\_countries_**)  
 
 ````python
 df_countries = df_countries[['id_country','alpha-3','country','region','sub-region']]
@@ -417,6 +454,8 @@ df_countries.head()
 | 3 | 4 | AND | Andorra | Europe | Southern Europe |
 | 4 | 5 | AGO | Angola | Africa | Sub-Saharan Africa |
 
+Dejamos límpia la dimensión de categorías de productos (**_df\_codes_**)  
+
 ````python
 df_codes = df_codes[['id_code','clean_code','Description','parent_description']]
 df_codes.head()
@@ -428,3 +467,5 @@ df_codes.head()
 | 3 | 4 | 10100 | Live horses, asses, mules and hinnies | LIVE ANIMALS |
 | 5 | 6 | 10121 | Pure-bred breeding horses | LIVE ANIMALS |
 | 6 | 7 | 10129 | Live horses \(excl. pure-bred for breeding\) | LIVE ANIMALS |
+
+¡Y listo!, ya estamos listos para hacer la carga de los datos  
