@@ -14,4 +14,6 @@
 
 * [JetBrains DataSpell: The IDE for Data Scientists](https://www.jetbrains.com/dataspell/)  
 
-* [Examples of using the Amazon Redshift Python connector - Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/python-connect-examples.html)
+* [Examples of using the Amazon Redshift Python connector - Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/python-connect-examples.html)  
+
+* [Pentaho Marketplace](https://marketplace.hitachivantara.com/pentaho/)  
