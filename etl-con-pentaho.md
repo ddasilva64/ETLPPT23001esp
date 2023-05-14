@@ -382,7 +382,7 @@ Si volvemos a entrar, veremos que nos ha desaparecido la conexión a nuestra BD 
 
 ![La conexión target ha desaparecido](https://i.imgur.com/1KXxL7T.png)
 
-## Transformación de datos con Pentaho (I)  
+## Transformación de datos con Pentaho (.CSV)  
 
 Cuando volvemos a entrar en nuestro proyecto, vemos el resultado de las extracciones hechas  
 
@@ -590,8 +590,111 @@ Ejecutamos y tenemos los campos deseados y límpios
 
 **_Nota_**: Los detalles explicativos de las transformaciones están en las transformaciones que hicimos en Python, ya que estamos haciendo el mismo trabajo  
 
-## Transformación de datos con Pentaho (II)  
+## Transformación de datos con Pentaho (.JSON y dimensiones tabla BD)  
 
-## Transformación de datos con Pentaho (III)  
+Vamos al fichero .JSON de paises y añadimos un filtro, para controlar que alpha-3 (iso3), no sea nulo  
+
+![alpha-3 no nulo](https://i.imgur.com/TNvsz6R.png)  
+
+Ahora aplicamos una secuencia  
+
+![secuencia](https://i.imgur.com/eYJPoz6.png)  
+
+![secuencia](https://i.imgur.com/tUbRbfA.png)  
+
+Seleccionamos los valores que realmente necesitamos  
+
+![selección](https://i.imgur.com/VRaNLMG.png)  
+
+Ejecutamos y comprobamos el resultado  
+
+![Run](https://i.imgur.com/psOhW48.png)  
+
+Ahora extraeremos las dimensiones de la tabla **_trades_** (BD). Primero ordenaremos las dimensiones  
+
+![sort rows](https://i.imgur.com/v3Uw0HY.png)
+
+Relacionamos haciendo copia  
+
+![relaciones](https://i.imgur.com/3k1eGFS.png)
+
+Ordenamos la dimensión flow
+
+![sort flow](https://i.imgur.com/xCeyGpY.png)
+
+Ordenamos la dimensión año  
+
+![sort year](https://i.imgur.com/mVwCyWa.png)
+
+Ordenamos la dimensión quantity  
+
+![sort quantity](https://i.imgur.com/IFM7YtQ.png)
+
+Ahora vamos a identificar los valores únicos  
+
+![unique rows](https://i.imgur.com/8oCIM5B.png)
+
+Establecemos valores únicos para la dimensión flow  
+
+![valores únicos de flow](https://i.imgur.com/BFS01zb.png)
+
+Nos avisa, cuando aceptamos, de que los valores deben estar ordenados previamente (como hemos hecho)  
+
+![aviso de sort](https://i.imgur.com/sqobKt6.png)
+
+Hacemos los mismo con year  
+
+![valores únicos de year](https://i.imgur.com/P3LRT7c.png)
+
+Hacemos lo mismo con quantity  
+
+![valores únicos de quantity](https://i.imgur.com/FrSiztc.png)
+
+Agregamos secuencia para flow 
+
+![secuencia flow](https://i.imgur.com/KN37ssq.png)
+
+Agregamos secuencia para year
+
+![secuencia year](https://i.imgur.com/0G7hF1G.png)
+
+Agregamos secuencia para quantity  
+
+![secuencia quantity](https://i.imgur.com/RzMw5T9.png)  
+
+Ejecutamos y comprobamos  
+
+![run](https://i.imgur.com/G8WKCko.png)
+
+Necesitamos extraer los valores únicos, para dejar solo las FK (como hicimos en **_Python_**). Para hacerlo añadimos **_select values_**  
+
+Seleccionamos valores para flow  
+
+![flow](https://i.imgur.com/e38c1kd.png)
+
+Seleccionamos valores para year  
+
+![year](https://i.imgur.com/scKN1CU.png)
+
+Seleccionamos valores para quantity  
+
+![quantity](https://i.imgur.com/6SLnHK5.png)
+
+Ejecutamos y comprobamos  
+
+Flow  
+
+![flow](https://i.imgur.com/fsXUM8i.png)
+
+Year
+
+![year](https://i.imgur.com/EMSObx7.png)
+
+Quantity
+
+![quantity](https://i.imgur.com/STOp57y.png)
+
+
+## Transformación de datos con Pentaho (integración final)  
 
 ## Carga de datos con Pentaho  
