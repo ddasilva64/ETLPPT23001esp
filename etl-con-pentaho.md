@@ -382,10 +382,216 @@ Si volvemos a entrar, veremos que nos ha desaparecido la conexión a nuestra BD 
 
 ![La conexión target ha desaparecido](https://i.imgur.com/1KXxL7T.png)
 
-## Transformación de datos con Pentaho  
+## Transformación de datos con Pentaho (I)  
 
-## Transformación de datos con Pentaho: parte 2  
+Cuando volvemos a entrar en nuestro proyecto, vemos el resultado de las extracciones hechas  
 
-## Transformación de datos con Pentaho: parte 3  
+![Resiltado extracciones](https://i.imgur.com/Rfp6tHQ.png)  
+
+Eliminamos nulos  
+
+![Eliminamos nulos](https://i.imgur.com/obcdXd0.png)  
+
+Usamos el conector con la flechita saliente, para conectar  
+
+![Filtro](https://i.imgur.com/xWoz4Ve.png)
+
+En el filtro, debe estar la flechita entrante  
+
+![Sobre filtro](https://i.imgur.com/SWEXOBd.png)  
+
+Conexión hecha  
+
+![Conexión hecha](https://i.imgur.com/7yAAnSZ.png)  
+
+Con dos clicks, levantamos la ventana de propiedades  
+
+![Propiedades](https://i.imgur.com/DMnG2JK.png)
+
+Con un click, levantamos el selector de campos y seleccionamos **_Code_comm_**  
+
+![Selector de campos](https://i.imgur.com/oiNw2bY.png)  
+
+Con un click, también, seleccionamos que en lugar de comparar con algo, con un signo de igual, seleccionamos que no sea nulo  
+
+![Not null](https://i.imgur.com/Gzq9NmS.png)  
+
+Presionamos OK y ya tenemos el filtro hecho  
+
+![OK](https://i.imgur.com/LlFkQIw.png)  
+
+Creamos un conjunto de datos de categorías de productos, para ello añadimos un nuevo filtro y al conectarlo le decimos que nos copie el conjunto de datos originales. Para ello, hacemos clik dentro de la cajita del segundo filtro y seleccionamos la opción **_"Main output of step"_** (salida principal del paso)
+
+!["Main output of step"](https://i.imgur.com/6olKlLP.png)  
+
+Ahora seleccionamos **_"Copy"_**, para hacer una copia del dataset
+
+!["Copy"](https://i.imgur.com/JftWv1s.png)  
+
+Con un click, levantamos la ventana de propiedades y le decimos que **_Level_**=2 (nivel igual a 2)
+
+![**_Level_**=2](https://i.imgur.com/WO03qqp.png)  
+
+Aceptamos y tenemos el dataset de categorías de productos  
+
+![OK](https://i.imgur.com/Cl2qSrI.png)
+
+No obstante, debemos seleccionar campos del nuevo dataset. Para ello seleccionamos valores    
+
+![Seleccionar valores](https://i.imgur.com/87ndwGU.png)  
+
+Manteniendo el puntero dentro de la cajita, decimos que sean los valores no nulos (**_"Result is TRUE"_**)  
+
+![**_"Result is TRUE"_**](https://i.imgur.com/6xjDr7h.png)  
+
+Hacemos **_"get fields to select"_** (recuperar campos) y obtenemos los campos originales  
+
+![**_"get fields to select"_**](https://i.imgur.com/gs1jVrY.png)
+
+Ahora dejamos solo los que nos interesa **_Code\_comm_** y **_Description_**. Borramos los campos que no nos interesa, con la tecla **_suprimir_**. Renombramos **_Code\_comm_** como **_Code_**   
+
+![Solo los campos que interesa](https://i.imgur.com/h3r7IDk.png)  
+
+Ahora filtraremos en el primer dataset que la lóngitud del código se 11 o mayor que 11. Lo hacemos con **_"Calculator"_**  
+
+![**_"Calculator"_**](https://i.imgur.com/YHzrv8J.png)  
+
+Cuando, como antes los valores no sean nulos (**_"Result is TRUE"_**) y abrimos la ventana de propiedades. Le decimos que el campo se llama **_len\_code_** y hacemos click para seleccionar el cálculo    
+
+![len_code](https://i.imgur.com/b8jWBM8.png)  
+
+La operación es la longitud de la cadena de texto (**_"Return the lenght of a string A"_**)
+
+![Longitud](https://i.imgur.com/zhQl8u8.png)  
+
+El campo que queremos calcular es **_"Code"_**  
+
+![Code](https://i.imgur.com/0Jy5O3h.png)  
+
+Ejecutamos para verificar el resultado de la operación que hemos hecho  
+
+![Run](https://i.imgur.com/l7FUpXj.png)  
+
+![Run](https://i.imgur.com/0nwJNdt.png)  
+
+Como siempre, salvamos y ejecutamos  
+
+![salvamos y ejecutamos](https://i.imgur.com/UqG2myP.png)  
+
+Al final de todo, de la vista previa, tenemos el campo que acabamos de añadir y que nos muestra la logitud del campo **_"Code"_**  
+
+![Nuevo campo de longitud](https://i.imgur.com/3ZpfZ8y.png)  
+
+Para filtrar los registros por la longitud de **_Code_**, añadimos otro filtro al que llamaremos **_length_**. Lo conectamos al resultado del **_Calculate_** y decimos que si **_len\_code_** = 11  
+
+![si len_code = 11](https://i.imgur.com/bmo04si.png)  
+
+Ahora añadimos dos operaciones **_String cut_** (una para una longitud de 11 y otra de 12)  
+
+![Strings cut](https://i.imgur.com/3hltQg5.png)  
+
+![Dos Strings cut](https://i.imgur.com/BjzGlY8.png)  
+
+El primer **_"Strings cut"_** es para cuando sí cumple la condición  
+
+![Si cumple condición](https://i.imgur.com/fo4Xtlk.png)
+
+
+El segundo **_"Strings cut"_** es para cuando no cumple la condición  
+
+![No cumple condición](https://i.imgur.com/qwJykn3.png)  
+
+Montamos el resultado, tal como lo hicimos en Python, es decir: 
+  
+1. Si Code_comm tiene 1 dígito, entonces code tiene 11 dígitos, de los que cogeremos 5    
+        code = 5 primeras posiciones  
+        categoría (**_parent\_code_**) = primera posición
+        ![Primera opción](https://i.imgur.com/TYmKCh3.png)
+3. Si Code_comm tiene 2 dígitos, entonces code tiene 12 dígitos, de los que cogeremos 6   
+        code = 6 primeras posiciones  
+        categoría (**_parent\_code_**) = 2 primeras posiciones
+        ![Segunda opción](https://i.imgur.com/33fGFH3.png)
+
+Ejecutamos los pasos   
+
+![Run](https://i.imgur.com/1SmkFnU.png)  
+
+Vemos que hay un error de ejecución, debido a que tratamos como un **_string_**, un campo que es un **_integer_**  
+
+![Errores por tipo de datos](https://i.imgur.com/ao4fnOX.png)  
+
+De manera que vamos a la extracción original, del fichero **_.CSV_** y convertimos el campo Code de **_Integer_** a **_String_**  
+
+![Cambiamos el tipo](https://i.imgur.com/GgAdkZm.png)  
+
+Guardamos, ejecutamos y ya todo es correcto  
+
+![Todo correcto](https://i.imgur.com/MSa6c23.png)  
+
+Además, tengo **_clean\_code_** y **_parent\_code_** generados.
+
+![clean_code y parent_code generados](https://i.imgur.com/znpxT8s.png)  
+
+Ahora tengo que unirlos y para ello utilizo una función que se llama **_Append streams_**  
+
+![Append streams](https://i.imgur.com/EwZebyf.png)  
+
+Ejecutamos y nos da un error  
+
+![Error](https://i.imgur.com/CyFyDJk.png)  
+
+Esto es debido a que en las propiedades le debo decir el orden de los **_Strings cut_**. Lo ponemos    
+
+![Orden](https://i.imgur.com/JlnxQjY.png)  
+
+¡Ejecutamos y listo!   
+
+![Sin errores](https://i.imgur.com/DcRbzrV.png)  
+
+Ahora tenemos que hacer un **_merge_** con los de nivel 2  
+
+![merge](https://i.imgur.com/pCSHjHV.png)  
+
+Hacemos un **_Inner Join_**, diciendo el orden de lo que recibe y los campos que une  
+
+![Inner Join](https://i.imgur.com/TVc18bq.png)  
+
+Nos da un warning y cerramos  
+
+![warning](https://i.imgur.com/kbuRKpx.png)   
+
+Ejecutamos  
+
+![Ejecutamos](https://i.imgur.com/pkZbt6A.png)  
+
+Ahora ya vemos los datos transformados  
+
+![Datos transformados](https://i.imgur.com/sdmRi54.png)
+
+![Datos transformados](https://i.imgur.com/AdzZezv.png)  
+
+Ahora añadimos un ID único con **_Add sequence_**  
+
+![Add sequence](https://i.imgur.com/UhVtBmz.png)  
+
+Le damos nombre y dejamos los parámetros de incremento como están  
+
+![ID único](https://i.imgur.com/cU4Jzmo.png)  
+
+Seleccionamos los valores con un nuevo **_Select values_**  
+
+![Select values](https://i.imgur.com/oAjbzZJ.png)  
+
+Ejecutamos y tenemos los campos deseados y límpios  
+
+![Campos desados y límpios](https://i.imgur.com/qAZVP4P.png)
+
+![Campos desados y límpios](https://i.imgur.com/I89AbOT.png)
+
+**_Nota_**: Los detalles explicativos de las transformaciones están en las transformaciones que hicimos en Python, ya que estamos haciendo el mismo trabajo  
+
+## Transformación de datos con Pentaho (II)  
+
+## Transformación de datos con Pentaho (III)  
 
 ## Carga de datos con Pentaho  
