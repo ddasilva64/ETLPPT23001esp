@@ -20,11 +20,32 @@ Descomprimimos el archivo que acabamos de descargar
 
 ![sitio web oficial](https://i.imgur.com/v1XyhH0.png)  
 
-Si no se abre spoon.bat, seguramente debido a que no tenemos definidas variables de entorno, podemos bajar [**_Open JDK_**](https://learn.microsoft.com/es-es/java/openjdk/download) la siguiente versión, que lo hace en la instalación  
+¡Atención!: La versión que se propone es de un **_jre_** de 32 bits, esto provoca dos problemas:
+1. **_Spoon_** no abre
+2. Bajando el **_jdk_** abre **_Spoon_**, pero no establece conexión con la BD. NO DICE NADA
 
-![Imgur](https://i.imgur.com/0A2D6gU.png)
+SOLUCIÓN:
+1. Disgnóstico del problema:  
+    En lugar de ejecutar **_Spoon.bat_**, ejecutar **_SpoonDebug.bat_**, lo cual genera un log de texto de la ejecución. El resultado dice algo relativo a la VM y la cantidad de memoria utilizada:  
 
-**_Nota_**: **_Oracle JDK_** es lanzado bajo licencia **_OTN_**, mientras que **_OpenJDK_** se ha lanzado bajo la **_GPLv2wCP_** e incluye la licencia **_GPL_**. El código fuente de **_Oracle JDK_** incluye la leyenda **_“ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms. “_**, mientras que los archivos fuentes de **_OpenJDK_** incluyen **_GPL_**.
+    DEBUG: Using PENTAHO_JAVA_HOME  
+    DEBUG: _PENTAHO_JAVA_HOME=C:\Program Files (x86)\Java\jre-1.8       
+    DEBUG: _PENTAHO_JAVA=C:\Program Files (x86)\Java\jre-1.8\bin\java.exe       
+
+    D:\temp\soft\Pentaho_Data_Integration\pdi-ce-9.3.0.0-428\data-integration>"C:\Program Files (x86)\Java\jre-1.8\bin\java.exe"  "-Xms1024m" "-Xmx2048m" "-XX:MaxPermSize=256m" "-Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2" "-Djava.library.path=libswt\win32" "-DKETTLE_HOME=" "-DKETTLE_REPOSITORY=" "-DKETTLE_USER=" "-DKETTLE_PASSWORD=" "-DKETTLE_PLUGIN_PACKAGES=" "-DKETTLE_LOG_SIZE_LIMIT=" "-DKETTLE_JNDI_ROOT=" -jar launcher\launcher.jar -lib ..\libswt\win32  /level:Debug      
+    Java HotSpot(TM) Client VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0        
+    Error occurred during initialization of VM      
+    Could not reserve enough space for 2097152KB object heap  
+
+    * **_Es inútil declarar variables de entorno JAVA\_HOME o PENTAHO\_JAVA\_HOME_**
+    * **_Es inútil copiar la carpeta jre en la carpeta de Pentaho_**
+    * **_Es inútil bajar otros drivers (.jar) de Postgre SQL_**
+    * **_Es inútil bajar otras versiones de Pentaho DI_**
+    * **_Es inútil bajar otros jdk_**
+
+2. Solución:
+    Desinstalar **_Java_** (**_Panel de Control_**). Bajar de la [URL](https://javadl.oracle.com/webapps/download/AutoDL?BundleId=248242_ce59cff5c23f4e2eaf4e778a117d4c5b) el **_jre_** de 64 bits  
+    Instalarlo, ejecutar Spoon.bat, como administrador ¡y listo!  
 
 ### **_Ejecución de Spoon_**  
 
@@ -165,7 +186,201 @@ chmod +x spoon.sh
 
 ## Extracción de datos con Pentaho  
 
+Como siempre hemos hecho, abrimos la imagen Docker de la BD  
 
+![Verfifación](https://i.imgur.com/v4C22FY.png)  
+
+Ahora repetimos la operación con la imagen **_Docker_** (puerto 5432) de **_Postgre SQL_** y nos conectamos   
+
+````
+docker run -e POSTGRES_PASSWORD=xxxxx --rm -it -p 5432:5432/tcp postgres:latest
+````
+
+![Verificación en Linux](https://i.imgur.com/FCb2cG1.png)  
+
+Hacemos doble click en la carpeta Transformaciones y nos crea una estructura de proyecto  
+
+![Nueva transformación](https://i.imgur.com/Cg5AkMf.png)  
+
+Salvamos la transformación como project_etl  
+
+![project_etl](https://i.imgur.com/4JVOYnX.png)  
+
+Para evitar más complicaciones y por coherencia con nuestro objetivo final (en el proyecto que queremos construir), con doble click abrimos una nueva conexión una nueva tabla trades en una nueva BD (source), en nuestra instalación local de Postgre SQL (puerto 5433)  
+
+![nueva conexión a la imagen Docker](https://i.imgur.com/oAEFds0.png)  
+
+**_Nota_**: La conexión sería igual para la imagen **_Docker_** en el puerto 5432, pero no nos interesa   
+
+La probamos y se conecta perfectamente  
+
+![imagen Postgre SQL](https://i.imgur.com/U8HR5Pd.png)
+
+Hacemos click en OK y ya tenemos la conexión a la BD Postgre SQL (puerto 5433)  
+
+![imagen Postgre SQL conectada](https://i.imgur.com/Ipjh5Xq.png)
+
+Hacemos lo mismo con nuestro target, que hemos definido, también, en una instalación local de Postgre SQL (puerto 5433)  
+
+![BD local](https://i.imgur.com/45pPfjC.png)
+
+Ya tenemos las dos conexiones que necesitamos  
+
+![Conexiones realizadas](https://i.imgur.com/WaQv1Wq.png)
+
+¡Atención!: Si en este moneto intentásemos salvar la transformación que estamos realizando, sin haber comenzado, al menos con un input de la BD, no nos salvaría las conexiones a las BD, Pero si, al menos, hacemos un input, entonces sí nos salvaría las conexiones a la BD, de la cual hayamos hecho un input    
+
+Vamos a diseño y seleccionamos una **_table input_**, para hacer una entrada de nuestra tabla **_trades_**, en la BD de entrada (**_source_**). Para ello pinchamos y arrastramos  
+
+![Table input](https://i.imgur.com/7Cm8E2O.png)  
+
+Un doble click nos abre las propiedades de la extracción. Como podemos observar, dado que hay dos conexiones de datos, podemos seleccionar una
+
+![Selección conexión de datos](https://i.imgur.com/P7Mw7Ae.png)  
+
+En  uestro caso se trata de una tabla de una BD, con lo cual hacemos una Select, para verificar el contenido de nuestra extracción  
+
+![Select](https://i.imgur.com/ebPETwA.png)  
+
+Y ya tenemos la tabla en nuestro panel de diseño. Ahora procedemos a ejecutar la extracción   
+
+![Tabla](https://i.imgur.com/drATkQh.png)  
+
+No cambiamos nuestros parámetros. Ejecutamos  
+
+![Run](https://i.imgur.com/AGWuSFz.png)  
+
+Salvamos y ejecutamos la acción en el fichero  
+
+![Save and run](https://i.imgur.com/Jbkaht2.png)  
+
+En la parte inferior, por defecto, el sistema muestra el log de la acción que hemos realizado. Vamos a la solapa "Vista previa" para comprobar el resultado de nuestra extracción  
+
+![Vista previa](https://i.imgur.com/JYg9Bgo.png)  
+
+Comprobamos que hemos extraído correctamente los datos de la tabla **_trades_** de la conexión **_source_**  
+
+![Extracción OK](https://i.imgur.com/xjtaUNR.png)  
+
+Procedemos, ahora, a la extracción del fichero **_.CSV_**  
+
+![.CSV](https://i.imgur.com/QtcqYKY.png)  
+
+Un doble click nos abre las propiedades de la extracción  
+
+![Propiedades CSV](https://i.imgur.com/wH930TQ.png)  
+
+Cambiamos el nombre para identificar el origen de los datos (codes) y con el botón **_Browse_**, buscamos el fichero en nuestro sistema  
+
+![Fichero de origen](https://i.imgur.com/g3npftp.png)  
+
+Obtenemos los campos que vamos a extraer (**_Get fields_**)  
+
+![Get fields](https://i.imgur.com/8aVzLWt.png)
+
+Limitamos la vista a 100 línias, del fichero, para buscar las columnas   
+
+![Imgur](https://i.imgur.com/F7xziVu.png)  
+
+Comprobamos, las columnas y su formato  
+
+![Columnas y formato](https://i.imgur.com/gfzuKYv.png)  
+
+Para prever el fihero, presionamos el botón Preview. Limitamos los registros a previsualizar a 100  
+
+![Limitar nº de registros](https://i.imgur.com/BkMwsl0.png)
+
+Comprobamos que la extracción es correcta  
+
+![Extracción OK](https://i.imgur.com/sBVlLtZ.png)  
+
+Ejecutamos la acción que hemos hecho (extracción), hacemos click en el botón **_Run_**  
+
+![Run](https://i.imgur.com/JqX533y.png)  
+
+No cambiamos parámetros y ejecutamos  
+
+![Run](https://i.imgur.com/m0WUbDF.png)  
+
+Como antes, salvamos y ejecutamos  
+
+![Save & run](https://i.imgur.com/niLrz1y.png)  
+
+Como antes, tenemos un log de la acción y vamos a **_Preview_**  
+
+![Log](https://i.imgur.com/Us8WnaI.png)  
+
+Y vemos que la extracción de **_codes_** es OK
+
+![codes OK](https://i.imgur.com/zscY0WD.png)  
+
+Ahora vamos a la extracción del fichero **_.JSON_**  
+
+![.JSON](https://i.imgur.com/NRi2MtI.png)  
+
+De nuevo, dos clicks, nos llevan a la ventana de propiedades de la etracción  
+
+![Propiedades](https://i.imgur.com/3AQYSxo.png)  
+
+También, como antes, cambiamos el nombre propuesto (ponemos **_contry_**) y buscamos el fichero con Browse  
+
+![Browse](https://i.imgur.com/8nAv9m1.png)  
+
+Seleccionamos, en nuestro sistema, el fichero  
+
+![Selección](https://i.imgur.com/ZuRAHUY.png)  
+
+Añadimos el fichero a nuestra lista de directorios de ficheros, con el botón **_Add_**  
+
+![Add](https://i.imgur.com/NlRUbm3.png)  
+
+El fichero se ha añadido a la lista  
+
+![Añadido](https://i.imgur.com/j73tkZQ.png)  
+
+ Ahora, como es un fichero de datos no estructurados, nosotros definiremos los campos (solapa **_fields_**)  
+
+![Definición de los campos](https://i.imgur.com/R1THH49.png)  
+
+Escribimos la estructura de los campos que deseamos y vamos a la previsualización (**_Preview_**)  
+
+![Campos](https://i.imgur.com/kc1uEIk.png)  
+
+Limitamos las filas a previsualizar  
+
+![Prevew size](https://i.imgur.com/1wcMTNQ.png)  
+
+La previsualización es OK  
+
+![Preview OK](https://i.imgur.com/FKb2SHF.png)  
+
+Ahora realizamos la extracción, con dos clicks sobre el icono  
+
+![Extracción](https://i.imgur.com/2m4hlWv.png)  
+
+En la ventana de propiedades, no cambiamos nada y ejecutamos (Run)  
+
+![Run](https://i.imgur.com/sbcX00a.png)
+
+Como siempre salvamos y ejecutamos la acción  
+
+![Save & run](https://i.imgur.com/42VAJUA.png)  
+
+Como siempre, tenemos el log de la acción y vamos a **_preview_**  
+
+![Log](https://i.imgur.com/Vx5RxJ6.png)  
+
+La vista previa de los datos es OK  
+
+![Preview OK](https://i.imgur.com/0n2MOQl.png)  
+
+¡Salvamos nuestras extracciones y listo!  
+
+![¡Listo!](https://i.imgur.com/2pnYDrA.png)  
+
+Si volvemos a entrar, veremos que nos ha desaparecido la conexión a nuestra BD target (**_datawarehouse_**). La razón es que la interface de **_Spoon_** (**_Kettle_**), solo mantiene conexiones con las que hemos hecho alguna acción (por ejemplo, extracciones). Es decir, mantiene la conexión a **_source_**, porque hemos extraído (al menos) una tabla (**_trades_**)  
+
+![La conexión target ha desaparecido](https://i.imgur.com/1KXxL7T.png)
 
 ## Transformación de datos con Pentaho  
 
