@@ -697,4 +697,73 @@ Quantity
 
 ## Transformación de datos con Pentaho (integración final)  
 
+Finalmente haremos un merge de los datasets que hemos obtenido, para ello hacemos un **_dummy_** (copia)  
+
+![Dummy](https://i.imgur.com/GdVMFJJ.png)
+
+![Dummy](https://i.imgur.com/MQvSJFN.png)
+
+Y para buscar utilizamos un **_lookup_**  
+
+![Stream lookup](https://i.imgur.com/WiUoe9L.png)
+
+![Stream lookup](https://i.imgur.com/m1u6eLa.png)
+
+Cogemos la descripción de ambas tablas para obtener el ID  
+
+![Stream lookup campo 1](https://i.imgur.com/LLhPoCU.png)
+
+![Stream lookup campo 2](https://i.imgur.com/Yc2bQf8.png)
+
+![Stream lookup ID](https://i.imgur.com/NdB79Yk.png)
+
+Añadimos otro lookup y ahora repetimos con **_years_**  
+
+![Lookup para years](https://i.imgur.com/WfDmMFU.png)
+
+![Lookup para years](https://i.imgur.com/BXGFRov.png)
+
+![Lookup para years](https://i.imgur.com/S97hiUo.png)
+
+Repetimos la operación para **_quantity_**  
+
+![Lookup para quantity](https://i.imgur.com/hDRCzY5.png)
+
+El resultado es  
+
+![Resultado](https://i.imgur.com/lGI0Saa.png)
+
+Volvemos a hacer un merge (con **_lookup_**), con **_countries_**  
+
+![Lookup para countries](https://i.imgur.com/QYwF9Lj.png)
+
+![Lookup para countries](https://i.imgur.com/emVXZsh.png)
+
+Repetimos para las **_categorías de productos_**  
+
+![Lookup para codes](https://i.imgur.com/P54wCNg.png)
+
+![Lookup para codes](https://i.imgur.com/u2tXKHZ.png)
+
+Añadimos un ID general (**_id\_trades_**), al dataset resultante  
+
+![id_trades](https://i.imgur.com/JzP5qX7.png)
+
+Ejecutamos y comprobamos  
+
+![run](https://i.imgur.com/CzLvZYT.png)
+
+Seleccionamos los valores que necesitamos  
+
+![valores que necesitamos](https://i.imgur.com/WgkXTBK.png)
+
+Ejecutamos y comprobamos  
+
+![run](https://i.imgur.com/hOPXgar.png)
+
+¡Y listo!, ya tenemos la tabla de hechos montada, con lo cual, ya hemos acabado las transformaciones en Pentaho  
+
 ## Carga de datos con Pentaho  
+
+Como ya se ha comentado, en lugar de utilizar Redshit, utilizaremos una BD Postgre SQL (local), para hacer la carga  
+
