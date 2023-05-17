@@ -765,5 +765,212 @@ Ejecutamos y comprobamos
 
 ## Carga de datos con Pentaho  
 
-Como ya se ha comentado, en lugar de utilizar Redshit, utilizaremos una BD Postgre SQL (local), para hacer la carga  
+Como ya se ha comentado, en lugar de utilizar **_Redshit_**, utilizaremos una BD Postgre SQL (local), para hacer la carga  
+
+Si utilizamos Redshift, recordemos, que al poner el dato del **_Target schema_** debe ser **_public_**, porque ese es el esquema donde hemos creado las tablas. Las tablas, las denominaremos en español, para diferenciarlas de las que creamos en **_Python_** y así poder comparar resultados. Los campos, los dejamos con los mismos nombres que ya creamos anteriormente  
+
+En **_Redshift_** , este ejemplo, se había usado **_etl\_test_** por ser el esquema donde se había dejado  
+
+![etl_test](https://i.imgur.com/nEsqweT.png)
+
+Hemos creado para nuestro **_target_** una BD en **_Postgre SQL_** llamada **_datawarehouse_**, en la cual crearemos una tabla con una estructura como la propuesta. La conectamos  
+
+![target](https://i.imgur.com/SJVGdLd.png)
+
+Ponemos un **_table output_**, para la tabla de destino de nuestro **_ETL_**  
+
+![table output](https://i.imgur.com/eVomzMN.png)
+
+Hacemos una copia, como una copia, **_quantity_** (dimensión final). Creamos una conexión hacia el **_target_**. El schema (público), se llama **_public_** (por defecto de **_Postgre SQL_**) y la tabla se llama **_cantidad_**   
+
+El script de creación de la tabla en **_PgAdmin_** es:
+
+````Postgre SQL
+-- Table: public.cantidad
+
+-- DROP TABLE IF EXISTS public.cantidad;
+
+CREATE TABLE IF NOT EXISTS public.cantidad
+(
+    id_quantity integer,
+    quantity_name character varying(50) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.cantidad
+    OWNER to postgres;
+````
+
+![conexión a cantidad](https://i.imgur.com/yHsL3ml.png)
+
+**_Nota_**: Al campo **_quantity\_name_** en **_Python_** lo llamamos, simplemente, **_quantity_**, por lo tanto, lo dejaremos como **_quantity_*
+
+Ejecutamos, comprobamos los resultados en **_Pentaho_**  
+
+![quantity en Pentaho](https://i.imgur.com/Tais3iq.png)
+
+Y comprobamos los resultados en **_PgAdmin_**  
+
+![quantity en PgAdmin](https://i.imgur.com/xKn1nfD.png)
+
+Con lo cual, vemos que ya hemos generado generado el contenido de la tabla cantidad la tabla **_cantidad_** de **_target_**  
+
+Repetimos el **_pipeline_** para el resto de tablas  
+
+Para codes  
+
+````Postgre SQL
+-- Table: public.categorias
+
+-- DROP TABLE IF EXISTS public.categorias;
+
+CREATE TABLE IF NOT EXISTS public.categorias
+(
+    id_code integer,
+    code bigint,
+    description character varying(2000) COLLATE pg_catalog."default",
+    parent_description character varying(1000) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.categorias
+    OWNER to postgres;
+````
+
+![categorias](https://i.imgur.com/wCozSLi.png)
+
+**_Nota_**: Hacemos, como siempre las conversiones de nombres, respecto a lo que hicimos en Python para poder comparar resultados fácimente. Además, en el select values, en metadata, convertimos **_clean\_code_** a **_Integer_** en codificación **_UTF-8_**. La razón es que, en Postgre SQL, definimos el campo como **_bigint_**. De este modo no tendremos errores de conversión de tipos. Esta operación es una especie de **_cast_** de **_java_**  
+
+![cast de clean-code](https://i.imgur.com/nCl9YLt.png)
+
+Ejecutamos y probamos  
+
+![stream data](https://i.imgur.com/D6NFlBq.png)
+
+![DB data](https://i.imgur.com/zxcUxJ6.png)
+
+Con lo cual está bien grabado  
+
+Para countries  
+
+````Postgre SQL
+-- Table: public.paises
+
+-- DROP TABLE IF EXISTS public.paises;
+
+CREATE TABLE IF NOT EXISTS public.paises
+(
+    id_country integer,
+    alpha_3 character varying(3) COLLATE pg_catalog."default",
+    country character varying(50) COLLATE pg_catalog."default",
+    region character varying(50) COLLATE pg_catalog."default",
+    sub_region character varying(50) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.paises
+    OWNER to postgres;
+````
+
+Hacemos la misma operación  
+
+![stream data](https://i.imgur.com/WbF2zTQ.png)
+
+![DB data](https://i.imgur.com/HZZX70N.png)
+
+Correcto  
+
+Para years  
+
+````Postgre SQL
+-- Table: public.anios
+
+-- DROP TABLE IF EXISTS public.anios;
+
+CREATE TABLE IF NOT EXISTS public.anios
+(
+    id_year integer,
+    year real
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.anios
+    OWNER to postgres;
+````
+
+La misma operación  
+
+![stream data](https://i.imgur.com/YSjHSLU.png)
+
+![DB data](https://i.imgur.com/9kJ4sKy.png)
+
+Correcto
+
+Para flow  
+
+````Postgre SQL
+-- Table: public.flujo
+
+-- DROP TABLE IF EXISTS public.flujo;
+
+CREATE TABLE IF NOT EXISTS public.flujo
+(
+    id_flow integer,
+    flow character varying(50) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.flujo
+    OWNER to postgres;
+````
+
+La misma operación  
+
+![stream data](https://i.imgur.com/R17BsvJ.png)
+
+![DB data](https://i.imgur.com/6RlE9IR.png)
+
+Correcto
+
+Para trades (tabla de hechos)  
+
+````Postgre SQL
+-- Table: public.transacciones
+
+-- DROP TABLE IF EXISTS public.transacciones;
+
+CREATE TABLE IF NOT EXISTS public.transacciones
+(
+    id_trades integer,
+    trade_usd double precision,
+    kg double precision,
+    quantity double precision,
+    id_code integer,
+    id_country integer,
+    id_quantity integer,
+    id_flow integer,
+    id_year integer
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.transacciones
+    OWNER to postgres;
+````
+
+La misma operación  
+
+![stream data](https://i.imgur.com/XjD2Dev.png)
+
+![DB data](https://i.imgur.com/IpOFE03.png)
+
+Correcto
+
+![project-etl](https://i.imgur.com/KXsFcBr.png)
+
 
