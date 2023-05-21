@@ -169,7 +169,9 @@ Datasets
 
 | **_Kaggle, World Bank Indicators Collection_** | Format | Convert to |
 | :--------------------------------------------- | :----- | :--------- |
-| PopulationDataWorldBank                        | .XLSX  | .XLS       |
+| PopulationDataWorldBank                        | .XLSX  |            |
+
+**_Notice_**: PDI is built in Java, and the correct way to get .XLSX file is with the driver (.jar), which is called Excel 2007 XLSX (Apache POI Streaming)  
 
 
 [Back to Table of contents :arrow_double_up:](#table-of-contents)

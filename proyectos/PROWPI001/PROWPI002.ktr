@@ -431,7 +431,7 @@
     <created_date>2023/05/20 22:43:45.869</created_date>
     <modified_user>-</modified_user>
     <modified_date>2023/05/20 22:43:45.869</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -443,31 +443,938 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>pai_ext</from>
-      <to>Country Code lower case</to>
+      <from>pai_princ</from>
+      <to>rename columns pi_princ</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>pai_princ</from>
-      <to>rename columns</to>
+      <from>pob02</from>
+      <to>rename columns pob02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>rename columns pob02</from>
+      <to>pob02 codigo_pais lower case</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Country Code lower case</from>
+      <to>sort pai01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>rename columns pi_princ</from>
+      <to>sort pai_princ</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>countries</from>
+      <to>sort countries</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>pob02 codigo_pais lower case</from>
+      <to>sort pob02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort pai01</from>
+      <to>inner join pai01 &amp; pai_princ</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort pai_princ</from>
+      <to>inner join pai01 &amp; pai_princ</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inner join pai01 &amp; pai_princ</from>
+      <to>countries</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort countries</from>
+      <to>innner join countries &amp; pob02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort pob02</from>
+      <to>innner join countries &amp; pob02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>pai_ext</from>
+      <to>region not null</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>region not null</from>
+      <to>Country Code lower case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>edu02</from>
+      <to>iso3 lower case 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>iso3 lower case 2</from>
+      <to>rename columns edu02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort countries</from>
+      <to>sorted countries 01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>rename columns edu02</from>
+      <to>sorted edu02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sorted countries 01</from>
       <to>Merge join</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>rename columns</from>
+      <from>sorted edu02</from>
       <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>des02</from>
+      <to>rename columns des02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>rename columns des02</from>
+      <to>des02 codigo_pais lower case </to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort countries</from>
+      <to>sorted countries 02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sorted countries 02</from>
+      <to>innner join countries &amp; des02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>des02 codigo_pais lower case </from>
+      <to>sorted des02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sorted des02</from>
+      <to>innner join countries &amp; des02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>innner join countries &amp; des02</from>
+      <to>des02 new</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Merge join</from>
-      <to>Select values</to>
+      <to>edu02 new</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>innner join countries &amp; pob02</from>
+      <to>pob02 new</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>pai_eng</from>
+      <to>sorted pai_eng01</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>pai_eng</from>
+      <to>sorted pai_eng01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sal02</from>
+      <to>rename columns sal02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>rename columns sal02</from>
+      <to>sorted sal02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sorted pai_eng01</from>
+      <to>innner join pai_eng &amp; sal02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sorted sal02</from>
+      <to>innner join pai_eng &amp; sal02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>innner join pai_eng &amp; sal02</from>
+      <to>sal02 new</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sorted pai_eng01</from>
+      <to>sorted pai_eng02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sorted pai_eng02</from>
+      <to>Regex Cabo Verde</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Regex Cabo Verde</from>
+      <to>Cabo Verde</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Regex Cabo Verde</from>
+      <to>Not Cabo Verde</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Regex Cabo Verde</from>
+      <to>Not Cabo Verde</to>
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>Country Code lower case</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Country Code</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>N</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Merge join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>sorted countries 01</step1>
+    <step2>sorted edu02</step2>
+    <keys_1>
+      <key>codigo_pais</key>
+    </keys_1>
+    <keys_2>
+      <key>codigo_pais</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1104</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>countries</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+      </field>
+      <field>
+        <name>pais</name>
+      </field>
+      <field>
+        <name>Region</name>
+        <rename>region</rename>
+      </field>
+      <field>
+        <name>IncomeGroup</name>
+        <rename>grupo_ingresos</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>912</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>des02</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\datasources\API_NY.GDP.MKTP.KD.ZG_DS2_en_csv_v2_4701072.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>Country Code</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Indicator Name</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>21</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>des02 codigo_pais lower case </name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>codigo_pais</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>N</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>des02 new</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+      </field>
+      <field>
+        <name>tasa_crecimiento_pib</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>edu02</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\datasources\HDR21-22_Composite_indices_complete_time_series.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>iso3</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>le_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>mys_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>gnipc_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>le_f_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>mys_f_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>gni_pc_f_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>le_m_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>mys_m_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>gni_pc_m_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>mmr_2021</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>abr_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>se_f_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>se_m_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>lfpr_f_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>lfpr_m_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>co2_prod_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>mf_2021</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>edu02 new</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+      </field>
+      <field>
+        <name>espernza_vida</name>
+      </field>
+      <field>
+        <name>promedio_anos_escolaridad</name>
+      </field>
+      <field>
+        <name>ingreso_nacional_bruto_pc</name>
+      </field>
+      <field>
+        <name>espernza_vida_f</name>
+      </field>
+      <field>
+        <name>promedio_anos_escolaridad_f</name>
+      </field>
+      <field>
+        <name>ingreso_nacional_bruto_pc_f</name>
+      </field>
+      <field>
+        <name>espernza_vida_m</name>
+      </field>
+      <field>
+        <name>promedio_anos_escolaridad_m</name>
+      </field>
+      <field>
+        <name>ingreso_nacional_bruto_pc_m</name>
+      </field>
+      <field>
+        <name>tasa_mortalidad_materna</name>
+      </field>
+      <field>
+        <name>tasa_natalidad_adolescente</name>
+      </field>
+      <field>
+        <name>algo_educación_secundaria_f</name>
+      </field>
+      <field>
+        <name>algo_educación_secundaria_m</name>
+      </field>
+      <field>
+        <name>tasa_participacion_laboral_f</name>
+      </field>
+      <field>
+        <name>tasa_participacion_laboral_m</name>
+      </field>
+      <field>
+        <name>emisiones_co2_pc</name>
+      </field>
+      <field>
+        <name>huella_material_pc</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>inner join pai01 &amp; pai_princ</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>sort pai01</step1>
+    <step2>sort pai_princ</step2>
+    <keys_1>
+      <key>Country Code</key>
+    </keys_1>
+    <keys_2>
+      <key>codigo_pais</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>innner join countries &amp; des02</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>sorted countries 02</step1>
+    <step2>sorted des02</step2>
+    <keys_1>
+      <key>codigo_pais</key>
+    </keys_1>
+    <keys_2>
+      <key>codigo_pais</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1120</xloc>
+      <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>innner join countries &amp; pob02</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>sort countries</step1>
+    <step2>sort pob02</step2>
+    <keys_1>
+      <key>codigo_pais</key>
+    </keys_1>
+    <keys_2>
+      <key>codigo_pais</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1152</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>iso3 lower case 2</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>iso3</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>N</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>pai01</name>
     <type>ExcelInput</type>
@@ -503,55 +1410,7 @@
     </file>
     <fields>
       <field>
-        <name>Country Name</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
         <name>Country Code</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Indicator Name</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Indicator Code</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Country Code_22</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -586,80 +1445,13 @@
         <decimal/>
         <group/>
       </field>
-      <field>
-        <name>SpecialNotes</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>TableName</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>INDICATOR_CODE</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>INDICATOR_NAME</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>SOURCE_NOTE</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>SOURCE_ORGANIZATION</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
     </fields>
     <sheets>
+      <sheet>
+        <name>Country Metadata</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+      </sheet>
     </sheets>
     <strict_types>N</strict_types>
     <error_ignored>N</error_ignored>
@@ -691,69 +1483,6 @@
     <GUI>
       <xloc>112</xloc>
       <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>pai_princ</name>
-    <type>CsvInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <filename>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\datasources\countries_esp.csv</filename>
-    <filename_field/>
-    <rownum_field/>
-    <include_filename>N</include_filename>
-    <separator>,</separator>
-    <enclosure>"</enclosure>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <format>mixed</format>
-    <encoding/>
-    <fields>
-      <field>
-        <name>alpha3</name>
-        <type>String</type>
-        <format/>
-        <currency>€</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>3</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>name</name>
-        <type>String</type>
-        <format/>
-        <currency>€</currency>
-        <decimal>,</decimal>
-        <group>.</group>
-        <length>23</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>112</xloc>
-      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -837,8 +1566,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>288</yloc>
+      <xloc>352</xloc>
+      <yloc>688</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -846,7 +1575,7 @@
     <name>pai_ext</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -855,56 +1584,13 @@
     </partitioning>
     <fields>
       <field>
-        <name>Country Name</name>
-        <rename/>
-      </field>
-      <field>
         <name>Country Code</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Indicator Name</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Indicator Code</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Country Code_22</name>
-        <rename/>
       </field>
       <field>
         <name>Region</name>
-        <rename/>
       </field>
       <field>
         <name>IncomeGroup</name>
-        <rename/>
-      </field>
-      <field>
-        <name>SpecialNotes</name>
-        <rename/>
-      </field>
-      <field>
-        <name>TableName</name>
-        <rename/>
-      </field>
-      <field>
-        <name>INDICATOR_CODE</name>
-        <rename/>
-      </field>
-      <field>
-        <name>INDICATOR_NAME</name>
-        <rename/>
-      </field>
-      <field>
-        <name>SOURCE_NOTE</name>
-        <rename/>
-      </field>
-      <field>
-        <name>SOURCE_ORGANIZATION</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -917,14 +1603,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
+      <xloc>240</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Country Code lower case</name>
-    <type>StringOperations</type>
+    <name>pai_princ</name>
+    <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -933,12 +1619,210 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <filename>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\datasources\countries_esp.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <format>mixed</format>
+    <encoding/>
     <fields>
       <field>
-        <in_stream_name>Country Code</in_stream_name>
+        <name>alpha3</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>name</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>23</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>pob02</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\datasources\2021_population.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <format>mixed</format>
+    <encoding/>
+    <fields>
+      <field>
+        <name>iso_code</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>2021_last_updated</name>
+        <type>Number</type>
+        <format>#,###,###.#</format>
+        <currency>€</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>13</length>
+        <precision>3</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>area</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>16</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>density_sq_km</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>11</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>growth_rate</name>
+        <type>String</type>
+        <format/>
+        <currency>€</currency>
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>6</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>pob02 codigo_pais lower case</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>codigo_pais</in_stream_name>
         <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>N</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>area</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>N</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>densidad_poblacion</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>N</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tasa_crecimiento</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
         <pad_char/>
         <pad_len/>
@@ -957,16 +1841,230 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
+      <xloc>768</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>pob02 new</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+      </field>
+      <field>
+        <name>poblacion</name>
+      </field>
+      <field>
+        <name>area</name>
+      </field>
+      <field>
+        <name>densidad_poblacion</name>
+      </field>
+      <field>
+        <name>tasa_crecimiento</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1312</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>region not null</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to/>
+    <send_false_to/>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>Region</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue/>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>rename columns</name>
+    <name>rename columns des02</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Country Code</name>
+        <rename>codigo_pais</rename>
+      </field>
+      <field>
+        <name>2021</name>
+        <rename>tasa_crecimiento_pib</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>rename columns edu02</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>iso3</name>
+        <rename>codigo_pais</rename>
+      </field>
+      <field>
+        <name>le_2021</name>
+        <rename>espernza_vida</rename>
+      </field>
+      <field>
+        <name>mys_2021</name>
+        <rename>promedio_anos_escolaridad</rename>
+      </field>
+      <field>
+        <name>gnipc_2021</name>
+        <rename>ingreso_nacional_bruto_pc</rename>
+      </field>
+      <field>
+        <name>le_f_2021</name>
+        <rename>espernza_vida_f</rename>
+      </field>
+      <field>
+        <name>mys_f_2021</name>
+        <rename>promedio_anos_escolaridad_f</rename>
+      </field>
+      <field>
+        <name>gni_pc_f_2021</name>
+        <rename>ingreso_nacional_bruto_pc_f</rename>
+      </field>
+      <field>
+        <name>le_m_2021</name>
+        <rename>espernza_vida_m</rename>
+      </field>
+      <field>
+        <name>mys_m_2021</name>
+        <rename>promedio_anos_escolaridad_m</rename>
+      </field>
+      <field>
+        <name>gni_pc_m_2021</name>
+        <rename>ingreso_nacional_bruto_pc_m</rename>
+      </field>
+      <field>
+        <name>mmr_2021</name>
+        <rename>tasa_mortalidad_materna</rename>
+      </field>
+      <field>
+        <name>abr_2021</name>
+        <rename>tasa_natalidad_adolescente</rename>
+      </field>
+      <field>
+        <name>se_f_2021</name>
+        <rename>algo_educación_secundaria_f</rename>
+      </field>
+      <field>
+        <name>se_m_2021</name>
+        <rename>algo_educación_secundaria_m</rename>
+      </field>
+      <field>
+        <name>lfpr_f_2021</name>
+        <rename>tasa_participacion_laboral_f</rename>
+      </field>
+      <field>
+        <name>lfpr_m_2021</name>
+        <rename>tasa_participacion_laboral_m</rename>
+      </field>
+      <field>
+        <name>co2_prod_2021</name>
+        <rename>emisiones_co2_pc</rename>
+      </field>
+      <field>
+        <name>mf_2021</name>
+        <rename>huella_material_pc</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>rename columns pi_princ</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -993,47 +2091,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
+      <xloc>368</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Merge join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>rename columns</step1>
-    <step2>Country Code lower case</step2>
-    <keys_1>
-      <key>codigo_pais</key>
-    </keys_1>
-    <keys_2>
-      <key>Country Code</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>528</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values</name>
+    <name>rename columns pob02</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -1045,20 +2109,23 @@
     </partitioning>
     <fields>
       <field>
-        <name>codigo_pais</name>
-        <rename/>
+        <name>iso_code</name>
+        <rename>codigo_pais</rename>
       </field>
       <field>
-        <name>pais</name>
-        <rename/>
+        <name>2021_last_updated</name>
+        <rename>poblacion</rename>
       </field>
       <field>
-        <name>Region</name>
-        <rename>region</rename>
+        <name>area</name>
       </field>
       <field>
-        <name>IncomeGroup</name>
-        <rename>grupo_ingresos</rename>
+        <name>density_sq_km</name>
+        <rename>densidad_poblacion</rename>
+      </field>
+      <field>
+        <name>growth_rate</name>
+        <rename>tasa_crecimiento</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1071,12 +2138,834 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>144</yloc>
+      <xloc>368</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sal02</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\datasources\NHA indicators.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>Countries</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Indicators</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>2020</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Table</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+      </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <spreadsheet_type>SAX_POI</spreadsheet_type>
+    <password>Encrypted </password>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort countries</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort pai01</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Country Code</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>Region</name>
+        <ascending>N</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>IncomeGroup</name>
+        <ascending>N</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort pai_princ</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>pais</name>
+        <ascending>N</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort pob02</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sorted countries 01</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sorted countries 02</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>528</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sorted des02</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>944</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sorted edu02</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codigo_pais</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sorted pai_eng01</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>name</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>688</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>rename columns sal02</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Countries</name>
+        <rename>pais</rename>
+      </field>
+      <field>
+        <name>Indicators</name>
+        <rename>indicador</rename>
+      </field>
+      <field>
+        <name>2020</name>
+        <rename>2021</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sorted sal02</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>pais</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>innner join pai_eng &amp; sal02</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>sorted pai_eng01</step1>
+    <step2>sorted sal02</step2>
+    <keys_1>
+      <key>name</key>
+    </keys_1>
+    <keys_2>
+      <key>pais</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sal02 new</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>alpha2</name>
+        <rename/>
+      </field>
+      <field>
+        <name>alpha3</name>
+        <rename/>
+      </field>
+      <field>
+        <name>name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>pais</name>
+        <rename/>
+      </field>
+      <field>
+        <name>indicador</name>
+        <rename/>
+      </field>
+      <field>
+        <name>2021</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sorted pai_eng02</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>688</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Data validator</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <validate_all>N</validate_all>
+    <concat_errors>N</concat_errors>
+    <concat_separator>|</concat_separator>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1512</xloc>
+      <yloc>868</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Regex Cabo Verde</name>
+    <type>Validator</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <validate_all>N</validate_all>
+    <concat_errors>Y</concat_errors>
+    <concat_separator>|</concat_separator>
+    <validator_field>
+      <name>name</name>
+      <validation_name>Cabo Verde</validation_name>
+      <max_length/>
+      <min_length/>
+      <null_allowed>Y</null_allowed>
+      <only_null_allowed>N</only_null_allowed>
+      <only_numeric_allowed>N</only_numeric_allowed>
+      <data_type>None</data_type>
+      <data_type_verified>N</data_type_verified>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <max_value/>
+      <min_value/>
+      <start_string/>
+      <end_string/>
+      <start_string_not_allowed/>
+      <end_string_not_allowed/>
+      <regular_expression>[C][a][b][o][ ][V].*</regular_expression>
+      <regular_expression_not_allowed/>
+      <error_code/>
+      <error_description/>
+      <is_sourcing_values>N</is_sourcing_values>
+      <sourcing_step/>
+      <sourcing_field/>
+      <allowed_value/>
+    </validator_field>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>688</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Cabo Verde</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>800</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Not Cabo Verde</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>688</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>Regex Cabo Verde</source_step>
+      <target_step>Not Cabo Verde</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
