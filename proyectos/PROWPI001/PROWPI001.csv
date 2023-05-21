@@ -1,0 +1,94 @@
+index,codigo_pais,pais,region,grupo_ingresos,densidad_poblacion,tasa_crecimiento,emisiones_co2_pc,gasto_corriente_salud_pc,espernza_vida,promedio_anos_escolaridad,ingreso_nacional_bruto_pc,tasa_mortalidad_materna,tasa_natalidad_adolescente
+0,mys,Malasia,Asia oriental y el Pacífico,Ingresos medios altos,top-ten,,,,,,,,
+1,syr,Siria,Oriente Medio y Norte de África,Ingresos bajos,top-ten,top-ten,,,,,,,
+2,srb,Serbia,Europa y Asia Central,Ingresos medios altos,top-ten,,,,,,,,
+3,dma,Dominica,Latinoamérica y Caribe,Ingresos medios altos,top-ten,,,,,,,,
+4,ken,Kenia,Africa Sub-sahariana,Ingresos medios bajos,top-ten,,,,,,,,
+5,irq,Irak,Oriente Medio y Norte de África,Ingresos medios altos,top-ten,,,,,,,,
+6,khm,Camboya,Asia oriental y el Pacífico,Ingresos medios bajos,top-ten,,,,,,,,
+7,esp,España,Europa y Asia Central,Ingresos altos,top-ten,bottom-ten,,,top-ten,,,,
+8,tls,Timor Oriental,Asia oriental y el Pacífico,Ingresos medios bajos,top-ten,,,,,,,,
+9,rus,Rusia,Europa y Asia Central,Ingresos medios altos,top-ten,bottom-ten,,,,,,,
+10,bgd,Bangladés,Asia del Sur,Ingresos medios bajos,bottom-ten,,,,,,,,
+11,mlt,Malta,Oriente Medio y Norte de África,Ingresos altos,bottom-ten,,,,top-ten,,,,
+12,mdv,Maldivas,Asia del Sur,Ingresos medios altos,bottom-ten,,,,,,,,
+13,alb,Albania,Europa y Asia Central,Ingresos medios altos,bottom-ten,,,,,,,,
+14,arm,Armenia,Europa y Asia Central,Ingresos medios altos,bottom-ten,,,,,,,,
+15,cri,Costa Rica,Latinoamérica y Caribe,Ingresos medios altos,bottom-ten,,,,,,,,
+16,svn,Eslovenia,Europa y Asia Central,Ingresos altos,bottom-ten,bottom-ten,,,,,,,
+17,cub,Cuba,Latinoamérica y Caribe,Ingresos medios altos,bottom-ten,bottom-ten,,,,,,,
+18,hun,Hungría,Europa y Asia Central,Ingresos altos,bottom-ten,,,,,,,,
+19,egy,Egipto,Oriente Medio y Norte de África,Ingresos medios bajos,bottom-ten,,,,,,,,
+20,ner,Níger,Africa Sub-sahariana,Ingresos bajos,,top-ten,bottom-ten,,,bottom-ten,bottom-ten,,top-ten
+21,gnq,Guinea Ecuatorial,Africa Sub-sahariana,Ingresos medios altos,,top-ten,,,,,,,top-ten
+22,ago,Angola,Africa Sub-sahariana,Ingresos medios bajos,,top-ten,,,,,,,top-ten
+23,bdi,Burundi,Africa Sub-sahariana,Ingresos bajos,,top-ten,bottom-ten,bottom-ten,,bottom-ten,bottom-ten,,
+24,uga,Uganda,Africa Sub-sahariana,Ingresos bajos,,top-ten,bottom-ten,,,,,,
+25,mli,Malí,Africa Sub-sahariana,Ingresos bajos,,top-ten,,,bottom-ten,bottom-ten,,,top-ten
+26,tcd,Chad,Africa Sub-sahariana,Ingresos bajos,,top-ten,bottom-ten,,bottom-ten,bottom-ten,bottom-ten,top-ten,top-ten
+27,tza,Tanzania,Africa Sub-sahariana,Ingresos medios bajos,,top-ten,,,,,,,top-ten
+28,som,Somalia,Africa Sub-sahariana,Ingresos bajos,,top-ten,bottom-ten,,bottom-ten,,bottom-ten,top-ten,
+29,mne,Montenegro,Europa y Asia Central,Ingresos medios altos,,bottom-ten,,,,,,,
+30,mkd,Macedonia del Norte,Europa y Asia Central,Ingresos medios altos,,bottom-ten,,,,,,,
+31,blr,Bielorrusia,Europa y Asia Central,Ingresos medios altos,,bottom-ten,,,,,,bottom-ten,
+32,est,Estonia,Europa y Asia Central,Ingresos altos,,bottom-ten,,,,top-ten,,,
+33,pol,Polonia,Europa y Asia Central,Ingresos altos,,bottom-ten,,,,,,bottom-ten,
+34,ita,Italia,Europa y Asia Central,Ingresos altos,,bottom-ten,,,,,,bottom-ten,
+35,qat,Catar,Oriente Medio y Norte de África,Ingresos altos,,,top-ten,,,,top-ten,,
+36,mng,Mongolia,Asia oriental y el Pacífico,Ingresos medios bajos,,,top-ten,,,,,,
+37,tto,Trinidad y Tobago,Latinoamérica y Caribe,Ingresos altos,,,top-ten,,,,,,
+38,brn,Brunéi,Asia oriental y el Pacífico,Ingresos altos,,,top-ten,,,,top-ten,,
+39,kwt,Kuwait,Oriente Medio y Norte de África,Ingresos altos,,,top-ten,,,,,,
+40,bhr,Baréin,Oriente Medio y Norte de África,Ingresos altos,,,top-ten,,,,,,
+41,sau,Arabia Saudita,Oriente Medio y Norte de África,Ingresos altos,,,top-ten,,,,,,
+42,kaz,Kazajistán,Europa y Asia Central,Ingresos medios altos,,,top-ten,,,,,,
+43,aus,Australia,Asia oriental y el Pacífico,Ingresos altos,,,top-ten,top-ten,top-ten,,,,
+44,are,Emiratos Árabes Unidos,Oriente Medio y Norte de África,Ingresos altos,,,top-ten,,,,top-ten,bottom-ten,bottom-ten
+45,cod,República Democrática del Congo,Africa Sub-sahariana,Ingresos bajos,,,bottom-ten,bottom-ten,,,bottom-ten,,
+46,caf,República Centroafricana,Africa Sub-sahariana,Ingresos bajos,,,bottom-ten,,bottom-ten,,bottom-ten,top-ten,top-ten
+47,mwi,Malaui,Africa Sub-sahariana,Ingresos bajos,,,bottom-ten,bottom-ten,,,,,
+48,rwa,Ruanda,Africa Sub-sahariana,Ingresos bajos,,,bottom-ten,,,,,,
+49,ssd,Sudán del Sur,Africa Sub-sahariana,Ingresos bajos,,,bottom-ten,bottom-ten,bottom-ten,,bottom-ten,top-ten,
+50,usa,Estados Unidos,América del Norte,Ingresos altos,,,,top-ten,,top-ten,top-ten,,
+51,che,Suiza,Europa y Asia Central,Ingresos altos,,,,top-ten,top-ten,top-ten,top-ten,,bottom-ten
+52,nor,Noruega,Europa y Asia Central,Ingresos altos,,,,top-ten,top-ten,,top-ten,bottom-ten,bottom-ten
+53,lux,Luxemburgo,Europa y Asia Central,Ingresos altos,,,,top-ten,,,top-ten,,
+54,dnk,Dinamarca,Europa y Asia Central,Ingresos altos,,,,top-ten,,,,bottom-ten,bottom-ten
+55,irl,Irlanda,Europa y Asia Central,Ingresos altos,,,,top-ten,,,top-ten,,
+56,swe,Suecia,Europa y Asia Central,Ingresos altos,,,,top-ten,top-ten,,,,
+57,deu,Alemania,Europa y Asia Central,Ingresos altos,,,,top-ten,,top-ten,,,
+58,nld,Países Bajos,Europa y Asia Central,Ingresos altos,,,,top-ten,,,,,bottom-ten
+59,mdg,Madagascar,Africa Sub-sahariana,Ingresos bajos,,,,bottom-ten,,,,,top-ten
+60,gmb,Gambia,Africa Sub-sahariana,Ingresos bajos,,,,bottom-ten,,,,,
+61,sdn,Sudán,Africa Sub-sahariana,Ingresos bajos,,,,bottom-ten,,,,,
+62,eri,Eritrea,Africa Sub-sahariana,Ingresos bajos,,,,bottom-ten,,,,,
+63,eth,Etiopía,Africa Sub-sahariana,Ingresos bajos,,,,bottom-ten,,,,,
+64,ben,Benín,Africa Sub-sahariana,Ingresos medios bajos,,,,bottom-ten,,,,,
+65,mco,Mónaco,Europa y Asia Central,Ingresos altos,,,,,top-ten,,,,
+66,jpn,Japón,Asia oriental y el Pacífico,Ingresos altos,,,,,top-ten,top-ten,,,bottom-ten
+67,kor,Corea del Sur,Asia oriental y el Pacífico,Ingresos altos,,,,,top-ten,,,,bottom-ten
+68,lie,Liechtenstein,Europa y Asia Central,Ingresos altos,,,,,top-ten,,top-ten,,bottom-ten
+69,nga,Nigeria,Africa Sub-sahariana,Ingresos medios bajos,,,,,bottom-ten,,,top-ten,
+70,lso,Lesoto,Africa Sub-sahariana,Ingresos medios bajos,,,,,bottom-ten,,,,
+71,swz,Suazilandia,Africa Sub-sahariana,Ingresos medios bajos,,,,,bottom-ten,,,,
+72,civ,Costa de Marfil,Africa Sub-sahariana,Ingresos medios bajos,,,,,bottom-ten,,,,
+73,gin,Guinea,Africa Sub-sahariana,Ingresos bajos,,,,,bottom-ten,bottom-ten,,,
+74,can,Canadá,América del Norte,Ingresos altos,,,,,,top-ten,,,
+75,isl,Islandia,Europa y Asia Central,Ingresos altos,,,,,,top-ten,,,
+76,ltu,Lituania,Europa y Asia Central,Ingresos altos,,,,,,top-ten,,,
+77,gbr,Reino Unido,Europa y Asia Central,Ingresos altos,,,,,,top-ten,,,
+78,isr,Israel,Oriente Medio y Norte de África,Ingresos altos,,,,,,top-ten,,bottom-ten,
+79,bfa,Burkina Faso,Africa Sub-sahariana,Ingresos bajos,,,,,,bottom-ten,,,
+80,sen,Senegal,Africa Sub-sahariana,Ingresos medios bajos,,,,,,bottom-ten,,,
+81,afg,Afganistán,Asia del Sur,Ingresos bajos,,,,,,bottom-ten,,top-ten,
+82,moz,Mozambique,Africa Sub-sahariana,Ingresos bajos,,,,,,bottom-ten,bottom-ten,,top-ten
+83,yem,Yemen,Oriente Medio y Norte de África,Ingresos bajos,,,,,,bottom-ten,bottom-ten,,
+84,sgp,Singapur,Asia oriental y el Pacífico,Ingresos altos,,,,,,,top-ten,,bottom-ten
+85,lbr,Liberia,Africa Sub-sahariana,Ingresos bajos,,,,,,,bottom-ten,top-ten,top-ten
+86,sle,Sierra Leona,Africa Sub-sahariana,Ingresos bajos,,,,,,,,top-ten,
+87,mrt,Mauritania,Africa Sub-sahariana,Ingresos medios bajos,,,,,,,,top-ten,
+88,gnb,Guinea-Bisáu,Africa Sub-sahariana,Ingresos bajos,,,,,,,,top-ten,
+89,fin,Finlandia,Europa y Asia Central,Ingresos altos,,,,,,,,bottom-ten,
+90,grc,Grecia,Europa y Asia Central,Ingresos altos,,,,,,,,bottom-ten,
+91,cze,República Checa,Europa y Asia Central,Ingresos altos,,,,,,,,bottom-ten,
+92,prk,Corea del Norte,Asia oriental y el Pacífico,Ingresos bajos,,,,,,,,,bottom-ten
