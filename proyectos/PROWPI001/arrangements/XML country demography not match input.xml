@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><country_code>cod</country_code><population>86,790,567</population><population_density>37.01</population_density><growth_rate>2.3</growth_rate></Row>
+<Row><country_code>cog</country_code><population>5,956,000</population><population_density>17.4</population_density><growth_rate>2.6</growth_rate></Row>
+<Row><country_code>swz</country_code><population>1,113,276</population><population_density>66.12</population_density><growth_rate>0.55</growth_rate></Row>
+<Row><country_code>vct</country_code><population>109,600</population><population_density>283.2</population_density><growth_rate>0.24</growth_rate></Row>
+</Rows>

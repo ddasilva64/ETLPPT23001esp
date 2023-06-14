@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><country_code>cpv</country_code><country>Cabo Verde</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>6,01976061</value></Row>
+<Row><country_code>cpv</country_code><country>Cabo Verde</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>176,02416992</value></Row>
+<Row><country_code>cod</country_code><country>Congo, Democratic Republic of the</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>4,46762228</value></Row>
+<Row><country_code>cod</country_code><country>Congo, Democratic Republic of the</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>80,80835724</value></Row>
+<Row><country_code>tza</country_code><country>Tanzania, United Republic of</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>3,74659801</value></Row>
+<Row><country_code>tza</country_code><country>Tanzania, United Republic of</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>39,30883408</value></Row>
+<Row><country_code>bol</country_code><country>Bolivia (Plurinational State of)</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>7,857059</value></Row>
+<Row><country_code>bol</country_code><country>Bolivia (Plurinational State of)</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>241,1182251</value></Row>
+<Row><country_code>irn</country_code><country>Iran (Islamic Republic of)</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>5,33579969</value></Row>
+<Row><country_code>irn</country_code><country>Iran (Islamic Republic of)</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>573,40447998</value></Row>
+<Row><country_code>cze</country_code><country>Czechia</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>9,24007225</value></Row>
+<Row><country_code>cze</country_code><country>Czechia</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>2119,84863281</value></Row>
+<Row><country_code>nld</country_code><country>Netherlands</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>11,1359272</value></Row>
+<Row><country_code>nld</country_code><country>Netherlands</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>5846,15478516</value></Row>
+<Row><country_code>mda</country_code><country>Moldova, Republic of</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>6,77933121</value></Row>
+<Row><country_code>mda</country_code><country>Moldova, Republic of</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>306,64892578</value></Row>
+<Row><country_code>mkd</country_code><country>North Macedonia</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>7,8894825</value></Row>
+<Row><country_code>mkd</country_code><country>North Macedonia</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>452,96640015</value></Row>
+<Row><country_code>gbr</country_code><country>United Kingdom of Great Britain and Northern Ireland</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>11,97759342</value></Row>
+<Row><country_code>gbr</country_code><country>United Kingdom of Great Britain and Northern Ireland</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>4926,63134766</value></Row>
+<Row><country_code>kor</country_code><country>Korea, Republic of</country><Indicators>Current Health Expenditure (CHE) as % Gross Domestic Product (GDP)</Indicators><value>8,36409569</value></Row>
+<Row><country_code>kor</country_code><country>Korea, Republic of</country><Indicators>Current Health Expenditure (CHE) per Capita in US$</Indicators><value>2642,41430664</value></Row>
+</Rows>
