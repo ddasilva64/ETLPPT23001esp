@@ -18,10 +18,10 @@
         - [Return on Investment (ROI) of the proposed solution](#return-on-investment-roi-of-the-proposed-solution)
         - [The improved service delivery and customer experience](#the-improved-service-delivery-and-customer-experience)  
     - [Conclusion](#conclusion)  
-- [DE (Data Engineering)](#de)
-- [DWH (Data Warehouse)](#dwh)
-- [UX (User Experience)](#ux)
-- [Data set sources](#data-set-sources)
+- [DE (Data Engineering)](#de-data-engineering)
+- [DWH (Data Warehouse)](#dwh-data-warehouse)
+- [Metrics](#metrics)
+- [UX (User Experience)](#ux-user-experience)
 - [Picture list](#picture-list)
 - [Storytelling notice](#storytelling-notice)
 - [Author](#author)
@@ -121,7 +121,7 @@ _(Platzi logo, from [Platzi Team](https://courses.platzi.com/), [public domain](
 
 ### **_Opportunity_**  
 
-The current project may be just the beginning of the **_BI_**, and **_DS_** collaboration between **_3DoWoCo_**, and **_Adventure Works Cycles, Inc._**. **_There are 80% hidden needs to discover and new business opportunities, for our client, that we can help them to discover_**    
+The current project may be just the beginning of the **_BI_**, and **_DS_** collaboration between **_3DoWoCo_**, and **_Adventure Works Cycles, Inc._** **_There are 80% hidden needs to discover and new business opportunities (like a hide side of an iceberg), for our client, that we can help them to discover_**    
 
 ![#pic003](https://i.imgur.com/arHXGzQ.png, "Iceberg")  
 _DS & BI needs are like an iceberg (80% not visible)_     
@@ -225,14 +225,14 @@ _Internet sales subsistem in dbo schema_
 
 | Key	| Name                  | Data type    | Null | Attributes | References            | Description |
 | :-: | :-------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-| 1   | ProductKey            | int          |      |            | dbo.DimProduct        |             |
-| 2   | OrderDateKey          | int          |      |            | dbo.DimDate	         |             |
-| 3   | DueDateKey            | int          |      |            | dbo.DimDate		       |             |
-| 4   | ShipDateKey           | int          |      |            | dbo.DimDate		       |             |
-| 5   | CustomerKey           | int          |      |            | dbo.DimCustomer       |             |
-| 6   | PromotionKey          | int          |      |            | dbo.DimPromotion      |             |
-| 7   | CurrencyKey           | int          |      |            | dbo.DimCurrency	     |             |
-| 8   | SalesTerritoryKey     | int          |      |            | dbo.DimSalesTerritory |             |
+| 1   | ProductKey            | int          |      |            | dbo.DimProduct        | FK          |
+| 2   | OrderDateKey          | int          |      |            | dbo.DimDate	         | FK          |
+| 3   | DueDateKey            | int          |      |            | dbo.DimDate		       | FK          |
+| 4   | ShipDateKey           | int          |      |            | dbo.DimDate		       | FK          |
+| 5   | CustomerKey           | int          |      |            | dbo.DimCustomer       | FK          |
+| 6   | PromotionKey          | int          |      |            | dbo.DimPromotion      | FK          |
+| 7   | CurrencyKey           | int          |      |            | dbo.DimCurrency	     | FK          |
+| 8   | SalesTerritoryKey     | int          |      |            | dbo.DimSalesTerritory | FK          |
 | 9   | SalesOrderNumber      | nvarchar(20) |      |            |                       |             |
 | 10  | SalesOrderLineNumber  | tinyint      |      |            |                       |             |
 | 11  | RevisionNumber        | tinyint      |      |            |                       |             |
@@ -255,56 +255,56 @@ _Internet sales subsistem in dbo schema_
   3.2. **_dbo.DimDate_**  
   3.2.1. Columns  
 
-| Key	| Name                  | Data type    | Null | Attributes | References            | Description |
-| :-: | :-------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-| 1   | DateKey               | int          |      |            |                       |             |
-| 2   | FullDateAlternateKey  | date         |      |            |                       |             |
-| 3   | DayNumberOfWeek       | tinyint      |      |            |                       |             |
-| 4   | EnglishDayNameOfWeek  | nvarchar(10) |      |            |                       |             |
-| 5   | SpanishDayNameOfWeek  | nvarchar(10) |      |            |                       |             |
-| 6   | FrenchDayNameOfWeek   | nvarchar(10) |      |            |                       |             |
-| 7   | DayNumberOfMonth      | tinyint      |      |            |                       |             |
-| 8   | DayNumberOfYear       | smallint     |      |            |                       |             |
-| 9   | WeekNumberOfYear      | tinyint      |      |            |                       |             |
-| 10  | EnglishMonthName      | nvarchar(10) |      |            |                       |             |
-| 11  | SpanishMonthName      | nvarchar(10) |      |            |                       |             |
-| 12  | FrenchMonthName       | nvarchar(10) |      |            |                       |             |
-| 13  | MonthNumberOfYear     | tinyint      |      |            |                       |             |
-| 14  | CalendarQuarter       | tinyint      |      |            |                       |             |
-| 15  | CalendarYear          | smallint     |      |            |                       |             |	
-| 16  | CalendarSemester      | tinyint      |      |            |                       |             |
-| 17  | FiscalQuarter         | tinyint      |      |            |                       |             |
-| 18  | FiscalYear            | smallint     |      |            |                       |             |
-| 19  | FiscalSemester        | tinyint      |      |            |                       |             |
+| Key	| Name                  | Data type    | Null | Attributes | References            | Description   |
+| :-: | :-------------------- | :----------: | :--: | :--------- | :-------------------- | :------------ |
+| 1   | DateKey               | int          |      |            |                       | PK            |
+| 2   | FullDateAlternateKey  | date         |      |            |                       |               |
+| 3   | DayNumberOfWeek       | tinyint      |      |            |                       |               |
+| 4   | EnglishDayNameOfWeek  | nvarchar(10) |      |            |                       | DayNameOfWeek |
+| 5   | SpanishDayNameOfWeek  | nvarchar(10) |      |            |                       | deprecated    |
+| 6   | FrenchDayNameOfWeek   | nvarchar(10) |      |            |                       | deprecated    |
+| 7   | DayNumberOfMonth      | tinyint      |      |            |                       |               |
+| 8   | DayNumberOfYear       | smallint     |      |            |                       |               |
+| 9   | WeekNumberOfYear      | tinyint      |      |            |                       |               |
+| 10  | EnglishMonthName      | nvarchar(10) |      |            |                       | MonthName     |
+| 11  | SpanishMonthName      | nvarchar(10) |      |            |                       | deprecated    |
+| 12  | FrenchMonthName       | nvarchar(10) |      |            |                       | deprecated    |
+| 13  | MonthNumberOfYear     | tinyint      |      |            |                       |               |
+| 14  | CalendarQuarter       | tinyint      |      |            |                       |               |
+| 15  | CalendarYear          | smallint     |      |            |                       |               |	
+| 16  | CalendarSemester      | tinyint      |      |            |                       |               |
+| 17  | FiscalQuarter         | tinyint      |      |            |                       |               |
+| 18  | FiscalYear            | smallint     |      |            |                       |               |
+| 19  | FiscalSemester        | tinyint      |      |            |                       |               |
 
   3.3. **_dbo.DimPromotion_**  
   3.3.1. Columns  
 
-| Key	| Name                     | Data type    | Null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-| 1   | PromotionKey             | int          |      | Identity   |                       |             |
-| 2   | PromotionAlternateKey    | int          |      |            |                       |             |
-| 3   | EnglishPromotionName     | nvarchar(255)|      |            |                       |             |				
-| 4   | SpanishPromotionName     | nvarchar(255)|      |            |                       |             |			
-| 5   | FrenchPromotionName      | nvarchar(255)|      |            |                       |             |		
-| 6   | DiscountPct              | float        |      |            |                       |             |
-| 7   | EnglishPromotionType     | nvarchar(50) |      |            |                       |             |
-| 8   | SpanishPromotionType	   | nvarchar(50) |      |            |                       |             |	
-| 9   | FrenchPromotionType      | nvarchar(50) |      |            |                       |             |	
-| 10  | EnglishPromotionCategory | nvarchar(50) |      |            |                       |             |	
-| 11  | SpanishPromotionCategory | nvarchar(50) |      |            |                       |             |
-| 12  | FrenchPromotionCategory  | nvarchar(50) |      |            |                       |             |
-| 13  | StartDate                | datetime     |      |            |                       |             |
-| 14  | EndDate                  | datetime     |      |            |                       |             |
-| 15  | MinQty                   | int          |      |            |                       |             |
-| 16  | MaxQty                   | int          |      |            |                       |             |
+| Key	| Name                     | Data type    | Null | Attributes | References            | Description       |
+| :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :---------------- |
+| 1   | PromotionKey             | int          |      | Identity   |                       | PK                |
+| 2   | PromotionAlternateKey    | int          |      |            |                       | PK                |
+| 3   | EnglishPromotionName     | nvarchar(255)|      |            |                       | PromotionName     |				
+| 4   | SpanishPromotionName     | nvarchar(255)|      |            |                       | deprecated        |			
+| 5   | FrenchPromotionName      | nvarchar(255)|      |            |                       | deprecated        |		
+| 6   | DiscountPct              | float        |      |            |                       |                   |
+| 7   | EnglishPromotionType     | nvarchar(50) |      |            |                       | PromotionType     |
+| 8   | SpanishPromotionType	   | nvarchar(50) |      |            |                       | deprecated        |	
+| 9   | FrenchPromotionType      | nvarchar(50) |      |            |                       | deprecated        |	
+| 10  | EnglishPromotionCategory | nvarchar(50) |      |            |                       | PromotionCategory |	
+| 11  | SpanishPromotionCategory | nvarchar(50) |      |            |                       | deprecated        |
+| 12  | FrenchPromotionCategory  | nvarchar(50) |      |            |                       | deprecated        |
+| 13  | StartDate                | datetime     |      |            |                       |                   |
+| 14  | EndDate                  | datetime     |      |            |                       |                   |
+| 15  | MinQty                   | int          |      |            |                       |                   |
+| 16  | MaxQty                   | int          |      |            |                       |                   |
 
   3.4. **_dbo.DimCurrency_**  
   3.4.1. Columns 
 
 | Key	| Name                     | Data type    | Null | Attributes | References            | Description |
 | :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-| 1   | CurrencyKey              | int          |      | Identity   |                       |             |
+| 1   | CurrencyKey              | int          |      | Identity   |                       | PK          |
 | 2   | CurrencyAlternateKey     | nchar(3)     |      |            |                       |             |
 | 3   | CurrencyName             | nvarchar(50) |      |            |                       |             |
 
@@ -313,8 +313,8 @@ _Internet sales subsistem in dbo schema_
 
 | Key	| Name                     | Data type    | Null | Attributes | References            | Description |
 | :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-| 1   | CustomerKey              | int          |      | Identity   |                       |             |
-| 2   | GeographyKey             | int          |      |            | dbo.DimGeography      |             |
+| 1   | CustomerKey              | int          |      | Identity   |                       | PK          |
+| 2   | GeographyKey             | int          |      |            | dbo.DimGeography      | FK          |
 | 3   | CustomerAlternateKey     | nvarchar(15) |      |            |                       |             |
 | 4   | Title                    | nvarchar(8)  |      |            |                       |             |
 | 5   | FirstName                | nvarchar(50) |      |            |                       |             |
@@ -329,12 +329,12 @@ _Internet sales subsistem in dbo schema_
 | 14  | YearlyIncome             | money        |      |            |                       |             |
 | 15  | TotalChildren            | tinyint      |      |            |                       |             |
 | 16  | NumberChildrenAtHome     | tinyint      |      |            |                       |             |
-| 17  | EnglishEducation         | nvarchar(40) |      |            |                       |             |
-| 18  | SpanishEducation         | nvarchar(40) |      |            |                       |             |
-| 19  | FrenchEducation          | nvarchar(40) |      |            |                       |             |
-| 20  | EnglishOccupation        | nvarchar(100)|      |            |                       |             |
-| 21  | SpanishOccupation        | nvarchar(100)|      |            |                       |             |
-| 22  | FrenchOccupation         | nvarchar(100)|      |            |                       |             |
+| 17  | EnglishEducation         | nvarchar(40) |      |            |                       | Education   |
+| 18  | SpanishEducation         | nvarchar(40) |      |            |                       | deprecated  |
+| 19  | FrenchEducation          | nvarchar(40) |      |            |                       | deprecated  |
+| 20  | EnglishOccupation        | nvarchar(100)|      |            |                       | Occupation  |
+| 21  | SpanishOccupation        | nvarchar(100)|      |            |                       | deprecated  |
+| 22  | FrenchOccupation         | nvarchar(100)|      |            |                       | deprecated  |
 | 23  | HouseOwnerFlag           | nchar(1)     |      |            |                       |             |
 | 24  | NumberCarsOwned          | tinyint      |      |            |                       |             |
 | 25  | AddressLine1             | nvarchar(120)|      |            |                       |             |
@@ -346,105 +346,107 @@ _Internet sales subsistem in dbo schema_
   3.6. **_dbo.DimGeography_**  
   3.6.1. Columns  
 
-| Key	| Name                     | Data type    | Null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-| 1   | GeographyKey             | int          |      | Identity   |                       |             |
-| 2   | City                     | nvarchar(30) |      |            |                       |             |
-| 3   | StateProvinceCode        | nvarchar(3)  |      |            |                       |             |
-| 4   | StateProvinceName        | nvarchar(50) |      |            |                       |             |
-| 5   | CountryRegionCode        | nvarchar(3)  |      |            |                       |             |
-| 6   | EnglishCountryRegionName | nvarchar(50) |      |            |                       |             |
-| 7   | SpanishCountryRegionName | nvarchar(50) |      |            |                       |             |
-| 8   | FrenchCountryRegionName  | nvarchar(50) |      |            |                       |             |
-| 9   | PostalCode               | nvarchar(15) |      |            |                       |             |
-| 10  | SalesTerritoryKey        | int          |      |            | dbo.DimSalesTerritory	|             |
-| 11  | IpAddressLocator         | nvarchar(15) |      |            |                       |             |
+| Key	| Name                     | Data type    | Null | Attributes | References            | Description       |
+| :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :---------------- |
+| 1   | GeographyKey             | int          |      | Identity   |                       |                   |
+| 2   | City                     | nvarchar(30) |      |            |                       |                   |
+| 3   | StateProvinceCode        | nvarchar(3)  |      |            |                       |                   |
+| 4   | StateProvinceName        | nvarchar(50) |      |            |                       |                   |
+| 5   | CountryRegionCode        | nvarchar(3)  |      |            |                       |                   |
+| 6   | EnglishCountryRegionName | nvarchar(50) |      |            |                       | CountryRegionName |
+| 7   | SpanishCountryRegionName | nvarchar(50) |      |            |                       | deprecated        |
+| 8   | FrenchCountryRegionName  | nvarchar(50) |      |            |                       | deprecated        |
+| 9   | PostalCode               | nvarchar(15) |      |            |                       |                   |
+| 10  | SalesTerritoryKey        | int          |      |            | dbo.DimSalesTerritory	| FK                |
+| 11  | IpAddressLocator         | nvarchar(15) |      |            |                       |                   |
 
   3.7. **_dbo.DimSalesTerritory_**  
   3.7.1. Columns  
 
 | Key	| Name                       | Data type      | Null | Attributes | References            | Description |
 | :-: | :------------------------- | :------------: | :--: | :--------- | :-------------------- | :-----------|
-| 1   | SalesTerritoryKey          | int            |      | Identity   |                       |             |
-| 2   | SalesTerritoryAlternateKey | int            |      |            |                       |             |
+| 1   | SalesTerritoryKey          | int            |      | Identity   |                       | PK          |
+| 2   | SalesTerritoryAlternateKey | int            |      |            |                       | PK          |
 | 3   | SalesTerritoryRegion       | nvarchar(50)   |      |            |                       |             |
 | 4   | SalesTerritoryCountry      | nvarchar(50)   |      |            |                       |             |
 | 5   | SalesTerritoryGroup        | nvarchar(50)   |      |            |                       |             |
-| 6   | SalesTerritoryImage        | varbinary(MAX) |      |            |                       |             |
+| 6   | SalesTerritoryImage        | varbinary(MAX) |      |            |                       | deprecated  |
 
   3.8. **_dbo.DimProduct_**
   3.8.1. Columns 
 
-| Key	| Name                     | Data type    | Null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-1		ProductKey	int		Identity		
-2		ProductAlternateKey	nvarchar(25)				
-3		ProductSubcategoryKey	int			dbo.DimProductSubcategory	
-4		WeightUnitMeasureCode	nchar(3)				
-5		SizeUnitMeasureCode	nchar(3)				
-6		EnglishProductName	nvarchar(50)				
-7		SpanishProductName	nvarchar(50)				
-8		FrenchProductName	nvarchar(50)				
-9		StandardCost	money				
-10		FinishedGoodsFlag	bit				
-11		Color	nvarchar(15)				
-12		SafetyStockLevel	smallint				
-13		ReorderPoint	smallint				
-14		ListPrice	money				
-15		Size	nvarchar(50)				
-16		SizeRange	nvarchar(50)				
-17		Weight	float				
-18		DaysToManufacture	int				
-19		ProductLine	nchar(2)				
-20		DealerPrice	money				
-21		Class	nchar(2)				
-22		Style	nchar(2)				
-23		ModelName	nvarchar(50)				
-24		LargePhoto	varbinary(MAX)				
-25		EnglishDescription	nvarchar(400)				
-26		FrenchDescription	nvarchar(400)				
-27		ChineseDescription	nvarchar(400)				
-28		ArabicDescription	nvarchar(400)				
-29		HebrewDescription	nvarchar(400)				
-30		ThaiDescription	nvarchar(400)				
-31		GermanDescription	nvarchar(400)				
-32		JapaneseDescription	nvarchar(400)				
-33		TurkishDescription	nvarchar(400)				
-34		StartDate	datetime				
-35		EndDate	datetime				
-36		Status	nvarchar(7)		
+| Key	| Name                     | Data type     | Null | Attributes | References                | Description |
+| :-: | :----------------------- | :-----------: | :--: | :--------- | :------------------------ | :-----------|
+| 1   | ProductKey               | int           |      | Identity   |                           | PK          |
+| 2   | ProductAlternateKey      | nvarchar(25)  |      |            |                           | PK          |
+| 3   | ProductSubcategoryKey    | int           |      |            | dbo.DimProductSubcategory | FK          |
+| 4   | WeightUnitMeasureCode    | nchar(3)      |      |            |                           |             |
+| 5   | SizeUnitMeasureCode      | nchar(3)      |      |            |                           |             |
+| 6   | EnglishProductName       | nvarchar(50)  |      |            |                           | ProductName |
+| 7   | SpanishProductName       | nvarchar(50)  |      |            |                           | deprecated  |
+| 8   | FrenchProductNamen       | varchar(50)   |      |            |                           | deprecated  |
+| 9   | StandardCost             | money         |      |            |                           |             |
+| 10  | FinishedGoodsFlag        | bit           |      |            |                           |             |
+| 11  | Color                    | nvarchar(15)  |      |            |                           |             |
+| 12  | SafetyStockLevel         | smallint      |      |            |                           |             |
+| 13  | ReorderPoint             | smallint      |      |            |                           |             |
+| 14  | ListPrice                | money         |      |            |                           |             |
+| 15  | Size                     | nvarchar(50)  |      |            |                           |             |
+| 16  | SizeRange                | nvarchar(50)  |      |            |                           |             |
+| 17  | Weight                   | float         |      |            |                           |             |
+| 18  | DaysToManufacture        | int           |      |            |                           |             |
+| 19  | ProductLine              | nchar(2)      |      |            |                           |             |
+| 20  | DealerPrice              | money         |      |            |                           |             |
+| 21  | Class                    | nchar(2)      |      |            |                           |             |
+| 22  | Style                    | nchar(2)      |      |            |                           |             |
+| 23  | ModelName                | nvarchar(50)  |      |            |                           |             |
+| 24  | LargePhoto               | varbinary(MAX)|      |            |                           |             |				
+| 25  | EnglishDescription       | nvarchar(400) |      |            |                           | Description |
+| 26  | FrenchDescription        | nvarchar(400) |      |            |                           | deprecated  |			
+| 27  | ChineseDescription       | nvarchar(400) |      |            |                           | deprecated  |
+| 28  | ArabicDescription        | nvarchar(400) |      |            |                           | deprecated  |		
+| 29  | HebrewDescription        | nvarchar(400) |      |            |                           | deprecated  |
+| 30  | ThaiDescription          | nvarchar(400) |      |            |                           | deprecated  |				
+| 31  | GermanDescription        | nvarchar(400) |      |            |                           | deprecated  |		
+| 32  | JapaneseDescription      | nvarchar(400) |      |            |                           | deprecated  |		
+| 33  | TurkishDescription       | nvarchar(400) |      |            |                           | deprecated  |
+| 34  | StartDate                | datetime      |      |            |                           |             |
+| 35  | EndDate                  | datetime      |      |            |                           |             |
+| 36  | Status                   | nvarchar(7)   |      |            |                           |             |
 
   3.9. **_dbo.DimProductSubcategory_**  
   3.9.1. Columns  
 
-| Key	| Name                     | Data type    | Null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-1		ProductSubcategoryKey	int		Identity		
-2		ProductSubcategoryAlternateKey	int				
-3		EnglishProductSubcategoryName	nvarchar(50)				
-4		SpanishProductSubcategoryName	nvarchar(50)				
-5		FrenchProductSubcategoryName	nvarchar(50)				
-6		ProductCategoryKey	int			dbo.DimProductCategory	
+| Key	| Name                           | Data type    | Null | Attributes | References            | Description            |
+| :-: | :----------------------------- | :----------: | :--: | :--------- | :-------------------- | :--------------------- |
+| 1   | ProductSubcategoryKey          | int          |      | Identity   |                       | PK                     |
+| 2   | ProductSubcategoryAlternateKey | int          |      |            |                       | PK                     |
+| 3   | EnglishProductSubcategoryName  | nvarchar(50) |      |            |                       | ProductSubcategoryName |
+| 4   | SpanishProductSubcategoryName  | nvarchar(50) |      |            |                       | deprecated             |
+| 5   | FrenchProductSubcategoryName   | nvarchar(50) |      |            |                       | deprecated             |
+| 6   | ProductCategoryKey             | int          |      |            | dbo.DimProductCategory| FK                     |	
 
   3.10. **_dbo.DimProductCategory_**  
   3.10.1. Columns  
 
-| Key	| Name                     | Data type    | Null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-1		ProductCategoryKey	int		Identity		
-2		ProductCategoryAlternateKey	int				
-3		EnglishProductCategoryName	nvarchar(50)				
-4		SpanishProductCategoryName	nvarchar(50)				
-5		FrenchProductCategoryName	nvarchar(50)	
+| Key	| Name                        | Data type    | Null | Attributes | References            | Description         |
+| :-: | :-------------------------- | :----------: | :--: | :--------- | :-------------------- | :------------------ |
+| 1   | ProductCategoryKey          | int          |      | Identity   |                       | PK                  |
+| 2   | ProductCategoryAlternateKey | int          |      |            |                       | PK                  |
+| 3   | EnglishProductCategoryName  | nvarchar(50) |      |            |                       | ProductCategoryName |
+| 4   | SpanishProductCategoryName  | nvarchar(50) |      |            |                       | deprecated          |
+| 5   | FrenchProductCategoryName   | nvarchar(50) |      |            |                       | deprecated          |
 
   3.11. **_dbo.FactInternetSalesReason_**  
   3.11.1. Columns  
 
 | Key	| Name                     | Data type    | Null | Attributes | References            | Description |
 | :-: | :----------------------- | :----------: | :--: | :--------- | :-------------------- | :-----------|
-1		SalesOrderNumber	nvarchar(20)			dbo.FactInternetSales	
-2		SalesOrderLineNumber	tinyint			dbo.FactInternetSales	
-3		SalesReasonKey	int			dbo.DimSalesReason	
+| 1   | SalesOrderNumber         | nvarchar(20) |      |            | dbo.FactInternetSales |             |
+| 2   | SalesOrderLineNumber     | tinyint      |      |            | dbo.FactInternetSales |             |
+| 3   | SalesReasonKey           | int          |      |            | dbo.DimSalesReason    | PK          |
+
+**_Notice_**: **_Adventure Works Cycles, Inc._** has decided that multilingual capabilities into the DB (in general) are pointless. In addition, specifically for DS, and BI, since the users are internal and at managerial level, they must have worldwide pro knowledge of English
 
 [Back to Table of contents :arrow_double_up:](#table-of-contents)
 
@@ -482,44 +484,53 @@ By the way, as the British adage goes, "**_the proof of the pudding is in the ea
 
 ---
 
-## DE  
+## DE (Data Engineering)  
 
 ### **_Prework_**
 
 1. Conversion from **_ETL of PROWPI001_** (**_Python_**) to **_ETL of PROWPI001_** (**_PDI_**), and test results  
+1.1. Tables  
+1.2. Data types  
+1.3. QA (Quality Assurance)
 
-Datasets
+2. Check restored DB in local
+2.1. Tables  
+2.2. Data types  
+2.3. QA (Quality Assurance)
 
-| **_Kaggle, World Bank Indicators Collection_** | Format | Convert to |
-| :--------------------------------------------- | :----- | :--------- |
-| PopulationDataWorldBank                        | .XLSX  |            |
-
-**_Notice_**: PDI is built in Java, and the correct way to get .XLSX file is with the driver (.jar), which is called Excel 2007 XLSX (Apache POI Streaming)  
-
-
-[Back to Table of contents :arrow_double_up:](#table-of-contents)
-
----
-
-## DWH  
+3. Check parametric data in local
+2.1. Tables  
+2.2. Data types  
+2.3. QA (Quality Assurance)
 
 [Back to Table of contents :arrow_double_up:](#table-of-contents)
 
----
+## DWH (Data Warehouse)  
 
-## UX  
+1. Conversion from **_ETL of PROWPI001_** (**_Python_**) to **_ETL of PROWPI001_** (**_PDI_**), and test results  
+1.1. Tables  
+1.2. Data types  
+1.3. QA (Quality Assurance)
+
+2. Check restored DB in local
+2.1. Tables  
+2.2. Data types  
+2.3. QA (Quality Assurance)
+
+3. Check parametric data in local
+2.1. Tables  
+2.2. Data types  
+2.3. QA (Quality Assurance)
+
+[Back to Table of contents :arrow_double_up:](#table-of-contents)
+
+## Metrics  
+
+[Back to Table of contents :arrow_double_up:](#table-of-contents)
+
+## UX (User Experience)  
 
 [Back to Table of contents :arrow_double_up:](#table-of-contents)  
-
----
-
-## Data set sources  
-
-- Dataset #001: Based on [PROWPI001](https://github.com/ddasilva64/MTDPDN23001esp/tree/master/proyectos)  
-
-[Back to Table of contents :arrow_double_up:](#table-of-contents)
-
----
 
 ## Picture list  
 
@@ -535,15 +546,13 @@ Datasets
 
 ## Storytelling notice  
 
-All dataset sources are licensed in the public domain, but Drinking Water for Planet Earth Company, Inc. (**_DWPECO_**) is an invention (the same as **_3DoWoCo_**). It's a narrative to build project storytelling, containing data solutions, which the author sees in his lifetime professional  
+All dataset sources are licensed in the public domain, but **_Adventure Works Cycles, Inc._**, and **_AdventureWorksDW2022_** are, both of them, fiction created by Microsoft. It's a narrative to build project storytelling, containing data solutions, which the author sees in his lifetime professional  
 
-**_Disclaimer!_**: DWPECO and 3DoWoCo are a fiction. Any similarities to companies living or dead, or something else is purely coincidental  
+**_Disclaimer!_**: **_Adventure Works Cycles, Inc._** and **_3DoWoCo_** are a fiction. Any similarities to companies living or dead, or something else is purely coincidental  
 
-Many dataset sources are based on [PROWPI001]() project, built by xxxx Platzi course. The ETL were made, in this project, in **_Python_**, now we built ETL with **_PDI_** exclusively  
+Many dataset sources are based on [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) project, built by "Data Manipulation and Analysis with Pandas and Python" Platzi course. The **_ETL_** were made, in this project, in **_Python_**, now we built **_ETL_** with **_PDI_** exclusively  
 
-The present project **_PROWPI002_** is an exercise for xxx Platzi course, anyway  
-
-By the way, today May 2023, the human being has shown that he can find, but not take advantage of, water, which is almost never found in a liquid state, in many bodies of our Star System (Moon, Mars, asteroids, and other satellites)  
+The present project **_PROWPI002_** is an exercise for "ETL with Python and Pentaho fundamentals" Platzi course, anyway  
 
 Anyway, what can we get from data in this project? It can happen, as Forrest Gump said:  
 > **_"Life is like a box of chocolates. You never know what you gonna get"_**  
@@ -551,8 +560,6 @@ Anyway, what can we get from data in this project? It can happen, as Forrest Gum
 That's all folks!!!  
 
 [Back to Table of contents :arrow_double_up:](#table-of-contents)
-
----
 
 ## Author  
 
@@ -562,8 +569,6 @@ That's all folks!!!
 [Professional profile (English) - LinkedIn -](https://linkedin.com/in/daniel-da-silva-jarque-863705206)
 
 [Back to Table of contents :arrow_double_up:](#table-of-contents)
-
----
 
 ## eof
 
