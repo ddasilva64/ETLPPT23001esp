@@ -437,7 +437,7 @@
   <notepads>
   </notepads>
   <connection>
-    <name>datawarehouse_target</name>
+    <name>DataWarehouse</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -650,7 +650,7 @@
     </hop>
     <hop>
       <from>columns #10</from>
-      <to>output #01</to>
+      <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1479,20 +1479,24 @@
     <fields>
       <field>
         <name>country_code</name>
+        <rename>CountryCode</rename>
       </field>
       <field>
         <name>country</name>
+        <rename>Country</rename>
       </field>
       <field>
         <name>area</name>
+        <rename>Area</rename>
       </field>
       <field>
         <name>region</name>
+        <rename>Region</rename>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
         <name>area</name>
-        <rename>area</rename>
+        <rename>Area</rename>
         <type>Number</type>
         <length>14</length>
         <precision>0</precision>
@@ -1672,66 +1676,6 @@
     <GUI>
       <xloc>1360</xloc>
       <yloc>464</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>output #01</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>datawarehouse_target</connection>
-    <schema>target</schema>
-    <table>"DimCountries"</table>
-    <commit>100</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>country_code</column_name>
-        <stream_name>country_code</stream_name>
-      </field>
-      <field>
-        <column_name>country</column_name>
-        <stream_name>country</stream_name>
-      </field>
-      <field>
-        <column_name>area</column_name>
-        <stream_name>area</stream_name>
-      </field>
-      <field>
-        <column_name>region</column_name>
-        <stream_name>region</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
-      <yloc>688</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2331,6 +2275,66 @@
     <GUI>
       <xloc>832</xloc>
       <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>DataWarehouse</connection>
+    <schema>target</schema>
+    <table>"DimCountries"</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"CountryCode"</column_name>
+        <stream_name>CountryCode</stream_name>
+      </field>
+      <field>
+        <column_name>"Country"</column_name>
+        <stream_name>Country</stream_name>
+      </field>
+      <field>
+        <column_name>"Area"</column_name>
+        <stream_name>Area</stream_name>
+      </field>
+      <field>
+        <column_name>"Region"</column_name>
+        <stream_name>Region</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>688</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

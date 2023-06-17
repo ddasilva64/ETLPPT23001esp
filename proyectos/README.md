@@ -49,17 +49,17 @@ _Adventure Works Cycles logo_
 
 Especially, as far as we (**_3DoWoCo_**) are concerned, our work must focus on the next objectives:  
 
-1. Take as a base our project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) and transform it, according to their requirements. That is, firstly, we need to do the **_ETL (Extract, Transform & Load)_**, and quality assurance, **_according to their needs_**  
+1. We are taking, as a base our project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb), and transform it, according to our client requirements. That is, firstly, we need to do the **_ETL (Extract, Transform & Load)_**, and quality assurance, **_according to their needs_**  
 
-2. Secondly, we need **_to transform the DB that is transferred to us (AdventureWorksDW)_**, into a system that integrates our DB (**_PROWPI002_**) and **_that is the base of their DS and BI system_**  
+2. We need **_to transform the DB that is transferred to us (AdventureWorksDW2022)_**, into a system that integrates our DB (**_PROWPI002_**) and **_that is the base of their DS and BI system_**  
 
-3. Third, there will be **_parametric data_** in the form of sheets (tables) **_in Excel spreadsheets_**  
+3. There will be **_parametric data_** in the form of sheets (tables) **_in Excel spreadsheets_**. **_This info not exists in the source DB_**, provided by our client  
 
-4. Additionally, there will be **_data in the parameters (Excel)_**, which will evolve (temporarily). That is, **_there will be historical data, outside the DB (AdventureWorksDW)_**  
+4. There will be **_data in the parameters (Excel)_**, which will evolve (temporarily). That is, **_there will be historical data, outside the DB (AdventureWorksDW2022)_**  
 
-5. All the **_ETL_** steps will be stored in a **_DWH (Data Warehouse)_**, in which we will build in a different **_RDBS_** from the company's corporate **_RDBS_**. The reason for this is not to interfere with the normal functioning of the corporate database    
+5. All the **_ETL_** steps will be stored in a **_DWH (Data Warehouse)_**, which we will build with a different **_RDBS_** from the company's corporate **_RDBS_**. The reason for this is not to interfere with the normal functioning of the corporate database  
 
-5. Also, they need that we create a tabular model for sales and marketing users to analyze Internet sales data in the AdventureWorksDW DB, to expand their business worldwide, and to other business models  
+5. Also, they need that we **_create a tabular model for sales and marketing users to analyze Internet sales_** data in the **_AdventureWorksDW2022_** DB, to expand their business worldwide, and to other business models  
 
 5. Finally, in the **_DWH_**, we will build a **_sales yearly forecast_** that we will compare with currents sales results  
 
@@ -110,7 +110,7 @@ Especially, as far as we (**_3DoWoCo_**) are concerned, our work must focus on t
 
    - The **_creation of automated systems_**, despite having a batch process standard, has proven to be **_inefficient, to meet the needs of DS_**
 
-   - **_IT_** staff are very professional and efficient, but they are **_too specialized _** in their technology stack  
+   - **_IT_** staff are very professional and efficient, but they are **_too specialized_** in their technology stack  
 
    - The management staff of our client, **_do not have the necessary skills_**, to face **_BI_**, and **_DS_** projects. To solve this problem, we have contacted **_Adventure Works Cycles, Inc._** with our training partner: [**_Platzi_**](https://en.wikipedia.org/wiki/Platzi) (**_may be, one of the better Technology of Information Systems Training company worldwide_**)  
 
@@ -121,7 +121,9 @@ _(Platzi logo, from [Platzi Team](https://courses.platzi.com/), [public domain](
 
 ### **_Opportunity_**  
 
-The current project may be just the beginning of the **_BI_**, and **_DS_** collaboration between **_3DoWoCo_**, and **_Adventure Works Cycles, Inc._** **_There are 80% hidden needs to discover and new business opportunities (like a hide side of an iceberg), for our client, that we can help them to discover_**    
+The current project may be just the beginning of the **_BI_**, and **_DS_** collaboration between **_3DoWoCo_**, and **_Adventure Works Cycles, Inc._** **_There are 80% hidden needs to discover and new business opportunities (like a hide side of an iceberg), for our client, that we can help them to discover_**  
+
+Also, the combination of **_Python_** and **_PDI_** will be a perfect set of tools to solve any customer's **_ETL_** needs in the future  
 
 ![#pic003](https://i.imgur.com/arHXGzQ.png, "Iceberg")  
 _DS & BI needs are like an iceberg (80% not visible)_     
@@ -134,7 +136,7 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
 - **_ETL_** from **_PROWPI001_**, will be ported from **_Python_** to **_PDI_**  
 
-- Each table from different **_dsf (Data Source Files)_** of **_PROWPI001_**, will generate a **_.KTR_** file (**_Transformation file_**), that is our client will be able to check transformation results, easily. Later, we will integrate transform tables from **_PROWPI001_** project in a **_fact table_** or in a **_dimension table_** (only one)   
+- Each table from different **raw (raw data source files)_** of **_PROWPI001_**, will generate a **_.KTR_** file (**_Transformation file_**), that is our client will be able to check transformation results, easily. Later, we will integrate transform tables from **_PROWPI001_** project in a **_fact table_** or in a **_dimension table_** (only one)   
 
 - The operational data, which as we have said, is in **_SQL Server_** (**_AdventureWorksDW2022_** DB), we will complete it with **_Excel_** parametric tables. These tables will be part of **_PROWPI002_**. Some of these parametric tables will be historic data   
 
@@ -142,25 +144,29 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
 - They also need the following transformations:  
 
-  1. Each table will be a different **_.KTR_** file, just as we will do in our **_PROWPI001 dsf_**  
+  1. Each table will be a different **_.KTR_** file, just as we will do in our **_PROWPI001 raw_**  
 
-  2. All **_country data_** will be transformed to **_ISO standard_** adopted in **_PROWPI001_** (**_more efficient and standard_**)  
+  2. All **_country data_** will be transformed to **_iso3 standard_** adopted in **_PROWPI001_** (**_more efficient and standard_**)  
 
   3. **_All other geographic data will be replaced_** by standard names and geographic coordinates, and nothing else  
 
   4. **_Each parametric table_** will be a different **_.KTR_** file, just as DB tables  
 
+  5. **_All multilingual references will be removed from the DB_** for two reasons:  
+    5.1. They will be external resources to the transactional applications, therefore, they must not be in the DB  
+    5.2. In a DS or BI application, they are not required  
+
+  6. For the same reasons, **_binary fields (such as images) will be removed from the DB_**  
+
 - **_PROWPI002 will focus on obtaining the productivity metrics of the Sales Dept. (Sales Department)_**, which will be able to obtain **_KPI (Key Performance Indicatos)_** from the **_HR Dept. (Human Resources Department_**)  
 
-- **_Sales Dept._** of **_Adventure Works Cycles, Inc._** commits to transfer, **_quickly and with absolute transparency_**, the data necessary to generate historical parametric data
+- **_Sales Dept._** of **_Adventure Works Cycles, Inc._** commits to transfer, **_quickly and with absolute transparency_**, the **_data necessary to generate historical_** parametric data
 
-- **_HR Dept._** of **_Adventure Works Cycles, Inc._** undertakes to transfer, with absolute transparency, the data and metrics desired for the control of the productivity of the Sales Dept.  
+- **_HR Dept._** of **_Adventure Works Cycles, Inc._** undertakes to transfer, **_quickly and with absolute transparency_**, the **_data necessary and metrics desired for the control of the productivity of the Sales Dept._**  
 
-- **_HR Dept._** of **_Adventure Works Cycles, Inc._** undertakes to transfer, with absolute transparency, the data and metrics desired for the control of the productivity of the Sales Dept.  
+- The **_Adventure Works Cycles, Inc. Management_** agrees t**_o provide the necessary feedback_**, to obtain the best information and **_UX (User eXperience)_** of the final **_BSC_**. **_This will be done, as many times as it goes off_**  
 
-- The **_Adventure Works Cycles, Inc. Management_** agrees to provide the necessary feedback, to obtain the best information and **_UX (User eXperience)_** of the final **_BSC_**. **_This will be done, as many times as it goes off_**  
-
-- Meetings (in person or by **_Microsoft Teams_**), will be done without excuses, without 'ifs' or 'buts', between **_Adventure Works Cycles, Inc._**, and **_3DoWoCo_**, including to concerned Managers or employees    
+- Meetings (in person or by **_Microsoft Teams_**), between **_Adventure Works Cycles, Inc._**, and **_3DoWoCo_**, including to concerned Managers or employees    
 
 [Back to Table of contents :arrow_double_up:](#table-of-contents)
 
@@ -168,46 +174,167 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
 - **_PROWPI001 ETL_**  
   1. **_PROWPI001_countries.KTR_**  
-    1.1. dsf #01: PopulationDataWorldBank.XLSX  
-    1.2. dsf #02: countries_eng.CSV  
-    1.3. dsf #03: 2021_population.CSV  
-    1.4. dsf #04: arrangements/XML country areas not match input.XML  
-    1.5. output #01: **_DimCountries_** (Postgre SQL table)  
+    1.1. #raw_01: PopulationDataWorldBank.XLSX  
+    1.2. #raw_02: countries_eng.CSV  
+    1.3. #raw_03: 2021_population.CSV  
+    1.4. #raw_04: arrangements/XML country areas not match input.XML  
+    1.5. #staged_01: **_DimCountries_** (Postgre SQL table)  
+    ![PDI transformation](https://i.imgur.com/3oeRCer.png)  
+    _PDI transformation_
+
+    ![Execution in PDI](https://i.imgur.com/lMaI4dr.png)  
+    _Execution in PDI_
+    ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/5wh3IhK.png) 
+    _Postgres SQL's transactions checking in PgAdmin_
+
   2. **_PROWPI001_demography.KTR_**  
-    2.1. dsf #01: 2021_population.CSV  
-    2.2. dsf #02: arrangements/XML country demography not match input.XML  
-    2.3. output #01: stages_dsf\demography.XML
+    2.1. #raw_03: 2021_population.CSV  
+    2.2. #raw_05: arrangements/XML country demography not match input.XML  
+    2.3. #staged_02: **_staging\demography.XML_**
   3. **_PROWPI001_ecology.KTR_**  
-    3.1. dsf #01: HDR21-22_Composite_indices_complete_time_series.CSV  
-    3.2. dsf #03: countries_eng.CSV  
-    3.3. output #01: stages_dsf\ecology.XML  
+    3.1. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
+    3.2. #raw_02: countries_eng.CSV  
+    3.3. #staged_03: staging\ecology.XML  
   4. **_PROWPI001_economy.KTR_**  
-    4.1. dsf #01: API_NY.GDP.MKTP.KD.ZG_DS2_en_csv_v2_4701072.CSV  
-    4.2. dsf #02: HDR21-22_Composite_indices_complete_time_series.CSV  
-    4.3. dsf #03: countries_eng.CSV  
-    4.4. dsf #03: WEO_Data_01.CSV  
-    4.5. dsf #04: WEO_Data_02.CSV  
-    4.6. output #01: stages_dsf\economy.XML  
+    4.1. #raw_07: API_NY.GDP.MKTP.KD.ZG_DS2_en_csv_v2_4701072.CSV  
+    4.2. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
+    4.3. #raw_02: countries_eng.CSV  
+    4.4. #raw_08: WEO_Data_01.CSV  
+    4.5. #raw_09: WEO_Data_02.CSV  
+    4.6. #staged_04: staging\economy.XML  
   5. **_PROWPI001_education.KTR_**  
-    5.1. dsf #01: HDR21-22_Composite_indices_complete_time_series.CSV  
-    5.2. dsf #02: countries_eng.CSV  
-    5.3. output #01: stages_dsf\education.XML
+    5.1. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
+    5.2. #raw_02: countries_eng.CSV  
+    5.3. #staged_05: staging\education.XML
   6. **_PROWPI001_health.KTR_**  
-    6.1. dsf #01: HDR21-22_Composite_indices_complete_time_series.CSV  
-    6.2. dsf #02: countries_eng.CSV  
-    6.3. dsf #03: NHA indicators.XLSX
-    6.4. dsf #04: arrangements/XML countries NHS not match input.XML  
-    6.5. output #01: stages_dsf\health.XML  
+    6.1. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
+    6.2. #raw_02: countries_eng.CSV  
+    6.3. #raw_10: NHA indicators.XLSX
+    6.4. #raw_11: arrangements/XML countries NHS not match input.XML  
+    6.5. #staged_06: staging\health.XML  
   7. **_PROWPI001_fact.KTR_**  
-    7.1. dsf #01: stages_dsf\demography.XML  
-    7.2. dsf #02: stages_dsf\ecology.XML  
-    7.3. dsf #03: stages_dsf\economy.XML  
-    7.4. dsf #04: stages_dsf\education.XML  
-    7.5. dsf #04: stages_dsf\health.XML 
-    7.6. output #01: **_FactCountries_** (Postgre SQL table)  
+    7.1. #staged_02: staging\demography.XML  
+    7.2. #staged_03: staging\ecology.XML  
+    7.3. #staged_04: staging\economy.XML  
+    7.4. #staged_05: staging\education.XML  
+    7.5. #staged_06: staging\health.XML 
+    7.6. #staged_07: **_FactCountries_** (Postgre SQL table)  
 
+    
+**_Warning_**!: Remember that field names are standard (the first character of the word is uppercase and no spaces between words). That means that in the output table name and table field names (in POI), we need to write them (table and fields) in double quotes  
 
-**_Notice_**: See our, worldwide well-known standard, project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb), for **_dsf_** documentation (URL, licenses, and so on)       
+![Be atention i standard names in output tables](https://i.imgur.com/9BUiVSw.png)  
+_Be atention i standard names (tables and fields) in output tables_
+
+**_Notices_**: See our, worldwide well-known standard, project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb), for **_raw_** documentation (URL, licenses, and so on). All staging files or tables have their field types in **_Postgre SQL_** types, because target DB is **_DWH_** in **_Postgre SQL_**. Countries are the 193 countries recognized by the **_UN_**in 2021. In **_FactCountries_** we will add the year of the measurements (e.g. 2021)  
+
+**_DimCountries_** layout
+
+| Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK           | m001     |  
+| 2   | Country               | Character variying(60)|          |            |                       |              | m002     |
+| 3   | Area                  | integer               |          |            |                       |              | m003     |
+| 4   | Region                | Character variying(30)|          |            |                       |              | m004     |
+
+**_staging\demography.XML_** layout
+
+| Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK        | m001     |
+| 2   | Population            | integer               |          |            |                       |              | m005     |
+| 3   | PDR                   | real                  |          |            |                       |              | m006     |
+| 4   | PGR                   | real                  |          |            |                       |              | m007     |  
+
+**_staging\ecology.XML_** layout
+
+| Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
+| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
+| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
+| 2   | CO2PC                 | real                  |          |            |                       |             | m008     |
+| 3   | MFPC                  | real                  |          |            |                       |             | m009     |  
+
+**_staging\economy.XML_** layout
+
+| Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
+| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
+| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
+| 2   | GDPG                  | real                  |          |            |                       |             | m010     |
+| 3   | GNIPC                 | real                  |          |            |                       |             | m011     |
+| 4   | FGNIPC                | real                  |          |            |                       |             | m012     |
+| 5   | MGNIPC                | real                  |          |            |                       |             | m013     |
+| 6   | FLFPR                 | real                  |          |            |                       |             | m014     |
+| 7   | MLFPR                 | real                  |          |            |                       |             | m015     |
+| 8   | PDGDP                 | real                  |          |            |                       |             | m016     |
+
+**_staging\education.XML_** layout
+
+| Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
+| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
+| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
+| 2   | EYS                   | real                  |          |            |                       |             | m017     |
+| 3   | FEYS                  | real                  |          |            |                       |             | m018     |
+| 4   | MEYS                  | real                  |          |            |                       |             | m019     |
+| 5   | FSSE                  | real                  |          |            |                       |             | m020     |
+| 6   | MSSE                  | real                  |          |            |                       |             | m021     |
+
+**_staging\health.XML_** layout
+
+| Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
+| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
+| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
+| 2   | CHEGDP                | real                  |          |            |                       |             | m022     | 
+| 3   | CHEPCUSD              | real                  |          |            |                       |             | m023     |
+| 4   | LE                    | real                  |          |            |                       |             | m024     |
+| 5   | FLE                   | real                  |          |            |                       |             | m025     |
+| 6   | MLE                   | real                  |          |            |                       |             | m026     |
+| 7   | MMR                   | integer               |          |            |                       |             | m027     |
+| 9   | TBR                   | real                  |          |            |                       |             | m028     |
+
+**_staging\metadata.XML_** values (not layout)
+
+| Key      	| Meaning                                 | Standard              | Formula                                                                  | Units |
+| :-------: | :-------------------------------------- | :-------------------: | :----------------------------------------------------------------------- | :---: |
+| m001      | Country code                            | Standard ISO3         |                                                                          |       |
+| m002      | Country standard name                   |                       |                                                                          |       |
+| m003      | Country area                            |                       |                                                                          | Km2   |
+| m004      | Region standardized name                |                       |                                                                          |       |
+| m005      | Country Population in the year          |                       |                                                                          |       |
+| m006      | Population Density Rate                 |                       | population/Km2                                                           |       |
+| m007      | Population Growth Rate                  |                       | (t1-t0)/t0 x 100; t0=last year population; t1= current year population   | %     |
+| m008      | CO2 emissions Per Capita                |                       | e1 /t1; e1=current year total CO2 emissions; t1= current year population | Tons  |
+| m009      | Material Footprint Per Capita           |                       | (de + rmeim - rmeex)/t1; de = domestic extraction of materials; rmeim = raw material equivalent of imports; rmeex = – raw material equivalents of exports; t1= current year population | Tons  |
+| m010      | Gross Domestic Product                  |                       | pc + gpi + gi + gs + (e – i); pc=private consumption; gpi=gross private investment; gi=government investment; gs=government spending; e=exports; i=imports; Gross Domestic Product Growth = GDP1-GDP0/GDP0; GDP1=GDP current year (adjusted for inflation); GDP0=GDP last year (adjusted for inflation) | US$   |
+| m011      | Gross National Income Per Capita        |                       | gni/population; gni= gdp + (inward remittances by businesses and individuals – outward remittance by the foreigners residing in the country) | US$   |
+| m012      | Female Gross National Income Per Capita |                       |                                                                             | US$   |
+| m013      | Male Gros National Income Per Capita    |                       |                                                                             | US$   |
+| m014      | Female Labor Force Participation Rate   |                       | flf / twap x 100; flf=female labor force; twap=total working-age population | %     |
+| m015      | Male Labor Force Participation Rate     |                       |                                                                             | %     |
+| m016      | Public Debt as % of GDP                 |                       | pd / gdp; pd=public debt at the end of a 12-month period; gdp=GDP during that period | %     |
+| m017      | Expected Years of Shooling              |                       | years a child of school entrance age is expected to spend at school, or university, including years spent on repetition | years  |
+| m018      | Female Years of Schooling               |                       |                                                                             | years  |
+| m019      | Male Years of Schooling                 |                       |                                                                             | years  |
+| m020      | Female Some Secondary Education         |                       |                                                                             | years  |
+| m021      | Male Some Secondary Education           |                       |                                                                             | years  |
+| m022      | Current Health Expenditure % of GDP     |                       |                                                                             | %      |
+| m023      | Current Health Expenditure Per Capita in US$ |                  |                                                                             | US$    |
+| m024      | Life Expectancy at birth                |                       | number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life | years  |
+| m025      | Female Years of Life Expectancy         |                       |                                                                             | years  |
+| m026      | Male Years of Life Expectancy           |                       |                                                                             | years  |
+| m027      | Maternal Mortality Rate                 |                       | number of maternal deaths in a year / number of live births for the same period x 100,000 | %      |
+| m028      | Teen Birth Rate                         |                       | number of resident live births to mothers ages 15-19 / number of resident women aged 15-19 | %      |
+
+**_staging\metadata.XML_** (layout, directly in **_Postgre SQL_**)
+
+| Key	| Name                  | Data type              | Not null | Attributes | References            | Description |
+| :-: | :-------------------- | :--------------------: | :------: | :--------- | :-------------------- | :-----------| 
+| 1   | Key                   | Character variying(4)  | X        |            |                       | PK,FK       |
+| 2   | Meaning               | Character variying(60) | X        |            |                       |             |
+| 3   | Standard              | Character variying(20) |          |            |                       |             |
+| 4   | Formula               | Character variying(250)|          |            |                       |             |
+| 5   | Units                 | Character variying(10) |          |            |                       |             |
+
+**_Atention!_**: While the importance of metadata cannot be overstated, the reason to use it is to help drive reporting accuracy, validate data transformation, and ensure calculation accuracy. Metadata also imposes the definition of terms such as indicators, standards, etc. In the development of the DWH, metadata appears, and with it arises the need to create a table with this content  
 
 - **_AdventureWorksDW2022 DB_**  
   1. **_ERD (Entity Relationship Diagram) DB_**  
