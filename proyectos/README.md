@@ -179,15 +179,20 @@ _DS & BI needs are like an iceberg (80% not visible)_
     1.3. #raw_03: 2021_population.CSV  
     1.4. #raw_04: arrangements/XML country areas not match input.XML  
     1.5. #staging_01: **_DimCountries_** (Postgre SQL table)  
-    **_DimCountries_** layout  
+
+    **_<p><br>DimCountries layout</p>_**  
+
     | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
     | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
     | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK           | m001     |  
     | 2   | Country               | Character variying(60)|          |            |                       |              | m002     |
     | 3   | Area                  | integer               |          |            |                       |              | m003     |
     | 4   | Region                | Character variying(30)|          |            |                       |              | m004     |
-    ![PDI transformation](https://i.imgur.com/7vnbEs8.png)
-    _PDI transformation_
+
+    **_<p><br>Transform execution</p>_**
+
+    ![PDI transform](https://i.imgur.com/7vnbEs8.png)
+    _PDI transform_
     ![Execution in PDI](https://i.imgur.com/5wh3IhK.png)  
     _Execution in PDI_
     ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/09gCq47.png) 
@@ -229,8 +234,8 @@ _DS & BI needs are like an iceberg (80% not visible)_
     
 **_Warning_**!: Remember that field names are standard (the first character of the word is uppercase and no spaces between words). That means that in the output table name and table field names (in POI), we need to write them (table and fields) in double quotes  
 
-![Be atention i standard names in output tables](https://i.imgur.com/bHgo76C.png)  
-_Be atention i standard names (tables and fields) in output tables_
+![Be atention in standard names in Postgre SQL output tables](https://i.imgur.com/bHgo76C.png)  
+_Be atention in standard names in Postgre SQL output tables_
 
 **_Notices_**: See our, worldwide well-known standard, project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb), for **_raw_** documentation (URL, licenses, and so on). All staging files or tables have their field types in **_Postgre SQL_** types, because target DB is **_DWH_** in **_Postgre SQL_**. Countries are the 193 countries recognized by the **_UN_** in 2021. In **_FactCountries_** we will add the year of the measurements (e.g. 2021)  
 
