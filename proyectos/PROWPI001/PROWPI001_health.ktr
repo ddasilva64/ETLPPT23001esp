@@ -438,7 +438,7 @@
   </notepads>
   <order>
     <hop>
-      <from>HDR21-22_Composite_indices_complete_time_series</from>
+      <from>#raw_06</from>
       <to>columns #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -458,7 +458,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>NHA indicators</from>
+      <from>#raw_10</from>
       <to>columns #04</to>
       <enabled>Y</enabled>
     </hop>
@@ -468,7 +468,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>countries_eng</from>
+      <from>#raw_02</from>
       <to>columns #03</to>
       <enabled>Y</enabled>
     </hop>
@@ -583,7 +583,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>XML countries NHS not match input</from>
+      <from>#raw_11</from>
       <to>columns #10</to>
       <enabled>Y</enabled>
     </hop>
@@ -664,7 +664,7 @@
     </hop>
     <hop>
       <from>sort #12</from>
-      <to>output #01</to>
+      <to>#staging_06</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -690,8 +690,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>576</yloc>
+      <xloc>736</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -715,8 +715,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>656</yloc>
+      <xloc>512</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -740,8 +740,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1424</xloc>
-      <yloc>752</yloc>
+      <xloc>1184</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -765,13 +765,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1488</xloc>
-      <yloc>896</yloc>
+      <xloc>1280</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>HDR21-22_Composite_indices_complete_time_series</name>
+    <name>#raw_06</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -12026,13 +12026,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
+      <xloc>64</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>NHA indicators</name>
+    <name>#raw_10</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>N</distribute>
@@ -12149,13 +12149,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>480</yloc>
+      <xloc>64</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>XML countries NHS not match input</name>
+    <name>#raw_11</name>
     <type>getXMLData</type>
     <description/>
     <distribute>N</distribute>
@@ -12270,8 +12270,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>576</yloc>
+      <xloc>64</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12322,7 +12322,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>224</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -12368,7 +12368,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1472</xloc>
+      <xloc>1280</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -12404,8 +12404,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>368</yloc>
+      <xloc>224</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12460,8 +12460,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>480</yloc>
+      <xloc>224</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12495,8 +12495,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>288</yloc>
+      <xloc>864</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12532,8 +12532,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>416</yloc>
+      <xloc>736</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12566,8 +12566,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1424</xloc>
-      <yloc>192</yloc>
+      <xloc>1184</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12601,8 +12601,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>656</yloc>
+      <xloc>976</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12635,8 +12635,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>752</yloc>
+      <xloc>736</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12690,8 +12690,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>576</yloc>
+      <xloc>224</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12727,8 +12727,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1248</xloc>
-      <yloc>880</yloc>
+      <xloc>976</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12746,35 +12746,35 @@
     <fields>
       <field>
         <name>country_code</name>
-        <rename/>
+        <rename>CountryCode</rename>
       </field>
       <field>
         <name>current_health_expenditure_%_gdp</name>
-        <rename>current_health_expenditure_perc_gdp</rename>
+        <rename>CHEGDP</rename>
       </field>
       <field>
         <name>current_health_expenditure_pc_us$</name>
-        <rename>current_health_expenditure_pc_us_dollars</rename>
+        <rename>CHEPCUSD</rename>
       </field>
       <field>
         <name>life_expectancy</name>
-        <rename/>
+        <rename>LE</rename>
       </field>
       <field>
         <name>female_years_life_expectancy</name>
-        <rename/>
+        <rename>FLE</rename>
       </field>
       <field>
         <name>male_years_life_expectancy</name>
-        <rename/>
+        <rename>MLE</rename>
       </field>
       <field>
         <name>maternal_mortality_rate</name>
-        <rename/>
+        <rename>MMR</rename>
       </field>
       <field>
         <name>teen_birth_rate</name>
-        <rename/>
+        <rename>TBR</rename>
       </field>
       <select_unspecified>Y</select_unspecified>
     </fields>
@@ -12787,13 +12787,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1376</xloc>
-      <yloc>1200</yloc>
+      <xloc>1184</xloc>
+      <yloc>816</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>countries_eng</name>
+    <name>#raw_02</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -12872,8 +12872,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>368</yloc>
+      <xloc>64</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12916,8 +12916,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1360</xloc>
-      <yloc>288</yloc>
+      <xloc>976</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12960,8 +12960,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1360</xloc>
-      <yloc>656</yloc>
+      <xloc>1088</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12994,8 +12994,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1248</xloc>
-      <yloc>816</yloc>
+      <xloc>976</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13028,8 +13028,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1376</xloc>
-      <yloc>1104</yloc>
+      <xloc>1184</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13062,8 +13062,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>288</yloc>
+      <xloc>736</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13096,8 +13096,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>416</yloc>
+      <xloc>608</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13130,13 +13130,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
-      <yloc>656</yloc>
+      <xloc>736</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>output #01</name>
+    <name>#staging_06</name>
     <type>XMLOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -13151,7 +13151,7 @@
     <xml_main_element>Rows</xml_main_element>
     <xml_repeat_element>Row</xml_repeat_element>
     <file>
-      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI001\stages_dsf\health</name>
+      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI001\staging\health</name>
       <extention>xml</extention>
       <servlet_output>N</servlet_output>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
@@ -13168,7 +13168,7 @@
     <fields>
       <field>
         <content_type>Element</content_type>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <element/>
         <type>String</type>
         <format/>
@@ -13181,7 +13181,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>current_health_expenditure_perc_gdp</name>
+        <name>CHEGDP</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13194,7 +13194,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>current_health_expenditure_pc_us_dollars</name>
+        <name>CHEPCUSD</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13207,7 +13207,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>life_expectancy</name>
+        <name>LE</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13220,7 +13220,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>female_years_life_expectancy</name>
+        <name>FLE</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13233,7 +13233,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>male_years_life_expectancy</name>
+        <name>MLE</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13246,7 +13246,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>maternal_mortality_rate</name>
+        <name>MMR</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13259,7 +13259,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>teen_birth_rate</name>
+        <name>TBR</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13280,8 +13280,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1072</xloc>
-      <yloc>1184</yloc>
+      <xloc>880</xloc>
+      <yloc>816</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13314,7 +13314,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
+      <xloc>624</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -13356,7 +13356,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>512</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -13398,7 +13398,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1024</xloc>
+      <xloc>816</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -13440,8 +13440,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
-      <yloc>368</yloc>
+      <xloc>512</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13482,8 +13482,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
-      <yloc>480</yloc>
+      <xloc>368</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13524,8 +13524,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1248</xloc>
-      <yloc>288</yloc>
+      <xloc>864</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13566,8 +13566,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1360</xloc>
-      <yloc>448</yloc>
+      <xloc>976</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13608,8 +13608,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1232</xloc>
-      <yloc>656</yloc>
+      <xloc>1088</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13650,8 +13650,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1136</xloc>
-      <yloc>752</yloc>
+      <xloc>848</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13692,8 +13692,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1328</xloc>
-      <yloc>752</yloc>
+      <xloc>1088</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13734,8 +13734,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1248</xloc>
-      <yloc>1008</yloc>
+      <xloc>1088</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13776,8 +13776,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1488</xloc>
-      <yloc>1008</yloc>
+      <xloc>1280</xloc>
+      <yloc>720</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13801,7 +13801,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -13818,8 +13818,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1232</xloc>
-      <yloc>1200</yloc>
+      <xloc>1088</xloc>
+      <yloc>816</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -13858,7 +13858,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>384</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>

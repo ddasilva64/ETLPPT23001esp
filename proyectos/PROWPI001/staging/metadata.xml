@@ -1,31 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <Rows>
-<Row><Key>"m001"</Key> <Meaning>"Country code"</Meaning> <Standard>"Standard ISO3"</Standard> <Formula> </Formula> <Units> </Units></Row>
-<Row><Key>"m002"</Key> <Meaning>"Country standard name"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
-<Row><Key>"m003"</Key> <Meaning>"Country area"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"Km2"</Units></Row>
-<Row><Key>"m004"</Key> <Meaning>"Region standardized name"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
-<Row><Key>"m005"</Key> <Meaning>"Country Population in the year"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
-<Row><Key>"m006"</Key> <Meaning>"Population Density Rate"</Meaning> <Standard> </Standard> <Formula>"population/Km2"</Formula> <Units> </Units></Row>
-<Row><Key>"m007"</Key> <Meaning>"Population Growth Rate"</Meaning> <Standard> </Standard> <Formula>"(t1-t0)/t0 x 100; t0=last year population; t1= current year population"</Formula> <Units>"%"</Units></Row>
-<Row><Key>"m008"</Key> <Meaning>"CO2 emissions Per Capita"</Meaning> <Standard> </Standard> <Formula>"e1 /t1; e1=current year total CO2 emissions; t1= current year population"</Formula> <Units>"Tons"</Units></Row>
-<Row><Key>"m009"</Key> <Meaning>"Material Footprint Per Capita"</Meaning> <Standard> </Standard> <Formula>"(de + rmeim - rmeex)/t1; de = domestic extraction of materials; rmeim = raw material equivalent of imports; rmeex = – raw material equivalents of exports; t1= current year population"</Formula> <Units>"Tons"</Units></Row>
-<Row><Key>"m010"</Key> <Meaning>"Gross Domestic Product"</Meaning> <Standard> </Standard> <Formula>"pc + gpi + gi + gs + (e – i); pc=private consumption; gpi=gross private investment; gi=government investment; gs=government spending; e=exports; i=imports; Gross Domestic Product Growth = GDP1-GDP0/GDP0; GDP1=GDP current year (adjusted for inflation); GDP0=GDP last year (adjusted for inflation)"</Formula> <Units>"US$"</Units></Row>
-<Row><Key>"m011"</Key> <Meaning>"Gross National Income Per Capita"</Meaning> <Standard> </Standard> <Formula>"gni/population; gni= gdp + (inward remittances by businesses and individuals – outward remittance by the foreigners residing in the country)"</Formula> <Units>"US$"</Units></Row>
-<Row><Key>"m012"</Key> <Meaning>"Female Gross National Income Per Capita"</Meaning> <Standard> </Standard> <Formula> </Formula>"US$"<Units> </Units></Row>
-<Row><Key>"m013"</Key> <Meaning>"Male Gros National Income Per Capita"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"US$"</Units></Row>
-<Row><Key>"m014"</Key> <Meaning>"Female Labor Force Participation Rate"</Meaning> <Standard> </Standard> <Formula>"flf / twap x 100; flf=female labor force; twap=total working-age population"</Formula> <Units>"%"</Units></Row>
-<Row><Key>"m015"</Key> <Meaning>"Male Labor Force Participation Rate"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"%"</Units></Row>
-<Row><Key>"m016"</Key> <Meaning>"Public Debt as % of GDP"</Meaning> <Standard> </Standard> <Formula>"pd / gdp; pd=public debt at the end of a 12-month period; gdp=GDP during that period"</Formula> <Units>"%"</Units></Row>
-<Row><Key>"m017"</Key> <Meaning>"Expected Years of Shooling"</Meaning> <Standard> </Standard> <Formula>"years a child of school entrance age is expected to spend at school, or university, including years spent on repetition"</Formula> <Units>"years"</Units></Row>
-<Row><Key>"m018"</Key> <Meaning>"Female Years of Schooling"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>""years</Units></Row>
-<Row><Key>"m019"</Key> <Meaning>"Male Years of Schooling"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"years"</Units></Row>
-<Row><Key>"m020"</Key> <Meaning>"Female Some Secondary Education"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"years"</Units></Row>
-<Row><Key>"m021"</Key> <Meaning>"Male Some Secondary Education"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"years"</Units></Row>
-<Row><Key>"m022"</Key> <Meaning>"Current Health Expenditure % of GDP"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"%"</Units></Row>
-<Row><Key>"m023"</Key> <Meaning>"Current Health Expenditure Per Capita in US$"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>" US$"</Units></Row>
-<Row><Key>"m024"</Key> <Meaning>"Life Expectancy at birth"</Meaning> <Standard> </Standard> <Formula>"number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life"</Formula> <Units>"years"</Units></Row>
-<Row><Key>"m025"</Key> <Meaning>"Female Years of Life Expectancy"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"years"</Units></Row>
-<Row><Key>"m026"</Key> <Meaning>"Male Years of Life Expectanc"</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>"years"</Units></Row>
-<Row><Key>"m027"</Key> <Meaning>"Maternal Mortality Rate"</Meaning> <Standard> </Standard> <Formula>"number of maternal deaths in a year / number of live births for the same period x 100,000"</Formula> <Units>"%"</Units></Row>
-<Row><Key>"m028"</Key> <Meaning>"Teen Birth Rate"</Meaning> <Standard> </Standard> <Formula>"number of resident live births to mothers ages 15-19 / number of resident women aged 15-19"</Formula> <Units>"%"</Units></Row>
+<Row><Key>m001</Key> <Meaning>Country code</Meaning> <Standard>Standard ISO3</Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m002</Key> <Meaning>Country standard name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m003</Key> <Meaning>Country area</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>Km2</Units></Row>
+<Row><Key>m004</Key> <Meaning>Region standardized name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m005</Key> <Meaning>Country Population in the year</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m006</Key> <Meaning>Population Density Rate</Meaning> <Standard> </Standard> <Formula>population/Km2</Formula> <Units> </Units></Row>
+<Row><Key>m007</Key> <Meaning>Population Growth Rate</Meaning> <Standard> </Standard> <Formula>(t1-t0)/t0 x 100; t0=last year population; t1= current year population</Formula> <Units>"%"</Units></Row>
+<Row><Key>m008</Key> <Meaning>CO2 emissions Per Capita</Meaning> <Standard> </Standard> <Formula>e1 /t1; e1=current year total CO2 emissions; t1= current year population</Formula> <Units>Tons</Units></Row>
+<Row><Key>m009</Key> <Meaning>Material Footprint Per Capita</Meaning> <Standard> </Standard> <Formula>(de + rmeim - rmeex)/t1; de = domestic extraction of materials; rmeim = raw material equivalent of imports; rmeex = – raw material equivalents of exports; t1= current year population</Formula> <Units>Tons</Units></Row>
+<Row><Key>m010</Key> <Meaning>Gross Domestic Product</Meaning> <Standard> </Standard> <Formula>pc + gpi + gi + gs + (e – i); pc=private consumption; gpi=gross private investment; gi=government investment; gs=government spending; e=exports; i=imports; Gross Domestic Product Growth = GDP1-GDP0/GDP0; GDP1=GDP current year (adjusted for inflation); GDP0=GDP last year (adjusted for inflation)</Formula> <Units>US$</Units></Row>
+<Row><Key>m011</Key> <Meaning>Gross National Income Per Capita</Meaning> <Standard> </Standard> <Formula>gni/population; gni= gdp + (inward remittances by businesses and individuals – outward remittance by the foreigners residing in the country)</Formula> <Units>US$</Units></Row>
+<Row><Key>m012</Key> <Meaning>Female Gross National Income Per Capita</Meaning> <Standard> </Standard> <Formula> </Formula>US$<Units> </Units></Row>
+<Row><Key>m013</Key> <Meaning>Male Gros National Income Per Capita</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>US$</Units></Row>
+<Row><Key>m014</Key> <Meaning>Female Labor Force Participation Rate</Meaning> <Standard> </Standard> <Formula>flf / twap x 100; flf=female labor force; twap=total working-age population</Formula> <Units>%</Units></Row>
+<Row><Key>m015</Key> <Meaning>Male Labor Force Participation Rate</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>%</Units></Row>
+<Row><Key>m016</Key> <Meaning>Public Debt as % of GDP</Meaning> <Standard> </Standard> <Formula>pd / gdp; pd=public debt at the end of a 12-month period; gdp=GDP during that period</Formula> <Units>%</Units></Row>
+<Row><Key>m017</Key> <Meaning>Expected Years of Shooling</Meaning> <Standard> </Standard> <Formula>years a child of school entrance age is expected to spend at school, or university, including years spent on repetition</Formula> <Units>years</Units></Row>
+<Row><Key>m018</Key> <Meaning>Female Years of Schooling</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>years</Units></Row>
+<Row><Key>m019</Key> <Meaning>Male Years of Schooling</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>years</Units></Row>
+<Row><Key>m020</Key> <Meaning>Female Some Secondary Education</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>years</Units></Row>
+<Row><Key>m021</Key> <Meaning>Male Some Secondary Education</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>years</Units></Row>
+<Row><Key>m022</Key> <Meaning>Current Health Expenditure % of GDP</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>%</Units></Row>
+<Row><Key>m023</Key> <Meaning>Current Health Expenditure Per Capita in US$</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>US$</Units></Row>
+<Row><Key>m024</Key> <Meaning>Life Expectancy at birth</Meaning> <Standard> </Standard> <Formula>number of years a newborn infant would live if prevailing patterns of mortality at the time of its birth were to stay the same throughout its life</Formula> <Units>years</Units></Row>
+<Row><Key>m025</Key> <Meaning>Female Years of Life Expectancy</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>years</Units></Row>
+<Row><Key>m026</Key> <Meaning>Male Years of Life Expectanc</Meaning> <Standard> </Standard> <Formula> </Formula> <Units>years</Units></Row>
+<Row><Key>m027</Key> <Meaning>Maternal Mortality Rate</Meaning> <Standard> </Standard> <Formula>number of maternal deaths in a year / number of live births for the same period x 100,000</Formula> <Units>%</Units></Row>
+<Row><Key>m028</Key> <Meaning>Teen Birth Rate</Meaning> <Standard> </Standard> <Formula>number of resident live births to mothers ages 15-19 / number of resident women aged 15-19</Formula> <Units>%</Units></Row>
 </Rows>

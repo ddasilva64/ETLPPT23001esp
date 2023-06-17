@@ -489,12 +489,12 @@
   </connection>
   <order>
     <hop>
-      <from>XML staged demography</from>
+      <from>#staging_02</from>
       <to>inner join #01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>XML staged ecology</from>
+      <from>#staging_03</from>
       <to>inner join #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -509,7 +509,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>XML staged economy</from>
+      <from>#staging_04</from>
       <to>columns #02</to>
       <enabled>Y</enabled>
     </hop>
@@ -534,7 +534,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>XML staged education</from>
+      <from>#staging_05</from>
       <to>columns #04</to>
       <enabled>Y</enabled>
     </hop>
@@ -559,7 +559,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>XML staged health</from>
+      <from>#staging_06</from>
       <to>columns #06</to>
       <enabled>Y</enabled>
     </hop>
@@ -590,7 +590,7 @@
     </hop>
   </order>
   <step>
-    <name>XML staged demography</name>
+    <name>#staging_02</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -614,7 +614,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/stages_dsf/demography.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/demography.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -622,8 +622,8 @@
     </file>
     <fields>
       <field>
-        <name>country_code</name>
-        <xpath>country_code</xpath>
+        <name>CountryCode</name>
+        <xpath>CountryCode</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -637,8 +637,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>population</name>
-        <xpath>population</xpath>
+        <name>Population</name>
+        <xpath>Population</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -652,8 +652,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>population_density</name>
-        <xpath>population_density</xpath>
+        <name>PDR</name>
+        <xpath>PDR</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -667,8 +667,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>growth_rate</name>
-        <xpath>growth_rate</xpath>
+        <name>PGR</name>
+        <xpath>PGR</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -706,12 +706,12 @@
     </remotesteps>
     <GUI>
       <xloc>176</xloc>
-      <yloc>48</yloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>XML staged ecology</name>
+    <name>#staging_03</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -735,7 +735,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/stages_dsf/ecology.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/ecology.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -743,8 +743,8 @@
     </file>
     <fields>
       <field>
-        <name>country_code</name>
-        <xpath>country_code</xpath>
+        <name>CountryCode</name>
+        <xpath>CountryCode</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -758,8 +758,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>CO2_emissions_pc</name>
-        <xpath>CO2_emissions_pc</xpath>
+        <name>CO2PC</name>
+        <xpath>CO2PC</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -773,8 +773,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>material_footprint_pc</name>
-        <xpath>material_footprint_pc</xpath>
+        <name>MFPC</name>
+        <xpath>MFPC</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -817,7 +817,7 @@
     </GUI>
   </step>
   <step>
-    <name>XML staged economy</name>
+    <name>#staging_04</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -841,7 +841,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/stages_dsf/economy.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/economy.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -849,8 +849,8 @@
     </file>
     <fields>
       <field>
-        <name>country_code</name>
-        <xpath>country_code</xpath>
+        <name>CountryCode</name>
+        <xpath>CountryCode</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -864,8 +864,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>gross_domestic_product_growth</name>
-        <xpath>gross_domestic_product_growth</xpath>
+        <name>GDPG</name>
+        <xpath>GDPG</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -879,8 +879,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>gross_national_income_pc</name>
-        <xpath>gross_national_income_pc</xpath>
+        <name>GNIPC</name>
+        <xpath>GNIPC</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -894,8 +894,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>female_gross_national_income_pc</name>
-        <xpath>female_gross_national_income_pc</xpath>
+        <name>FGNIPC</name>
+        <xpath>FGNIPC</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -909,8 +909,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>male_gross_national_income_pc</name>
-        <xpath>male_gross_national_income_pc</xpath>
+        <name>MGNIPC</name>
+        <xpath>MGNIPC</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -924,8 +924,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>female_labor_force_participation_rate</name>
-        <xpath>female_labor_force_participation_rate</xpath>
+        <name>FLFPR</name>
+        <xpath>FLFPR</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -939,8 +939,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>male_labor_force_participation_rate</name>
-        <xpath>male_labor_force_participation_rate</xpath>
+        <name>MLFPR</name>
+        <xpath>MLFPR</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -954,8 +954,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>public_debt_perc_gdp</name>
-        <xpath>public_debt_perc_gdp</xpath>
+        <name>PDGDP</name>
+        <xpath>PDGDP</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Integer</type>
@@ -998,7 +998,7 @@
     </GUI>
   </step>
   <step>
-    <name>XML staged education</name>
+    <name>#staging_05</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -1022,7 +1022,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/stages_dsf/education.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/education.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1030,8 +1030,8 @@
     </file>
     <fields>
       <field>
-        <name>country_code</name>
-        <xpath>country_code</xpath>
+        <name>CountryCode</name>
+        <xpath>CountryCode</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -1045,8 +1045,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>expected_years_schooling</name>
-        <xpath>expected_years_schooling</xpath>
+        <name>EYS</name>
+        <xpath>EYS</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1060,8 +1060,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>female_years_schooling</name>
-        <xpath>female_years_schooling</xpath>
+        <name>FEYS</name>
+        <xpath>FEYS</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1075,8 +1075,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>male_years_schooling</name>
-        <xpath>male_years_schooling</xpath>
+        <name>MEYS</name>
+        <xpath>MEYS</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1090,8 +1090,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>female_some_secondary_education</name>
-        <xpath>female_some_secondary_education</xpath>
+        <name>FSSE</name>
+        <xpath>FSSE</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1105,8 +1105,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>male_some_secondary_education</name>
-        <xpath>male_some_secondary_education</xpath>
+        <name>MSSE</name>
+        <xpath>MSSE</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1149,7 +1149,7 @@
     </GUI>
   </step>
   <step>
-    <name>XML staged health</name>
+    <name>#staging_06</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -1173,7 +1173,12 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/stages_dsf/health.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/health.XML</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name/>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1181,8 +1186,8 @@
     </file>
     <fields>
       <field>
-        <name>country_code</name>
-        <xpath>country_code</xpath>
+        <name>CountryCode</name>
+        <xpath>CountryCode</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -1196,8 +1201,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>current_health_expenditure_perc_gdp</name>
-        <xpath>current_health_expenditure_perc_gdp</xpath>
+        <name>CHEGDP</name>
+        <xpath>CHEGDP</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1211,8 +1216,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>current_health_expenditure_pc_us_dollars</name>
-        <xpath>current_health_expenditure_pc_us_dollars</xpath>
+        <name>CHEPCUSD</name>
+        <xpath>CHEPCUSD</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1226,8 +1231,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>life_expectancy</name>
-        <xpath>life_expectancy</xpath>
+        <name>LE</name>
+        <xpath>LE</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1241,8 +1246,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>female_years_life_expectancy</name>
-        <xpath>female_years_life_expectancy</xpath>
+        <name>FLE</name>
+        <xpath>FLE</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1256,8 +1261,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>male_years_life_expectancy</name>
-        <xpath>male_years_life_expectancy</xpath>
+        <name>MLE</name>
+        <xpath>MLE</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1271,8 +1276,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>maternal_mortality_rate</name>
-        <xpath>maternal_mortality_rate</xpath>
+        <name>MMR</name>
+        <xpath>MMR</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Integer</type>
@@ -1286,8 +1291,8 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>teen_birth_rate</name>
-        <xpath>teen_birth_rate</xpath>
+        <name>TBR</name>
+        <xpath>TBR</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
@@ -1342,27 +1347,33 @@
     </partitioning>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
+        <rename/>
       </field>
       <field>
-        <name>population</name>
+        <name>Population</name>
+        <rename/>
       </field>
       <field>
-        <name>population_density</name>
+        <name>PDR</name>
+        <rename/>
       </field>
       <field>
-        <name>growth_rate</name>
+        <name>PGR</name>
+        <rename/>
       </field>
       <field>
-        <name>CO2_emissions_pc</name>
+        <name>CO2PC</name>
+        <rename/>
       </field>
       <field>
-        <name>material_footprint_pc</name>
+        <name>MFPC</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
-        <name>population</name>
-        <rename>population</rename>
+        <name>Population</name>
+        <rename>Population</rename>
         <type>Integer</type>
         <length>15</length>
         <precision>15</precision>
@@ -1405,33 +1416,41 @@
     </partitioning>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
+        <rename/>
       </field>
       <field>
-        <name>gross_domestic_product_growth</name>
+        <name>GDPG</name>
+        <rename/>
       </field>
       <field>
-        <name>gross_national_income_pc</name>
+        <name>GNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>female_gross_national_income_pc</name>
+        <name>FGNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>male_gross_national_income_pc</name>
+        <name>MGNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>female_labor_force_participation_rate</name>
+        <name>FLFPR</name>
+        <rename/>
       </field>
       <field>
-        <name>male_labor_force_participation_rate</name>
+        <name>MLFPR</name>
+        <rename/>
       </field>
       <field>
-        <name>public_debt_perc_gdp</name>
+        <name>PDGDP</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
-        <name>gross_domestic_product_growth</name>
-        <rename>gross_domestic_product_growth</rename>
+        <name>GDPG</name>
+        <rename>GDPG</rename>
         <type>Number</type>
         <length>30</length>
         <precision>25</precision>
@@ -1447,8 +1466,8 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>gross_national_income_pc</name>
-        <rename>gross_national_income_pc</rename>
+        <name>GNIPC</name>
+        <rename>GNIPC</rename>
         <type>Number</type>
         <length>30</length>
         <precision>22</precision>
@@ -1464,8 +1483,8 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>female_gross_national_income_pc</name>
-        <rename>female_gross_national_income_pc</rename>
+        <name>FGNIPC</name>
+        <rename>FGNIPC</rename>
         <type>Number</type>
         <length>30</length>
         <precision>22</precision>
@@ -1481,8 +1500,8 @@
         <storage_type/>
       </meta>
       <meta>
-        <name>male_gross_national_income_pc</name>
-        <rename>male_gross_national_income_pc</rename>
+        <name>MGNIPC</name>
+        <rename>MGNIPC</rename>
         <type>Number</type>
         <length>30</length>
         <precision>22</precision>
@@ -1525,43 +1544,56 @@
     </partitioning>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
+        <rename/>
       </field>
       <field>
-        <name>population</name>
+        <name>Population</name>
+        <rename/>
       </field>
       <field>
-        <name>population_density</name>
+        <name>PDR</name>
+        <rename/>
       </field>
       <field>
-        <name>growth_rate</name>
+        <name>PGR</name>
+        <rename/>
       </field>
       <field>
-        <name>CO2_emissions_pc</name>
+        <name>CO2PC</name>
+        <rename/>
       </field>
       <field>
-        <name>material_footprint_pc</name>
+        <name>MFPC</name>
+        <rename/>
       </field>
       <field>
-        <name>gross_domestic_product_growth</name>
+        <name>GDPG</name>
+        <rename/>
       </field>
       <field>
-        <name>gross_national_income_pc</name>
+        <name>GNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>female_gross_national_income_pc</name>
+        <name>FGNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>male_gross_national_income_pc</name>
+        <name>MGNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>female_labor_force_participation_rate</name>
+        <name>FLFPR</name>
+        <rename/>
       </field>
       <field>
-        <name>male_labor_force_participation_rate</name>
+        <name>MLFPR</name>
+        <rename/>
       </field>
       <field>
-        <name>public_debt_perc_gdp</name>
+        <name>PDGDP</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1592,22 +1624,28 @@
     </partitioning>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
+        <rename/>
       </field>
       <field>
-        <name>expected_years_schooling</name>
+        <name>EYS</name>
+        <rename/>
       </field>
       <field>
-        <name>female_years_schooling</name>
+        <name>FEYS</name>
+        <rename/>
       </field>
       <field>
-        <name>male_years_schooling</name>
+        <name>MEYS</name>
+        <rename/>
       </field>
       <field>
-        <name>female_some_secondary_education</name>
+        <name>FSSE</name>
+        <rename/>
       </field>
       <field>
-        <name>male_some_secondary_education</name>
+        <name>MSSE</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1638,58 +1676,76 @@
     </partitioning>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
+        <rename/>
       </field>
       <field>
-        <name>population</name>
+        <name>Population</name>
+        <rename/>
       </field>
       <field>
-        <name>population_density</name>
+        <name>PDR</name>
+        <rename/>
       </field>
       <field>
-        <name>growth_rate</name>
+        <name>PGR</name>
+        <rename/>
       </field>
       <field>
-        <name>CO2_emissions_pc</name>
+        <name>CO2PC</name>
+        <rename/>
       </field>
       <field>
-        <name>material_footprint_pc</name>
+        <name>MFPC</name>
+        <rename/>
       </field>
       <field>
-        <name>gross_domestic_product_growth</name>
+        <name>GDPG</name>
+        <rename/>
       </field>
       <field>
-        <name>gross_national_income_pc</name>
+        <name>GNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>female_gross_national_income_pc</name>
+        <name>FGNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>male_gross_national_income_pc</name>
+        <name>MGNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>female_labor_force_participation_rate</name>
+        <name>FLFPR</name>
+        <rename/>
       </field>
       <field>
-        <name>male_labor_force_participation_rate</name>
+        <name>MLFPR</name>
+        <rename/>
       </field>
       <field>
-        <name>public_debt_perc_gdp</name>
+        <name>PDGDP</name>
+        <rename/>
       </field>
       <field>
-        <name>expected_years_schooling</name>
+        <name>EYS</name>
+        <rename/>
       </field>
       <field>
-        <name>female_years_schooling</name>
+        <name>FEYS</name>
+        <rename/>
       </field>
       <field>
-        <name>male_years_schooling</name>
+        <name>MEYS</name>
+        <rename/>
       </field>
       <field>
-        <name>female_some_secondary_education</name>
+        <name>FSSE</name>
+        <rename/>
       </field>
       <field>
-        <name>male_some_secondary_education</name>
+        <name>MSSE</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1720,28 +1776,36 @@
     </partitioning>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
+        <rename/>
       </field>
       <field>
-        <name>current_health_expenditure_perc_gdp</name>
+        <name>CHEGDP</name>
+        <rename/>
       </field>
       <field>
-        <name>current_health_expenditure_pc_us_dollars</name>
+        <name>CHEPCUSD</name>
+        <rename/>
       </field>
       <field>
-        <name>life_expectancy</name>
+        <name>LE</name>
+        <rename/>
       </field>
       <field>
-        <name>female_years_life_expectancy</name>
+        <name>FLE</name>
+        <rename/>
       </field>
       <field>
-        <name>male_years_life_expectancy</name>
+        <name>MLE</name>
+        <rename/>
       </field>
       <field>
-        <name>maternal_mortality_rate</name>
+        <name>MMR</name>
+        <rename/>
       </field>
       <field>
-        <name>teen_birth_rate</name>
+        <name>TBR</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1772,79 +1836,104 @@
     </partitioning>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
+        <rename/>
       </field>
       <field>
-        <name>population</name>
+        <name>Population</name>
+        <rename/>
       </field>
       <field>
-        <name>population_density</name>
+        <name>PDR</name>
+        <rename/>
       </field>
       <field>
-        <name>growth_rate</name>
+        <name>PGR</name>
+        <rename/>
       </field>
       <field>
-        <name>CO2_emissions_pc</name>
+        <name>CO2PC</name>
+        <rename/>
       </field>
       <field>
-        <name>material_footprint_pc</name>
+        <name>MFPC</name>
+        <rename/>
       </field>
       <field>
-        <name>gross_domestic_product_growth</name>
+        <name>GDPG</name>
+        <rename/>
       </field>
       <field>
-        <name>gross_national_income_pc</name>
+        <name>GNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>female_gross_national_income_pc</name>
+        <name>FGNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>male_gross_national_income_pc</name>
+        <name>MGNIPC</name>
+        <rename/>
       </field>
       <field>
-        <name>female_labor_force_participation_rate</name>
+        <name>FLFPR</name>
+        <rename/>
       </field>
       <field>
-        <name>male_labor_force_participation_rate</name>
+        <name>MLFPR</name>
+        <rename/>
       </field>
       <field>
-        <name>public_debt_perc_gdp</name>
+        <name>PDGDP</name>
+        <rename/>
       </field>
       <field>
-        <name>expected_years_schooling</name>
+        <name>EYS</name>
+        <rename/>
       </field>
       <field>
-        <name>female_years_schooling</name>
+        <name>FEYS</name>
+        <rename/>
       </field>
       <field>
-        <name>male_years_schooling</name>
+        <name>MEYS</name>
+        <rename/>
       </field>
       <field>
-        <name>female_some_secondary_education</name>
+        <name>FSSE</name>
+        <rename/>
       </field>
       <field>
-        <name>male_some_secondary_education</name>
+        <name>MSSE</name>
+        <rename/>
       </field>
       <field>
-        <name>current_health_expenditure_perc_gdp</name>
+        <name>CHEGDP</name>
+        <rename/>
       </field>
       <field>
-        <name>current_health_expenditure_pc_us_dollars</name>
+        <name>CHEPCUSD</name>
+        <rename/>
       </field>
       <field>
-        <name>life_expectancy</name>
+        <name>LE</name>
+        <rename/>
       </field>
       <field>
-        <name>female_years_life_expectancy</name>
+        <name>FLE</name>
+        <rename/>
       </field>
       <field>
-        <name>male_years_life_expectancy</name>
+        <name>MLE</name>
+        <rename/>
       </field>
       <field>
-        <name>maternal_mortality_rate</name>
+        <name>MMR</name>
+        <rename/>
       </field>
       <field>
-        <name>teen_birth_rate</name>
+        <name>TBR</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1874,13 +1963,13 @@
       <schema_name/>
     </partitioning>
     <join_type>INNER</join_type>
-    <step1>XML staged demography</step1>
-    <step2>XML staged ecology</step2>
+    <step1>#staging_02</step1>
+    <step2>#staging_03</step2>
     <keys_1>
-      <key>country_code</key>
+      <key>CountryCode</key>
     </keys_1>
     <keys_2>
-      <key>country_code</key>
+      <key>CountryCode</key>
     </keys_2>
     <attributes/>
     <cluster_schema/>
@@ -1911,10 +2000,10 @@
     <step1>sort #01</step1>
     <step2>columns #02</step2>
     <keys_1>
-      <key>country_code</key>
+      <key>CountryCode</key>
     </keys_1>
     <keys_2>
-      <key>country_code</key>
+      <key>CountryCode</key>
     </keys_2>
     <attributes/>
     <cluster_schema/>
@@ -1945,10 +2034,10 @@
     <step1>sort #02</step1>
     <step2>columns #04</step2>
     <keys_1>
-      <key>country_code</key>
+      <key>CountryCode</key>
     </keys_1>
     <keys_2>
-      <key>country_code</key>
+      <key>CountryCode</key>
     </keys_2>
     <attributes/>
     <cluster_schema/>
@@ -1979,10 +2068,10 @@
     <step1>sort #03</step1>
     <step2>columns #06</step2>
     <keys_1>
-      <key>country_code</key>
+      <key>CountryCode</key>
     </keys_1>
     <keys_2>
-      <key>country_code</key>
+      <key>CountryCode</key>
     </keys_2>
     <attributes/>
     <cluster_schema/>
@@ -2028,104 +2117,104 @@
     <return_field/>
     <fields>
       <field>
-        <column_name>country_code</column_name>
-        <stream_name>country_code</stream_name>
+        <column_name>"CountryCode"</column_name>
+        <stream_name>CountryCode</stream_name>
       </field>
       <field>
-        <column_name>population</column_name>
-        <stream_name>population</stream_name>
+        <column_name>"Population"</column_name>
+        <stream_name>Population</stream_name>
       </field>
       <field>
-        <column_name>population_density</column_name>
-        <stream_name>population_density</stream_name>
+        <column_name>"PDR"</column_name>
+        <stream_name>PDR</stream_name>
       </field>
       <field>
-        <column_name>growth_rate</column_name>
-        <stream_name>growth_rate</stream_name>
+        <column_name>"PGR"</column_name>
+        <stream_name>PGR</stream_name>
       </field>
       <field>
-        <column_name>CO2_emissions_pc</column_name>
-        <stream_name>CO2_emissions_pc</stream_name>
+        <column_name>"CO2PC"</column_name>
+        <stream_name>CO2PC</stream_name>
       </field>
       <field>
-        <column_name>material_footprint_pc</column_name>
-        <stream_name>material_footprint_pc</stream_name>
+        <column_name>"MFPC"</column_name>
+        <stream_name>MFPC</stream_name>
       </field>
       <field>
-        <column_name>gross_domestic_product_growth</column_name>
-        <stream_name>gross_domestic_product_growth</stream_name>
+        <column_name>"GDPG"</column_name>
+        <stream_name>GDPG</stream_name>
       </field>
       <field>
-        <column_name>gross_national_income_pc</column_name>
-        <stream_name>gross_national_income_pc</stream_name>
+        <column_name>"GNIPC"</column_name>
+        <stream_name>GNIPC</stream_name>
       </field>
       <field>
-        <column_name>female_gross_national_income_pc</column_name>
-        <stream_name>female_gross_national_income_pc</stream_name>
+        <column_name>"FGNIPC"</column_name>
+        <stream_name>FGNIPC</stream_name>
       </field>
       <field>
-        <column_name>male_gross_national_income_pc</column_name>
-        <stream_name>male_gross_national_income_pc</stream_name>
+        <column_name>"MGNIPC"</column_name>
+        <stream_name>MGNIPC</stream_name>
       </field>
       <field>
-        <column_name>female_labor_force_participation_rate</column_name>
-        <stream_name>female_labor_force_participation_rate</stream_name>
+        <column_name>"FLFPR"</column_name>
+        <stream_name>FLFPR</stream_name>
       </field>
       <field>
-        <column_name>male_labor_force_participation_rate</column_name>
-        <stream_name>male_labor_force_participation_rate</stream_name>
+        <column_name>"MLFPR"</column_name>
+        <stream_name>MLFPR</stream_name>
       </field>
       <field>
-        <column_name>public_debt_perc_gdp</column_name>
-        <stream_name>public_debt_perc_gdp</stream_name>
+        <column_name>"PDGDP"</column_name>
+        <stream_name>PDGDP</stream_name>
       </field>
       <field>
-        <column_name>expected_years_schooling</column_name>
-        <stream_name>expected_years_schooling</stream_name>
+        <column_name>"EYS"</column_name>
+        <stream_name>EYS</stream_name>
       </field>
       <field>
-        <column_name>female_years_schooling</column_name>
-        <stream_name>female_years_schooling</stream_name>
+        <column_name>"FEYS"</column_name>
+        <stream_name>FEYS</stream_name>
       </field>
       <field>
-        <column_name>male_years_schooling</column_name>
-        <stream_name>male_years_schooling</stream_name>
+        <column_name>"MEYS"</column_name>
+        <stream_name>MEYS</stream_name>
       </field>
       <field>
-        <column_name>female_some_secondary_education</column_name>
-        <stream_name>female_some_secondary_education</stream_name>
+        <column_name>"FSSE"</column_name>
+        <stream_name>FSSE</stream_name>
       </field>
       <field>
-        <column_name>male_some_secondary_education</column_name>
-        <stream_name>male_some_secondary_education</stream_name>
+        <column_name>"MSSE"</column_name>
+        <stream_name>MSSE</stream_name>
       </field>
       <field>
-        <column_name>current_health_expenditure_perc_gdp</column_name>
-        <stream_name>current_health_expenditure_perc_gdp</stream_name>
+        <column_name>"CHEGDP"</column_name>
+        <stream_name>CHEGDP</stream_name>
       </field>
       <field>
-        <column_name>current_health_expenditure_pc_us_dollars</column_name>
-        <stream_name>current_health_expenditure_pc_us_dollars</stream_name>
+        <column_name>"CHEPCUSD"</column_name>
+        <stream_name>CHEPCUSD</stream_name>
       </field>
       <field>
-        <column_name>life_expectancy</column_name>
-        <stream_name>life_expectancy</stream_name>
+        <column_name>"LE"</column_name>
+        <stream_name>LE</stream_name>
       </field>
       <field>
-        <column_name>female_years_life_expectancy</column_name>
-        <stream_name>female_years_life_expectancy</stream_name>
+        <column_name>"FLE"</column_name>
+        <stream_name>FLE</stream_name>
       </field>
       <field>
-        <column_name>male_years_life_expectancy</column_name>
-        <stream_name>male_years_life_expectancy</stream_name>
+        <column_name>"MLE"</column_name>
+        <stream_name>MLE</stream_name>
       </field>
       <field>
-        <column_name>maternal_mortality_rate</column_name>
-        <stream_name>maternal_mortality_rate</stream_name>
+        <column_name>"MMR"</column_name>
+        <stream_name>MMR</stream_name>
       </field>
       <field>
-        <column_name>teen_birth_rate</column_name>
-        <stream_name>teen_birth_rate</stream_name>
+        <column_name>"TBR"</column_name>
+        <stream_name>TBR</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -2162,7 +2251,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -2204,7 +2293,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -2246,7 +2335,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -2288,7 +2377,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
