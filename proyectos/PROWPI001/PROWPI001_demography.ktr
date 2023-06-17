@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>PROWPI001_demography</name>
+    <name>#staging_02</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -438,7 +438,7 @@
   </notepads>
   <order>
     <hop>
-      <from>2021_population</from>
+      <from>#raw_03</from>
       <to>columns #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -468,7 +468,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>countries_eng</from>
+      <from>#raw_02</from>
       <to>columns #03</to>
       <enabled>Y</enabled>
     </hop>
@@ -488,7 +488,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>XML country demography not match input</from>
+      <from>#raw_05</from>
       <to>columns #05</to>
       <enabled>Y</enabled>
     </hop>
@@ -534,7 +534,7 @@
     </hop>
   </order>
   <step>
-    <name>2021_population</name>
+    <name>#raw_03</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -736,7 +736,7 @@
     </GUI>
   </step>
   <step>
-    <name>XML country demography not match input</name>
+    <name>#raw_05</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -1220,15 +1220,19 @@
     <fields>
       <field>
         <name>country_code</name>
+        <rename>CountryCode</rename>
       </field>
       <field>
         <name>population</name>
+        <rename>Population</rename>
       </field>
       <field>
         <name>population_density</name>
+        <rename>PDR</rename>
       </field>
       <field>
         <name>growth_rate</name>
+        <rename>PGR</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1247,7 +1251,7 @@
     </GUI>
   </step>
   <step>
-    <name>countries_eng</name>
+    <name>#raw_02</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -1347,7 +1351,7 @@
     <xml_main_element>Rows</xml_main_element>
     <xml_repeat_element>Row</xml_repeat_element>
     <file>
-      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI001\stages_dsf\demography</name>
+      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI001\staging\demography</name>
       <extention>xml</extention>
       <servlet_output>N</servlet_output>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
@@ -1364,7 +1368,7 @@
     <fields>
       <field>
         <content_type>Element</content_type>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <element/>
         <type>String</type>
         <format/>
@@ -1377,7 +1381,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>population</name>
+        <name>Population</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -1390,7 +1394,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>population_density</name>
+        <name>PDR</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -1403,7 +1407,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>growth_rate</name>
+        <name>PGR</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>

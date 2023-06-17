@@ -193,15 +193,35 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
     ![PDI transform](https://i.imgur.com/7vnbEs8.png)
     _PDI transform_
-    ![Execution in PDI](https://i.imgur.com/5wh3IhK.png)  
-    _Execution in PDI_
+    ![PDI execution](https://i.imgur.com/5wh3IhK.png)  
+    _PDI execution_
     ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/09gCq47.png) 
     _Postgres SQL's transactions checking in PgAdmin_
 
   2. **_PROWPI001_demography.KTR_**  
-    2.1. #raw_03: 2021_population.CSV  
+    2.1. #raw_03: 2021_population.CSV 
+    2.2. #raw_02: countries_eng.CSV  
     2.2. #raw_05: arrangements/XML country demography not match input.XML  
-    2.3. #staged_02: **_staging\demography.XML_**
+    2.3. #staging_02: **_staging\demography.XML_**  
+    
+    **_<p><br>staging\demography.XML layout</p>_**  
+
+    | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+    | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+    | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK        | m001     |
+    | 2   | Population            | integer               |          |            |                       |              | m005     |
+    | 3   | PDR                   | real                  |          |            |                       |              | m006     |
+    | 4   | PGR                   | real                  |          |            |                       |              | m007     |  
+
+    **_<p><br>Transform execution</p>_**
+
+    ![PDI transform](https://i.imgur.com/c6NwdFK.png)
+    _PDI transform_
+    ![PDI execution](https://i.imgur.com/g5QZiJT.png)  
+    _PDI execution_
+    ![XML file checking](https://i.imgur.com/p7KbdVZ.png) 
+    _XML file checking_
+    
   3. **_PROWPI001_ecology.KTR_**  
     3.1. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
     3.2. #raw_02: countries_eng.CSV  
@@ -232,22 +252,13 @@ _DS & BI needs are like an iceberg (80% not visible)_
     7.6. #staged_07: **_FactCountries_** (Postgre SQL table)  
 
     
-**_Warning_**!: Remember that field names are standard (the first character of the word is uppercase and no spaces between words). That means that in the output table name and table field names (in POI), we need to write them (table and fields) in double quotes  
+**_Warning_**!: Remember that field names are standard (the first character of the word is uppercase, and no spaces between words). That means that in the output table name and table field names (in POI), we need to write them (table and fields) in double quotes  
 
 ![Be atention in standard names in Postgre SQL output tables](https://i.imgur.com/bHgo76C.png)  
 _Be atention in standard names in Postgre SQL output tables_
 
 **_Notices_**: See our, worldwide well-known standard, project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb), for **_raw_** documentation (URL, licenses, and so on). All staging files or tables have their field types in **_Postgre SQL_** types, because target DB is **_DWH_** in **_Postgre SQL_**. Countries are the 193 countries recognized by the **_UN_** in 2021. In **_FactCountries_** we will add the year of the measurements (e.g. 2021)  
 
-
-**_staging\demography.XML_** layout
-
-| Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
-| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK        | m001     |
-| 2   | Population            | integer               |          |            |                       |              | m005     |
-| 3   | PDR                   | real                  |          |            |                       |              | m006     |
-| 4   | PGR                   | real                  |          |            |                       |              | m007     |  
 
 **_staging\ecology.XML_** layout
 
