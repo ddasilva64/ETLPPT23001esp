@@ -462,7 +462,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>countries_eng</from>
+      <from>#raw_02</from>
       <to>columns #03</to>
       <enabled>Y</enabled>
     </hop>
@@ -472,7 +472,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>HDR21-22_Composite_indices_complete_time_series</from>
+      <from>#raw_06</from>
       <to>columns #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -483,12 +483,12 @@
     </hop>
     <hop>
       <from>columns #02</from>
-      <to>output #01</to>
+      <to>#staging_05</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>HDR21-22_Composite_indices_complete_time_series</name>
+    <name>#raw_06</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -11814,21 +11814,27 @@
     <fields>
       <field>
         <name>country_code</name>
+        <rename>CountryCode</rename>
       </field>
       <field>
         <name>expected_years_schooling</name>
+        <rename>EYS</rename>
       </field>
       <field>
         <name>female_years_schooling</name>
+        <rename>FEYS</rename>
       </field>
       <field>
         <name>male_years_schooling</name>
+        <rename>MEYS</rename>
       </field>
       <field>
         <name>female_some_secondary_education</name>
+        <rename>FSSE</rename>
       </field>
       <field>
         <name>male_some_secondary_education</name>
+        <rename>MSSE</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -11879,7 +11885,7 @@
     </GUI>
   </step>
   <step>
-    <name>countries_eng</name>
+    <name>#raw_02</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -11964,7 +11970,7 @@
     </GUI>
   </step>
   <step>
-    <name>output #01</name>
+    <name>#staging_05</name>
     <type>XMLOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -11979,7 +11985,7 @@
     <xml_main_element>Rows</xml_main_element>
     <xml_repeat_element>Row</xml_repeat_element>
     <file>
-      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI001\stages_dsf\education</name>
+      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI001\staging\education</name>
       <extention>xml</extention>
       <servlet_output>N</servlet_output>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
@@ -11996,7 +12002,7 @@
     <fields>
       <field>
         <content_type>Element</content_type>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <element/>
         <type>String</type>
         <format/>
@@ -12009,7 +12015,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>expected_years_schooling</name>
+        <name>EYS</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -12022,7 +12028,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>female_years_schooling</name>
+        <name>FEYS</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -12035,7 +12041,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>male_years_schooling</name>
+        <name>MEYS</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -12048,7 +12054,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>female_some_secondary_education</name>
+        <name>FSSE</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -12061,7 +12067,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>male_some_secondary_education</name>
+        <name>MSSE</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -12083,7 +12089,7 @@
     </remotesteps>
     <GUI>
       <xloc>1376</xloc>
-      <yloc>224</yloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

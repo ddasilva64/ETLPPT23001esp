@@ -437,7 +437,7 @@
   </notepads>
   <order>
     <hop>
-      <from>API_NY.GDP.MKTP.KD.ZG_DS2_en_csv_v2_4701072</from>
+      <from>#raw_07</from>
       <to>columns #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -447,7 +447,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>HDR21-22_Composite_indices_complete_time_series</from>
+      <from>#raw_06</from>
       <to>columns #02</to>
       <enabled>Y</enabled>
     </hop>
@@ -487,7 +487,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>countries_eng</from>
+      <from>#raw_02</from>
       <to>columns #03</to>
       <enabled>Y</enabled>
     </hop>
@@ -507,7 +507,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>WEO_Data_01</from>
+      <from>#raw_08</from>
       <to>columns #04</to>
       <enabled>Y</enabled>
     </hop>
@@ -532,7 +532,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>WEO_Data_02</from>
+      <from>#raw_09</from>
       <to>columns #05</to>
       <enabled>Y</enabled>
     </hop>
@@ -603,12 +603,12 @@
     </hop>
     <hop>
       <from>sort #10</from>
-      <to>output #01</to>
+      <to>#staging_04</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>API_NY.GDP.MKTP.KD.ZG_DS2_en_csv_v2_4701072</name>
+    <name>#raw_07</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -1545,7 +1545,7 @@
     </GUI>
   </step>
   <step>
-    <name>HDR21-22_Composite_indices_complete_time_series</name>
+    <name>#raw_06</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -12806,7 +12806,7 @@
     </GUI>
   </step>
   <step>
-    <name>WEO_Data_01</name>
+    <name>#raw_08</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -12968,7 +12968,7 @@
     </GUI>
   </step>
   <step>
-    <name>WEO_Data_02</name>
+    <name>#raw_09</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -13458,28 +13458,35 @@
     <fields>
       <field>
         <name>country_code</name>
+        <rename>CountryCode</rename>
       </field>
       <field>
         <name>gross_domestic_product_growth</name>
+        <rename>GDPG</rename>
       </field>
       <field>
         <name>gross_national_income_pc</name>
+        <rename>GNIPC</rename>
       </field>
       <field>
         <name>female_gross_national_income_pc</name>
+        <rename>FGNIPC</rename>
       </field>
       <field>
         <name>male_gross_national_income_pc</name>
+        <rename>MGNIPC</rename>
       </field>
       <field>
         <name>female_labor_force_participation_rate</name>
+        <rename>FLFPR</rename>
       </field>
       <field>
         <name>male_labor_force_participation_rate</name>
+        <rename>MLFPR</rename>
       </field>
       <field>
         <name>public_debt_%_gdp</name>
-        <rename>public_debt_perc_gdp</rename>
+        <rename>PDGDP</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -13498,7 +13505,7 @@
     </GUI>
   </step>
   <step>
-    <name>countries_eng</name>
+    <name>#raw_02</name>
     <type>CsvInput</type>
     <description/>
     <distribute>N</distribute>
@@ -13719,7 +13726,7 @@
     </GUI>
   </step>
   <step>
-    <name>output #01</name>
+    <name>#staging_04</name>
     <type>XMLOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -13734,10 +13741,10 @@
     <xml_main_element>Rows</xml_main_element>
     <xml_repeat_element>Row</xml_repeat_element>
     <file>
-      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI001\stages_dsf\economy</name>
+      <name>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI001\staging\economy</name>
       <extention>xml</extention>
       <servlet_output>N</servlet_output>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <split>N</split>
       <add_date>N</add_date>
       <add_time>N</add_time>
@@ -13751,7 +13758,7 @@
     <fields>
       <field>
         <content_type>Element</content_type>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <element/>
         <type>String</type>
         <format/>
@@ -13764,7 +13771,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>gross_domestic_product_growth</name>
+        <name>GDPG</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13777,7 +13784,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>gross_national_income_pc</name>
+        <name>GNIPC</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13790,7 +13797,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>female_gross_national_income_pc</name>
+        <name>FGNIPC</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13803,7 +13810,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>male_gross_national_income_pc</name>
+        <name>MGNIPC</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13816,7 +13823,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>female_labor_force_participation_rate</name>
+        <name>FLFPR</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13829,7 +13836,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>male_labor_force_participation_rate</name>
+        <name>MLFPR</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -13842,7 +13849,7 @@
       </field>
       <field>
         <content_type>Element</content_type>
-        <name>public_debt_perc_gdp</name>
+        <name>PDGDP</name>
         <element/>
         <type>Number</type>
         <format>###,###,###.###</format>
@@ -14266,7 +14273,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>country_code</name>
+        <name>CountryCode</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>

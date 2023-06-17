@@ -215,9 +215,9 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
     **_<p><br>Transform execution</p>_**
 
-    ![PDI transform](https://i.imgur.com/c6NwdFK.png)
+    ![PDI transform](https://i.imgur.com/U6U8y0p.png)
     _PDI transform_
-    ![PDI execution](https://i.imgur.com/g5QZiJT.png)  
+    ![PDI execution](https://i.imgur.com/9VYrTCl.png)  
     _PDI execution_
     ![XML file checking](https://i.imgur.com/p7KbdVZ.png) 
     _XML file checking_
@@ -225,18 +225,81 @@ _DS & BI needs are like an iceberg (80% not visible)_
   3. **_PROWPI001_ecology.KTR_**  
     3.1. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
     3.2. #raw_02: countries_eng.CSV  
-    3.3. #staged_03: staging\ecology.XML  
+    3.3. #staging_03: staging\ecology.XML  
+
+    **_<p><br>staging\ecology.XML layout</p>_**  
+
+
+    | Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
+    | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
+    | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
+    | 2   | CO2PC                 | real                  |          |            |                       |             | m008     |
+    | 3   | MFPC                  | real                  |          |            |                       |             | m009     |  
+
+    **_<p><br>Transform execution</p>_**
+
+    ![PDI transform](https://i.imgur.com/ROtuoqS.png)
+    _PDI transform_
+    ![PDI execution](https://i.imgur.com/xmuK1GA.png)  
+    _PDI execution_
+    ![XML file checking](https://i.imgur.com/6HS55VU.png) 
+    _XML file checking_
+
   4. **_PROWPI001_economy.KTR_**  
     4.1. #raw_07: API_NY.GDP.MKTP.KD.ZG_DS2_en_csv_v2_4701072.CSV  
     4.2. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
     4.3. #raw_02: countries_eng.CSV  
     4.4. #raw_08: WEO_Data_01.CSV  
     4.5. #raw_09: WEO_Data_02.CSV  
-    4.6. #staged_04: staging\economy.XML  
+    4.6. #staging_04: staging\economy.XML  
+
+    **_<p><br>staging\economy.XML layout</p>_** 
+
+    | Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
+    | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
+    | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
+    | 2   | GDPG                  | real                  |          |            |                       |             | m010     |
+    | 3   | GNIPC                 | real                  |          |            |                       |             | m011     |
+    | 4   | FGNIPC                | real                  |          |            |                       |             | m012     |
+    | 5   | MGNIPC                | real                  |          |            |                       |             | m013     |
+    | 6   | FLFPR                 | real                  |          |            |                       |             | m014     |
+    | 7   | MLFPR                 | real                  |          |            |                       |             | m015     |
+    | 8   | PDGDP                 | real                  |          |            |                       |             | m016     |
+
+    **_<p><br>Transform execution</p>_**
+
+    ![PDI transform](https://i.imgur.com/GZ8ZExc.png)
+    _PDI transform_
+    ![PDI execution](https://i.imgur.com/XXMKcs1.png)  
+    _PDI execution_
+    ![XML file checking](https://i.imgur.com/LJmQj4T.png) 
+    _XML file checking_
+
   5. **_PROWPI001_education.KTR_**  
     5.1. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
     5.2. #raw_02: countries_eng.CSV  
-    5.3. #staged_05: staging\education.XML
+    5.3. #staging_05: staging\education.XML  
+
+    **_<p><br>staging\education.XML layout</p>_** 
+
+    | Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
+    | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
+    | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
+    | 2   | EYS                   | real                  |          |            |                       |             | m017     |
+    | 3   | FEYS                  | real                  |          |            |                       |             | m018     |
+    | 4   | MEYS                  | real                  |          |            |                       |             | m019     |
+    | 5   | FSSE                  | real                  |          |            |                       |             | m020     |
+    | 6   | MSSE                  | real                  |          |            |                       |             | m021     |  
+
+    **_<p><br>Transform execution</p>_**
+
+    ![PDI transform](https://i.imgur.com/E1pOonB.png)
+    _PDI transform_
+    ![PDI execution](https://i.imgur.com/eczLhvU.png)  
+    _PDI execution_
+    ![XML file checking](https://i.imgur.com/zfeATj9.png) 
+    _XML file checking_
+
   6. **_PROWPI001_health.KTR_**  
     6.1. #raw_06: HDR21-22_Composite_indices_complete_time_series.CSV  
     6.2. #raw_02: countries_eng.CSV  
@@ -258,39 +321,6 @@ _DS & BI needs are like an iceberg (80% not visible)_
 _Be atention in standard names in Postgre SQL output tables_
 
 **_Notices_**: See our, worldwide well-known standard, project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb), for **_raw_** documentation (URL, licenses, and so on). All staging files or tables have their field types in **_Postgre SQL_** types, because target DB is **_DWH_** in **_Postgre SQL_**. Countries are the 193 countries recognized by the **_UN_** in 2021. In **_FactCountries_** we will add the year of the measurements (e.g. 2021)  
-
-
-**_staging\ecology.XML_** layout
-
-| Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
-| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
-| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
-| 2   | CO2PC                 | real                  |          |            |                       |             | m008     |
-| 3   | MFPC                  | real                  |          |            |                       |             | m009     |  
-
-**_staging\economy.XML_** layout
-
-| Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
-| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
-| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
-| 2   | GDPG                  | real                  |          |            |                       |             | m010     |
-| 3   | GNIPC                 | real                  |          |            |                       |             | m011     |
-| 4   | FGNIPC                | real                  |          |            |                       |             | m012     |
-| 5   | MGNIPC                | real                  |          |            |                       |             | m013     |
-| 6   | FLFPR                 | real                  |          |            |                       |             | m014     |
-| 7   | MLFPR                 | real                  |          |            |                       |             | m015     |
-| 8   | PDGDP                 | real                  |          |            |                       |             | m016     |
-
-**_staging\education.XML_** layout
-
-| Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
-| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
-| 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
-| 2   | EYS                   | real                  |          |            |                       |             | m017     |
-| 3   | FEYS                  | real                  |          |            |                       |             | m018     |
-| 4   | MEYS                  | real                  |          |            |                       |             | m019     |
-| 5   | FSSE                  | real                  |          |            |                       |             | m020     |
-| 6   | MSSE                  | real                  |          |            |                       |             | m021     |
 
 **_staging\health.XML_** layout
 
