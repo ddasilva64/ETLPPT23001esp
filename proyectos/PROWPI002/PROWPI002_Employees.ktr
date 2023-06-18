@@ -437,11 +437,11 @@
   <notepads>
   </notepads>
   <connection>
-    <name>Contoso</name>
+    <name>AdventureWorks</name>
     <server>ddasilva6401\SQLEXPRESS</server>
     <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>ContosoRetailDW</database>
+    <database>AdventureWorksDW2022</database>
     <port>1433</port>
     <username>ddasilva6401\Daniel</username>
     <password>Encrypted </password>
@@ -517,7 +517,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Contoso</connection>
+    <connection>AdventureWorks</connection>
     <sql>SELECT
   EmployeeKey
 , ParentEmployeeKey
