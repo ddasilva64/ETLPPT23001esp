@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>PROWPI002_xxx</name>
+    <name>PROWPI002_Employees</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -1274,9 +1274,6 @@ FROM dbo.DimEmployee
       </field>
       <field>
         <name>Status</name>
-      </field>
-      <field>
-        <name>ETLLoadID</name>
       </field>
       <field>
         <name>LoadDate</name>
