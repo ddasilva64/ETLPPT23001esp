@@ -30,7 +30,7 @@
 
 ## Storytelling notice  
 
-All dataset sources are licensed in the public domain, but **_Adventure Works Cycles, Inc._**, and **_AdventureWorksDW2022_** are, both of them, fiction created by Microsoft. It's a narrative to build project storytelling, containing data solutions, which the author sees in his lifetime professional  
+All dataset sources are licensed in the public domain, but **_Adventure Works Cycles, Inc._**, and **_AdventureWorksDW2022_** are, both of them, fiction created by Microsoft Corp. It's a narrative to build project storytelling, containing data solutions, which the author sees in his lifetime professional  
 
 **_Disclaimer!_**: **_Adventure Works Cycles, Inc._** and **_3DoWoCo_** are a fiction. Any similarities to companies living or dead, or something else is purely coincidental  
 
