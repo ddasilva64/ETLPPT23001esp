@@ -9,7 +9,7 @@
     1.2. #raw_02: countries_eng.CSV  
     1.3. #raw_03: 2021_population.CSV  
     1.4. #raw_04: arrangements/XML country areas not match input.XML  
-    1.5. #staging_01: **_DimCountries_** (Postgre SQL table)  
+    1.5. #staging_01: arrangements/XML DimCountries.XML  
 
   **_<p><br>DimCountries layout</p>_**  
 
@@ -22,12 +22,12 @@
 
   **_<p><br>Transform execution</p>_**
 
-  ![PDI transform](https://i.imgur.com/7vnbEs8.png)
+  ![PDI transform](https://i.imgur.com/2H7IdFy.png)
   _PDI transform_
   ![PDI execution](https://i.imgur.com/5wh3IhK.png)  
   _PDI execution_
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/09gCq47.png) 
-  _Postgres SQL's transactions checking in PgAdmin_
+  ![XML file checking](https://i.imgur.com/ja9Mxa1.png) 
+  _XML file checking_
 
   2. **_PROWPI001_demography.KTR_**  
     2.1. #raw_03: 2021_population.CSV 

@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><CountryCode>afg</CountryCode> <Country>Afghanistan</Country> <Area>652,230</Area> <Region>South Asia</Region></Row>
+<Row><CountryCode>ago</CountryCode> <Country>Angola</Country> <Area>1,246,700</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>alb</CountryCode> <Country>Albania</Country> <Area>28,748</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>and</CountryCode> <Country>Andorra</Country> <Area>468</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>are</CountryCode> <Country>United Arab Emirates</Country> <Area>83,600</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>arg</CountryCode> <Country>Argentina</Country> <Area>2,780,400</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>arm</CountryCode> <Country>Armenia</Country> <Area>29,743</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>atg</CountryCode> <Country>Antigua and Barbuda</Country> <Area>442</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>aus</CountryCode> <Country>Australia</Country> <Area>7,692,024</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>aut</CountryCode> <Country>Austria</Country> <Area>83,871</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>aze</CountryCode> <Country>Azerbaijan</Country> <Area>86,600</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>bdi</CountryCode> <Country>Burundi</Country> <Area>27,834</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>bel</CountryCode> <Country>Belgium</Country> <Area>30,528</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>ben</CountryCode> <Country>Benin</Country> <Area>112,622</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>bfa</CountryCode> <Country>Burkina Faso</Country> <Area>272,967</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>bgd</CountryCode> <Country>Bangladesh</Country> <Area>147,570</Area> <Region>South Asia</Region></Row>
+<Row><CountryCode>bgr</CountryCode> <Country>Bulgaria</Country> <Area>110,879</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>bhr</CountryCode> <Country>Bahrain</Country> <Area>765</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>bhs</CountryCode> <Country>Bahamas</Country> <Area>13,943</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>bih</CountryCode> <Country>Bosnia and Herzegovina</Country> <Area>51,209</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>blr</CountryCode> <Country>Belarus</Country> <Area>207,600</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>blz</CountryCode> <Country>Belize</Country> <Area>22,966</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>bol</CountryCode> <Country>Bolivia (Plurinational State of)</Country> <Area>1,098,581</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>bra</CountryCode> <Country>Brazil</Country> <Area>8,515,767</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>brb</CountryCode> <Country>Barbados</Country> <Area>430</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>brn</CountryCode> <Country>Brunei Darussalam</Country> <Area>5,765</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>btn</CountryCode> <Country>Bhutan</Country> <Area>38,394</Area> <Region>South Asia</Region></Row>
+<Row><CountryCode>bwa</CountryCode> <Country>Botswana</Country> <Area>582,000</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>caf</CountryCode> <Country>Central African Republic</Country> <Area>622,984</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>can</CountryCode> <Country>Canada</Country> <Area>9,984,670</Area> <Region>North America</Region></Row>
+<Row><CountryCode>che</CountryCode> <Country>Switzerland</Country> <Area>41,284</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>chl</CountryCode> <Country>Chile</Country> <Area>756,102</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>chn</CountryCode> <Country>China</Country> <Area>9,706,961</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>civ</CountryCode> <Country>Cote d'Ivoire</Country> <Area>322,463</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>cmr</CountryCode> <Country>Cameroon</Country> <Area>475,442</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>cod</CountryCode> <Country>Congo, Democratic Republic of the</Country> <Area>2,345,000</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>cog</CountryCode> <Country>Congo</Country> <Area>342,000</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>col</CountryCode> <Country>Colombia</Country> <Area>1,141,748</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>com</CountryCode> <Country>Comoros</Country> <Area>1,862</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>cpv</CountryCode> <Country>Cabo Verde</Country> <Area>4,033</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>cri</CountryCode> <Country>Costa Rica</Country> <Area>51,100</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>cub</CountryCode> <Country>Cuba</Country> <Area>109,884</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>cyp</CountryCode> <Country>Cyprus</Country> <Area>9,251</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>cze</CountryCode> <Country>Czechia</Country> <Area>78,865</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>deu</CountryCode> <Country>Germany</Country> <Area>357,114</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>dji</CountryCode> <Country>Djibouti</Country> <Area>23,200</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>dma</CountryCode> <Country>Dominica</Country> <Area>751</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>dnk</CountryCode> <Country>Denmark</Country> <Area>43,094</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>dom</CountryCode> <Country>Dominican Republic</Country> <Area>48,671</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>dza</CountryCode> <Country>Algeria</Country> <Area>2,381,741</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>ecu</CountryCode> <Country>Ecuador</Country> <Area>276,841</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>egy</CountryCode> <Country>Egypt</Country> <Area>1,002,450</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>eri</CountryCode> <Country>Eritrea</Country> <Area>117,600</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>esp</CountryCode> <Country>Spain</Country> <Area>505,992</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>est</CountryCode> <Country>Estonia</Country> <Area>45,227</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>eth</CountryCode> <Country>Ethiopia</Country> <Area>1,104,300</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>fin</CountryCode> <Country>Finland</Country> <Area>338,424</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>fji</CountryCode> <Country>Fiji</Country> <Area>18,272</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>fra</CountryCode> <Country>France</Country> <Area>551,695</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>fsm</CountryCode> <Country>Micronesia (Federated States of)</Country> <Area>702</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>gab</CountryCode> <Country>Gabon</Country> <Area>267,668</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>gbr</CountryCode> <Country>United Kingdom of Great Britain and Northern Ireland</Country> <Area>242,900</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>geo</CountryCode> <Country>Georgia</Country> <Area>69,700</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>gha</CountryCode> <Country>Ghana</Country> <Area>238,533</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>gin</CountryCode> <Country>Guinea</Country> <Area>245,857</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>gmb</CountryCode> <Country>Gambia</Country> <Area>10,689</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>gnb</CountryCode> <Country>Guinea-Bissau</Country> <Area>36,125</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>gnq</CountryCode> <Country>Equatorial Guinea</Country> <Area>28,051</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>grc</CountryCode> <Country>Greece</Country> <Area>131,990</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>grd</CountryCode> <Country>Grenada</Country> <Area>344</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>gtm</CountryCode> <Country>Guatemala</Country> <Area>108,889</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>guy</CountryCode> <Country>Guyana</Country> <Area>214,969</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>hnd</CountryCode> <Country>Honduras</Country> <Area>112,492</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>hrv</CountryCode> <Country>Croatia</Country> <Area>56,594</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>hti</CountryCode> <Country>Haiti</Country> <Area>27,750</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>hun</CountryCode> <Country>Hungary</Country> <Area>93,028</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>idn</CountryCode> <Country>Indonesia</Country> <Area>1,904,569</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>ind</CountryCode> <Country>India</Country> <Area>3,287,590</Area> <Region>South Asia</Region></Row>
+<Row><CountryCode>irl</CountryCode> <Country>Ireland</Country> <Area>70,273</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>irn</CountryCode> <Country>Iran (Islamic Republic of)</Country> <Area>1,648,195</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>irq</CountryCode> <Country>Iraq</Country> <Area>438,317</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>isl</CountryCode> <Country>Iceland</Country> <Area>103,000</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>isr</CountryCode> <Country>Israel</Country> <Area>20,770</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>ita</CountryCode> <Country>Italy</Country> <Area>301,336</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>jam</CountryCode> <Country>Jamaica</Country> <Area>10,991</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>jor</CountryCode> <Country>Jordan</Country> <Area>89,342</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>jpn</CountryCode> <Country>Japan</Country> <Area>377,930</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>kaz</CountryCode> <Country>Kazakhstan</Country> <Area>2,724,900</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>ken</CountryCode> <Country>Kenya</Country> <Area>580,367</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>kgz</CountryCode> <Country>Kyrgyzstan</Country> <Area>199,951</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>khm</CountryCode> <Country>Cambodia</Country> <Area>181,035</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>kir</CountryCode> <Country>Kiribati</Country> <Area>811</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>kna</CountryCode> <Country>Saint Kitts and Nevis</Country> <Area>261</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>kor</CountryCode> <Country>Korea, Republic of</Country> <Area>100,210</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>kwt</CountryCode> <Country>Kuwait</Country> <Area>17,818</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>lao</CountryCode> <Country>Lao People's Democratic Republic</Country> <Area>236,800</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>lbn</CountryCode> <Country>Lebanon</Country> <Area>10,452</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>lbr</CountryCode> <Country>Liberia</Country> <Area>111,369</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>lby</CountryCode> <Country>Libya</Country> <Area>1,759,540</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>lca</CountryCode> <Country>Saint Lucia</Country> <Area>616</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>lie</CountryCode> <Country>Liechtenstein</Country> <Area>160</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>lka</CountryCode> <Country>Sri Lanka</Country> <Area>65,610</Area> <Region>South Asia</Region></Row>
+<Row><CountryCode>lso</CountryCode> <Country>Lesotho</Country> <Area>30,355</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>ltu</CountryCode> <Country>Lithuania</Country> <Area>65,300</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>lux</CountryCode> <Country>Luxembourg</Country> <Area>2,586</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>lva</CountryCode> <Country>Latvia</Country> <Area>64,559</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>mar</CountryCode> <Country>Morocco</Country> <Area>446,550</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>mco</CountryCode> <Country>Monaco</Country> <Area>2</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>mda</CountryCode> <Country>Moldova, Republic of</Country> <Area>33,846</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>mdg</CountryCode> <Country>Madagascar</Country> <Area>587,041</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>mdv</CountryCode> <Country>Maldives</Country> <Area>300</Area> <Region>South Asia</Region></Row>
+<Row><CountryCode>mex</CountryCode> <Country>Mexico</Country> <Area>1,964,375</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>mhl</CountryCode> <Country>Marshall Islands</Country> <Area>181</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>mkd</CountryCode> <Country>North Macedonia</Country> <Area>25,713</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>mli</CountryCode> <Country>Mali</Country> <Area>1,240,192</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>mlt</CountryCode> <Country>Malta</Country> <Area>316</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>mmr</CountryCode> <Country>Myanmar</Country> <Area>676,578</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>mne</CountryCode> <Country>Montenegro</Country> <Area>13,812</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>mng</CountryCode> <Country>Mongolia</Country> <Area>1,564,110</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>moz</CountryCode> <Country>Mozambique</Country> <Area>801,590</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>mrt</CountryCode> <Country>Mauritania</Country> <Area>1,030,700</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>mus</CountryCode> <Country>Mauritius</Country> <Area>2,040</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>mwi</CountryCode> <Country>Malawi</Country> <Area>118,484</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>mys</CountryCode> <Country>Malaysia</Country> <Area>330,803</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>nam</CountryCode> <Country>Namibia</Country> <Area>825,615</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>ner</CountryCode> <Country>Niger</Country> <Area>1,267,000</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>nga</CountryCode> <Country>Nigeria</Country> <Area>923,768</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>nic</CountryCode> <Country>Nicaragua</Country> <Area>130,373</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>nld</CountryCode> <Country>Netherlands</Country> <Area>41,850</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>nor</CountryCode> <Country>Norway</Country> <Area>323,802</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>npl</CountryCode> <Country>Nepal</Country> <Area>147,181</Area> <Region>South Asia</Region></Row>
+<Row><CountryCode>nru</CountryCode> <Country>Nauru</Country> <Area>21</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>nzl</CountryCode> <Country>New Zealand</Country> <Area>270,467</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>omn</CountryCode> <Country>Oman</Country> <Area>309,500</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>pak</CountryCode> <Country>Pakistan</Country> <Area>881,912</Area> <Region>South Asia</Region></Row>
+<Row><CountryCode>pan</CountryCode> <Country>Panama</Country> <Area>75,417</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>per</CountryCode> <Country>Peru</Country> <Area>1,285,216</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>phl</CountryCode> <Country>Philippines</Country> <Area>342,353</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>plw</CountryCode> <Country>Palau</Country> <Area>459</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>png</CountryCode> <Country>Papua New Guinea</Country> <Area>462,840</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>pol</CountryCode> <Country>Poland</Country> <Area>312,679</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>prk</CountryCode> <Country>Korea (Democratic People's Republic of)</Country> <Area>120,538</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>prt</CountryCode> <Country>Portugal</Country> <Area>92,090</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>pry</CountryCode> <Country>Paraguay</Country> <Area>406,752</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>qat</CountryCode> <Country>Qatar</Country> <Area>11,586</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>rou</CountryCode> <Country>Romania</Country> <Area>238,391</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>rus</CountryCode> <Country>Russian Federation</Country> <Area>17,098,242</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>rwa</CountryCode> <Country>Rwanda</Country> <Area>26,338</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>sau</CountryCode> <Country>Saudi Arabia</Country> <Area>2,149,690</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>sdn</CountryCode> <Country>Sudan</Country> <Area>1,886,068</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>sen</CountryCode> <Country>Senegal</Country> <Area>196,722</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>sgp</CountryCode> <Country>Singapore</Country> <Area>710</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>slb</CountryCode> <Country>Solomon Islands</Country> <Area>28,896</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>sle</CountryCode> <Country>Sierra Leone</Country> <Area>71,740</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>slv</CountryCode> <Country>El Salvador</Country> <Area>21,041</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>smr</CountryCode> <Country>San Marino</Country> <Area>61</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>som</CountryCode> <Country>Somalia</Country> <Area>637,657</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>srb</CountryCode> <Country>Serbia</Country> <Area>88,361</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>ssd</CountryCode> <Country>South Sudan</Country> <Area>619,745</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>stp</CountryCode> <Country>Sao Tome and Principe</Country> <Area>964</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>sur</CountryCode> <Country>Suriname</Country> <Area>163,820</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>svk</CountryCode> <Country>Slovakia</Country> <Area>49,037</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>svn</CountryCode> <Country>Slovenia</Country> <Area>20,273</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>swe</CountryCode> <Country>Sweden</Country> <Area>450,295</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>swz</CountryCode> <Country>Eswatini</Country> <Area>17,364</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>syc</CountryCode> <Country>Seychelles</Country> <Area>452</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>syr</CountryCode> <Country>Syrian Arab Republic</Country> <Area>185,180</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>tcd</CountryCode> <Country>Chad</Country> <Area>1,284,000</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>tgo</CountryCode> <Country>Togo</Country> <Area>56,785</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>tha</CountryCode> <Country>Thailand</Country> <Area>513,120</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>tjk</CountryCode> <Country>Tajikistan</Country> <Area>143,100</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>tkm</CountryCode> <Country>Turkmenistan</Country> <Area>488,100</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>tls</CountryCode> <Country>Timor-Leste</Country> <Area>14,874</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>ton</CountryCode> <Country>Tonga</Country> <Area>747</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>tto</CountryCode> <Country>Trinidad and Tobago</Country> <Area>5,130</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>tun</CountryCode> <Country>Tunisia</Country> <Area>163,610</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>tur</CountryCode> <Country>Turkiye</Country> <Area>783,562</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>tuv</CountryCode> <Country>Tuvalu</Country> <Area>26</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>tza</CountryCode> <Country>Tanzania, United Republic of</Country> <Area>945,087</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>uga</CountryCode> <Country>Uganda</Country> <Area>241,550</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>ukr</CountryCode> <Country>Ukraine</Country> <Area>603,500</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>ury</CountryCode> <Country>Uruguay</Country> <Area>181,034</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>usa</CountryCode> <Country>United States of America</Country> <Area>9,372,610</Area> <Region>North America</Region></Row>
+<Row><CountryCode>uzb</CountryCode> <Country>Uzbekistan</Country> <Area>447,400</Area> <Region>Europe &amp; Central Asia</Region></Row>
+<Row><CountryCode>vct</CountryCode> <Country>Saint Vincent and the Grenadines</Country> <Area>387</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>ven</CountryCode> <Country>Venezuela (Bolivarian Republic of)</Country> <Area>916,445</Area> <Region>Latin America &amp; Caribbean</Region></Row>
+<Row><CountryCode>vnm</CountryCode> <Country>Viet Nam</Country> <Area>331,212</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>vut</CountryCode> <Country>Vanuatu</Country> <Area>12,189</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>wsm</CountryCode> <Country>Samoa</Country> <Area>2,842</Area> <Region>East Asia &amp; Pacific</Region></Row>
+<Row><CountryCode>yem</CountryCode> <Country>Yemen</Country> <Area>527,968</Area> <Region>Middle East &amp; North Africa</Region></Row>
+<Row><CountryCode>zaf</CountryCode> <Country>South Africa</Country> <Area>1,221,037</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>zmb</CountryCode> <Country>Zambia</Country> <Area>752,612</Area> <Region>Sub-Saharan Africa</Region></Row>
+<Row><CountryCode>zwe</CountryCode> <Country>Zimbabwe</Country> <Area>390,757</Area> <Region>Sub-Saharan Africa</Region></Row>
+</Rows>

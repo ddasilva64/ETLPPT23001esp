@@ -103,7 +103,7 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
 ### **_Solution_**  
 
-#### **_Steps or methods_**  
+#### **_Steps_**  
 
 - **_ETL_** from **_PROWPI001_**, will be ported from **_Python_** to **_PDI_**  
 
@@ -141,11 +141,11 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
 [Back to Table of contents :arrow_double_up:](../README.md)
 
-#### **_Goals and objectives_**  
+#### **_Goals_**  
 
 **_PROWPI001 ETL (from [PROWPI001](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) data sources)_**  
 
-It will generate next staging tables (**_Postgre SQL_**):  
+It will generate, and check **_QA_** of the next staging tables (**_Postgre SQL_**):  
 
   1. **_Countries_** (dimension and fact table)  
   2. **_Metadata_** (metadata table)  
@@ -154,7 +154,7 @@ It will generate next staging tables (**_Postgre SQL_**):
 
 **_PROWPI002 ETL (from AdventureWorksDW2022 DB)_**  
 
-It will generate next staging clean dimension tables (**_Postgre SQL_**):  
+It will generate, and check **_QA_** of the next staging clean dimension tables (**_Postgre SQL_**):  
 
   1. **_Dates_**  
   2. **_Promotions_**  
@@ -167,7 +167,7 @@ It will generate next staging clean dimension tables (**_Postgre SQL_**):
   9. **_Employees_**  
   10. **_Resellers_**  
 
-It will generate next staging clean fact tables (**_Postgre SQL_**):   
+It will generate, and check **_QA_** of the next staging clean fact tables (**_Postgre SQL_**):   
 
   1. **_Internet sales_**  
   2. **_Reseller sales_**  

@@ -102,6 +102,12 @@ _Internet sales subsistem in dbo schema_
 | 2   | CurrencyAlternateKey     | nchar(3)     | X        |            |                       |             |
 | 3   | CurrencyName             | nvarchar(50) | X        |            |                       |             |
 
+**_Notice_**: Some currency keys are deprecated. For example, the currency key for Afghanistan until 2003 in Iso3 (**_ISO 4217-currency_alphabetic_code_**) was AFA, but since then it has been AFN. In our **_DWH_** we will adopt the ISO 4217-currency_alphabetic_code standard, which means that:
+1. We will only use the Iso3 standard  
+2. We will convert all uses of the currency code to the current standard. e.g. AFA will be transformed into AFN in all the tables in which it is used  
+By the way, we will use the next public domain data sources, for this task: 
+- [Comprehensive country codes: ISO 3166, ITU, ISO 4217 currency codes and many more](https://datahub.io/core/country-codes)
+
   3.5. **_dbo.DimCustomer_**  
   3.5.1. Columns  
 

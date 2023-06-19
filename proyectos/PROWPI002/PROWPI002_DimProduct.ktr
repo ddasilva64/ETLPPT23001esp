@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>PROWPI002_Employees</name>
+    <name>PROWPI002_DimProduct</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -502,6 +502,11 @@
   <order>
     <hop>
       <from>Table input</from>
+      <to>sort #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort #01</from>
       <to>columns #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -510,7 +515,7 @@
     <name>Table input</name>
     <type>TableInput</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -519,34 +524,43 @@
     </partitioning>
     <connection>AdventureWorks</connection>
     <sql>SELECT
-  EmployeeKey
-, ParentEmployeeKey
-, FirstName
-, LastName
-, MiddleName
-, Title
-, HireDate
-, BirthDate
-, EmailAddress
-, Phone
-, MaritalStatus
-, EmergencyContactName
-, EmergencyContactPhone
-, SalariedFlag
-, Gender
-, PayFrequency
-, BaseRate
-, VacationHours
-, CurrentFlag
-, SalesPersonFlag
-, DepartmentName
+  ProductKey
+, ProductAlternateKey
+, ProductSubcategoryKey
+, WeightUnitMeasureCode
+, SizeUnitMeasureCode
+, EnglishProductName
+, SpanishProductName
+, FrenchProductName
+, StandardCost
+, FinishedGoodsFlag
+, Color
+, SafetyStockLevel
+, ReorderPoint
+, ListPrice
+, "Size"
+, SizeRange
+, Weight
+, DaysToManufacture
+, ProductLine
+, DealerPrice
+, "Class"
+, Style
+, ModelName
+, LargePhoto
+, EnglishDescription
+, FrenchDescription
+, ChineseDescription
+, ArabicDescription
+, HebrewDescription
+, ThaiDescription
+, GermanDescription
+, JapaneseDescription
+, TurkishDescription
 , StartDate
 , EndDate
 , Status
-, ETLLoadID
-, LoadDate
-, UpdateDate
-FROM dbo.DimEmployee
+FROM dbo.DimProduct
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -558,12 +572,35 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>EmployeeKey</name>
+        <name>ProductKey</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>EmployeeKey</comments>
+        <comments>ProductKey</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>ProductAlternateKey</name>
+        <length>25</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>ProductAlternateKey</comments>
+        <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -581,11 +618,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>ParentEmployeeKey</name>
+        <name>ProductSubcategoryKey</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>ParentEmployeeKey</comments>
+        <comments>ProductSubcategoryKey</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -604,126 +641,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>FirstName</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>FirstName</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>LastName</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>LastName</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>MiddleName</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>MiddleName</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>Title</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>Title</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Date</type>
-        <storagetype>normal</storagetype>
-        <name>HireDate</name>
+        <name>WeightUnitMeasureCode</name>
         <length>-1</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <origin>Table input</origin>
-        <comments>HireDate</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Date</type>
-        <storagetype>normal</storagetype>
-        <name>BirthDate</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>BirthDate</comments>
+        <comments>WeightUnitMeasureCode</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -742,11 +664,34 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>EmailAddress</name>
+        <name>SizeUnitMeasureCode</name>
+        <length>-1</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>SizeUnitMeasureCode</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>EnglishProductName</name>
         <length>50</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>EmailAddress</comments>
+        <comments>EnglishProductName</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -765,57 +710,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>Phone</name>
-        <length>25</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>Phone</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>MaritalStatus</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>MaritalStatus</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>EmergencyContactName</name>
+        <name>SpanishProductName</name>
         <length>50</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>EmergencyContactName</comments>
+        <comments>SpanishProductName</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -834,14 +733,37 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>EmergencyContactPhone</name>
-        <length>25</length>
+        <name>FrenchProductName</name>
+        <length>50</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>EmergencyContactPhone</comments>
+        <comments>FrenchProductName</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>StandardCost</name>
+        <length>19</length>
+        <precision>4</precision>
+        <origin>Table input</origin>
+        <comments>StandardCost</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -857,11 +779,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>Boolean</type>
         <storagetype>normal</storagetype>
-        <name>SalariedFlag</name>
+        <name>FinishedGoodsFlag</name>
         <length>-1</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>SalariedFlag</comments>
+        <comments>FinishedGoodsFlag</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -880,11 +802,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>Gender</name>
-        <length>-1</length>
+        <name>Color</name>
+        <length>15</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>Gender</comments>
+        <comments>Color</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -903,11 +825,34 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>PayFrequency</name>
-        <length>2</length>
+        <name>SafetyStockLevel</name>
+        <length>4</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>PayFrequency</comments>
+        <comments>SafetyStockLevel</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>ReorderPoint</name>
+        <length>4</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>ReorderPoint</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -926,11 +871,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>BigNumber</type>
         <storagetype>normal</storagetype>
-        <name>BaseRate</name>
+        <name>ListPrice</name>
         <length>19</length>
         <precision>4</precision>
         <origin>Table input</origin>
-        <comments>BaseRate</comments>
+        <comments>ListPrice</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol/>
@@ -947,59 +892,13 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>VacationHours</name>
-        <length>4</length>
-        <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>VacationHours</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Boolean</type>
-        <storagetype>normal</storagetype>
-        <name>CurrentFlag</name>
-        <length>-1</length>
+        <name>Size</name>
+        <length>50</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>CurrentFlag</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Boolean</type>
-        <storagetype>normal</storagetype>
-        <name>SalesPersonFlag</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>SalesPersonFlag</comments>
+        <comments>Size</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1018,11 +917,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>DepartmentName</name>
+        <name>SizeRange</name>
         <length>50</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>DepartmentName</comments>
+        <comments>SizeRange</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1039,10 +938,401 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Date</type>
+        <type>Number</type>
+        <storagetype>normal</storagetype>
+        <name>Weight</name>
+        <length>15</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>Weight</comments>
+        <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>DaysToManufacture</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>DaysToManufacture</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>ProductLine</name>
+        <length>-1</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>ProductLine</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>DealerPrice</name>
+        <length>19</length>
+        <precision>4</precision>
+        <origin>Table input</origin>
+        <comments>DealerPrice</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>Class</name>
+        <length>-1</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>Class</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>Style</name>
+        <length>-1</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>Style</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>ModelName</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>ModelName</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Binary</type>
+        <storagetype>normal</storagetype>
+        <name>LargePhoto</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>LargePhoto</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>EnglishDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>EnglishDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>FrenchDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>FrenchDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>ChineseDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>ChineseDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>ArabicDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>ArabicDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>HebrewDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>HebrewDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>ThaiDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>ThaiDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>GermanDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>GermanDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>JapaneseDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>JapaneseDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>TurkishDescription</name>
+        <length>400</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>TurkishDescription</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>StartDate</name>
-        <length>-1</length>
+        <length>3</length>
         <precision>-1</precision>
         <origin>Table input</origin>
         <comments>StartDate</comments>
@@ -1062,10 +1352,10 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Date</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>EndDate</name>
-        <length>-1</length>
+        <length>3</length>
         <precision>-1</precision>
         <origin>Table input</origin>
         <comments>EndDate</comments>
@@ -1088,79 +1378,10 @@ FROM dbo.DimEmployee
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>Status</name>
-        <length>50</length>
+        <length>7</length>
         <precision>-1</precision>
         <origin>Table input</origin>
         <comments>Status</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>ETLLoadID</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>ETLLoadID</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Timestamp</type>
-        <storagetype>normal</storagetype>
-        <name>LoadDate</name>
-        <length>3</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>LoadDate</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Timestamp</type>
-        <storagetype>normal</storagetype>
-        <name>UpdateDate</name>
-        <length>3</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>UpdateDate</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1187,7 +1408,7 @@ FROM dbo.DimEmployee
     </remotesteps>
     <GUI>
       <xloc>96</xloc>
-      <yloc>64</yloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1204,82 +1425,108 @@ FROM dbo.DimEmployee
     </partitioning>
     <fields>
       <field>
-        <name>EmployeeKey</name>
+        <name>ProductKey</name>
+        <rename/>
       </field>
       <field>
-        <name>ParentEmployeeKey</name>
+        <name>ProductAlternateKey</name>
+        <rename/>
       </field>
       <field>
-        <name>FirstName</name>
+        <name>ProductSubcategoryKey</name>
+        <rename/>
       </field>
       <field>
-        <name>LastName</name>
+        <name>WeightUnitMeasureCode</name>
+        <rename/>
       </field>
       <field>
-        <name>MiddleName</name>
+        <name>SizeUnitMeasureCode</name>
+        <rename/>
       </field>
       <field>
-        <name>Title</name>
+        <name>EnglishProductName</name>
+        <rename>ProductName</rename>
       </field>
       <field>
-        <name>HireDate</name>
+        <name>StandardCost</name>
+        <rename/>
       </field>
       <field>
-        <name>BirthDate</name>
+        <name>FinishedGoodsFlag</name>
+        <rename/>
       </field>
       <field>
-        <name>EmailAddress</name>
+        <name>Color</name>
+        <rename/>
       </field>
       <field>
-        <name>Phone</name>
+        <name>SafetyStockLevel</name>
+        <rename/>
       </field>
       <field>
-        <name>MaritalStatus</name>
+        <name>ReorderPoint</name>
+        <rename/>
       </field>
       <field>
-        <name>EmergencyContactName</name>
+        <name>ListPrice</name>
+        <rename/>
       </field>
       <field>
-        <name>EmergencyContactPhone</name>
+        <name>Size</name>
+        <rename/>
       </field>
       <field>
-        <name>SalariedFlag</name>
+        <name>SizeRange</name>
+        <rename/>
       </field>
       <field>
-        <name>Gender</name>
+        <name>Weight</name>
+        <rename/>
       </field>
       <field>
-        <name>PayFrequency</name>
+        <name>DaysToManufacture</name>
+        <rename/>
       </field>
       <field>
-        <name>BaseRate</name>
+        <name>ProductLine</name>
+        <rename/>
       </field>
       <field>
-        <name>VacationHours</name>
+        <name>DealerPrice</name>
+        <rename/>
       </field>
       <field>
-        <name>CurrentFlag</name>
+        <name>Class</name>
+        <rename/>
       </field>
       <field>
-        <name>SalesPersonFlag</name>
+        <name>Style</name>
+        <rename/>
       </field>
       <field>
-        <name>DepartmentName</name>
+        <name>ModelName</name>
+        <rename/>
+      </field>
+      <field>
+        <name>LargePhoto</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EnglishDescription</name>
+        <rename>Description</rename>
       </field>
       <field>
         <name>StartDate</name>
+        <rename/>
       </field>
       <field>
         <name>EndDate</name>
+        <rename/>
       </field>
       <field>
         <name>Status</name>
-      </field>
-      <field>
-        <name>LoadDate</name>
-      </field>
-      <field>
-        <name>UpdateDate</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1292,8 +1539,50 @@ FROM dbo.DimEmployee
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>64</yloc>
+      <xloc>352</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort #01</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
