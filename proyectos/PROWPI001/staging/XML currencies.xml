@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><CountryCode>btn</CountryCode> <Country>Bhutan</Country> <Capital>Thimphu</Capital> <RegionCode> 000000000000142</RegionCode> <SubregionCode> 000000000000034</SubregionCode> <CurrencyKey01>inr</CurrencyKey01> <CurrencyKey02>btn</CurrencyKey02> <Area>38,394</Area></Row>
+<Row><CountryCode>cub</CountryCode> <Country>Cuba</Country> <Capital>Havana</Capital> <RegionCode> 000000000000019</RegionCode> <SubregionCode> 000000000000419</SubregionCode> <CurrencyKey01>cup</CurrencyKey01> <CurrencyKey02>cuc</CurrencyKey02> <Area>109,884</Area></Row>
+<Row><CountryCode>hti</CountryCode> <Country>Haiti</Country> <Capital>Port-au-Prince</Capital> <RegionCode> 000000000000019</RegionCode> <SubregionCode> 000000000000419</SubregionCode> <CurrencyKey01>htg</CurrencyKey01> <CurrencyKey02>usd</CurrencyKey02> <Area>27,750</Area></Row>
+<Row><CountryCode>lso</CountryCode> <Country>Lesotho</Country> <Capital>Maseru</Capital> <RegionCode> 000000000000002</RegionCode> <SubregionCode> 000000000000202</SubregionCode> <CurrencyKey01>lsl</CurrencyKey01> <CurrencyKey02>zar</CurrencyKey02> <Area>30,355</Area></Row>
+<Row><CountryCode>nam</CountryCode> <Country>Namibia</Country> <Capital>Windhoek</Capital> <RegionCode> 000000000000002</RegionCode> <SubregionCode> 000000000000202</SubregionCode> <CurrencyKey01>nad</CurrencyKey01> <CurrencyKey02>zar</CurrencyKey02> <Area>825,615</Area></Row>
+<Row><CountryCode>pan</CountryCode> <Country>Panama</Country> <Capital>Panama City</Capital> <RegionCode> 000000000000019</RegionCode> <SubregionCode> 000000000000419</SubregionCode> <CurrencyKey01>pab</CurrencyKey01> <CurrencyKey02>usd</CurrencyKey02> <Area>75,417</Area></Row>
+<Row><CountryCode>slv</CountryCode> <Country>El Salvador</Country> <Capital>San Salvador</Capital> <RegionCode> 000000000000019</RegionCode> <SubregionCode> 000000000000419</SubregionCode> <CurrencyKey01>svc</CurrencyKey01> <CurrencyKey02>usd</CurrencyKey02> <Area>21,041</Area></Row>
+</Rows>

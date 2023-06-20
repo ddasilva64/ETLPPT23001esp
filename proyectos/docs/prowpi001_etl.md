@@ -165,7 +165,7 @@
     7.3. #staging_04: staging\economy.XML  
     7.4. #staging_05: staging\education.XML  
     7.5. #staging_06: staging\health.XML 
-    7.6. #staged_07: **_FactCountries_** (Postgre SQL table)  
+    7.6. #staging_07: **_FactCountries_** (Postgre SQL table)  
 
   **_<p><br>FactCountries layout</p>_**  
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>PROWPI002_DimCurrency</name>
+    <name>PROWPI002_DimSubregions</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -652,13 +652,23 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>#raw_13</from>
+      <from>#staging_07</from>
       <to>columns #06</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>inner join #01</from>
-      <to>columns #10</to>
+      <to>columns #08</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #08</from>
+      <to>sort #08</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort #08</from>
+      <to>Group by #02</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -672,43 +682,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>columns #10</from>
-      <to>Filter rows #01</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows #01</from>
-      <to>sort #07</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>sort #07</from>
-      <to>Group by #01</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Group by #01</from>
-      <to>sort #08</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>sort #08</from>
-      <to>output #01</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>#staging_02</from>
-      <to>columns #11</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>columns #11</from>
-      <to>sort #09</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>sort #09</from>
-      <to>output #02</to>
+      <from>Group by #02</from>
+      <to>output #04</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1527,7 +1502,7 @@
     </GUI>
   </step>
   <step>
-    <name>#raw_13</name>
+    <name>#staging_07</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -1642,7 +1617,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>752</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1698,54 +1673,10 @@
     </GUI>
   </step>
   <step>
-    <name>Filter rows #01</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to/>
-    <send_false_to>sort #07</send_false_to>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>CurrencyKey</leftvalue>
-        <function>CONTAINS</function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>,</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1120</xloc>
-      <yloc>496</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Group by #01</name>
+    <name>Group by #02</name>
     <type>GroupBy</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -1762,10 +1693,10 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>CurrencyKey</name>
+        <name>SubregionCode</name>
       </field>
       <field>
-        <name>Currency</name>
+        <name>Subregion</name>
       </field>
     </group>
     <fields>
@@ -1779,8 +1710,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
-      <yloc>496</yloc>
+      <xloc>864</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2297,7 +2228,7 @@ FROM dbo.DimCurrency
     </GUI>
   </step>
   <step>
-    <name>columns #10</name>
+    <name>columns #08</name>
     <type>SelectValues</type>
     <description/>
     <distribute>N</distribute>
@@ -2309,10 +2240,10 @@ FROM dbo.DimCurrency
     </partitioning>
     <fields>
       <field>
-        <name>CurrencyKey</name>
+        <name>SubregionCode</name>
       </field>
       <field>
-        <name>Currency</name>
+        <name>Subregion</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -2326,7 +2257,7 @@ FROM dbo.DimCurrency
     </remotesteps>
     <GUI>
       <xloc>1248</xloc>
-      <yloc>496</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2365,7 +2296,7 @@ FROM dbo.DimCurrency
     </GUI>
   </step>
   <step>
-    <name>output #01</name>
+    <name>output #04</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -2377,7 +2308,7 @@ FROM dbo.DimCurrency
     </partitioning>
     <connection>datawarehouse</connection>
     <schema>target</schema>
-    <table>"DimCurrencies"</table>
+    <table>"DimSubregions"</table>
     <commit>100</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -2394,12 +2325,12 @@ FROM dbo.DimCurrency
     <return_field/>
     <fields>
       <field>
-        <column_name>"CurrencyKey"</column_name>
-        <stream_name>CurrencyKey</stream_name>
+        <column_name>"SubregionCode"</column_name>
+        <stream_name>SubregionCode</stream_name>
       </field>
       <field>
-        <column_name>"Currency"</column_name>
-        <stream_name>Currency</stream_name>
+        <column_name>"Subregion"</column_name>
+        <stream_name>Subregion</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -2411,8 +2342,8 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>496</yloc>
+      <xloc>656</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2737,48 +2668,6 @@ FROM dbo.DimCurrency
     </GUI>
   </step>
   <step>
-    <name>sort #07</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>CurrencyKey</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1024</xloc>
-      <yloc>496</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>sort #08</name>
     <type>SortRows</type>
     <description/>
@@ -2798,7 +2687,7 @@ FROM dbo.DimCurrency
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>CurrencyKey</name>
+        <name>SubregionCode</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -2815,229 +2704,8 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>496</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>#staging_02</name>
-    <type>getXMLData</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <include>N</include>
-    <include_field/>
-    <rownum>N</rownum>
-    <addresultfile>N</addresultfile>
-    <namespaceaware>N</namespaceaware>
-    <ignorecomments>N</ignorecomments>
-    <readurl>N</readurl>
-    <validating>N</validating>
-    <usetoken>N</usetoken>
-    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
-    <doNotFailIfNoFile>N</doNotFailIfNoFile>
-    <rownum_field/>
-    <encoding>UTF-8</encoding>
-    <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI002/arrangements/XML currencies.xml</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>CurrencyKey</name>
-        <xpath>CurrencyKey</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>Currency</name>
-        <xpath>Currency</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <loopxpath>/Rows/Row</loopxpath>
-    <IsInFields>N</IsInFields>
-    <IsAFile>N</IsAFile>
-    <XmlField/>
-    <prunePath/>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1120</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #11</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>CurrencyKey</name>
-        <rename/>
-      </field>
-      <field>
-        <name>Currency</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1024</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>sort #09</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>CurrencyKey</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>912</xloc>
-      <yloc>592</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>output #02</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>datawarehouse</connection>
-    <schema>target</schema>
-    <table>"DimCurrencies"</table>
-    <commit>100</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>"CurrencyKey"</column_name>
-        <stream_name>CurrencyKey</stream_name>
-      </field>
-      <field>
-        <column_name>"Currency"</column_name>
-        <stream_name>Currency</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>768</xloc>
-      <yloc>592</yloc>
+      <xloc>1008</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

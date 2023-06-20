@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><CurrencyKey>cup</CurrencyKey> <Currency>Cuban Peso</Currency></Row>
+<Row><CurrencyKey>cuc</CurrencyKey> <Currency>Peso Convertible</Currency></Row>
+<Row><CurrencyKey>htg</CurrencyKey> <Currency>Gourde</Currency></Row>
+<Row><CurrencyKey>btn</CurrencyKey> <Currency>Ngultrum</Currency></Row>
+<Row><CurrencyKey>lsl</CurrencyKey> <Currency>Loti</Currency></Row>
+<Row><CurrencyKey>nad</CurrencyKey> <Currency>Namibia Dollar</Currency></Row>
+<Row><CurrencyKey>pab</CurrencyKey> <Currency>Balboa</Currency></Row>
+<Row><CurrencyKey>svc</CurrencyKey> <Currency>El Salvador Colon</Currency></Row>
+</Rows>

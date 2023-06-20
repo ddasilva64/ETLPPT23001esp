@@ -108,6 +108,105 @@ _Internet sales subsistem in dbo schema_
 By the way, we will use the next public domain data sources, for this task: 
 - [Comprehensive country codes: ISO 3166, ITU, ISO 4217 currency codes and many more](https://datahub.io/core/country-codes)
 
+3.4.2.1. **_PROWPI002\_DimCurrency.KTR_**   
+3.4.2.1.1. #Table input: **_dbo.DimCurrency_** (SQL Server)  
+3.4.2.1.2. #raw_12: country-codes_csv.csv  
+3.4.2.1.3. #raw_02: countries_eng.CSV  
+3.4.2.1.4. #raw_13: arrangements/XML dimcountries.XML  
+3.4.2.1.5. #raw_14: arrangements/XML currencies.xml  
+3.4.2.1.6. #staging_08: **_DimCurrencies_** (Postgre SQL table) 
+
+  **_<p><br>DimCountries layout</p>_**  
+
+  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+  | 1   | CurrencyKey           | Character variying(3) | X        |            |                       | PK           |          |  
+  | 2   | Currency              | Character variying(60)|          |            |                       |              |          |
+  
+  **_<p><br>Transform execution</p>_**
+
+  ![PDI transform](https://i.imgur.com/mBUqgU4.png)  
+  _PDI transform_  
+  ![PDI execution](https://i.imgur.com/dpHuZHP.png)  
+  _PDI execution_  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/vldaeUm.png)  
+  _Postgres SQL's transactions checking in PgAdmin_  
+
+3.4.2.2. **_PROWPI002\_DimCountries.KTR_**   
+3.4.2.2.1. #Table input: **_dbo.DimCurrency_** (SQL Server)  
+3.4.2.2.2. #raw_12: country-codes_csv.csv  
+3.4.2.2.3. #raw_02: countries_eng.CSV  
+3.4.2.2.4. #raw_13: arrangements/XML dimcountries.XML  
+3.4.2.2.5. #staging_09: **_DimCountries_** (Postgre SQL table) 
+
+  **_<p><br>DimCountries layout</p>_**  
+
+  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+  | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK           |          |  
+  | 2   | Country               | Character variying(60)|          |            |                       |              |          |
+  | 3   | Capital               | Character variying(60)|          |            |                       |              |          |
+  | 4   | RegionCode            | Integer               |          |            |                       | FK           |          |
+  | 5   | SubregionCode         | Integer               |          |            |                       | FK           |          |
+  | 6   | CurrencyKey01         | Character variying(3) |          |            |                       | FK           |          |
+  | 7   | CurrencyKey02         | Character variying(3) |          |            |                       | FK           |          |
+  | 8   | Area                  | Integer               |          |            |                       |              |          |
+  
+  **_<p><br>Transform execution</p>_**
+
+  ![PDI transform](https://i.imgur.com/P2diJfD.png)  
+  _PDI transform_  
+  ![PDI execution](https://i.imgur.com/lW3BKb7.png)  
+  _PDI execution_  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/XHFHV1e.png)  
+  _Postgres SQL's transactions checking in PgAdmin_  
+
+3.4.2.3. **_PROWPI002\_DimRegions.KTR_**   
+3.4.2.3.1. #Table input: **_dbo.DimCurrency_** (SQL Server)  
+3.4.2.3.2. #raw_12: country-codes_csv.csv  
+3.4.2.3.3. #raw_02: countries_eng.CSV  
+3.4.2.3.4. #raw_13: arrangements/XML dimcountries.XML  
+3.4.2.3.5. #staging_09: **_DimRegions_** (Postgre SQL table) 
+
+  **_<p><br>DimRegions layout</p>_**  
+
+  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+  | 1   | RegionCode            | Integer               | X        |            |                       | PK           |          |  
+  | 2   | Region                | Character variying(20)|          |            |                       |              |          |
+  
+  **_<p><br>Transform execution</p>_**
+
+  ![PDI transform](https://i.imgur.com/WqVby2s.png)  
+  _PDI transform_  
+  ![PDI execution](https://i.imgur.com/EZU1wxq.png)  
+  _PDI execution_  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/K0L1MjX.png)  
+  _Postgres SQL's transactions checking in PgAdmin_  
+
+3.4.2.4. **_PROWPI002\_DimSubregions.KTR_**   
+3.4.2.4.1. #Table input: **_dbo.DimCurrency_** (SQL Server)  
+3.4.2.4.2. #raw_12: country-codes_csv.csv  
+3.4.2.4.3. #raw_02: countries_eng.CSV  
+3.4.2.4.4. #raw_13: arrangements/XML dimcountries.XML  
+3.4.2.4.5. #staging_10: **_DimSubregions_** (Postgre SQL table) 
+
+  **_<p><br>DimSubregions layout</p>_**  
+
+  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+  | 1   | SubregionCode         | Integer               | X        |            |                       | PK           |          |  
+  | 2   | Subregion             | Character variying(20)|          |            |                       |              |          |
+  
+  **_<p><br>Transform execution</p>_**
+
+  ![PDI transform](https://i.imgur.com/dtSpYpf.png)  
+  _PDI transform_  
+  ![PDI execution](https://i.imgur.com/606h01P.png)  
+  _PDI execution_  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/xGo96rl.png)  
+  _Postgres SQL's transactions checking in PgAdmin_  
+
   3.5. **_dbo.DimCustomer_**  
   3.5.1. Columns  
 
