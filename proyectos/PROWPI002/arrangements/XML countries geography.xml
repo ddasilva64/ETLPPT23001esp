@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><CountryCode>usa</CountryCode> <Country>United States</Country></Row>
+<Row><CountryCode>aus</CountryCode> <Country>Australia</Country></Row>
+<Row><CountryCode>can</CountryCode> <Country>Canada</Country></Row>
+<Row><CountryCode>deu</CountryCode> <Country>Germany</Country></Row>
+<Row><CountryCode>fra</CountryCode> <Country>France</Country></Row>
+<Row><CountryCode>gbr</CountryCode> <Country>United Kingdom</Country></Row>
+</Rows>

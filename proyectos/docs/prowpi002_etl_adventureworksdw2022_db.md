@@ -257,7 +257,52 @@ By the way, we will use the next public domain data sources, for this task:
 | 8   | FrenchCountryRegionName  | nvarchar(50) |          |            |                       | deprecated        |
 | 9   | PostalCode               | nvarchar(15) |          |            |                       |                   |
 | 10  | SalesTerritoryKey        | int          |          |            | dbo.DimSalesTerritory	| FK                |
-| 11  | IpAddressLocator         | nvarchar(15) |          |            |                       |                   |
+| 11  | IpAddressLocator         | nvarchar(15) |          |            |                       | deprecated        |
+
+3.6.1.1. **_PROWPI002\_DimGeography.KTR_**   
+3.6.1.1.1. #Table input: **_dbo.DimGeography_** (SQL Server)   
+3.6.1.1.2. #staging_09: **_DimStatesProvinces_** (Postgre SQL table) 
+
+  **_<p><br>DimStatesProvinces layout</p>_**  
+
+  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+  | 1   | StateProvinceCode     | Character variying(2) | X        |            |                       | PK           |          |  
+  | 2   | CountryCode           | Character variying(3) | X        |            |                       | FK           |          |
+  | 3   | StateProvince         | Character variying(60)|          |            |                       |              |          |
+  
+  **_<p><br>Transform execution</p>_**
+
+  ![PDI transform](https://i.imgur.com/rMfFNsT.png)  
+  _PDI transform_ 
+  ![PDI execution](https://i.imgur.com/uqN5VrH.png)  
+  _PDI execution_  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/Dar3bXc.png)  
+  _Postgres SQL's transactions checking in PgAdmin_  
+
+3.6.1.2. **_PROWPI002\_DimGeography.KTR_**   
+3.6.1.2.1. #Table input: **_dbo.DimGeography_** (SQL Server)  
+3.6.1.2.2. #staging_09: **_"DimStatesProvinces"_** (Postgre SQL table) 
+
+  **_<p><br>DimCountries layout</p>_**  
+
+  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+  | 1   | GeographyKey          | Integer               | X        |            |                       | PK           |          |  
+  | 2   | CountryCode           | Character variying(3) | X        |            |                       | FK           |          |
+  | 3   | StateProvinceCode     | Character variying(2) | X        |            |                       | FK           |          |
+  | 4   | SalesTerritoryKey     | Integer               |          |            |                       | FK           |          |
+  | 5   | City                  | Character variying(60)|          |            |                       |              |          |
+  | 6   | PostalCode            | Character variying(10)|          |            |                       |              |          |
+  
+  **_<p><br>Transform execution</p>_**
+
+  ![The same PDI transform](https://i.imgur.com/rMfFNsT.png)  
+  _The same PDI transform_  
+  ![PDI execution](https://i.imgur.com/UMO0fsj.png)  
+  _PDI execution_  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/KNp4OlJ.png)  
+  _Postgres SQL's transactions checking in PgAdmin_  
 
   3.7. **_dbo.DimSalesTerritory_**  
   3.7.1. Columns  
