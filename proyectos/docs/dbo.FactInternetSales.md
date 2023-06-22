@@ -40,7 +40,7 @@
 
 **_Warning!_**: In their database, **_Adventure Works Cycles, Inc._**, they count sales (in France and Germany), in € since January 1, 1999, but have not changed the value of CurrencyKey. At this time **_3DoWoCo_** will change **_"dem"_** and **_"frf"_** to **_"eur"_**
 
-### **_PROWPI002\_FactInternetSales.KT (PDI)_**   
+### **_PROWPI002\_FactInternetSales.KTR (PDI)_**   
 1. #Table input: **_dbo.FactInternetSales_** (SQL Server)  
 2. #Table input: **_dbo.DimCurrency_** (SQL Server)  
 3. #raw_15: arrangements/XML currencies - euro.xml  

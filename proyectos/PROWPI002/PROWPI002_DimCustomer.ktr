@@ -499,6 +499,57 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>datawarehouse</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>datawarehouse</database>
+    <port>5433</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc818c28197a215a775d086ff8b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
       <from>Table input</from>
@@ -508,6 +559,11 @@
     <hop>
       <from>sort #01</from>
       <to>columns #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #01</from>
+      <to>output #01</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -774,7 +830,7 @@ FROM dbo.DimCustomer
         <storagetype>normal</storagetype>
         <name>MaritalStatus</name>
         <length>-1</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <origin>Table input</origin>
         <comments>MaritalStatus</comments>
         <conversion_Mask/>
@@ -1073,7 +1129,7 @@ FROM dbo.DimCustomer
         <storagetype>normal</storagetype>
         <name>HouseOwnerFlag</name>
         <length>-1</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <origin>Table input</origin>
         <comments>HouseOwnerFlag</comments>
         <conversion_Mask/>
@@ -1357,6 +1413,40 @@ FROM dbo.DimCustomer
         <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>BirthDate</name>
+        <rename>BirthDate</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>DateFirstPurchase</name>
+        <rename>DateFirstPurchase</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1410,6 +1500,150 @@ FROM dbo.DimCustomer
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>output #01</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"DimCustomer"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"CustomerKey"</column_name>
+        <stream_name>CustomerKey</stream_name>
+      </field>
+      <field>
+        <column_name>"GeographyKey"</column_name>
+        <stream_name>GeographyKey</stream_name>
+      </field>
+      <field>
+        <column_name>"CustomerAlternateKey"</column_name>
+        <stream_name>CustomerAlternateKey</stream_name>
+      </field>
+      <field>
+        <column_name>"Title"</column_name>
+        <stream_name>Title</stream_name>
+      </field>
+      <field>
+        <column_name>"FirstName"</column_name>
+        <stream_name>FirstName</stream_name>
+      </field>
+      <field>
+        <column_name>"MiddleName"</column_name>
+        <stream_name>MiddleName</stream_name>
+      </field>
+      <field>
+        <column_name>"LastName"</column_name>
+        <stream_name>LastName</stream_name>
+      </field>
+      <field>
+        <column_name>"NameStyle"</column_name>
+        <stream_name>NameStyle</stream_name>
+      </field>
+      <field>
+        <column_name>"BirthDate"</column_name>
+        <stream_name>BirthDate</stream_name>
+      </field>
+      <field>
+        <column_name>"MaritalStatus"</column_name>
+        <stream_name>MaritalStatus</stream_name>
+      </field>
+      <field>
+        <column_name>"Suffix"</column_name>
+        <stream_name>Suffix</stream_name>
+      </field>
+      <field>
+        <column_name>"Gender"</column_name>
+        <stream_name>Gender</stream_name>
+      </field>
+      <field>
+        <column_name>"EmailAddress"</column_name>
+        <stream_name>EmailAddress</stream_name>
+      </field>
+      <field>
+        <column_name>"YearlyIncome"</column_name>
+        <stream_name>YearlyIncome</stream_name>
+      </field>
+      <field>
+        <column_name>"TotalChildren"</column_name>
+        <stream_name>TotalChildren</stream_name>
+      </field>
+      <field>
+        <column_name>"NumberChildrenAtHome"</column_name>
+        <stream_name>NumberChildrenAtHome</stream_name>
+      </field>
+      <field>
+        <column_name>"Education"</column_name>
+        <stream_name>Education</stream_name>
+      </field>
+      <field>
+        <column_name>"Occupation"</column_name>
+        <stream_name>Occupation</stream_name>
+      </field>
+      <field>
+        <column_name>"HouseOwnerFlag"</column_name>
+        <stream_name>HouseOwnerFlag</stream_name>
+      </field>
+      <field>
+        <column_name>"NumberCarsOwned"</column_name>
+        <stream_name>NumberCarsOwned</stream_name>
+      </field>
+      <field>
+        <column_name>"AddressLine1"</column_name>
+        <stream_name>AddressLine1</stream_name>
+      </field>
+      <field>
+        <column_name>"AddressLine2"</column_name>
+        <stream_name>AddressLine2</stream_name>
+      </field>
+      <field>
+        <column_name>"Phone"</column_name>
+        <stream_name>Phone</stream_name>
+      </field>
+      <field>
+        <column_name>"DateFirstPurchase"</column_name>
+        <stream_name>DateFirstPurchase</stream_name>
+      </field>
+      <field>
+        <column_name>"CommuteDistance"</column_name>
+        <stream_name>CommuteDistance</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>

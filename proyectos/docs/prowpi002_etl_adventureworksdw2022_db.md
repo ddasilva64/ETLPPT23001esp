@@ -23,40 +23,7 @@ _Internet sales subsistem in dbo schema_
 
 **_[dbo.DimCurrency](dbo.DimCurrency.md)_** 
 
-  3.5. **_dbo.DimCustomer_**  
-  3.5.1. Columns  
-
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :-----------|
-| 1   | CustomerKey              | int          | X        | Identity   |                       | PK          |
-| 2   | GeographyKey             | int          |          |            | dbo.DimGeography      | FK          |
-| 3   | CustomerAlternateKey     | nvarchar(15) |          |            |                       |             |
-| 4   | Title                    | nvarchar(8)  |          |            |                       |             |
-| 5   | FirstName                | nvarchar(50) |          |            |                       |             |
-| 6   | MiddleName               | nvarchar(50) |          |            |                       |             |
-| 7   | LastName                 | nvarchar(50) |          |            |                       |             |
-| 8   | NameStyle                | bit          |          |            |                       |             |
-| 9   | FBirthDate               | date         |          |            |                       |             |		
-| 10  | MaritalStatus            | nchar(1)     |          |            |                       |             |
-| 11  | Suffix                   | nvarchar(10) |          |            |                       |             |
-| 12  | Gender                   | nvarchar(1)  |          |            |                       |             |
-| 13  | EmailAddress             | nvarchar(50) |          |            |                       |             |
-| 14  | YearlyIncome             | money        |          |            |                       |             |
-| 15  | TotalChildren            | tinyint      |          |            |                       |             |
-| 16  | NumberChildrenAtHome     | tinyint      |          |            |                       |             |
-| 17  | EnglishEducation         | nvarchar(40) |          |            |                       | Education   |
-| 18  | SpanishEducation         | nvarchar(40) |          |            |                       | deprecated  |
-| 19  | FrenchEducation          | nvarchar(40) |          |            |                       | deprecated  |
-| 20  | EnglishOccupation        | nvarchar(100)|          |            |                       | Occupation  |
-| 21  | SpanishOccupation        | nvarchar(100)|          |            |                       | deprecated  |
-| 22  | FrenchOccupation         | nvarchar(100)|          |            |                       | deprecated  |
-| 23  | HouseOwnerFlag           | nchar(1)     |          |            |                       |             |
-| 24  | NumberCarsOwned          | tinyint      |          |            |                       |             |
-| 25  | AddressLine1             | nvarchar(120)|          |            |                       |             |
-| 26  | AddressLine2             | nvarchar(120)|          |            |                       |             |
-| 27  | Phone                    | nvarchar(20) |          |            |                       |             |
-| 28  | DateFirstPurchase        | date         |          |            |                       |             |
-| 29  | CommuteDistance          | nvarchar(15) |          |            |                       |             |
+**_[dbo.DimCustomer](dbo.DimCustomer.md)_** 
 
   3.6. **_dbo.DimGeography_**  
   3.6.1. Columns  

@@ -28,7 +28,7 @@
 
    <p><br></p>  
 
-### **_PROWPI002\_FactInternetSales.KT (PDI)_**   
+### **_PROWPI002\_DimPromotion.KTR (PDI)_**   
 1. #Table input: **_dbo.DimPromotion_** (SQL Server)  
 2. staging_09: **_DimPromotion_** (Postgre SQL table)
  
@@ -42,7 +42,7 @@
   ![PDI execution](https://i.imgur.com/bU5fFw4.png)  
   _PDI execution_ 
 
-### **_<p><br>FactInternetSales layout (Postgre SQL)</p>_**  
+### **_<p><br>DimPromotion layout (Postgre SQL)</p>_**  
 
 | Key	| Name                     | Data type               | Not null | Attributes | References            | Description       |
 | :-: | :----------------------- | :---------------------: | :------: | :--------- | :-------------------- | :---------------- |
