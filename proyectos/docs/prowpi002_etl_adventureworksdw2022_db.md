@@ -46,7 +46,7 @@ _Internet sales subsistem in dbo schema_
 | 25  | DueDate               | datetime     |          |            |                       |              |
 | 26  | ShipDate              | datetime     |          |            |                       |              |  
 
-**_Warning_**!: In their database, **_Adventure Works Cycles, Inc._**, they count sales (in France and Germany), in € since January 1, 1999, but have not changed the value of CurrencyKey. At this time **_3DoWoCo_** will change **_dem_** and **_frf_** to **_eur_**
+**_Warning_**!: In their database, **_Adventure Works Cycles, Inc._**, they count sales (in France and Germany), in € since January 1, 1999, but have not changed the value of CurrencyKey. At this time **_3DoWoCo_** will change **_"dem"_** and **_"frf"_** to **_"eur"_**
 
 3.4.2.1. **_PROWPI002\_FactInternetSales.KTR_**   
 3.4.2.1.1. #Table input: **_dbo.FactInternetSales_** (SQL Server)  
