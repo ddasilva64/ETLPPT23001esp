@@ -499,15 +499,141 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>datawarehouse</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>datawarehouse</database>
+    <port>5433</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc818c28197a215a775d086ff8b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
+    <hop>
+      <from>sort #01</from>
+      <to>columns #01</to>
+      <enabled>Y</enabled>
+    </hop>
     <hop>
       <from>Table input</from>
       <to>sort #01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>sort #01</from>
-      <to>columns #01</to>
+      <from>Table input 2</from>
+      <to>String operations #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations #01</from>
+      <to>sort #02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort #02</from>
+      <to>columns #02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #01</from>
+      <to>left join #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #02</from>
+      <to>left join #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>left join #01</from>
+      <to>columns #03</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #04</from>
+      <to>output #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>#raw_15</from>
+      <to>columns #06</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #05</from>
+      <to>inner join #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #06</from>
+      <to>inner join #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inner join #01</from>
+      <to>columns #07</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #07</from>
+      <to>output #02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #03</from>
+      <to>Filter rows #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows #01</from>
+      <to>columns #05</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows #01</from>
+      <to>columns #04</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -524,38 +650,33 @@
     </partitioning>
     <connection>AdventureWorks</connection>
     <sql>SELECT
-  EmployeeKey
-, ParentEmployeeKey
-, EmployeeNationalIDAlternateKey
-, ParentEmployeeNationalIDAlternateKey
+  ProductKey
+, OrderDateKey
+, DueDateKey
+, ShipDateKey
+, CustomerKey
+, PromotionKey
+, CurrencyKey
 , SalesTerritoryKey
-, FirstName
-, LastName
-, MiddleName
-, NameStyle
-, Title
-, HireDate
-, BirthDate
-, LoginID
-, EmailAddress
-, Phone
-, MaritalStatus
-, EmergencyContactName
-, EmergencyContactPhone
-, SalariedFlag
-, Gender
-, PayFrequency
-, BaseRate
-, VacationHours
-, SickLeaveHours
-, CurrentFlag
-, SalesPersonFlag
-, DepartmentName
-, StartDate
-, EndDate
-, Status
-, EmployeePhoto
-FROM dbo.DimEmployee
+, SalesOrderNumber
+, SalesOrderLineNumber
+, RevisionNumber
+, OrderQuantity
+, UnitPrice
+, ExtendedAmount
+, UnitPriceDiscountPct
+, DiscountAmount
+, ProductStandardCost
+, TotalProductCost
+, SalesAmount
+, TaxAmt
+, Freight
+, CarrierTrackingNumber
+, CustomerPONumber
+, OrderDate
+, DueDate
+, ShipDate
+FROM dbo.FactInternetSales
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -567,11 +688,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>EmployeeKey</name>
+        <name>ProductKey</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>EmployeeKey</comments>
+        <comments>ProductKey</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -590,11 +711,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>ParentEmployeeKey</name>
+        <name>OrderDateKey</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>ParentEmployeeKey</comments>
+        <comments>OrderDateKey</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -611,14 +732,14 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>EmployeeNationalIDAlternateKey</name>
-        <length>15</length>
-        <precision>-1</precision>
+        <name>DueDateKey</name>
+        <length>9</length>
+        <precision>0</precision>
         <origin>Table input</origin>
-        <comments>EmployeeNationalIDAlternateKey</comments>
-        <conversion_Mask/>
+        <comments>DueDateKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -634,14 +755,83 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>ParentEmployeeNationalIDAlternateKey</name>
-        <length>15</length>
-        <precision>-1</precision>
+        <name>ShipDateKey</name>
+        <length>9</length>
+        <precision>0</precision>
         <origin>Table input</origin>
-        <comments>ParentEmployeeNationalIDAlternateKey</comments>
-        <conversion_Mask/>
+        <comments>ShipDateKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>CustomerKey</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>CustomerKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>PromotionKey</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>PromotionKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>CurrencyKey</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>CurrencyKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -682,333 +872,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>FirstName</name>
-        <length>50</length>
+        <name>SalesOrderNumber</name>
+        <length>20</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>FirstName</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>LastName</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>LastName</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>MiddleName</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>MiddleName</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Boolean</type>
-        <storagetype>normal</storagetype>
-        <name>NameStyle</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>NameStyle</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>Title</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>Title</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Date</type>
-        <storagetype>normal</storagetype>
-        <name>HireDate</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>HireDate</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Date</type>
-        <storagetype>normal</storagetype>
-        <name>BirthDate</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>BirthDate</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>LoginID</name>
-        <length>256</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>LoginID</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>EmailAddress</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>EmailAddress</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>Phone</name>
-        <length>25</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>Phone</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>MaritalStatus</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>MaritalStatus</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>EmergencyContactName</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>EmergencyContactName</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>EmergencyContactPhone</name>
-        <length>25</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>EmergencyContactPhone</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Boolean</type>
-        <storagetype>normal</storagetype>
-        <name>SalariedFlag</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>SalariedFlag</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>Gender</name>
-        <length>-1</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>Gender</comments>
+        <comments>SalesOrderNumber</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1027,11 +895,57 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>PayFrequency</name>
+        <name>SalesOrderLineNumber</name>
         <length>2</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>PayFrequency</comments>
+        <comments>SalesOrderLineNumber</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>RevisionNumber</name>
+        <length>2</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>RevisionNumber</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>OrderQuantity</name>
+        <length>4</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>OrderQuantity</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1050,11 +964,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>BigNumber</type>
         <storagetype>normal</storagetype>
-        <name>BaseRate</name>
+        <name>UnitPrice</name>
         <length>19</length>
         <precision>4</precision>
         <origin>Table input</origin>
-        <comments>BaseRate</comments>
+        <comments>UnitPrice</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol/>
@@ -1071,16 +985,16 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>BigNumber</type>
         <storagetype>normal</storagetype>
-        <name>VacationHours</name>
-        <length>4</length>
-        <precision>0</precision>
+        <name>ExtendedAmount</name>
+        <length>19</length>
+        <precision>4</precision>
         <origin>Table input</origin>
-        <comments>VacationHours</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <comments>ExtendedAmount</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1094,37 +1008,14 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>Number</type>
         <storagetype>normal</storagetype>
-        <name>SickLeaveHours</name>
-        <length>4</length>
-        <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>SickLeaveHours</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Boolean</type>
-        <storagetype>normal</storagetype>
-        <name>CurrentFlag</name>
-        <length>-1</length>
+        <name>UnitPriceDiscountPct</name>
+        <length>15</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>CurrentFlag</comments>
-        <conversion_Mask/>
+        <comments>UnitPriceDiscountPct</comments>
+        <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -1140,13 +1031,151 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Boolean</type>
+        <type>Number</type>
         <storagetype>normal</storagetype>
-        <name>SalesPersonFlag</name>
-        <length>-1</length>
+        <name>DiscountAmount</name>
+        <length>15</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>SalesPersonFlag</comments>
+        <comments>DiscountAmount</comments>
+        <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>ProductStandardCost</name>
+        <length>19</length>
+        <precision>4</precision>
+        <origin>Table input</origin>
+        <comments>ProductStandardCost</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>TotalProductCost</name>
+        <length>19</length>
+        <precision>4</precision>
+        <origin>Table input</origin>
+        <comments>TotalProductCost</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>SalesAmount</name>
+        <length>19</length>
+        <precision>4</precision>
+        <origin>Table input</origin>
+        <comments>SalesAmount</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>TaxAmt</name>
+        <length>19</length>
+        <precision>4</precision>
+        <origin>Table input</origin>
+        <comments>TaxAmt</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>Freight</name>
+        <length>19</length>
+        <precision>4</precision>
+        <origin>Table input</origin>
+        <comments>Freight</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CarrierTrackingNumber</name>
+        <length>25</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>CarrierTrackingNumber</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1165,11 +1194,11 @@ FROM dbo.DimEmployee
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>DepartmentName</name>
-        <length>50</length>
+        <name>CustomerPONumber</name>
+        <length>25</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>DepartmentName</comments>
+        <comments>CustomerPONumber</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1186,13 +1215,13 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Date</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
-        <name>StartDate</name>
-        <length>-1</length>
+        <name>OrderDate</name>
+        <length>3</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>StartDate</comments>
+        <comments>OrderDate</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1209,13 +1238,13 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Date</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
-        <name>EndDate</name>
-        <length>-1</length>
+        <name>DueDate</name>
+        <length>3</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>EndDate</comments>
+        <comments>DueDate</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1232,36 +1261,13 @@ FROM dbo.DimEmployee
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
-        <name>Status</name>
-        <length>50</length>
+        <name>ShipDate</name>
+        <length>3</length>
         <precision>-1</precision>
         <origin>Table input</origin>
-        <comments>Status</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Binary</type>
-        <storagetype>normal</storagetype>
-        <name>EmployeePhoto</name>
-        <length>-1</length>
-        <precision>0</precision>
-        <origin>Table input</origin>
-        <comments>EmployeePhoto</comments>
+        <comments>ShipDate</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1287,7 +1293,7 @@ FROM dbo.DimEmployee
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
+      <xloc>80</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1305,94 +1311,378 @@ FROM dbo.DimEmployee
     </partitioning>
     <fields>
       <field>
-        <name>EmployeeKey</name>
+        <name>ProductKey</name>
+        <rename/>
       </field>
       <field>
-        <name>ParentEmployeeKey</name>
+        <name>CustomerKey</name>
+        <rename/>
       </field>
       <field>
-        <name>EmployeeNationalIDAlternateKey</name>
+        <name>PromotionKey</name>
+        <rename/>
       </field>
       <field>
-        <name>ParentEmployeeNationalIDAlternateKey</name>
+        <name>CurrencyKey</name>
+        <rename/>
       </field>
       <field>
         <name>SalesTerritoryKey</name>
+        <rename/>
       </field>
       <field>
-        <name>FirstName</name>
+        <name>SalesOrderNumber</name>
+        <rename/>
       </field>
       <field>
-        <name>LastName</name>
+        <name>SalesOrderLineNumber</name>
+        <rename/>
       </field>
       <field>
-        <name>MiddleName</name>
+        <name>RevisionNumber</name>
+        <rename/>
       </field>
       <field>
-        <name>NameStyle</name>
+        <name>OrderQuantity</name>
+        <rename/>
       </field>
       <field>
-        <name>Title</name>
+        <name>UnitPrice</name>
+        <rename/>
       </field>
       <field>
-        <name>HireDate</name>
+        <name>ExtendedAmount</name>
+        <rename/>
       </field>
       <field>
-        <name>BirthDate</name>
+        <name>UnitPriceDiscountPct</name>
+        <rename/>
       </field>
       <field>
-        <name>LoginID</name>
+        <name>DiscountAmount</name>
+        <rename/>
       </field>
       <field>
-        <name>EmailAddress</name>
+        <name>ProductStandardCost</name>
+        <rename/>
       </field>
       <field>
-        <name>Phone</name>
+        <name>TotalProductCost</name>
+        <rename/>
       </field>
       <field>
-        <name>MaritalStatus</name>
+        <name>SalesAmount</name>
+        <rename/>
       </field>
       <field>
-        <name>EmergencyContactName</name>
+        <name>TaxAmt</name>
+        <rename/>
       </field>
       <field>
-        <name>EmergencyContactPhone</name>
+        <name>Freight</name>
+        <rename/>
       </field>
       <field>
-        <name>SalariedFlag</name>
+        <name>CarrierTrackingNumber</name>
+        <rename/>
       </field>
       <field>
-        <name>Gender</name>
+        <name>CustomerPONumber</name>
+        <rename/>
       </field>
       <field>
-        <name>PayFrequency</name>
+        <name>OrderDate</name>
+        <rename/>
       </field>
       <field>
-        <name>BaseRate</name>
+        <name>DueDate</name>
+        <rename/>
       </field>
       <field>
-        <name>VacationHours</name>
+        <name>ShipDate</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>OrderDate</name>
+        <rename>OrderDate</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>DueDate</name>
+        <rename>DueDate</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>ShipDate</name>
+        <rename>ShipDate</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort #01</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CurrencyKey</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>Y</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table input 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>AdventureWorks</connection>
+    <sql>SELECT
+  CurrencyKey
+, CurrencyAlternateKey
+, CurrencyName
+FROM dbo.DimCurrency
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>CurrencyKey</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input 2</origin>
+        <comments>CurrencyKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CurrencyAlternateKey</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Table input 2</origin>
+        <comments>CurrencyAlternateKey</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CurrencyName</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>Table input 2</origin>
+        <comments>CurrencyName</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>80</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations #01</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>CurrencyAlternateKey</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>N</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #02</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>CurrencyKey</name>
+        <rename/>
       </field>
       <field>
-        <name>SickLeaveHours</name>
+        <name>CurrencyAlternateKey</name>
+        <rename/>
       </field>
       <field>
-        <name>CurrentFlag</name>
-      </field>
-      <field>
-        <name>SalesPersonFlag</name>
-      </field>
-      <field>
-        <name>DepartmentName</name>
-      </field>
-      <field>
-        <name>StartDate</name>
-      </field>
-      <field>
-        <name>EndDate</name>
-      </field>
-      <field>
-        <name>Status</name>
+        <name>CurrencyName</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1405,13 +1695,13 @@ FROM dbo.DimEmployee
       </output>
     </remotesteps>
     <GUI>
-      <xloc>368</xloc>
-      <yloc>48</yloc>
+      <xloc>512</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>sort #01</name>
+    <name>sort #02</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1430,7 +1720,7 @@ FROM dbo.DimEmployee
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>EmployeeKey</name>
+        <name>CurrencyKey</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1447,8 +1737,1020 @@ FROM dbo.DimEmployee
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>48</yloc>
+      <xloc>384</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>left join #01</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>LEFT OUTER</join_type>
+    <step1>columns #01</step1>
+    <step2>columns #02</step2>
+    <keys_1>
+      <key>CurrencyKey</key>
+    </keys_1>
+    <keys_2>
+      <key>CurrencyKey</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #03</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PromotionKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CurrencyAlternateKey</name>
+        <rename>CurrencyKey</rename>
+      </field>
+      <field>
+        <name>SalesTerritoryKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderLineNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>RevisionNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderQuantity</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPrice</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ExtendedAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPriceDiscountPct</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DiscountAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductStandardCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TotalProductCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TaxAmt</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Freight</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CarrierTrackingNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerPONumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DueDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ShipDate</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>output #01</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"FactInternetSales"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"ProductKey"</column_name>
+        <stream_name>ProductKey</stream_name>
+      </field>
+      <field>
+        <column_name>"CustomerKey"</column_name>
+        <stream_name>CustomerKey</stream_name>
+      </field>
+      <field>
+        <column_name>"PromotionKey"</column_name>
+        <stream_name>PromotionKey</stream_name>
+      </field>
+      <field>
+        <column_name>"CurrencyKey"</column_name>
+        <stream_name>CurrencyKey</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesTerritoryKey"</column_name>
+        <stream_name>SalesTerritoryKey</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesOrderNumber"</column_name>
+        <stream_name>SalesOrderNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesOrderLineNumber"</column_name>
+        <stream_name>SalesOrderLineNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"RevisionNumber"</column_name>
+        <stream_name>RevisionNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"OrderQuantity"</column_name>
+        <stream_name>OrderQuantity</stream_name>
+      </field>
+      <field>
+        <column_name>"UnitPrice"</column_name>
+        <stream_name>UnitPrice</stream_name>
+      </field>
+      <field>
+        <column_name>"ExtendedAmount"</column_name>
+        <stream_name>ExtendedAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"UnitPriceDiscountPct"</column_name>
+        <stream_name>UnitPriceDiscountPct</stream_name>
+      </field>
+      <field>
+        <column_name>"DiscountAmount"</column_name>
+        <stream_name>DiscountAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"ProductStandardCost"</column_name>
+        <stream_name>ProductStandardCost</stream_name>
+      </field>
+      <field>
+        <column_name>"TotalProductCost"</column_name>
+        <stream_name>TotalProductCost</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesAmount"</column_name>
+        <stream_name>SalesAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"TaxAmt"</column_name>
+        <stream_name>TaxAmt</stream_name>
+      </field>
+      <field>
+        <column_name>"Freight"</column_name>
+        <stream_name>Freight</stream_name>
+      </field>
+      <field>
+        <column_name>"CarrierTrackingNumber"</column_name>
+        <stream_name>CarrierTrackingNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"CustomerPONumber"</column_name>
+        <stream_name>CustomerPONumber</stream_name>
+      </field>
+      <field>
+        <column_name>"OrderDate"</column_name>
+        <stream_name>OrderDate</stream_name>
+      </field>
+      <field>
+        <column_name>"DueDate"</column_name>
+        <stream_name>DueDate</stream_name>
+      </field>
+      <field>
+        <column_name>"ShipDate"</column_name>
+        <stream_name>ShipDate</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #04</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PromotionKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CurrencyKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesTerritoryKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderLineNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>RevisionNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderQuantity</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPrice</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ExtendedAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPriceDiscountPct</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DiscountAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductStandardCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TotalProductCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TaxAmt</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Freight</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CarrierTrackingNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerPONumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DueDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ShipDate</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>inner join #01</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>columns #05</step1>
+    <step2>columns #06</step2>
+    <keys_1>
+      <key>CurrencyKey</key>
+    </keys_1>
+    <keys_2>
+      <key>CurrencyKey</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #05</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PromotionKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CurrencyKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesTerritoryKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderLineNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>RevisionNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderQuantity</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPrice</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ExtendedAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPriceDiscountPct</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DiscountAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductStandardCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TotalProductCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TaxAmt</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Freight</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CarrierTrackingNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerPONumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DueDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ShipDate</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>#raw_15</name>
+    <type>getXMLData</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <namespaceaware>N</namespaceaware>
+    <ignorecomments>N</ignorecomments>
+    <readurl>N</readurl>
+    <validating>N</validating>
+    <usetoken>N</usetoken>
+    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum_field/>
+    <encoding>UTF-8</encoding>
+    <file>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI002/arrangements/XML currencies - euro.XML</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>CurrencyKey</name>
+        <xpath>CurrencyKey</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CurrencyKey1</name>
+        <xpath>CurrencyKey1</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <loopxpath>/Rows/Row</loopxpath>
+    <IsInFields>N</IsInFields>
+    <IsAFile>N</IsAFile>
+    <XmlField/>
+    <prunePath/>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>992</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #06</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>CurrencyKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CurrencyKey1</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #07</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PromotionKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CurrencyKey1</name>
+        <rename>CurrencyKey</rename>
+      </field>
+      <field>
+        <name>SalesTerritoryKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderLineNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>RevisionNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderQuantity</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPrice</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ExtendedAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPriceDiscountPct</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DiscountAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductStandardCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TotalProductCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TaxAmt</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Freight</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CarrierTrackingNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerPONumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DueDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ShipDate</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>output #02</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"FactInternetSales"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"ProductKey"</column_name>
+        <stream_name>ProductKey</stream_name>
+      </field>
+      <field>
+        <column_name>"CustomerKey"</column_name>
+        <stream_name>CustomerKey</stream_name>
+      </field>
+      <field>
+        <column_name>"PromotionKey"</column_name>
+        <stream_name>PromotionKey</stream_name>
+      </field>
+      <field>
+        <column_name>"CurrencyKey"</column_name>
+        <stream_name>CurrencyKey</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesTerritoryKey"</column_name>
+        <stream_name>SalesTerritoryKey</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesOrderNumber"</column_name>
+        <stream_name>SalesOrderNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesOrderLineNumber"</column_name>
+        <stream_name>SalesOrderLineNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"RevisionNumber"</column_name>
+        <stream_name>RevisionNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"OrderQuantity"</column_name>
+        <stream_name>OrderQuantity</stream_name>
+      </field>
+      <field>
+        <column_name>"UnitPrice"</column_name>
+        <stream_name>UnitPrice</stream_name>
+      </field>
+      <field>
+        <column_name>"ExtendedAmount"</column_name>
+        <stream_name>ExtendedAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"UnitPriceDiscountPct"</column_name>
+        <stream_name>UnitPriceDiscountPct</stream_name>
+      </field>
+      <field>
+        <column_name>"DiscountAmount"</column_name>
+        <stream_name>DiscountAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"ProductStandardCost"</column_name>
+        <stream_name>ProductStandardCost</stream_name>
+      </field>
+      <field>
+        <column_name>"TotalProductCost"</column_name>
+        <stream_name>TotalProductCost</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesAmount"</column_name>
+        <stream_name>SalesAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"TaxAmt"</column_name>
+        <stream_name>TaxAmt</stream_name>
+      </field>
+      <field>
+        <column_name>"Freight"</column_name>
+        <stream_name>Freight</stream_name>
+      </field>
+      <field>
+        <column_name>"CarrierTrackingNumber"</column_name>
+        <stream_name>CarrierTrackingNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"CustomerPONumber"</column_name>
+        <stream_name>CustomerPONumber</stream_name>
+      </field>
+      <field>
+        <column_name>"OrderDate"</column_name>
+        <stream_name>OrderDate</stream_name>
+      </field>
+      <field>
+        <column_name>"DueDate"</column_name>
+        <stream_name>DueDate</stream_name>
+      </field>
+      <field>
+        <column_name>"ShipDate"</column_name>
+        <stream_name>ShipDate</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Filter rows #01</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>columns #05</send_true_to>
+    <send_false_to>columns #04</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>CurrencyKey</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>dem</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>CurrencyKey</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>frf</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+        </conditions>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>944</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

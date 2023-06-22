@@ -19,34 +19,79 @@ _Internet sales subsistem in dbo schema_
 
 | Key	| Name                  | Data type    | Not null | Attributes | References            | Description |
 | :-: | :-------------------- | :----------: | :------: | :--------- | :-------------------- | :-----------|
-| 1   | ProductKey            | int          | X        |            | dbo.DimProduct        | FK          |
-| 2   | OrderDateKey          | int          | X        |            | dbo.DimDate	         | FK          |
-| 3   | DueDateKey            | int          | X        |            | dbo.DimDate		       | FK          |
-| 4   | ShipDateKey           | int          | X        |            | dbo.DimDate		       | FK          |
-| 5   | CustomerKey           | int          | X        |            | dbo.DimCustomer       | FK          |
-| 6   | PromotionKey          | int          | X        |            | dbo.DimPromotion      | FK          |
-| 7   | CurrencyKey           | int          | X        |            | dbo.DimCurrency	     | FK          |
-| 8   | SalesTerritoryKey     | int          | X        |            | dbo.DimSalesTerritory | FK          |
-| 9   | SalesOrderNumber      | nvarchar(20) | X        |            |                       | PK          |
-| 10  | SalesOrderLineNumber  | tinyint      | X        |            |                       | PK          |
-| 11  | RevisionNumber        | tinyint      | X        |            |                       |             |
-| 12  | OrderQuantity         | smallint     | X        |            |                       |             |
-| 13  | UnitPrice             | money        | X        |            |                       |             |
-| 14  | ExtendedAmount        | money        | X        |            |                       |             |
-| 15  | UnitPriceDiscountPct  | float        | X        |            |                       |             |
-| 16  | DiscountAmount        | float        | X        |            |                       |             |
-| 17  | ProductStandardCost   | money        | X        |            |                       |             |
-| 18  | TotalProductCost      | money        | X        |            |                       |             |
-| 19  | SalesAmount           | money        | X        |            |                       |             |
-| 20  | TaxAmt                | money        | X        |            |                       |             |
-| 21  | Freight               | money        | X        |            |                       |             |
-| 22  | CarrierTrackingNumber | nvarchar(25) |          |            |                       |             |
-| 23  | CustomerPONumber      | nvarchar(25) |          |            |                       |             |
-| 24  | OrderDate             | datetime     |          |            |                       |             |
-| 25  | DueDate               | datetime     |          |            |                       |             |
-| 26  | ShipDate              | datetime     |          |            |                       |             |  
+| 1   | ProductKey            | int          | X        |            | dbo.DimProduct        | FK           |
+| 2   | OrderDateKey          | int          | X        |            | dbo.DimDate	         | FK-deprecated|
+| 3   | DueDateKey            | int          | X        |            | dbo.DimDate		       | FK-deprecated|
+| 4   | ShipDateKey           | int          | X        |            | dbo.DimDate		       | FK-deprecated|
+| 5   | CustomerKey           | int          | X        |            | dbo.DimCustomer       | FK           |
+| 6   | PromotionKey          | int          | X        |            | dbo.DimPromotion      | FK           |
+| 7   | CurrencyKey           | int          | X        |            | dbo.DimCurrency	     | FK           |
+| 8   | SalesTerritoryKey     | int          | X        |            | dbo.DimSalesTerritory | FK           |
+| 9   | SalesOrderNumber      | nvarchar(20) | X        |            |                       | PK           |
+| 10  | SalesOrderLineNumber  | tinyint      | X        |            |                       | PK           |
+| 11  | RevisionNumber        | tinyint      | X        |            |                       |              |
+| 12  | OrderQuantity         | smallint     | X        |            |                       |              |
+| 13  | UnitPrice             | money        | X        |            |                       |              |
+| 14  | ExtendedAmount        | money        | X        |            |                       |              |
+| 15  | UnitPriceDiscountPct  | float        | X        |            |                       |              |
+| 16  | DiscountAmount        | float        | X        |            |                       |              |
+| 17  | ProductStandardCost   | money        | X        |            |                       |              |
+| 18  | TotalProductCost      | money        | X        |            |                       |              |
+| 19  | SalesAmount           | money        | X        |            |                       |              |
+| 20  | TaxAmt                | money        | X        |            |                       |              |
+| 21  | Freight               | money        | X        |            |                       |              |
+| 22  | CarrierTrackingNumber | nvarchar(25) |          |            |                       |              |
+| 23  | CustomerPONumber      | nvarchar(25) |          |            |                       |              |
+| 24  | OrderDate             | datetime     |          |            |                       |              |
+| 25  | DueDate               | datetime     |          |            |                       |              |
+| 26  | ShipDate              | datetime     |          |            |                       |              |  
 
-  3.2. **_dbo.DimDate_**  
+**_Warning_**!: In their database, **_Adventure Works Cycles, Inc._**, they count sales (in France and Germany), in € since January 1, 1999, but have not changed the value of CurrencyKey. At this time **_3DoWoCo_** will change **_dem_** and **_frf_** to **_eur_**
+
+3.4.2.1. **_PROWPI002\_FactInternetSales.KTR_**   
+3.4.2.1.1. #Table input: **_dbo.FactInternetSales_** (SQL Server)  
+3.4.2.1.2. #Table input: **_dbo.DimCurrency_** (SQL Server)  
+3.4.2.1.3. #raw_15: arrangements/XML currencies - euro.xml  
+3.4.2.1.4. staging_08: **_FactInternetSales_** (Postgre SQL table) 
+
+  **_<p><br>FactInternetSales layout</p>_**  
+
+  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+  | 1   | ProductKey            | integer               | X        |            | dbo.DimProduct        | FK           |          |
+  | 2   | CustomerKey           | integer               | X        |            | dbo.DimCustomer       | FK           |          |
+  | 3   | PromotionKey          | integer               | X        |            | dbo.DimPromotion      | FK           |          |
+  | 4   | CurrencyKey           | integer               | X        |            | dbo.DimCurrency	      | FK           |          |
+  | 5   | SalesTerritoryKey     | integer               | X        |            | dbo.DimSalesTerritory | FK           |          |
+  | 6   | SalesOrderNumber      | Character variying(20)| X        |            |                       | PK           |          |
+  | 7   | SalesOrderLineNumber  | integer               | X        |            |                       | PK           |          |
+  | 8   | RevisionNumber        | integer               | X        |            |                       |              |          |
+  | 9   | OrderQuantity         | integer               | X        |            |                       |              |          |
+  | 10  | UnitPrice             | real                  | X        |            |                       |              |          |
+  | 11  | ExtendedAmount        | real                  | X        |            |                       |              |          |
+  | 12  | UnitPriceDiscountPct  | real                  | X        |            |                       |              |          |
+  | 13  | DiscountAmount        | real                  | X        |            |                       |              |          |
+  | 14  | ProductStandardCost   | real                  | X        |            |                       |              |          |
+  | 15  | TotalProductCost      | real                  | X        |            |                       |              |          |
+  | 16  | SalesAmount           | real                  | X        |            |                       |              |          |
+  | 17  | TaxAmt                | real                  | X        |            |                       |              |          |
+  | 18  | Freight               | real                  | X        |            |                       |              |          |
+  | 19  | CarrierTrackingNumber | Character variying(25)|          |            |                       |              |          |
+  | 20  | CustomerPONumber      | Character variying(25)|          |            |                       |              |          |
+  | 21  | OrderDate             | date                  |          |            |                       |              |          |
+  | 22  | DueDate               | date                  |          |            |                       |              |          |
+  | 23  | ShipDate              | date                  |          |            |                       |              |          |
+  
+  **_<p><br>Transform execution</p>_**
+
+  ![PDI transform](https://i.imgur.com/1m28Di2.png)  
+  _PDI transform_  
+  ![PDI execution](https://i.imgur.com/3x62USi.png)  
+  _PDI execution_  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/GQ64tqU.png)  
+  _Postgres SQL's transactions checking in PgAdmin_  
+
+  3.2. **_dbo.DimDate_** (deprecated)  
   3.2.1. Columns  
 
 | Key	| Name                  | Data type    | Not null | Attributes | References            | Description   |
@@ -54,15 +99,15 @@ _Internet sales subsistem in dbo schema_
 | 1   | DateKey               | int          | X        |            |                       | PK            |
 | 2   | FullDateAlternateKey  | date         | X        |            |                       |               |
 | 3   | DayNumberOfWeek       | tinyint      | X        |            |                       |               |
-| 4   | EnglishDayNameOfWeek  | nvarchar(10) | X        |            |                       | DayNameOfWeek |
-| 5   | SpanishDayNameOfWeek  | nvarchar(10) | X        |            |                       | deprecated    |
-| 6   | FrenchDayNameOfWeek   | nvarchar(10) | X        |            |                       | deprecated    |
+| 4   | EnglishDayNameOfWeek  | nvarchar(10) | X        |            |                       |               |
+| 5   | SpanishDayNameOfWeek  | nvarchar(10) | X        |            |                       |               |
+| 6   | FrenchDayNameOfWeek   | nvarchar(10) | X        |            |                       |               |
 | 7   | DayNumberOfMonth      | tinyint      | X        |            |                       |               |
 | 8   | DayNumberOfYear       | smallint     | X        |            |                       |               |
 | 9   | WeekNumberOfYear      | tinyint      | X        |            |                       |               |
-| 10  | EnglishMonthName      | nvarchar(10) | X        |            |                       | MonthName     |
-| 11  | SpanishMonthName      | nvarchar(10) | X        |            |                       | deprecated    |
-| 12  | FrenchMonthName       | nvarchar(10) | X        |            |                       | deprecated    |
+| 10  | EnglishMonthName      | nvarchar(10) | X        |            |                       |               |
+| 11  | SpanishMonthName      | nvarchar(10) | X        |            |                       |               |
+| 12  | FrenchMonthName       | nvarchar(10) | X        |            |                       |               |
 | 13  | MonthNumberOfYear     | tinyint      | X        |            |                       |               |
 | 14  | CalendarQuarter       | tinyint      | X        |            |                       |               |
 | 15  | CalendarYear          | smallint     | X        |            |                       |               |	
@@ -70,6 +115,8 @@ _Internet sales subsistem in dbo schema_
 | 17  | FiscalQuarter         | tinyint      | X        |            |                       |               |
 | 18  | FiscalYear            | smallint     | X        |            |                       |               |
 | 19  | FiscalSemester        | tinyint      | X        |            |                       |               |
+
+**_Warning_**!: This table is deprecated, because in **_Power BI_** (e.g.), the **_time intelligence functions_** provide more powerful functions. In other **_DS_** systems, such as those based on Python, we must do the same ourselves. We will not create this entity in the **_DWH_**  
 
   3.3. **_dbo.DimPromotion_**  
   3.3.1. Columns  
@@ -102,7 +149,7 @@ _Internet sales subsistem in dbo schema_
 | 2   | CurrencyAlternateKey     | nchar(3)     | X        |            |                       |             |
 | 3   | CurrencyName             | nvarchar(50) | X        |            |                       |             |
 
-**_Notice_**: Some currency keys are deprecated. For example, the currency key for Afghanistan until 2003 in Iso3 (**_ISO 4217-currency_alphabetic_code_**) was AFA, but since then it has been AFN. In our **_DWH_** we will adopt the ISO 4217-currency_alphabetic_code standard, which means that:
+**_Notice_**: Some currency keys are deprecated. For example, the currency key for Afghanistan until 2003 in Iso3 (**_ISO 4217-currency\_alphabetic\_code_**) was AFA, but since then it has been AFN. In our **_DWH_** we will adopt the ISO 4217-currency_alphabetic_code standard, which means that:
 1. We will only use the Iso3 standard  
 2. We will convert all uses of the currency code to the current standard. e.g. AFA will be transformed into AFN in all the tables in which it is used  
 By the way, we will use the next public domain data sources, for this task: 
@@ -261,7 +308,8 @@ By the way, we will use the next public domain data sources, for this task:
 
 3.6.1.1. **_PROWPI002\_DimGeography.KTR_**   
 3.6.1.1.1. #Table input: **_dbo.DimGeography_** (SQL Server)   
-3.6.1.1.2. #staging_09: **_DimStatesProvinces_** (Postgre SQL table) 
+3.6.1.1.2. #raw_14: arrangements/XML countries geography.XML  
+3.6.1.1.3. #staging_09: **_DimStatesProvinces_** (Postgre SQL table) 
 
   **_<p><br>DimStatesProvinces layout</p>_**  
 
@@ -275,16 +323,17 @@ By the way, we will use the next public domain data sources, for this task:
 
   ![PDI transform](https://i.imgur.com/rMfFNsT.png)  
   _PDI transform_ 
-  ![PDI execution](https://i.imgur.com/uqN5VrH.png)  
+  ![PDI execution](https://i.imgur.com/04qTBND.png)  
   _PDI execution_  
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/Dar3bXc.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
 
 3.6.1.2. **_PROWPI002\_DimGeography.KTR_**   
 3.6.1.2.1. #Table input: **_dbo.DimGeography_** (SQL Server)  
-3.6.1.2.2. #staging_09: **_"DimStatesProvinces"_** (Postgre SQL table) 
+3.6.1.2.2. #raw_14: arrangements/XML countries geography.XML 
+3.6.1.2.3. #staging_09: **_"DimStatesProvinces"_** (Postgre SQL table) 
 
-  **_<p><br>DimCountries layout</p>_**  
+  **_<p><br>DimStatesProvinces layout</p>_**  
 
   | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
@@ -299,10 +348,12 @@ By the way, we will use the next public domain data sources, for this task:
 
   ![The same PDI transform](https://i.imgur.com/rMfFNsT.png)  
   _The same PDI transform_  
-  ![PDI execution](https://i.imgur.com/UMO0fsj.png)  
+  ![PDI execution](https://i.imgur.com/04qTBND.png)  
   _PDI execution_  
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/KNp4OlJ.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
+
+**_Notice_**: In the future, **_3DoWoCo_** will provide **_Adventure Works Cycles, Inc._**, and any other customers, with a comprehensive data set of major world cities  
 
   3.7. **_dbo.DimSalesTerritory_**  
   3.7.1. Columns  
@@ -310,11 +361,36 @@ By the way, we will use the next public domain data sources, for this task:
 | Key	| Name                       | Data type      | Not null | Attributes | References            | Description |
 | :-: | :------------------------- | :------------: | :------: | :--------- | :-------------------- | :-----------|
 | 1   | SalesTerritoryKey          | int            | X        | Identity   |                       | PK          |
-| 2   | SalesTerritoryAlternateKey | int            |          |            |                       |             |
+| 2   | SalesTerritoryAlternateKey | int            |          |            |                       | deprecated  |
 | 3   | SalesTerritoryRegion       | nvarchar(50)   | X        |            |                       |             |
 | 4   | SalesTerritoryCountry      | nvarchar(50)   | X        |            |                       |             |
 | 5   | SalesTerritoryGroup        | nvarchar(50)   |          |            |                       |             |
 | 6   | SalesTerritoryImage        | varbinary(MAX) |          |            |                       | deprecated  |
+
+**_Notice_**: **_N/A_** values in **_DimSalesTerritory_** is deprecated  
+
+3.7.1.1. **_PROWPI002\_DimSalesTerritory.KTR_**   
+3.7.1.1.1. #Table input: **_dbo.DimSalesTerritory_** (SQL Server)   
+3.7.1.1.2. #raw_14: arrangements/XML countries geography.XML  
+3.7.1.1.3. #staging_09: **_DimSalesTerritory_** (Postgre SQL table) 
+
+  **_<p><br>DimSalesTerritory layout</p>_**  
+
+  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+  | 1   | SalesTerritoryKey     | Integer               | X        |            |                       | PK           |          |  
+  | 2   | SalesTerritoryRegion  | Character variying(60)|          |            |                       |              |          |
+  | 3   | SalesTerritoryGroup   | Character variying(60)|          |            |                       |              |          |
+  | 4   | CountryCode           | Character variying(3) |          |            |                       | FK           |          |
+  
+  **_<p><br>Transform execution</p>_**
+
+  ![PDI transform](https://i.imgur.com/fmrtjcv.png)  
+  _PDI transform_ 
+  ![PDI execution](https://i.imgur.com/I9vysve.png)  
+  _PDI execution_  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/NQUEYEj.png)  
+  _Postgres SQL's transactions checking in PgAdmin_  
 
   3.8. **_dbo.DimProduct_**
   3.8.1. Columns 

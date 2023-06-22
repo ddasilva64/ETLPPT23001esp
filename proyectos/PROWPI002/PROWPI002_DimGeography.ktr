@@ -562,7 +562,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>#raw_13</from>
+      <from>#raw_14</from>
       <to>sort #02</to>
       <enabled>Y</enabled>
     </hop>
@@ -633,7 +633,7 @@
     </hop>
   </order>
   <step>
-    <name>#raw_13</name>
+    <name>#raw_14</name>
     <type>getXMLData</type>
     <description/>
     <distribute>Y</distribute>
@@ -720,6 +720,52 @@
     <GUI>
       <xloc>96</xloc>
       <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Group by #01</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>StateProvinceCode</name>
+      </field>
+      <field>
+        <name>CountryCode</name>
+      </field>
+      <field>
+        <name>StateProvince</name>
+      </field>
+    </group>
+    <fields>
+      </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1310,6 +1356,130 @@ FROM dbo.DimGeography
     </GUI>
   </step>
   <step>
+    <name>output #01</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"DimStatesProvinces"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"StateProvinceCode"</column_name>
+        <stream_name>StateProvinceCode</stream_name>
+      </field>
+      <field>
+        <column_name>"CountryCode"</column_name>
+        <stream_name>CountryCode</stream_name>
+      </field>
+      <field>
+        <column_name>"StateProvince"</column_name>
+        <stream_name>StateProvince</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1248</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>output #02</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"DimGeography"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"GeographyKey"</column_name>
+        <stream_name>GeographyKey</stream_name>
+      </field>
+      <field>
+        <column_name>"CountryCode"</column_name>
+        <stream_name>CountryCode</stream_name>
+      </field>
+      <field>
+        <column_name>"StateProvinceCode"</column_name>
+        <stream_name>StateProvinceCode</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesTerritoryKey"</column_name>
+        <stream_name>SalesTerritoryKey</stream_name>
+      </field>
+      <field>
+        <column_name>"City"</column_name>
+        <stream_name>City</stream_name>
+      </field>
+      <field>
+        <column_name>"PostalCode"</column_name>
+        <stream_name>PostalCode</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>sort #01</name>
     <type>SortRows</type>
     <description/>
@@ -1474,176 +1644,6 @@ FROM dbo.DimGeography
     <GUI>
       <xloc>928</xloc>
       <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>output #01</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>datawarehouse</connection>
-    <schema>target</schema>
-    <table>"DimStatesProvinces"</table>
-    <commit>100</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>"StateProvinceCode"</column_name>
-        <stream_name>StateProvinceCode</stream_name>
-      </field>
-      <field>
-        <column_name>"CountryCode"</column_name>
-        <stream_name>CountryCode</stream_name>
-      </field>
-      <field>
-        <column_name>"StateProvince"</column_name>
-        <stream_name>StateProvince</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1248</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>output #02</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>datawarehouse</connection>
-    <schema>target</schema>
-    <table>"DimGeography"</table>
-    <commit>100</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>"GeographyKey"</column_name>
-        <stream_name>GeographyKey</stream_name>
-      </field>
-      <field>
-        <column_name>"CountryCode"</column_name>
-        <stream_name>CountryCode</stream_name>
-      </field>
-      <field>
-        <column_name>"StateProvinceCode"</column_name>
-        <stream_name>StateProvinceCode</stream_name>
-      </field>
-      <field>
-        <column_name>"SalesTerritoryKey"</column_name>
-        <stream_name>SalesTerritoryKey</stream_name>
-      </field>
-      <field>
-        <column_name>"City"</column_name>
-        <stream_name>City</stream_name>
-      </field>
-      <field>
-        <column_name>"PostalCode"</column_name>
-        <stream_name>PostalCode</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1040</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Group by #01</name>
-    <type>GroupBy</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <all_rows>N</all_rows>
-    <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore/>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>grp</prefix>
-    <add_linenr>N</add_linenr>
-    <linenr_fieldname/>
-    <give_back_row>N</give_back_row>
-    <group>
-      <field>
-        <name>StateProvinceCode</name>
-      </field>
-      <field>
-        <name>CountryCode</name>
-      </field>
-      <field>
-        <name>StateProvince</name>
-      </field>
-    </group>
-    <fields>
-      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1040</xloc>
-      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
