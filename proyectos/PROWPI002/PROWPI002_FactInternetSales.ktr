@@ -2027,7 +2027,7 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1232</xloc>
+      <xloc>1344</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2549,7 +2549,7 @@ FROM dbo.DimCurrency
     </remotesteps>
     <GUI>
       <xloc>1232</xloc>
-      <yloc>320</yloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2684,8 +2684,8 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1232</xloc>
-      <yloc>416</yloc>
+      <xloc>1344</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
