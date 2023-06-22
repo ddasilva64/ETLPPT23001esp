@@ -89,4 +89,6 @@
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/GQ64tqU.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
 
-  **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it
+  **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
+
+[PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)

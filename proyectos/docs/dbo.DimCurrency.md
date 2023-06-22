@@ -53,6 +53,8 @@ By the way, we will use the next public domain data sources, for this task:
 
   **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
 
+[PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)
+
 ### **_PROWPI002\_DimCountries.KTR (PDI)_**   
 1. #Table input: **_dbo.DimCurrency_** (SQL Server)  
 2. #raw_12: country-codes_csv.csv  
@@ -90,6 +92,8 @@ By the way, we will use the next public domain data sources, for this task:
 
   **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
 
+[PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)
+
 ### **_PROWPI002\_DimRegions.KTR (PDI)_**   
 1. #Table input: **_dbo.DimCurrency_** (SQL Server)  
 2. #raw_12: country-codes_csv.csv  
@@ -120,6 +124,8 @@ By the way, we will use the next public domain data sources, for this task:
   _Postgres SQL's transactions checking in PgAdmin_  
 
   **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
+  
+[PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
 ### **_PROWPI002\_DimSubregions.KTR (PDI)_**  
 
@@ -152,3 +158,5 @@ By the way, we will use the next public domain data sources, for this task:
   _Postgres SQL's transactions checking in PgAdmin_  
 
   **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
+
+[PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)
