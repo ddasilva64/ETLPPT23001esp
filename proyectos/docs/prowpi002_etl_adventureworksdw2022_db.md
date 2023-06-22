@@ -15,56 +15,12 @@ _Internet sales subsistem in dbo schema_
 
 **_Internet sales subsistem tables_**   
 
- **_[dbo.FactInternetSales](dbo.FactInternetSales.md)_**
+**_[dbo.FactInternetSales](dbo.FactInternetSales.md)_**  
 
-  3.2. **_dbo.DimDate_** (deprecated)  
-  3.2.1. Columns  
+**_[dbo.DimDate](dbo.DimDate.md)_**    
 
-| Key	| Name                  | Data type    | Not null | Attributes | References            | Description   |
-| :-: | :-------------------- | :----------: | :------: | :--------- | :-------------------- | :------------ |
-| 1   | DateKey               | int          | X        |            |                       | PK            |
-| 2   | FullDateAlternateKey  | date         | X        |            |                       |               |
-| 3   | DayNumberOfWeek       | tinyint      | X        |            |                       |               |
-| 4   | EnglishDayNameOfWeek  | nvarchar(10) | X        |            |                       |               |
-| 5   | SpanishDayNameOfWeek  | nvarchar(10) | X        |            |                       |               |
-| 6   | FrenchDayNameOfWeek   | nvarchar(10) | X        |            |                       |               |
-| 7   | DayNumberOfMonth      | tinyint      | X        |            |                       |               |
-| 8   | DayNumberOfYear       | smallint     | X        |            |                       |               |
-| 9   | WeekNumberOfYear      | tinyint      | X        |            |                       |               |
-| 10  | EnglishMonthName      | nvarchar(10) | X        |            |                       |               |
-| 11  | SpanishMonthName      | nvarchar(10) | X        |            |                       |               |
-| 12  | FrenchMonthName       | nvarchar(10) | X        |            |                       |               |
-| 13  | MonthNumberOfYear     | tinyint      | X        |            |                       |               |
-| 14  | CalendarQuarter       | tinyint      | X        |            |                       |               |
-| 15  | CalendarYear          | smallint     | X        |            |                       |               |	
-| 16  | CalendarSemester      | tinyint      | X        |            |                       |               |
-| 17  | FiscalQuarter         | tinyint      | X        |            |                       |               |
-| 18  | FiscalYear            | smallint     | X        |            |                       |               |
-| 19  | FiscalSemester        | tinyint      | X        |            |                       |               |
+**_[dbo.DimPromotion](dbo.DimPromotion.md)_**  
 
-**_Warning_**!: This table is deprecated, because in **_Power BI_** (e.g.), the **_time intelligence functions_** provide more powerful functions. In other **_DS_** systems, such as those based on Python, we must do the same ourselves. We will not create this entity in the **_DWH_**  
-
-  3.3. **_dbo.DimPromotion_**  
-  3.3.1. Columns  
-
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description       |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | PromotionKey             | int          | X        | Identity   |                       | PK                |
-| 2   | PromotionAlternateKey    | int          |          |            |                       |                   |
-| 3   | EnglishPromotionName     | nvarchar(255)|          |            |                       | PromotionName     |				
-| 4   | SpanishPromotionName     | nvarchar(255)|          |            |                       | deprecated        |			
-| 5   | FrenchPromotionName      | nvarchar(255)|          |            |                       | deprecated        |		
-| 6   | DiscountPct              | float        |          |            |                       |                   |
-| 7   | EnglishPromotionType     | nvarchar(50) |          |            |                       | PromotionType     |
-| 8   | SpanishPromotionType	   | nvarchar(50) |          |            |                       | deprecated        |	
-| 9   | FrenchPromotionType      | nvarchar(50) |          |            |                       | deprecated        |	
-| 10  | EnglishPromotionCategory | nvarchar(50) |          |            |                       | PromotionCategory |	
-| 11  | SpanishPromotionCategory | nvarchar(50) |          |            |                       | deprecated        |
-| 12  | FrenchPromotionCategory  | nvarchar(50) |          |            |                       | deprecated        |
-| 13  | StartDate                | datetime     | X        |            |                       |                   |
-| 14  | EndDate                  | datetime     | X        |            |                       |                   |
-| 15  | MinQty                   | int          |          |            |                       |                   |
-| 16  | MaxQty                   | int          |          |            |                       |                   |
 
   3.4. **_dbo.DimCurrency_**  
   3.4.1. Columns 

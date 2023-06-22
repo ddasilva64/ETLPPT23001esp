@@ -499,6 +499,57 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>datawarehouse</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>datawarehouse</database>
+    <port>5433</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc818c28197a215a775d086ff8b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
       <from>Table input</from>
@@ -508,6 +559,11 @@
     <hop>
       <from>sort #01</from>
       <to>columns #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #01</from>
+      <to>output #01</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -949,12 +1005,8 @@ FROM dbo.DimPromotion
         <rename/>
       </field>
       <field>
-        <name>PromotionAlternateKey</name>
-        <rename/>
-      </field>
-      <field>
         <name>EnglishPromotionName</name>
-        <rename>PromotionName</rename>
+        <rename>Promotion</rename>
       </field>
       <field>
         <name>DiscountPct</name>
@@ -985,6 +1037,40 @@ FROM dbo.DimPromotion
         <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>StartDate</name>
+        <rename>StartDate</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>EndDate</name>
+        <rename>EndDate</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1038,6 +1124,86 @@ FROM dbo.DimPromotion
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>output #01</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"DimPromotion"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"PromotionKey"</column_name>
+        <stream_name>PromotionKey</stream_name>
+      </field>
+      <field>
+        <column_name>"Promotion"</column_name>
+        <stream_name>Promotion</stream_name>
+      </field>
+      <field>
+        <column_name>"DiscountPct"</column_name>
+        <stream_name>DiscountPct</stream_name>
+      </field>
+      <field>
+        <column_name>"PromotionType"</column_name>
+        <stream_name>PromotionType</stream_name>
+      </field>
+      <field>
+        <column_name>"PromotionCategory"</column_name>
+        <stream_name>PromotionCategory</stream_name>
+      </field>
+      <field>
+        <column_name>"StartDate"</column_name>
+        <stream_name>StartDate</stream_name>
+      </field>
+      <field>
+        <column_name>"EndDate"</column_name>
+        <stream_name>EndDate</stream_name>
+      </field>
+      <field>
+        <column_name>"MinQty"</column_name>
+        <stream_name>MinQty</stream_name>
+      </field>
+      <field>
+        <column_name>"MaxQty"</column_name>
+        <stream_name>MaxQty</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
