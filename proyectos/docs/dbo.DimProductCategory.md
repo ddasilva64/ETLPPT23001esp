@@ -17,8 +17,6 @@
 
    <p><br></p>  
 
-**_Notice!_**: **_SizeRange_**, and **_Color_** fields have NA value, of course deprecated  
-
 ### **_PROWPI002\_DimProductCategory.KTR (PDI)_**   
 1. #Table input: **_dbo.DimProductCategory_** (SQL Server)  
 2. staging_13: **_DimProductCategory_** (Postgre SQL table)

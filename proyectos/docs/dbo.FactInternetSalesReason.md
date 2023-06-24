@@ -15,8 +15,6 @@
 
    <p><br></p>  
 
-**_Notice!_**: **_SizeRange_**, and **_Color_** fields have NA value, of course deprecated  
-
 ### **_PROWPI002\_FactInternetSalesReason.KTR (PDI)_**   
 1. #Table input: **_dbo.FactInternetSalesReason_** (SQL Server)  
 2. staging_14: **_FactInternetSalesReason_** (Postgre SQL table)

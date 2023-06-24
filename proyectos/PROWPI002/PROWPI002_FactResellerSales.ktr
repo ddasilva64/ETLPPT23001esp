@@ -499,9 +499,60 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>datawarehouse</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>datawarehouse</database>
+    <port>5433</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc818c28197a215a775d086ff8b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
-      <from>Table input</from>
+      <from>Table input #01</from>
       <to>sort #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -510,9 +561,49 @@
       <to>columns #01</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>String operations #01</from>
+      <to>sort #02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input #02</from>
+      <to>String operations #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort #02</from>
+      <to>columns #02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #01</from>
+      <to>inner join #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #02</from>
+      <to>inner join #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inner join #01</from>
+      <to>columns #03</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #03</from>
+      <to>sort #03</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sort #03</from>
+      <to>output #01</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
-    <name>Table input</name>
+    <name>Table input #01</name>
     <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
@@ -1213,18 +1304,6 @@ FROM dbo.FactResellerSales
         <rename/>
       </field>
       <field>
-        <name>OrderDateKey</name>
-        <rename/>
-      </field>
-      <field>
-        <name>DueDateKey</name>
-        <rename/>
-      </field>
-      <field>
-        <name>ShipDateKey</name>
-        <rename/>
-      </field>
-      <field>
         <name>ResellerKey</name>
         <rename/>
       </field>
@@ -1327,13 +1406,581 @@ FROM dbo.FactResellerSales
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>496</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
     <name>sort #01</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CurrencyKey</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>output #01</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"FactResellerSales"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"ProductKey"</column_name>
+        <stream_name>ProductKey</stream_name>
+      </field>
+      <field>
+        <column_name>"ResellerKey"</column_name>
+        <stream_name>ResellerKey</stream_name>
+      </field>
+      <field>
+        <column_name>"EmployeeKey"</column_name>
+        <stream_name>EmployeeKey</stream_name>
+      </field>
+      <field>
+        <column_name>"PromotionKey"</column_name>
+        <stream_name>PromotionKey</stream_name>
+      </field>
+      <field>
+        <column_name>"CurrencyKey"</column_name>
+        <stream_name>CurrencyKey</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesTerritoryKey"</column_name>
+        <stream_name>SalesTerritoryKey</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesOrderNumber"</column_name>
+        <stream_name>SalesOrderNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesOrderLineNumber"</column_name>
+        <stream_name>SalesOrderLineNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"RevisionNumber"</column_name>
+        <stream_name>RevisionNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"OrderQuantity"</column_name>
+        <stream_name>OrderQuantity</stream_name>
+      </field>
+      <field>
+        <column_name>"UnitPrice"</column_name>
+        <stream_name>UnitPrice</stream_name>
+      </field>
+      <field>
+        <column_name>"ExtendedAmount"</column_name>
+        <stream_name>ExtendedAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"UnitPriceDiscountPct"</column_name>
+        <stream_name>UnitPriceDiscountPct</stream_name>
+      </field>
+      <field>
+        <column_name>"DiscountAmount"</column_name>
+        <stream_name>DiscountAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"ProductStandardCost"</column_name>
+        <stream_name>ProductStandardCost</stream_name>
+      </field>
+      <field>
+        <column_name>"TotalProductCost"</column_name>
+        <stream_name>TotalProductCost</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesAmount"</column_name>
+        <stream_name>SalesAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"TaxAmt"</column_name>
+        <stream_name>TaxAmt</stream_name>
+      </field>
+      <field>
+        <column_name>"Freight"</column_name>
+        <stream_name>Freight</stream_name>
+      </field>
+      <field>
+        <column_name>"CarrierTrackingNumber"</column_name>
+        <stream_name>CarrierTrackingNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"CustomerPONumber"</column_name>
+        <stream_name>CustomerPONumber</stream_name>
+      </field>
+      <field>
+        <column_name>"OrderDate"</column_name>
+        <stream_name>OrderDate</stream_name>
+      </field>
+      <field>
+        <column_name>"DueDate"</column_name>
+        <stream_name>DueDate</stream_name>
+      </field>
+      <field>
+        <column_name>"ShipDate"</column_name>
+        <stream_name>ShipDate</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations #01</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>CurrencyAlternateKey</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>lower</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>N</init_cap>
+        <mask_xml>None</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table input #02</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>AdventureWorks</connection>
+    <sql>SELECT
+  CurrencyKey
+, CurrencyAlternateKey
+, CurrencyName
+FROM dbo.DimCurrency
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>CurrencyKey</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input 2</origin>
+        <comments>CurrencyKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CurrencyAlternateKey</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Table input 2</origin>
+        <comments>CurrencyAlternateKey</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CurrencyName</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>Table input 2</origin>
+        <comments>CurrencyName</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #02</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>CurrencyKey</name>
+      </field>
+      <field>
+        <name>CurrencyAlternateKey</name>
+      </field>
+      <field>
+        <name>CurrencyName</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort #02</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CurrencyKey</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>inner join #01</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>columns #01</step1>
+    <step2>columns #02</step2>
+    <keys_1>
+      <key>CurrencyKey</key>
+    </keys_1>
+    <keys_2>
+      <key>CurrencyKey</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #03</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ResellerKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EmployeeKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PromotionKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CurrencyAlternateKey</name>
+        <rename>CurrencyKey</rename>
+      </field>
+      <field>
+        <name>SalesTerritoryKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderLineNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>RevisionNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderQuantity</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPrice</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ExtendedAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPriceDiscountPct</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DiscountAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductStandardCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TotalProductCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TaxAmt</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Freight</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CarrierTrackingNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerPONumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DueDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ShipDate</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort #03</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1377,8 +2024,8 @@ FROM dbo.FactResellerSales
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>48</yloc>
+      <xloc>880</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

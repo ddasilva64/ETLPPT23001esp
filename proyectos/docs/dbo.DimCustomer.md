@@ -42,8 +42,6 @@
 
    <p><br></p>  
 
-**_Warning!_**: In their database, **_Adventure Works Cycles, Inc._**, they count sales (in France and Germany), in € since January 1, 1999, but have not changed the value of CurrencyKey. At this time **_3DoWoCo_** will change **_"dem"_** and **_"frf"_** to **_"eur"_**
-
 ### **_PROWPI002\_DimCustomer.KTR (PDI)_**   
 1. #Table input: **_dbo.DimCustomer_** (SQL Server)  
 2. staging_10: **_DimCustomer_** (Postgre SQL table)

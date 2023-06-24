@@ -23,46 +23,11 @@
   - **_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
   - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_**  
   - **_[dbo.FactInternetSalesReason](dbo.FactInternetSalesReason.md)_**  
+  - **_[dbo.FactResellerSales](dbo.FactResellerSales.md)_**  
 
 
 
 
-
-
-
-
-  3.12. **_dbo.FactResellerSales_**  
-  3.12.1. Columns  
-
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :-----------|
-| 1   | ProductKey               | int          | X        |            | dbo.DimProduct        | FK          |
-| 2   | OrderDateKey             | int          | X        |            | dbo.DimDate           | FK          |
-| 3   | DueDateKey               | int          | X        |            | dbo.DimDate           | FK          |
-| 4   | ShipDateKey              | int          | X        |            | dbo.DimDate           | FK          |
-| 5   | ResellerKey              | int          | X        |            | dbo.DimReseller       | FK          |
-| 6   | EmployeeKey              | int          | X        |            | dbo.DimEmployee       | FK          |
-| 7   | PromotionKey             | int          | X        |            | dbo.DimPromotion      | FK          |
-| 8   | CurrencyKey              | int          | X        |            | dbo.DimCurrency       | FK          |
-| 9   | SalesTerritoryKey        | int          | X        |            | dbo.DimSalesTerritory | FK          |
-| 10  | SalesOrderNumber         | nvarchar(20) | X        |            |                       | PK          |
-| 11  | SalesOrderLineNumber     | tinyint      | X        |            |                       | PK          |
-| 12  | RevisionNumber           | tinyint      | X        |            |                       |             |
-| 13  | OrderQuantity            | smallint     | X        |            |                       |             |
-| 14  | UnitPrice                | money        | X        |            |                       |             |
-| 15  | ExtendedAmount           | money        | X        |            |                       |             |
-| 16  | UnitPriceDiscountPct     | float        | X        |            |                       |             |
-| 17  | DiscountAmount           | float        | X        |            |                       |             |
-| 18  | ProductStandardCost      | money        | X        |            |                       |             |
-| 19  | TotalProductCost         | money        | X        |            |                       |             |
-| 20  | SalesAmount              | money        | X        |            |                       |             |
-| 21  | TaxAmt                   | money        | X        |            |                       |             |
-| 22  | Freight                  | money        | X        |            |                       |             |
-| 23  | CarrierTrackingNumber    | nvarchar(25) |          |            |                       |             |
-| 24  | CustomerPONumber         | nvarchar(25) |          |            |                       |             |
-| 25  | OrderDate                | datetime     |          |            |                       |             |
-| 26  | DueDate                  | datetime     |          |            |                       |             |
-| 27  | ShipDate                 | datetime     |          |            |                       |             |
 
   3.13. **_dbo.FactProductInventory_**  
   3.13.1. Columns  
