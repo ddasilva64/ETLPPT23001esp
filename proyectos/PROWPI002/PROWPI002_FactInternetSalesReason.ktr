@@ -714,6 +714,62 @@ FROM dbo.FactInternetSalesReason
     </GUI>
   </step>
   <step>
+    <name>output #01</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"FactInternetSalesReason"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"SalesOrderNumber"</column_name>
+        <stream_name>SalesOrderNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesOrderLineNumber"</column_name>
+        <stream_name>SalesOrderLineNumber</stream_name>
+      </field>
+      <field>
+        <column_name>"SalesReasonKey"</column_name>
+        <stream_name>SalesReasonKey</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>sort #01</name>
     <type>SortRows</type>
     <description/>
@@ -767,62 +823,6 @@ FROM dbo.FactInternetSalesReason
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>output #01</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>datawarehouse</connection>
-    <schema>target</schema>
-    <table>"FactInternetSalesReason"</table>
-    <commit>100</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>"SalesOrderNumber"</column_name>
-        <stream_name>SalesOrderNumber</stream_name>
-      </field>
-      <field>
-        <column_name>"SalesOrderLineNumber"</column_name>
-        <stream_name>SalesOrderLineNumber</stream_name>
-      </field>
-      <field>
-        <column_name>"SalesReasonKey"</column_name>
-        <stream_name>SalesReasonKey</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>

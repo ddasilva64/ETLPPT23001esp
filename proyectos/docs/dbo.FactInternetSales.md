@@ -34,7 +34,7 @@
    <p><br></p>  
 
 ![SQL Server source in SQL Server Management studio](https://i.imgur.com/Zdn6jCp.png)  
-**_SQL Server source in SQL Server Management studio_**  
+_SQL Server source in SQL Server Management studio_  
 
    <p><br></p>  
 

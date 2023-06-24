@@ -11,7 +11,7 @@
    <p><br></p>  
 
 ![SQL Server source in SQL Server Management studio](https://i.imgur.com/i77wbIq.png)  
-**_SQL Server source in SQL Server Management studio_**  
+_SQL Server source in SQL Server Management studio_  
 
    <p><br></p>  
 

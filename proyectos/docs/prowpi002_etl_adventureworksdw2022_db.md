@@ -24,82 +24,11 @@
   - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_**  
   - **_[dbo.FactInternetSalesReason](dbo.FactInternetSalesReason.md)_**  
   - **_[dbo.FactResellerSales](dbo.FactResellerSales.md)_**  
+  - **_[dbo.FactProductInventory](dbo.FactProductInventory.md)_**  
+  - **_[dbo.DimEmployee](dbo.DimEmployee.md)_**  
 
 
 
-
-
-  3.13. **_dbo.FactProductInventory_**  
-  3.13.1. Columns  
-
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :-----------|
-| 1   | ProductKey               | int          | X        |            | dbo.DimProduct        | PK,FK       |
-| 2   | DateKey                  | int          | X        |            | dbo.DimDate           | PK,FK       |
-| 3   | MovementDate             | date         | X        |            |                       |             |
-| 4   | UnitCost                 | money        | X        |            |                       |             |
-| 5   | UnitsIn                  | int          | X        |            |                       |             |
-| 6   | UnitsOut                 | int          | X        |            |                       |             |
-| 7   | UnitsBalance             | int          | X        |            |                       |             |
-
-  3.14. **_dbo.DimPromotion_**  
-  3.14.1. Columns  
-
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description       |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | PromotionKey             | int          | X        | Identity   |                       | PK                |
-| 2   | PromotionAlternateKey    | int          |          |            |                       |                   |
-| 3   | EnglishPromotionName     | nvarchar(255)|          |            |                       | PromotionName     |
-| 4   | SpanishPromotionName     | nvarchar(255)|          |            |                       | deprecated        |
-| 5   | FrenchPromotionName      | nvarchar(255)|          |            |                       | deprecated        |
-| 6   | DiscountPct              | float        |          |            |                       |                   |
-| 7   | EnglishPromotionType     | nvarchar(50) |          |            |                       | PromotionType     |
-| 8   | SpanishPromotionType     | nvarchar(50) |          |            |                       | deprecated        |
-| 9   | FrenchPromotionType      | nvarchar(50) |          |            |                       | deprecated        |
-| 10  | EnglishPromotionCategory | nvarchar(50) |          |            |                       | PromotionCategory |
-| 11  | SpanishPromotionCategory | nvarchar(50) |          |            |                       | deprecated        |
-| 12  | FrenchPromotionCategory  | nvarchar(50) |          |            |                       | deprecated        |
-| 13  | StartDate                | datetime     |          |            |                       |                   |
-| 14  | EndDate                  | datetime     |          |            |                       |                   |
-| 15  | MinQty                   | int          |          |            |                       |                   |
-| 16  | MaxQty                   | int          |          |            |                       |                   |
-
-  3.15. **_dbo.DimEmployee_**  
-  3.15.1. Columns  
-
-| Key	| Name                                 | Data type      | Not null | Attributes | References            | Description       |
-| :-: | :----------------------------------- | :------------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | EmployeeKey                          | int            | X        | Identity   |                       | PK                |
-| 2   | ParentEmployeeKey                    | int            |          |            | dbo.DimEmployee       | FK                |
-| 3   | EmployeeNationalIDAlternateKey       | nvarchar(15)   |          |            |                       |                   |
-| 4   | ParentEmployeeNationalIDAlternateKey | nvarchar(15)   |          |            |                       |                   |
-| 5   | SalesTerritoryKey                    | int            |          |            | dbo.DimSalesTerritory | FK                | 
-| 6   | FirstName                            | nvarchar(50)   | X        |            |                       |                   |
-| 7   | LastName                             | nvarchar(50)   | X        |            |                       |                   |
-| 8   | MiddleName                           | nvarchar(50)   |          |            |                       |                   |
-| 9   | NameStyle                            | bit            | X        |            |                       |                   |
-| 10  | Title                                | nvarchar(50)   |          |            |                       |                   |
-| 11  | HireDate                             | date           |          |            |                       |                   |
-| 12  | BirthDate                            | date           |          |            |                       |                   |
-| 13  | LoginID                              | nvarchar(256)  |          |            |                       |                   |
-| 14  | EmailAddress                         | nvarchar(50)   |          |            |                       |                   |
-| 15  | Phone                                | nvarchar(25)   |          |            |                       |                   |
-| 16  | MaritalStatus                        | nchar(1)       |          |            |                       |                   |
-| 17  | EmergencyContactName                 | nvarchar(50)   |          |            |                       |                   |
-| 18  | EmergencyContactPhone                | nvarchar(25)   |          |            |                       |                   |
-| 19  | SalariedFlag                         | bit            |          |            |                       |                   |
-| 20  | Gender                               | nchar(1)       |          |            |                       |                   |
-| 21  | PayFrequency                         | tinyint        |          |            |                       |                   |
-| 22  | BaseRate                             | money          |          |            |                       |                   |
-| 23  | VacationHours                        | smallint       |          |            |                       |                   |
-| 24  | SickLeaveHours                       | smallint       |          |            |                       |                   |
-| 25  | CurrentFlag                          | bit            |          |            |                       |                   |
-| 26  | SalesPersonFlag                      | bit            |          |            |                       |                   |
-| 27  | DepartmentName                       | nvarchar(50)   |          |            |                       |                   |
-| 28  | StartDate                            | date           |          |            |                       |                   |
-| 29  | EndDate                              | date           |          |            |                       |                   |
-| 30  | Status                               | nvarchar(50)   |          |            |                       |                   |
-| 31  | EmployeePhoto                        | varbinary(MAX) |          |            |                       | deprecated        |
 
   3.16. **_dbo.DimReseller_**  
   3.165.1. Columns  
