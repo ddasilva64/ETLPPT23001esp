@@ -31,21 +31,14 @@ _Internet sales subsistem in dbo schema_
 
 **_[dbo.DimProduct](dbo.DimProduct.md)_**  
 
-**_[dbo.DimProduct](dbo.DimProductSubcategory.md)_**  
+**_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
+
+**_[dbo.DimProductCategory](dbo.DimProductCategory.md)_** 
 
 
 
 
-  3.10. **_dbo.DimProductCategory_**  
-  3.10.1. Columns  
 
-| Key	| Name                        | Data type    | Not null | Attributes | References            | Description         |
-| :-: | :-------------------------- | :----------: | :------: | :--------- | :-------------------- | :------------------ |
-| 1   | ProductCategoryKey          | int          | X        | Identity   |                       | PK                  |
-| 2   | ProductCategoryAlternateKey | int          |          |            |                       |                     |
-| 3   | EnglishProductCategoryName  | nvarchar(50) | X        |            |                       | ProductCategoryName |
-| 4   | SpanishProductCategoryName  | nvarchar(50) | X        |            |                       | deprecated          |
-| 5   | FrenchProductCategoryName   | nvarchar(50) | X        |            |                       | deprecated          |
 
   3.11. **_dbo.FactInternetSalesReason_**  
   3.11.1. Columns  
