@@ -4,30 +4,8 @@
 
 #### **_PROWPI001 ETL_**  
 
-  1. **_PROWPI001_countries.KTR_**   
-    1.1. #raw_01: PopulationDataWorldBank.XLSX  
-    1.2. #raw_02: countries_eng.CSV  
-    1.3. #raw_03: 2021_population.CSV  
-    1.4. #raw_04: arrangements/XML country areas not match input.XML  
-    1.5. #staging_01: arrangements/XML DimCountries.XML  
+  - **_[DimCountries.XML](DimCountries.XML.md)_**  
 
-  **_<p><br>DimCountries layout</p>_**  
-
-  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
-  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK           | m001     |  
-  | 2   | Country               | Character variying(60)|          |            |                       |              | m002     |
-  | 3   | Area                  | integer               |          |            |                       |              | m003     |
-  | 4   | Region                | Character variying(30)|          |            |                       |              | m004     |
-
-  **_<p><br>Transform execution</p>_**
-
-  ![PDI transform](https://i.imgur.com/2H7IdFy.png)
-  _PDI transform_
-  ![PDI execution](https://i.imgur.com/5wh3IhK.png)  
-  _PDI execution_
-  ![XML file checking](https://i.imgur.com/ja9Mxa1.png) 
-  _XML file checking_
 
   2. **_PROWPI001_demography.KTR_**  
     2.1. #raw_03: 2021_population.CSV 
