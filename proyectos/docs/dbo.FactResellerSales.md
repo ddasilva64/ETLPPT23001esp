@@ -40,7 +40,8 @@ _SQL Server source in SQL Server Management studio_
    <p><br></p>   
 
 ### **_PROWPI002\_FactResellerSales.KTR (PDI)_**   
-1. #Table input: **_dbo.FactResellerSales_** (SQL Server)  
+1. #Table input #01: **_dbo.FactResellerSales_** (SQL Server)  
+2. #Table input #02: **_dbo.DimCurrency_** (SQL Server)  
 2. staging_14: **_FactResellerSales_** (Postgre SQL table)
  
    <p><br></p>  
