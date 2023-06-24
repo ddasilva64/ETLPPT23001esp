@@ -4,36 +4,24 @@
  
 #### **_PROWPI002 ETL (AdventureWorksDW2022 DB)_**  
 
-**_ERD (Entity Relationship Diagram) DB_**  
+- **_[Source DB's ERD (SQL Server)](Source_SQL_Server_DB.md)_**  
+**_Notice_**: **_ERD_** (Entity Relationship Diagram) is the best system to know the database design at a glance  
 
-![ERD DB](https://i.imgur.com/WE0X3Vo.png)
+#### **_PROWPI002 ETL Internet Sales Subsystem_**  
 
-**_ERD Internet sales subsistem_**
+- **_[Internet Sales Subsystem ERD](Internet_Sales_Subsystem_ERD.md)_**  
 
-![ERD Internet sales subsistem](https://i.imgur.com/HLDMiTG.png)
-_Internet sales subsistem in dbo schema_
-
-**_Internet sales subsistem tables_**   
-
-**_[dbo.FactInternetSales](dbo.FactInternetSales.md)_**  
-
-**_[dbo.DimDate](dbo.DimDate.md)_**    
-
-**_[dbo.DimPromotion](dbo.DimPromotion.md)_**  
-
-**_[dbo.DimCurrency](dbo.DimCurrency.md)_** 
-
-**_[dbo.DimCustomer](dbo.DimCustomer.md)_**  
-
-**_[dbo.DimGeography](dbo.DimGeography.md)_** 
-
-**_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
-
-**_[dbo.DimProduct](dbo.DimProduct.md)_**  
-
-**_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
-
-**_[dbo.DimProductCategory](dbo.DimProductCategory.md)_** 
+- **_Internet Sales Subsystem tables transformations_**   
+  - **_[dbo.FactInternetSales](dbo.FactInternetSales.md)_**  
+  - **_[dbo.DimDate](dbo.DimDate.md)_**  
+  - **_[dbo.DimPromotion](dbo.DimPromotion.md)_**  
+  - **_[dbo.DimCurrency](dbo.DimCurrency.md)_**  
+  - **_[dbo.DimCustomer](dbo.DimCustomer.md)_**  
+  - **_[dbo.DimGeography](dbo.DimGeography.md)_**  
+  - **_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
+  - **_[dbo.DimProduct](dbo.DimProduct.md)_**  
+  - **_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
+  - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_** 
 
 
 
