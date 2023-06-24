@@ -26,35 +26,7 @@
   - **_[dbo.FactResellerSales](dbo.FactResellerSales.md)_**  
   - **_[dbo.FactProductInventory](dbo.FactProductInventory.md)_**  
   - **_[dbo.DimEmployee](dbo.DimEmployee.md)_**  
-
-
-
-
-  3.16. **_dbo.DimReseller_**  
-  3.165.1. Columns  
-
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description       |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | ResellerKey              | int          | X        | Identity   |                       | PK                |
-| 2   | GeographyKey             | int          |          |            | dbo.DimGeography      | FK                |
-| 3   | ResellerAlternateKey     | nvarchar(15) |          |            |                       |                   |
-| 4   | Phone                    | nvarchar(25) |          |            |                       |                   |
-| 5   | BusinessType             | nvarchar(20) | X        |            |                       |                   |
-| 6   | ResellerName             | nvarchar(50) | X        |            |                       |                   |
-| 7   | NumberEmployees          | int          |          |            |                       |                   |
-| 8   | OrderFrequency           | char(1)      |          |            |                       |                   |
-| 9   | OrderMonth               | tinyint      |          |            |                       |                   |
-| 10  | FirstOrderYear           | int          |          |            |                       |                   |
-| 11  | LastOrderYear            | int          |          |            |                       |                   |
-| 12  | ProductLine              | nvarchar(50) |          |            |                       |                   |
-| 13  | AddressLine1             | nvarchar(60) |          |            |                       |                   |
-| 14  | AddressLine2             | nvarchar(60) |          |            |                       |                   |
-| 15  | AnnualSales              | money        |          |            |                       |                   |
-| 16  | BankName                 | nvarchar(50) |          |            |                       |                   |
-| 17  | MinPaymentType           | tinyint      |          |            |                       |                   |
-| 18  | MinPaymentAmount         | money        |          |            |                       |                   |
-| 19  | AnnualRevenue            | money        |          |            |                       |                   |	
-| 20  | YearOpened               | int          |          |            |                       |                   |	
+  - **_[dbo.DimReseller](dbo.DimReseller.md)_**  
 
 **_Notice_**: **_Adventure Works Cycles, Inc._** has decided that multilingual capabilities into the DB (in general) are pointless. In addition, specifically for DS, and BI, since the users are internal and at managerial level, they must have worldwide pro knowledge of English. Also, binary picture fields are deprecated in DB.
 

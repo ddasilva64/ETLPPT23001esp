@@ -1343,7 +1343,7 @@ FROM dbo.DimEmployee
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
+      <xloc>128</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>

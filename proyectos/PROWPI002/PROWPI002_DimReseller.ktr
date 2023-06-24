@@ -499,6 +499,57 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>datawarehouse</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>datawarehouse</database>
+    <port>5433</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc818c28197a215a775d086ff8b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
       <from>Table input</from>
@@ -508,6 +559,11 @@
     <hop>
       <from>sort #01</from>
       <to>columns #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #01</from>
+      <to>output #01</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1042,83 +1098,63 @@ FROM dbo.DimReseller
     <fields>
       <field>
         <name>ResellerKey</name>
-        <rename/>
       </field>
       <field>
         <name>GeographyKey</name>
-        <rename/>
       </field>
       <field>
         <name>ResellerAlternateKey</name>
-        <rename/>
       </field>
       <field>
         <name>Phone</name>
-        <rename/>
       </field>
       <field>
         <name>BusinessType</name>
-        <rename/>
       </field>
       <field>
         <name>ResellerName</name>
-        <rename/>
       </field>
       <field>
         <name>NumberEmployees</name>
-        <rename/>
       </field>
       <field>
         <name>OrderFrequency</name>
-        <rename/>
       </field>
       <field>
         <name>OrderMonth</name>
-        <rename/>
       </field>
       <field>
         <name>FirstOrderYear</name>
-        <rename/>
       </field>
       <field>
         <name>LastOrderYear</name>
-        <rename/>
       </field>
       <field>
         <name>ProductLine</name>
-        <rename/>
       </field>
       <field>
         <name>AddressLine1</name>
-        <rename/>
       </field>
       <field>
         <name>AddressLine2</name>
-        <rename/>
       </field>
       <field>
         <name>AnnualSales</name>
-        <rename/>
       </field>
       <field>
         <name>BankName</name>
-        <rename/>
       </field>
       <field>
         <name>MinPaymentType</name>
-        <rename/>
       </field>
       <field>
         <name>MinPaymentAmount</name>
-        <rename/>
       </field>
       <field>
         <name>AnnualRevenue</name>
-        <rename/>
       </field>
       <field>
         <name>YearOpened</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1182,6 +1218,130 @@ FROM dbo.DimReseller
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>output #01</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"DimReseller"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"ResellerKey"</column_name>
+        <stream_name>ResellerKey</stream_name>
+      </field>
+      <field>
+        <column_name>"GeographyKey"</column_name>
+        <stream_name>GeographyKey</stream_name>
+      </field>
+      <field>
+        <column_name>"ResellerAlternateKey"</column_name>
+        <stream_name>ResellerAlternateKey</stream_name>
+      </field>
+      <field>
+        <column_name>"Phone"</column_name>
+        <stream_name>Phone</stream_name>
+      </field>
+      <field>
+        <column_name>"BusinessType"</column_name>
+        <stream_name>BusinessType</stream_name>
+      </field>
+      <field>
+        <column_name>"ResellerName"</column_name>
+        <stream_name>ResellerName</stream_name>
+      </field>
+      <field>
+        <column_name>"NumberEmployees"</column_name>
+        <stream_name>NumberEmployees</stream_name>
+      </field>
+      <field>
+        <column_name>"OrderFrequency"</column_name>
+        <stream_name>OrderFrequency</stream_name>
+      </field>
+      <field>
+        <column_name>"OrderMonth"</column_name>
+        <stream_name>OrderMonth</stream_name>
+      </field>
+      <field>
+        <column_name>"FirstOrderYear"</column_name>
+        <stream_name>FirstOrderYear</stream_name>
+      </field>
+      <field>
+        <column_name>"LastOrderYear"</column_name>
+        <stream_name>LastOrderYear</stream_name>
+      </field>
+      <field>
+        <column_name>"ProductLine"</column_name>
+        <stream_name>ProductLine</stream_name>
+      </field>
+      <field>
+        <column_name>"AddressLine1"</column_name>
+        <stream_name>AddressLine1</stream_name>
+      </field>
+      <field>
+        <column_name>"AddressLine2"</column_name>
+        <stream_name>AddressLine2</stream_name>
+      </field>
+      <field>
+        <column_name>"AnnualSales"</column_name>
+        <stream_name>AnnualSales</stream_name>
+      </field>
+      <field>
+        <column_name>"BankName"</column_name>
+        <stream_name>BankName</stream_name>
+      </field>
+      <field>
+        <column_name>"MinPaymentType"</column_name>
+        <stream_name>MinPaymentType</stream_name>
+      </field>
+      <field>
+        <column_name>"MinPaymentAmount"</column_name>
+        <stream_name>MinPaymentAmount</stream_name>
+      </field>
+      <field>
+        <column_name>"AnnualRevenue"</column_name>
+        <stream_name>AnnualRevenue</stream_name>
+      </field>
+      <field>
+        <column_name>"YearOpened"</column_name>
+        <stream_name>YearOpened</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
