@@ -21,21 +21,15 @@
   - **_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
   - **_[dbo.DimProduct](dbo.DimProduct.md)_**  
   - **_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
-  - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_** 
+  - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_**  
+  - **_[dbo.FactInternetSalesReason](dbo.FactInternetSalesReason.md)_**  
 
 
 
 
 
 
-  3.11. **_dbo.FactInternetSalesReason_**  
-  3.11.1. Columns  
 
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :-----------|
-| 1   | SalesOrderNumber         | nvarchar(20) | X        |            | dbo.FactInternetSales | PK,FK       |
-| 2   | SalesOrderLineNumber     | tinyint      | X        |            | dbo.FactInternetSales | PK,FK       |
-| 3   | SalesReasonKey           | int          | X        |            | dbo.DimSalesReason    | PK,FK       |
 
   3.12. **_dbo.FactResellerSales_**  
   3.12.1. Columns  
