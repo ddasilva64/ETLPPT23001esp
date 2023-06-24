@@ -22,7 +22,7 @@
     - [Prework](docs/prework.md)  
     - [Source tables](#poject-prowpi002-project-world-population-indicators-002)  
         - [PROWPI001 ETL](docs/prowpi001_etl.md)  
-          - [DimCountries.XML](DimCountries.XML.md)
+          - [DimCountries.XML](docs/DimCountries.XML.md)
         - [PROWPI002 ETL (AdventureWorksDW2022 DB)](docs/prowpi002_etl_adventureworksdw2022_db.md)  
           - [Source DB's ERD (SQL Server)](docs/Source_SQL_Server_DB.md)  
           - [Internet Sales Subsystem ERD](docs/Internet_Sales_Subsystem_ERD.md)  
