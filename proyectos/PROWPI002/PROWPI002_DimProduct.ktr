@@ -499,6 +499,57 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>datawarehouse</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>datawarehouse</database>
+    <port>5433</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc818c28197a215a775d086ff8b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
       <from>Table input</from>
@@ -508,6 +559,21 @@
     <hop>
       <from>sort #01</from>
       <to>columns #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #01</from>
+      <to>Replace in string #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string #01</from>
+      <to>columns #02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #02</from>
+      <to>output #01</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -643,7 +709,7 @@ FROM dbo.DimProduct
         <storagetype>normal</storagetype>
         <name>WeightUnitMeasureCode</name>
         <length>-1</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <origin>Table input</origin>
         <comments>WeightUnitMeasureCode</comments>
         <conversion_Mask/>
@@ -666,7 +732,7 @@ FROM dbo.DimProduct
         <storagetype>normal</storagetype>
         <name>SizeUnitMeasureCode</name>
         <length>-1</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <origin>Table input</origin>
         <comments>SizeUnitMeasureCode</comments>
         <conversion_Mask/>
@@ -988,7 +1054,7 @@ FROM dbo.DimProduct
         <storagetype>normal</storagetype>
         <name>ProductLine</name>
         <length>-1</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <origin>Table input</origin>
         <comments>ProductLine</comments>
         <conversion_Mask/>
@@ -1034,7 +1100,7 @@ FROM dbo.DimProduct
         <storagetype>normal</storagetype>
         <name>Class</name>
         <length>-1</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <origin>Table input</origin>
         <comments>Class</comments>
         <conversion_Mask/>
@@ -1057,7 +1123,7 @@ FROM dbo.DimProduct
         <storagetype>normal</storagetype>
         <name>Style</name>
         <length>-1</length>
-        <precision>0</precision>
+        <precision>-1</precision>
         <origin>Table input</origin>
         <comments>Style</comments>
         <conversion_Mask/>
@@ -1103,7 +1169,7 @@ FROM dbo.DimProduct
         <storagetype>normal</storagetype>
         <name>LargePhoto</name>
         <length>-1</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <origin>Table input</origin>
         <comments>LargePhoto</comments>
         <conversion_Mask/>
@@ -1433,6 +1499,14 @@ FROM dbo.DimProduct
         <rename/>
       </field>
       <field>
+        <name>EnglishProductName</name>
+        <rename>ProductName</rename>
+      </field>
+      <field>
+        <name>EnglishDescription</name>
+        <rename>Description</rename>
+      </field>
+      <field>
         <name>ProductSubcategoryKey</name>
         <rename/>
       </field>
@@ -1443,10 +1517,6 @@ FROM dbo.DimProduct
       <field>
         <name>SizeUnitMeasureCode</name>
         <rename/>
-      </field>
-      <field>
-        <name>EnglishProductName</name>
-        <rename>ProductName</rename>
       </field>
       <field>
         <name>StandardCost</name>
@@ -1509,14 +1579,6 @@ FROM dbo.DimProduct
         <rename/>
       </field>
       <field>
-        <name>LargePhoto</name>
-        <rename/>
-      </field>
-      <field>
-        <name>EnglishDescription</name>
-        <rename>Description</rename>
-      </field>
-      <field>
         <name>StartDate</name>
         <rename/>
       </field>
@@ -1529,6 +1591,40 @@ FROM dbo.DimProduct
         <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>StartDate</name>
+        <rename>StartDate</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>EndDate</name>
+        <rename>EndDate</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1539,7 +1635,7 @@ FROM dbo.DimProduct
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>368</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1582,6 +1678,329 @@ FROM dbo.DimProduct
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Replace in string #01</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>SizeRange</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>NA</replace_string>
+        <replace_by_string/>
+        <set_empty_string>Y</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>Color</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>NA</replace_string>
+        <replace_by_string/>
+        <set_empty_string>Y</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #02</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductAlternateKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductName</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Description</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductSubcategoryKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>WeightUnitMeasureCode</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SizeUnitMeasureCode</name>
+        <rename/>
+      </field>
+      <field>
+        <name>StandardCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>FinishedGoodsFlag</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Color</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SafetyStockLevel</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ReorderPoint</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ListPrice</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Size</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SizeRange</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Weight</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DaysToManufacture</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductLine</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DealerPrice</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Class</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Style</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ModelName</name>
+        <rename/>
+      </field>
+      <field>
+        <name>StartDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EndDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Status</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>672</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>output #01</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>datawarehouse</connection>
+    <schema>target</schema>
+    <table>"DimProduct"</table>
+    <commit>100</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>"ProductKey"</column_name>
+        <stream_name>ProductKey</stream_name>
+      </field>
+      <field>
+        <column_name>"ProductAlternateKey"</column_name>
+        <stream_name>ProductAlternateKey</stream_name>
+      </field>
+      <field>
+        <column_name>"ProductName"</column_name>
+        <stream_name>ProductName</stream_name>
+      </field>
+      <field>
+        <column_name>"Description"</column_name>
+        <stream_name>Description</stream_name>
+      </field>
+      <field>
+        <column_name>"ProductSubcategoryKey"</column_name>
+        <stream_name>ProductSubcategoryKey</stream_name>
+      </field>
+      <field>
+        <column_name>"WeightUnitMeasureCode"</column_name>
+        <stream_name>WeightUnitMeasureCode</stream_name>
+      </field>
+      <field>
+        <column_name>"SizeUnitMeasureCode"</column_name>
+        <stream_name>SizeUnitMeasureCode</stream_name>
+      </field>
+      <field>
+        <column_name>"StandardCost"</column_name>
+        <stream_name>StandardCost</stream_name>
+      </field>
+      <field>
+        <column_name>"FinishedGoodsFlag"</column_name>
+        <stream_name>FinishedGoodsFlag</stream_name>
+      </field>
+      <field>
+        <column_name>"Color"</column_name>
+        <stream_name>Color</stream_name>
+      </field>
+      <field>
+        <column_name>"SafetyStockLevel"</column_name>
+        <stream_name>SafetyStockLevel</stream_name>
+      </field>
+      <field>
+        <column_name>"ReorderPoint"</column_name>
+        <stream_name>ReorderPoint</stream_name>
+      </field>
+      <field>
+        <column_name>"ListPrice"</column_name>
+        <stream_name>ListPrice</stream_name>
+      </field>
+      <field>
+        <column_name>"Size"</column_name>
+        <stream_name>Size</stream_name>
+      </field>
+      <field>
+        <column_name>"SizeRange"</column_name>
+        <stream_name>SizeRange</stream_name>
+      </field>
+      <field>
+        <column_name>"Weight"</column_name>
+        <stream_name>Weight</stream_name>
+      </field>
+      <field>
+        <column_name>"DaysToManufacture"</column_name>
+        <stream_name>DaysToManufacture</stream_name>
+      </field>
+      <field>
+        <column_name>"ProductLine"</column_name>
+        <stream_name>ProductLine</stream_name>
+      </field>
+      <field>
+        <column_name>"DealerPrice"</column_name>
+        <stream_name>DealerPrice</stream_name>
+      </field>
+      <field>
+        <column_name>"Class"</column_name>
+        <stream_name>Class</stream_name>
+      </field>
+      <field>
+        <column_name>"Style"</column_name>
+        <stream_name>Style</stream_name>
+      </field>
+      <field>
+        <column_name>"ModelName"</column_name>
+        <stream_name>ModelName</stream_name>
+      </field>
+      <field>
+        <column_name>"StartDate"</column_name>
+        <stream_name>StartDate</stream_name>
+      </field>
+      <field>
+        <column_name>"EndDate"</column_name>
+        <stream_name>EndDate</stream_name>
+      </field>
+      <field>
+        <column_name>"Status"</column_name>
+        <stream_name>Status</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>

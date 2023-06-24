@@ -23,152 +23,16 @@ _Internet sales subsistem in dbo schema_
 
 **_[dbo.DimCurrency](dbo.DimCurrency.md)_** 
 
-**_[dbo.DimCustomer](dbo.DimCustomer.md)_** 
+**_[dbo.DimCustomer](dbo.DimCustomer.md)_**  
 
-  3.6. **_dbo.DimGeography_**  
-  3.6.1. Columns  
+**_[dbo.DimGeography](dbo.DimGeography.md)_** 
 
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description       |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | GeographyKey             | int          | X        | Identity   |                       | PK                |
-| 2   | City                     | nvarchar(30) |          |            |                       |                   |
-| 3   | StateProvinceCode        | nvarchar(3)  |          |            |                       |                   |
-| 4   | StateProvinceName        | nvarchar(50) |          |            |                       |                   |
-| 5   | CountryRegionCode        | nvarchar(3)  |          |            |                       |                   |
-| 6   | EnglishCountryRegionName | nvarchar(50) |          |            |                       | CountryRegionName |
-| 7   | SpanishCountryRegionName | nvarchar(50) |          |            |                       | deprecated        |
-| 8   | FrenchCountryRegionName  | nvarchar(50) |          |            |                       | deprecated        |
-| 9   | PostalCode               | nvarchar(15) |          |            |                       |                   |
-| 10  | SalesTerritoryKey        | int          |          |            | dbo.DimSalesTerritory	| FK                |
-| 11  | IpAddressLocator         | nvarchar(15) |          |            |                       | deprecated        |
+**_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
 
-3.6.1.1. **_PROWPI002\_DimGeography.KTR_**   
-3.6.1.1.1. #Table input: **_dbo.DimGeography_** (SQL Server)   
-3.6.1.1.2. #raw_14: arrangements/XML countries geography.XML  
-3.6.1.1.3. #staging_09: **_DimStatesProvinces_** (Postgre SQL table) 
+**_[dbo.DimProduct](dbo.DimProduct.md)_**  
 
-  **_<p><br>DimStatesProvinces layout</p>_**  
 
-  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
-  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | StateProvinceCode     | Character variying(2) | X        |            |                       | PK           |          |  
-  | 2   | CountryCode           | Character variying(3) | X        |            |                       | FK           |          |
-  | 3   | StateProvince         | Character variying(60)|          |            |                       |              |          |
-  
-  **_<p><br>Transform execution</p>_**
 
-  ![PDI transform](https://i.imgur.com/rMfFNsT.png)  
-  _PDI transform_ 
-  ![PDI execution](https://i.imgur.com/04qTBND.png)  
-  _PDI execution_  
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/Dar3bXc.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
-
-3.6.1.2. **_PROWPI002\_DimGeography.KTR_**   
-3.6.1.2.1. #Table input: **_dbo.DimGeography_** (SQL Server)  
-3.6.1.2.2. #raw_14: arrangements/XML countries geography.XML 
-3.6.1.2.3. #staging_09: **_"DimStatesProvinces"_** (Postgre SQL table) 
-
-  **_<p><br>DimStatesProvinces layout</p>_**  
-
-  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
-  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | GeographyKey          | Integer               | X        |            |                       | PK           |          |  
-  | 2   | CountryCode           | Character variying(3) | X        |            |                       | FK           |          |
-  | 3   | StateProvinceCode     | Character variying(2) | X        |            |                       | FK           |          |
-  | 4   | SalesTerritoryKey     | Integer               |          |            |                       | FK           |          |
-  | 5   | City                  | Character variying(60)|          |            |                       |              |          |
-  | 6   | PostalCode            | Character variying(10)|          |            |                       |              |          |
-  
-  **_<p><br>Transform execution</p>_**
-
-  ![The same PDI transform](https://i.imgur.com/rMfFNsT.png)  
-  _The same PDI transform_  
-  ![PDI execution](https://i.imgur.com/04qTBND.png)  
-  _PDI execution_  
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/KNp4OlJ.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
-
-**_Notice_**: In the future, **_3DoWoCo_** will provide **_Adventure Works Cycles, Inc._**, and any other customers, with a comprehensive data set of major world cities  
-
-  3.7. **_dbo.DimSalesTerritory_**  
-  3.7.1. Columns  
-
-| Key	| Name                       | Data type      | Not null | Attributes | References            | Description |
-| :-: | :------------------------- | :------------: | :------: | :--------- | :-------------------- | :-----------|
-| 1   | SalesTerritoryKey          | int            | X        | Identity   |                       | PK          |
-| 2   | SalesTerritoryAlternateKey | int            |          |            |                       | deprecated  |
-| 3   | SalesTerritoryRegion       | nvarchar(50)   | X        |            |                       |             |
-| 4   | SalesTerritoryCountry      | nvarchar(50)   | X        |            |                       |             |
-| 5   | SalesTerritoryGroup        | nvarchar(50)   |          |            |                       |             |
-| 6   | SalesTerritoryImage        | varbinary(MAX) |          |            |                       | deprecated  |
-
-**_Notice_**: **_N/A_** values in **_DimSalesTerritory_** is deprecated  
-
-3.7.1.1. **_PROWPI002\_DimSalesTerritory.KTR_**   
-3.7.1.1.1. #Table input: **_dbo.DimSalesTerritory_** (SQL Server)   
-3.7.1.1.2. #raw_14: arrangements/XML countries geography.XML  
-3.7.1.1.3. #staging_09: **_DimSalesTerritory_** (Postgre SQL table) 
-
-  **_<p><br>DimSalesTerritory layout</p>_**  
-
-  | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
-  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | SalesTerritoryKey     | Integer               | X        |            |                       | PK           |          |  
-  | 2   | SalesTerritoryRegion  | Character variying(60)|          |            |                       |              |          |
-  | 3   | SalesTerritoryGroup   | Character variying(60)|          |            |                       |              |          |
-  | 4   | CountryCode           | Character variying(3) |          |            |                       | FK           |          |
-  
-  **_<p><br>Transform execution</p>_**
-
-  ![PDI transform](https://i.imgur.com/fmrtjcv.png)  
-  _PDI transform_ 
-  ![PDI execution](https://i.imgur.com/I9vysve.png)  
-  _PDI execution_  
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/NQUEYEj.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
-
-  3.8. **_dbo.DimProduct_**
-  3.8.1. Columns 
-
-| Key	| Name                     | Data type     | Not null | Attributes | References                | Description |
-| :-: | :----------------------- | :-----------: | :------: | :--------- | :------------------------ | :-----------|
-| 1   | ProductKey               | int           | X        | Identity   |                           | PK          |
-| 2   | ProductAlternateKey      | nvarchar(25)  |          |            |                           |             |
-| 3   | ProductSubcategoryKey    | int           |          |            | dbo.DimProductSubcategory | FK          |
-| 4   | WeightUnitMeasureCode    | nchar(3)      |          |            |                           |             |
-| 5   | SizeUnitMeasureCode      | nchar(3)      |          |            |                           |             |
-| 6   | EnglishProductName       | nvarchar(50)  | X        |            |                           | ProductName |
-| 7   | SpanishProductName       | nvarchar(50)  | X        |            |                           | deprecated  |
-| 8   | FrenchProductNamen       | varchar(50)   | X        |            |                           | deprecated  |
-| 9   | StandardCost             | money         |          |            |                           |             |
-| 10  | FinishedGoodsFlag        | bit           | X        |            |                           |             |
-| 11  | Color                    | nvarchar(15)  | X        |            |                           |             |
-| 12  | SafetyStockLevel         | smallint      |          |            |                           |             |
-| 13  | ReorderPoint             | smallint      |          |            |                           |             |
-| 14  | ListPrice                | money         |          |            |                           |             |
-| 15  | Size                     | nvarchar(50)  |          |            |                           |             |
-| 16  | SizeRange                | nvarchar(50)  |          |            |                           |             |
-| 17  | Weight                   | float         |          |            |                           |             |
-| 18  | DaysToManufacture        | int           |          |            |                           |             |
-| 19  | ProductLine              | nchar(2)      |          |            |                           |             |
-| 20  | DealerPrice              | money         |          |            |                           |             |
-| 21  | Class                    | nchar(2)      |          |            |                           |             |
-| 22  | Style                    | nchar(2)      |          |            |                           |             |
-| 23  | ModelName                | nvarchar(50)  |          |            |                           |             |
-| 24  | LargePhoto               | varbinary(MAX)|          |            |                           |             |				
-| 25  | EnglishDescription       | nvarchar(400) |          |            |                           | Description |
-| 26  | FrenchDescription        | nvarchar(400) |          |            |                           | deprecated  |			
-| 27  | ChineseDescription       | nvarchar(400) |          |            |                           | deprecated  |
-| 28  | ArabicDescription        | nvarchar(400) |          |            |                           | deprecated  |		
-| 29  | HebrewDescription        | nvarchar(400) |          |            |                           | deprecated  |
-| 30  | ThaiDescription          | nvarchar(400) |          |            |                           | deprecated  |				
-| 31  | GermanDescription        | nvarchar(400) |          |            |                           | deprecated  |		
-| 32  | JapaneseDescription      | nvarchar(400) |          |            |                           | deprecated  |		
-| 33  | TurkishDescription       | nvarchar(400) |          |            |                           | deprecated  |
-| 34  | StartDate                | datetime      |          |            |                           |             |
-| 35  | EndDate                  | datetime      |          |            |                           |             |
-| 36  | Status                   | nvarchar(7)   |          |            |                           |             |
 
   3.9. **_dbo.DimProductSubcategory_**  
   3.9.1. Columns  
