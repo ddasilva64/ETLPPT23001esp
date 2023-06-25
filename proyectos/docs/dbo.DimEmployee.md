@@ -2,39 +2,39 @@
 
 ### Columns  
 
-| Key	| Name                                 | Data type      | Not null | Attributes | References            | PK  | FK  | Deprecated | Description       |
-| :-: | :----------------------------------- | :------------: | :------: | :--------- | :-------------------- | :-: | :-: | :--------: | :---------------- |
-| 1   | EmployeeKey                          | int            | X        | Identity   |                       | X   |     |            | Primary key for Employee records |
-| 2   | ParentEmployeeKey                    | int            |          |            | dbo.DimEmployee       |     | X   |            | Parent employee key |
-| 3   | EmployeeNationalIDAlternateKey       | nvarchar(15)   |          |            |                       |     |     |            | Unique national identification number such as a social security number |
-| 4   | ParentEmployeeNationalIDAlternateKey | nvarchar(15)   |          |            |                       |     |     |            | Parent unique national identification number such as a social security number |
-| 5   | SalesTerritoryKey                    | int            |          |            | dbo.DimSalesTerritory |     | X   |            | Territory currently assigned to. Foreign key to SalesTerritory.SalesTerritoryID |
-| 6   | FirstName                            | nvarchar(50)   | X        |            |                       |     |     |            | First name        |
-| 7   | LastName                             | nvarchar(50)   | X        |            |                       |     |     |            | Last name         |
-| 8   | MiddleName                           | nvarchar(50)   |          |            |                       |     |     |            | Middle name       |
-| 9   | NameStyle                            | bit            | X        |            |                       |     |     |            | 0 = The data in FirstName and LastName are stored in western style (first name, last name) order. 1 = Eastern style (last name, first name) order |
-| 10  | Title                                | nvarchar(50)   |          |            |                       |     |     |            | Work title such as Buyer or Sales Representative |
-| 11  | HireDate                             | date           |          |            |                       |     |     |            | Employee hired on this date |
-| 12  | BirthDate                            | date           |          |            |                       |     |     |            | Date of birth     |
-| 13  | LoginID                              | nvarchar(256)  |          |            |                       |     |     |            | Network login     |
-| 14  | EmailAddress                         | nvarchar(50)   |          |            |                       |     |     |            | Email address     |
-| 15  | Phone                                | nvarchar(25)   |          |            |                       |     |     |            | Phone             |
-| 16  | MaritalStatus                        | nchar(1)       |          |            |                       |     |     |            | M = Married, S = Single |
-| 17  | EmergencyContactName                 | nvarchar(50)   |          |            |                       |     |     |            | Emergency contact name |
-| 18  | EmergencyContactPhone                | nvarchar(25)   |          |            |                       |     |     |            | Emergency contac phone |
-| 19  | SalariedFlag                         | bit            |          |            |                       |     |     |            | Job classification. 0 = Hourly, not exempt from collective bargaining. 1 = Salaried, exempt from collective bargaining |
-| 20  | Gender                               | nchar(1)       |          |            |                       |     |     |            | M = Male, F = Female |
-| 21  | PayFrequency                         | tinyint        |          |            |                       |     |     |            | 1 = Salary received monthly, 2 = Salary received biweekly |
-| 22  | BaseRate                             | money          |          |            |                       |     |     |            | Salary hourly rate |
-| 23  | VacationHours                        | smallint       |          |            |                       |     |     |            | Number of available vacation hours |
-| 24  | SickLeaveHours                       | smallint       |          |            |                       |     |     |            | Number of available sick leave hours |
-| 25  | CurrentFlag                          | bit            |          |            |                       |     |     |            | 0 = Inactive, 1 = Active |
-| 26  | SalesPersonFlag                      | bit            |          |            |                       |     |     |            | 0 = No, 1 = Yes   |
-| 27  | DepartmentName                       | nvarchar(50)   |          |            |                       |     |     |            | Department name   |
-| 28  | StartDate                            | date           |          |            |                       |     |     |            | Date the employee started work in the department |
-| 29  | EndDate                              | date           |          |            |                       |     |     |            | Date the employee left the department. NULL = Current department |
-| 30  | Status                               | nvarchar(50)   |          |            |                       |     |     |            | Current or empty  |
-| 31  | EmployeePhoto                        | varbinary(MAX) |          |            |                       |     |     | X          | Employee photo    |
+| Key	| Name                                 | Data type      | Not null | Attributes | References            | Description | Metadata |
+| :-: | :----------------------------------- | :------------: | :------: | :--------- | :-------------------- | :---------: | :------- |
+| 1   | EmployeeKey                          | int            | X        | Identity   |                       | PK          | m029     |
+| 2   | ParentEmployeeKey                    | int            |          |            | dbo.DimEmployee       | FK          | m030     |
+| 3   | EmployeeNationalIDAlternateKey       | nvarchar(15)   |          |            |                       |             | m031     |
+| 4   | ParentEmployeeNationalIDAlternateKey | nvarchar(15)   |          |            |                       |             | m032     |
+| 5   | SalesTerritoryKey                    | int            |          |            | dbo.DimSalesTerritory | FK          | m033     |
+| 6   | FirstName                            | nvarchar(50)   | X        |            |                       |             | m034     |
+| 7   | LastName                             | nvarchar(50)   | X        |            |                       |             | m035     |
+| 8   | MiddleName                           | nvarchar(50)   |          |            |                       |             | m036     |
+| 9   | NameStyle                            | bit            | X        |            |                       |             | m037     |
+| 10  | Title                                | nvarchar(50)   |          |            |                       |             | m038     |
+| 11  | HireDate                             | date           |          |            |                       |             | m039     |
+| 12  | BirthDate                            | date           |          |            |                       |             | m040     |
+| 13  | LoginID                              | nvarchar(256)  |          |            |                       |             | m041     |
+| 14  | EmailAddress                         | nvarchar(50)   |          |            |                       |             | m042     |
+| 15  | Phone                                | nvarchar(25)   |          |            |                       |             | m043     |
+| 16  | MaritalStatus                        | nchar(1)       |          |            |                       |             | m044     |
+| 17  | EmergencyContactName                 | nvarchar(50)   |          |            |                       |             | m045     |
+| 18  | EmergencyContactPhone                | nvarchar(25)   |          |            |                       |             | m046     |
+| 19  | SalariedFlag                         | bit            |          |            |                       |             | m047     |
+| 20  | Gender                               | nchar(1)       |          |            |                       |             | m048     |
+| 21  | PayFrequency                         | tinyint        |          |            |                       |             | m049     |
+| 22  | BaseRate                             | money          |          |            |                       |             | m050     |
+| 23  | VacationHours                        | smallint       |          |            |                       |             | m051     |
+| 24  | SickLeaveHours                       | smallint       |          |            |                       |             | m052     |
+| 25  | CurrentFlag                          | bit            |          |            |                       |             | m053     |
+| 26  | SalesPersonFlag                      | bit            |          |            |                       |             | m054     |
+| 27  | DepartmentName                       | nvarchar(50)   |          |            |                       |             | m055     |
+| 28  | StartDate                            | date           |          |            |                       |             | m056     |
+| 29  | EndDate                              | date           |          |            |                       |             | m057     |
+| 30  | Status                               | nvarchar(50)   |          |            |                       |             | m058     |
+| 31  | EmployeePhoto                        | varbinary(MAX) |          |            |                       | deprecated  |          |
 
    <p><br></p>  
 
@@ -59,38 +59,38 @@ _SQL Server source in SQL Server Management studio_
 
 ### **_<p><br>DimEmployee layout (Postgre SQL)</p>_**  
 
-| Key	| Name                                 | Data type             | Not null | Attributes | References            | Description       |
-| :-: | :----------------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | EmployeeKey                          | integer               | X        |            |                       | PK                |
-| 2   | ParentEmployeeKey                    | integer               |          |            | dbo.DimEmployee       | FK                |
-| 3   | EmployeeNationalIDAlternateKey       | character varying(15) |          |            |                       |                   |
-| 4   | ParentEmployeeNationalIDAlternateKey | character varying(15) |          |            |                       |                   |
-| 5   | SalesTerritoryKey                    | integer               |          |            | dbo.DimSalesTerritory | FK                | 
-| 6   | FirstName                            | character varying(50) | X        |            |                       |                   |
-| 7   | LastName                             | character varying(50) | X        |            |                       |                   |
-| 8   | MiddleName                           | character varying(50) |          |            |                       |                   |
-| 9   | NameStyle                            | boolean               | X        |            |                       |                   |
-| 10  | Title                                | character varying(50) |          |            |                       |                   |
-| 11  | HireDate                             | date                  |          |            |                       |                   |
-| 12  | BirthDate                            | date                  |          |            |                       |                   |
-| 13  | LoginID                              | character varying(256)|          |            |                       |                   |
-| 14  | EmailAddress                         | character varying(50) |          |            |                       |                   |
-| 15  | Phone                                | character varying(25) |          |            |                       |                   |
-| 16  | MaritalStatus                        | character varying(1)  |          |            |                       |                   |
-| 17  | EmergencyContactName                 | character varying(50) |          |            |                       |                   |
-| 18  | EmergencyContactPhone                | character varying(25) |          |            |                       |                   |
-| 19  | SalariedFlag                         | boolean               |          |            |                       |                   |
-| 20  | Gender                               | character varying(1)  |          |            |                       |                   |
-| 21  | PayFrequency                         | integer               |          |            |                       |                   |
-| 22  | BaseRate                             | real                  |          |            |                       |                   |
-| 23  | VacationHours                        | integer               |          |            |                       |                   |
-| 24  | SickLeaveHours                       | integer               |          |            |                       |                   |
-| 25  | CurrentFlag                          | boolean               |          |            |                       |                   |
-| 26  | SalesPersonFlag                      | boolean               |          |            |                       |                   |
-| 27  | DepartmentName                       | character varying(50) |          |            |                       |                   |
-| 28  | StartDate                            | date                  |          |            |                       |                   |
-| 29  | EndDate                              | date                  |          |            |                       |                   |
-| 30  | Status                               | character varying(50) |          |            |                       |                   |
+| Key	| Name                                 | Data type             | Not null | Attributes | References            | Description       | Metadata |
+| :-: | :----------------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :---------------- | :------- |
+| 1   | EmployeeKey                          | integer               | X        |            |                       | PK                | m029     |
+| 2   | ParentEmployeeKey                    | integer               |          |            | dbo.DimEmployee       | FK                | m030     |
+| 3   | EmployeeNationalIDAlternateKey       | character varying(15) |          |            |                       |                   | m031     |
+| 4   | ParentEmployeeNationalIDAlternateKey | character varying(15) |          |            |                       |                   | m032     |
+| 5   | SalesTerritoryKey                    | integer               |          |            | dbo.DimSalesTerritory | FK                | m033     |
+| 6   | FirstName                            | character varying(50) | X        |            |                       |                   | m034     |
+| 7   | LastName                             | character varying(50) | X        |            |                       |                   | m035     |
+| 8   | MiddleName                           | character varying(50) |          |            |                       |                   | m036     |
+| 9   | NameStyle                            | boolean               | X        |            |                       |                   | m037     |
+| 10  | Title                                | character varying(50) |          |            |                       |                   | m038     |
+| 11  | HireDate                             | date                  |          |            |                       |                   | m039     |
+| 12  | BirthDate                            | date                  |          |            |                       |                   | m040     |
+| 13  | LoginID                              | character varying(256)|          |            |                       |                   | m041     |
+| 14  | EmailAddress                         | character varying(50) |          |            |                       |                   | m042     |
+| 15  | Phone                                | character varying(25) |          |            |                       |                   | m043     |
+| 16  | MaritalStatus                        | character varying(1)  |          |            |                       |                   | m044     |
+| 17  | EmergencyContactName                 | character varying(50) |          |            |                       |                   | m045     |
+| 18  | EmergencyContactPhone                | character varying(25) |          |            |                       |                   | m046     |
+| 19  | SalariedFlag                         | boolean               |          |            |                       |                   | m047     |
+| 20  | Gender                               | character varying(1)  |          |            |                       |                   | m048     |
+| 21  | PayFrequency                         | integer               |          |            |                       |                   | m049     |
+| 22  | BaseRate                             | real                  |          |            |                       |                   | m050     |
+| 23  | VacationHours                        | integer               |          |            |                       |                   | m051     |
+| 24  | SickLeaveHours                       | integer               |          |            |                       |                   | m052     |
+| 25  | CurrentFlag                          | boolean               |          |            |                       |                   | m053     |
+| 26  | SalesPersonFlag                      | boolean               |          |            |                       |                   | m054     |
+| 27  | DepartmentName                       | character varying(50) |          |            |                       |                   | m055     |
+| 28  | StartDate                            | date                  |          |            |                       |                   | m056     |
+| 29  | EndDate                              | date                  |          |            |                       |                   | m057     |
+| 30  | Status                               | character varying(50) |          |            |                       |                   | m058     |
 
    <p><br></p>  
  

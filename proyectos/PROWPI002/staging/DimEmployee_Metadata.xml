@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m029</Key> <Meaning>Primary key for Employee records</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m030</Key> <Meaning>Parent employee key</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m031</Key> <Meaning>Unique national identification number such as a social security number</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m032</Key> <Meaning>Parent unique national identification number such as a social security number</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m033</Key> <Meaning>Territory currently assigned to. Foreign key to SalesTerritory.SalesTerritoryID</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m034</Key> <Meaning>First name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m035</Key> <Meaning>Last name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m036</Key> <Meaning>Middle name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m037</Key> <Meaning>Name style</Meaning> <Standard> </Standard> <Formula>0 = The data in FirstName and LastName are stored in western style (first name, last name) order. 1 = Eastern style (last name, first name) order</Formula> <Units> </Units></Row>
+<Row><Key>m038</Key> <Meaning>Work title</Meaning> <Standard> </Standard> <Formula>Such as Buyer or Sales Representative</Formula> <Units> </Units></Row>
+<Row><Key>m039</Key> <Meaning>Employee hired on this date</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m040</Key> <Meaning>Date of birth</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m041</Key> <Meaning>Network login</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m042</Key> <Meaning>Email address</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m043</Key> <Meaning>Phone</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m044</Key> <Meaning>Marital status</Meaning> <Standard> </Standard> <Formula>M = Married, S = Single</Formula> <Units> </Units></Row>
+<Row><Key>m045</Key> <Meaning>Emergency contact name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m046</Key> <Meaning>Emergency contact phone</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m047</Key> <Meaning>Salaried flag</Meaning> <Standard> </Standard> <Formula>Job classification. 0 = Hourly, not exempt from collective bargaining. 1 = Salaried, exempt from collective bargaining</Formula> <Units> </Units></Row>
+<Row><Key>m048</Key> <Meaning>Gender</Meaning> <Standard> </Standard> <Formula>M = Male, F = Female</Formula> <Units> </Units></Row>
+<Row><Key>m049</Key> <Meaning>PayFrequency</Meaning> <Standard> </Standard> <Formula>1 = Salary received monthly, 2 = Salary received biweekly</Formula> <Units> </Units></Row>
+<Row><Key>m050</Key> <Meaning>Salary hourly rate</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m051</Key> <Meaning>Number of available vacation hours</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m052</Key> <Meaning>Number of available sick leave hours</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m053</Key> <Meaning>Current flag</Meaning> <Standard> </Standard> <Formula>0 = Inactive, 1 = Active</Formula> <Units> </Units></Row>
+<Row><Key>m054</Key> <Meaning>Sales person flag</Meaning> <Standard> </Standard> <Formula>0 = No, 1 = Yes</Formula> <Units> </Units></Row>
+<Row><Key>m055</Key> <Meaning>Department name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m056</Key> <Meaning>Date the employee started work in the department</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m057</Key> <Meaning>Date the employee left the departmen</Meaning> <Standard> </Standard> <Formula>NULL = Current department</Formula> <Units> </Units></Row>
+<Row><Key>m058</Key> <Meaning>Status</Meaning> <Standard> </Standard> <Formula>Current or empty</Formula> <Units> </Units></Row>
+</Rows>
