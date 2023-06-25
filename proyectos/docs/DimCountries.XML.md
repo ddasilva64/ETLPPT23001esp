@@ -14,8 +14,8 @@
 
   <p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/5wh3IhK.png)  
-  _PDI execution_ 
+  ![PDI execution](https://i.imgur.com/QQ5erJu.png)
+  _PDI execution_  
 
 ### **_<p><br>DimCountries layout</p>_**  
 
@@ -29,7 +29,12 @@
    <p><br></p>  
  
    ![XML file checking](https://i.imgur.com/ja9Mxa1.png)  
-  _XML file checking_
+  _XML file checking_  
+
+  <p><br></p>  
+
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/5wh3IhK.png)  
+  _Postgres SQL's transactions checking in PgAdmin_ 
 
   **_QA_**: You can download data sources, and **_PDI_** transformations to chek it  
 
