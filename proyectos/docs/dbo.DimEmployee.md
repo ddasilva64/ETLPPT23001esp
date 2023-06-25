@@ -2,39 +2,39 @@
 
 ### Columns  
 
-| Key	| Name                                 | Data type      | Not null | Attributes | References            | Description       |
-| :-: | :----------------------------------- | :------------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | EmployeeKey                          | int            | X        | Identity   |                       | PK                |
-| 2   | ParentEmployeeKey                    | int            |          |            | dbo.DimEmployee       | FK                |
-| 3   | EmployeeNationalIDAlternateKey       | nvarchar(15)   |          |            |                       |                   |
-| 4   | ParentEmployeeNationalIDAlternateKey | nvarchar(15)   |          |            |                       |                   |
-| 5   | SalesTerritoryKey                    | int            |          |            | dbo.DimSalesTerritory | FK                | 
-| 6   | FirstName                            | nvarchar(50)   | X        |            |                       |                   |
-| 7   | LastName                             | nvarchar(50)   | X        |            |                       |                   |
-| 8   | MiddleName                           | nvarchar(50)   |          |            |                       |                   |
-| 9   | NameStyle                            | bit            | X        |            |                       |                   |
-| 10  | Title                                | nvarchar(50)   |          |            |                       |                   |
-| 11  | HireDate                             | date           |          |            |                       |                   |
-| 12  | BirthDate                            | date           |          |            |                       |                   |
-| 13  | LoginID                              | nvarchar(256)  |          |            |                       |                   |
-| 14  | EmailAddress                         | nvarchar(50)   |          |            |                       |                   |
-| 15  | Phone                                | nvarchar(25)   |          |            |                       |                   |
-| 16  | MaritalStatus                        | nchar(1)       |          |            |                       |                   |
-| 17  | EmergencyContactName                 | nvarchar(50)   |          |            |                       |                   |
-| 18  | EmergencyContactPhone                | nvarchar(25)   |          |            |                       |                   |
-| 19  | SalariedFlag                         | bit            |          |            |                       |                   |
-| 20  | Gender                               | nchar(1)       |          |            |                       |                   |
-| 21  | PayFrequency                         | tinyint        |          |            |                       |                   |
-| 22  | BaseRate                             | money          |          |            |                       |                   |
-| 23  | VacationHours                        | smallint       |          |            |                       |                   |
-| 24  | SickLeaveHours                       | smallint       |          |            |                       |                   |
-| 25  | CurrentFlag                          | bit            |          |            |                       |                   |
-| 26  | SalesPersonFlag                      | bit            |          |            |                       |                   |
-| 27  | DepartmentName                       | nvarchar(50)   |          |            |                       |                   |
-| 28  | StartDate                            | date           |          |            |                       |                   |
-| 29  | EndDate                              | date           |          |            |                       |                   |
-| 30  | Status                               | nvarchar(50)   |          |            |                       |                   |
-| 31  | EmployeePhoto                        | varbinary(MAX) |          |            |                       | deprecated        |
+| Key	| Name                                 | Data type      | Not null | Attributes | References            | PK  | FK  | Deprecated | Description       |
+| :-: | :----------------------------------- | :------------: | :------: | :--------- | :-------------------- | :-: | :-: | :--------: | :---------------- |
+| 1   | EmployeeKey                          | int            | X        | Identity   |                       | X   |     |            | Primary key for Employee records |
+| 2   | ParentEmployeeKey                    | int            |          |            | dbo.DimEmployee       |     | X   |            | Parent employee key |
+| 3   | EmployeeNationalIDAlternateKey       | nvarchar(15)   |          |            |                       |     |     |            | Unique national identification number such as a social security number |
+| 4   | ParentEmployeeNationalIDAlternateKey | nvarchar(15)   |          |            |                       |     |     |            | Parent unique national identification number such as a social security number |
+| 5   | SalesTerritoryKey                    | int            |          |            | dbo.DimSalesTerritory |     | X   |            | Territory currently assigned to. Foreign key to SalesTerritory.SalesTerritoryID |
+| 6   | FirstName                            | nvarchar(50)   | X        |            |                       |     |     |            | First name        |
+| 7   | LastName                             | nvarchar(50)   | X        |            |                       |     |     |            | Last name         |
+| 8   | MiddleName                           | nvarchar(50)   |          |            |                       |     |     |            | Middle name       |
+| 9   | NameStyle                            | bit            | X        |            |                       |     |     |            | 0 = The data in FirstName and LastName are stored in western style (first name, last name) order. 1 = Eastern style (last name, first name) order |
+| 10  | Title                                | nvarchar(50)   |          |            |                       |     |     |            | Work title such as Buyer or Sales Representative |
+| 11  | HireDate                             | date           |          |            |                       |     |     |            | Employee hired on this date |
+| 12  | BirthDate                            | date           |          |            |                       |     |     |            | Date of birth     |
+| 13  | LoginID                              | nvarchar(256)  |          |            |                       |     |     |            | Network login     |
+| 14  | EmailAddress                         | nvarchar(50)   |          |            |                       |     |     |            | Email address     |
+| 15  | Phone                                | nvarchar(25)   |          |            |                       |     |     |            | Phone             |
+| 16  | MaritalStatus                        | nchar(1)       |          |            |                       |     |     |            | M = Married, S = Single |
+| 17  | EmergencyContactName                 | nvarchar(50)   |          |            |                       |     |     |            | Emergency contact name |
+| 18  | EmergencyContactPhone                | nvarchar(25)   |          |            |                       |     |     |            | Emergency contac phone |
+| 19  | SalariedFlag                         | bit            |          |            |                       |     |     |            | Job classification. 0 = Hourly, not exempt from collective bargaining. 1 = Salaried, exempt from collective bargaining |
+| 20  | Gender                               | nchar(1)       |          |            |                       |     |     |            | M = Male, F = Female |
+| 21  | PayFrequency                         | tinyint        |          |            |                       |     |     |            | 1 = Salary received monthly, 2 = Salary received biweekly |
+| 22  | BaseRate                             | money          |          |            |                       |     |     |            | Salary hourly rate |
+| 23  | VacationHours                        | smallint       |          |            |                       |     |     |            | Number of available vacation hours |
+| 24  | SickLeaveHours                       | smallint       |          |            |                       |     |     |            | Number of available sick leave hours |
+| 25  | CurrentFlag                          | bit            |          |            |                       |     |     |            | 0 = Inactive, 1 = Active |
+| 26  | SalesPersonFlag                      | bit            |          |            |                       |     |     |            | 0 = No, 1 = Yes   |
+| 27  | DepartmentName                       | nvarchar(50)   |          |            |                       |     |     |            | Department name   |
+| 28  | StartDate                            | date           |          |            |                       |     |     |            | Date the employee started work in the department |
+| 29  | EndDate                              | date           |          |            |                       |     |     |            | Date the employee left the department. NULL = Current department |
+| 30  | Status                               | nvarchar(50)   |          |            |                       |     |     |            | Current or empty  |
+| 31  | EmployeePhoto                        | varbinary(MAX) |          |            |                       |     |     | X          | Employee photo    |
 
    <p><br></p>  
 
