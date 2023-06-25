@@ -34,6 +34,7 @@
           - [Source DB's ERD (SQL Server)](docs/Source_SQL_Server_DB.md)  
           - [Internet Sales Subsystem ERD](docs/Internet_Sales_Subsystem_ERD.md)  
           - [dbo.FactInternetSales](docs/dbo.FactInternetSales.md)  
+          - [FactInternetSales Metadata](docs/FactInternetSales_Metadata.md)  
           - [dbo.DimDate](docs/dbo.DimDate.md)  
           - [dbo.DimPromotion](docs/dbo.DimPromotion.md)  
           - [dbo.DimCurrency](docs/bo.DimCurrency.md)  

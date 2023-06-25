@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m059</Key> <Meaning>Primary key for Product records</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m060</Key> <Meaning>Primary key for Customer records</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m061</Key> <Meaning>Primary key for Promotion records</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m062</Key> <Meaning>Primary key for Currency records</Meaning> <Standard>The ISO code for the Currency</Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m063</Key> <Meaning>Primary key for SalesTerritory records</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m064</Key> <Meaning>Primary key. Unique sales order identification number</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m065</Key> <Meaning>Primary key. One incremental unique number per product sold</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m066</Key> <Meaning>Incremental number to track changes to the sales order over time</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m067</Key> <Meaning>Quantity ordered per product</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m068</Key> <Meaning>Selling price of a single product</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m069</Key> <Meaning>Per product subtotal</Meaning> <Standard> </Standard> <Formula>UnitPrice * (1 - UnitPriceDiscount) * OrderQty</Formula> <Units> </Units></Row>
+<Row><Key>m070</Key> <Meaning>Unit price discount</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m071</Key> <Meaning>Discount amount</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m072</Key> <Meaning>Standard cost of the product</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m073</Key> <Meaning>Selling price</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m074</Key> <Meaning>Sales subtotal</Meaning> <Standard> </Standard> <Formula>SUM(SalesOrderDetail.LineTotal)for the appropriate SalesOrderID</Formula> <Units> </Units></Row>
+<Row><Key>m075</Key> <Meaning>Tax amount</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m076</Key> <Meaning>Shipping cost</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m077</Key> <Meaning>Shipment tracking number supplied by the shipper</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m078</Key> <Meaning>Customer purchase order number reference</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m079</Key> <Meaning>Dates the sales order was created</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m080</Key> <Meaning>Date the order is due to the customer</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m081</Key> <Meaning>Date the order was shipped to the customer</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+</Rows>

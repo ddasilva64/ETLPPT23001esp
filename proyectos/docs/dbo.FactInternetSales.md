@@ -60,29 +60,29 @@ _SQL Server source in SQL Server Management studio_
 
   | Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | ProductKey            | integer               | X        |            | dbo.DimProduct        | FK           |          |
-  | 2   | CustomerKey           | integer               | X        |            | dbo.DimCustomer       | FK           |          |
-  | 3   | PromotionKey          | integer               | X        |            | dbo.DimPromotion      | FK           |          |
-  | 4   | CurrencyKey           | integer               | X        |            | dbo.DimCurrency	     | FK           |          |
-  | 5   | SalesTerritoryKey     | integer               | X        |            | dbo.DimSalesTerritory | FK           |          |
-  | 6   | SalesOrderNumber      | Character variying(20)| X        |            |                       | PK           |          |
-  | 7   | SalesOrderLineNumber  | integer               | X        |            |                       | PK           |          |
-  | 8   | RevisionNumber        | integer               | X        |            |                       |              |          |
-  | 9   | OrderQuantity         | integer               | X        |            |                       |              |          |
-  | 10  | UnitPrice             | real                  | X        |            |                       |              |          |
-  | 11  | ExtendedAmount        | real                  | X        |            |                       |              |          |
-  | 12  | UnitPriceDiscountPct  | real                  | X        |            |                       |              |          |
-  | 13  | DiscountAmount        | real                  | X        |            |                       |              |          |
-  | 14  | ProductStandardCost   | real                  | X        |            |                       |              |          |
-  | 15  | TotalProductCost      | real                  | X        |            |                       |              |          |
-  | 16  | SalesAmount           | real                  | X        |            |                       |              |          |
-  | 17  | TaxAmt                | real                  | X        |            |                       |              |          |
-  | 18  | Freight               | real                  | X        |            |                       |              |          |
-  | 19  | CarrierTrackingNumber | Character variying(25)|          |            |                       |              |          |
-  | 20  | CustomerPONumber      | Character variying(25)|          |            |                       |              |          |
-  | 21  | OrderDate             | date                  |          |            |                       |              |          |
-  | 22  | DueDate               | date                  |          |            |                       |              |          |
-  | 23  | ShipDate              | date                  |          |            |                       |              |          |
+  | 1   | ProductKey            | integer               | X        |            | dbo.DimProduct        | FK           | m059     |
+  | 2   | CustomerKey           | integer               | X        |            | dbo.DimCustomer       | FK           | m060     |
+  | 3   | PromotionKey          | integer               | X        |            | dbo.DimPromotion      | FK           | m061     |
+  | 4   | CurrencyKey           | integer               | X        |            | dbo.DimCurrency	     | FK           | m062     |
+  | 5   | SalesTerritoryKey     | integer               | X        |            | dbo.DimSalesTerritory | FK           | m063     |
+  | 6   | SalesOrderNumber      | Character variying(20)| X        |            |                       | PK           | m064     |
+  | 7   | SalesOrderLineNumber  | integer               | X        |            |                       | PK           | m065     |
+  | 8   | RevisionNumber        | integer               | X        |            |                       |              | m066     |
+  | 9   | OrderQuantity         | integer               | X        |            |                       |              | m067     |
+  | 10  | UnitPrice             | real                  | X        |            |                       |              | m068     |
+  | 11  | ExtendedAmount        | real                  | X        |            |                       |              | m069     |
+  | 12  | UnitPriceDiscountPct  | real                  | X        |            |                       |              | m070     |
+  | 13  | DiscountAmount        | real                  | X        |            |                       |              | m071     |
+  | 14  | ProductStandardCost   | real                  | X        |            |                       |              | m072     |
+  | 15  | TotalProductCost      | real                  | X        |            |                       |              | m073     |
+  | 16  | SalesAmount           | real                  | X        |            |                       |              | m074     |
+  | 17  | TaxAmt                | real                  | X        |            |                       |              | m075     |
+  | 18  | Freight               | real                  | X        |            |                       |              | m076     |
+  | 19  | CarrierTrackingNumber | Character variying(25)|          |            |                       |              | m077     |
+  | 20  | CustomerPONumber      | Character variying(25)|          |            |                       |              | m078     |
+  | 21  | OrderDate             | date                  |          |            |                       |              | m079     |
+  | 22  | DueDate               | date                  |          |            |                       |              | m080     |
+  | 23  | ShipDate              | date                  |          |            |                       |              | m081     |
   
    <p><br></p>  
  
