@@ -47,7 +47,7 @@
           - [dbo.FactResellerSales](docs/dbo.FactResellerSales.md)  
           - [dbo.FactProductInventory](docs/dbo.FactProductInventory.md)  
           - [dbo.DimEmployee](docs/dbo.DimEmployee.md)  
-          - [DimEmployee Metadata](docs/DimEmployee_Metadata.md) 
+          - [DimEmployees Metadata](docs/DimEmployees_Metadata.md) 
           - [dbo.DimReseller](docs/bo.DimReseller.md)  
         - [PROWPI002 ETL (parametric data)](docs/prowpi002_etl_parametric_data.md)  
 - [DWH (Data Warehouse)](docs/dwh.md)

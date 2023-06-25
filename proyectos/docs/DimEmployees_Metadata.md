@@ -2,10 +2,10 @@
 
 **_Atention!_**: While the importance of metadata cannot be overstated, the reason to use it is to help drive reporting accuracy, validate data transformation, and ensure calculation accuracy. Metadata also imposes the definition of terms such as indicators, standards, etc. In the development of the DWH, metadata appears, and with it arises the need to create a table with this content  
 
-### **_DimEmployee\_Metadata.XML (values)_**  
-  1. #staging_07: **_staging\DimEmployee\_Metadata.XML_** (values, but not layout)  
+### **_DimEmployees\_Metadata.XML (values)_**  
+  1. #staging_07: **_staging\DimEmployees\_Metadata.XML_** (values, but not layout)  
 
-### **_<p><br>DimEmployee\_Metadata.XML layout</p>_**  
+### **_<p><br>DimEmployees\_Metadata.XML layout</p>_**  
 
 | Key      	| Meaning                                 | Standard              | Formula                                                                  | Units |
 | :-------: | :-------------------------------------- | :-------------------: | :----------------------------------------------------------------------- | :---: |
@@ -52,8 +52,8 @@
 [Back to Table of contents :arrow_double_up:](../README.md)  
 
 
-### **_DimEmployee\_Metadata.KTR_**  
-  1. #staging_07: **_staging\PROWPI002\_Metadata.XML_**  
+### **_DimEmployees\_Metadata.KTR_**  
+  1. #staging_07: **_staging\DimEmployees\_Metadata.XML_**  
 
    <p><br></p>  
 
