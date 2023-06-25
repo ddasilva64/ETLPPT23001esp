@@ -1,4 +1,4 @@
-## **_dbo.DimEmployee (SQL Server table)_**  
+## **_dbo.DimCountries (XML staging file)_**  
 
 ### **_PROWPI001\_Countries.KTR (PDI)_**   
 1. #raw_01: PopulationDataWorldBank.XLSX  
