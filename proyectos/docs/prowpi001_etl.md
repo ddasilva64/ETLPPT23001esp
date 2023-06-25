@@ -12,7 +12,6 @@
   - **_[Health.XML](Health.XML.md)_**  
   - **_[FactCountries](FactCountries.md)_**  
   - **_[Metadata](Metadata.md)_**  
-    
 
   **_Warning_**!: Remember that field names are standard (the first character of the word is uppercase, and no spaces between words). That means that in the output table name and table field names (in POI), we need to write them (table and fields) in double quotes  
 
