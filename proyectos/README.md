@@ -38,6 +38,7 @@
           - [dbo.DimDate](docs/dbo.DimDate.md)  
           - [dbo.DimPromotion](docs/dbo.DimPromotion.md)  
           - [dbo.DimCurrency](docs/bo.DimCurrency.md)  
+          - [DimCurrencies Metadata](docs/DimCurrencies_Metadata.md)  
           - [dbo.DimCustomer](docs/dbo.DimCustomer.md)  
           - [dbo.DimGeography](docs/dbo.DimGeography.md)    
           - [dbo.DimSalesTerritory](docs/dbo.DimSalesTerritory.md)  

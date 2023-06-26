@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m082</Key> <Meaning>Primary key of Currency records</Meaning> <Standard> </Standard> <Formula>The ISO code for the Currency</Formula> <Units> </Units></Row>
+<Row><Key>m083</Key> <Meaning>Currency name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+</Rows>

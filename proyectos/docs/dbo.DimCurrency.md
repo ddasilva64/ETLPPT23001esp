@@ -43,8 +43,8 @@ By the way, we will use the next public domain data sources, for this task:
 
   | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | CurrencyKey           | Character variying(3) | X        |            |                       | PK           |          |  
-  | 2   | Currency              | Character variying(60)|          |            |                       |              |          |
+  | 1   | CurrencyKey           | Character variying(3) | X        |            |                       | PK           | m082     |  
+  | 2   | Currency              | Character variying(60)|          |            |                       |              | m083     |
   
    <p><br></p>  
  

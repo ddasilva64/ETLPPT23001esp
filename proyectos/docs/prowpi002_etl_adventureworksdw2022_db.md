@@ -17,6 +17,7 @@
   - **_[dbo.DimDate](dbo.DimDate.md)_**  
   - **_[dbo.DimPromotion](dbo.DimPromotion.md)_**  
   - **_[dbo.DimCurrency](dbo.DimCurrency.md)_**  
+  - **_[DimCurrencies Metadata](DimCurrencies_Metadata.md)_**  
   - **_[dbo.DimCustomer](dbo.DimCustomer.md)_**  
   - **_[dbo.DimGeography](dbo.DimGeography.md)_**  
   - **_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
