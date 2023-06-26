@@ -14,7 +14,7 @@
 - **_Internet Sales Subsystem tables transformations_**   
   - **_[dbo.FactInternetSales](dbo.FactInternetSales.md)_**  
   - **_[FactInternetSales Metadata](FactInternetSales_Metadata.md)_**  
-  - **_[dbo.DimDate](dbo.DimDate.md)_**  
+  - **_[dbo.DimDate -deprecated-](dbo.DimDate.md)_**  
   - **_[dbo.DimPromotion](dbo.DimPromotion.md)_**  
   - **_[dbo.DimCurrency](dbo.DimCurrency.md)_**  
   - **_[DimCurrencies Metadata](DimCurrencies_Metadata.md)_**  
@@ -22,6 +22,7 @@
   - **_[dbo.DimGeography](dbo.DimGeography.md)_**  
   - **_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
   - **_[dbo.DimProduct](dbo.DimProduct.md)_**  
+  - **_[DimProduct Metadata](DimProduct_Metadata.md)_**
   - **_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
   - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_**  
   - **_[dbo.FactInternetSalesReason](dbo.FactInternetSalesReason.md)_**  

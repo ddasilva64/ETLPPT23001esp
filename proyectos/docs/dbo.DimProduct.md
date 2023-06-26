@@ -64,35 +64,34 @@ _SQL Server source in SQL Server Management studio_
   ![PDI execution](https://i.imgur.com/xOzKVjn.png)  
   _PDI execution_ 
 
-### **_<p><br>DimProduct layout (Postgre SQL)</p>_**  
 
-| Key	| Name                     | Data type             | Not null | Attributes | References                | Description |
-| :-: | :----------------------- | :-------------------: | :------: | :--------- | :------------------------ | :-----------|
-| 1   | ProductKey               | integer               | X        | Identity   |                           | PK          |
-| 2   | ProductAlternateKey      | character varying(25) |          |            |                           |             |
-| 3   | ProductSubcategoryKey    | integer               |          |            | dbo.DimProductSubcategory | FK          |
-| 4   | WeightUnitMeasureCode    | character varying(3)  |          |            |                           |             |
-| 5   | SizeUnitMeasureCode      | character varying(3)  |          |            |                           |             |
-| 6   | ProductName              | character varying(50) | X        |            |                           |             |
-| 7   | StandardCost             | real                  |          |            |                           |             |
-| 8   | FinishedGoodsFlag        | boolean               | X        |            |                           |             |
-| 9   | Color                    | character varying(15) |          |            |                           |             |
-| 10  | SafetyStockLevel         | integer               |          |            |                           |             |
-| 11  | ReorderPoint             | integer               |          |            |                           |             |
-| 12  | ListPrice                | real                  |          |            |                           |             |
-| 13  | Size                     | character varying(50) |          |            |                           |             |
-| 14  | SizeRange                | character varying(50) |          |            |                           |             |
-| 15  | Weight                   | real                  |          |            |                           |             |
-| 16  | DaysToManufacture        | integer               |          |            |                           |             |
-| 17  | ProductLine              | character varying(2)  |          |            |                           |             |
-| 18  | DealerPrice              | real                  |          |            |                           |             |
-| 19  | Class                    | character varying(2)  |          |            |                           |             |
-| 20  | Style                    | character varying(2)  |          |            |                           |             |
-| 21  | ModelName                | character varying(50) |          |            |                           |             |		
-| 22  | Description              | character varying(400)|          |            |                           |             |
-| 23  | StartDate                | date                  |          |            |                           |             |
-| 24  | EndDate                  | date                  |          |            |                           |             |
-| 25  | Status                   | character varying(7)  |          |            |                           |             |
+| Key	| Name                     | Data type             | Not null | Attributes | References                | Description | Metadata |
+| :-: | :----------------------- | :-------------------: | :------: | :--------- | :------------------------ | :---------- | :------: |
+| 1   | ProductKey               | integer               | X        |            |                           | PK          | m084     |
+| 2   | ProductAlternateKey      | character varying(25) |          |            |                           |             | m085     |
+| 3   | ProductSubcategoryKey    | integer               |          |            | dbo.DimProductSubcategory | FK          | m086     |   
+| 4   | WeightUnitMeasureCode    | character varying(3)  |          |            |                           |             | m087     |
+| 5   | SizeUnitMeasureCode      | character varying(3)  |          |            |                           |             | m088     |
+| 6   | ProductName              | character varying(50) | X        |            |                           |             | m089     |
+| 7   | StandardCost             | real                  |          |            |                           |             | m072     |
+| 8   | FinishedGoodsFlag        | boolean               | X        |            |                           |             | m090     |
+| 9   | Color                    | character varying(15) |          |            |                           |             | m091     |
+| 10  | SafetyStockLevel         | integer               |          |            |                           |             | m092     |
+| 11  | ReorderPoint             | integer               |          |            |                           |             | m093     |
+| 12  | ListPrice                | real                  |          |            |                           |             | m073     |
+| 13  | Size                     | character varying(50) |          |            |                           |             | m094     |
+| 14  | SizeRange                | character varying(50) |          |            |                           |             | m095     |
+| 15  | Weight                   | real                  |          |            |                           |             | m096     |
+| 16  | DaysToManufacture        | integer               |          |            |                           |             | m097     |
+| 17  | ProductLine              | character varying(2)  |          |            |                           |             | m098     |
+| 18  | DealerPrice              | real                  |          |            |                           |             | m099     |
+| 19  | Class                    | character varying(2)  |          |            |                           |             | m100     |
+| 20  | Style                    | character varying(2)  |          |            |                           |             | m101     |
+| 21  | ModelName                | character varying(50) |          |            |                           |             | m102     |
+| 22  | Description              | character varying(400)|          |            |                           |             | m103     |
+| 23  | StartDate                | date                  |          |            |                           |             | m104     |
+| 24  | EndDate                  | date                  |          |            |                           |             | m105     |
+| 25  | Status                   | character varying(7)  |          |            |                           |             | m106     |
 
    <p><br></p>  
  

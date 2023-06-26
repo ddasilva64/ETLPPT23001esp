@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m084</Key> <Meaning>Primary key for Product records</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m085</Key> <Meaning>Unique product identification number</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m086</Key> <Meaning>Product is a member of this product subcategory. Foreign key to ProductSubCategory.ProductSubCategoryID</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m087</Key> <Meaning>Unit of measure for weight</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m088</Key> <Meaning>Unit of measure for size</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m089</Key> <Meaning>Name of the product</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m090</Key> <Meaning>Finished goods flag</Meaning> <Standard> </Standard> <Formula>0 = Product is not a salable item. 1 = Product is salable</Formula> <Units> </Units></Row>
+<Row><Key>m091</Key> <Meaning>Product color</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m092</Key> <Meaning>Minimum inventory quantity</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m093</Key> <Meaning>Inventory level that triggers a purchase order or work order</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m094</Key> <Meaning>Product size</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m095</Key> <Meaning>Size range</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m096</Key> <Meaning>Product weight</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m097</Key> <Meaning>Number of days required to manufacture the product</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m098</Key> <Meaning>Product line</Meaning> <Standard> </Standard> <Formula>R = Road, M = Mountain, T = Touring, S = Standard</Formula> <Units> </Units></Row>
+<Row><Key>m099</Key> <Meaning>Dealer price for a given product on a particular order date</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m100</Key> <Meaning>Class</Meaning> <Standard> </Standard> <Formula>H = High, M = Medium, L = Low</Formula> <Units> </Units></Row>
+<Row><Key>m101</Key> <Meaning>Style</Meaning> <Standard> </Standard> <Formula>W = Womens, M = Mens, U = Universal</Formula> <Units> </Units></Row>
+<Row><Key>m102</Key> <Meaning>Product model description</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m103</Key> <Meaning>Description of the product</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m104</Key> <Meaning>Date the product was available for salet</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m105</Key> <Meaning>Date the product was no longer available for sale</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m106</Key> <Meaning>Status</Meaning> <Standard> </Standard> <Formula>0 = Product is purchased, 1 = Product is manufactured in-house</Formula> <Units> </Units></Row>
+</Rows>
