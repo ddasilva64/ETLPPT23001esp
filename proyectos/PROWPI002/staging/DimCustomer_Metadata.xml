@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m107</Key> <Meaning>ID of the territory in which the customer is located. Foreign key to SalesTerritory.SalesTerritoryID</Meaning> <Standard> </Standard> <Formula></Formula> <Units> </Units></Row>
+<Row><Key>m108</Key> <Meaning>Customer alternate key</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m109</Key> <Meaning>A courtesy title</Meaning> <Standard> </Standard> <Formula>For example, Mr. or Ms.</Formula> <Units> </Units></Row>
+<Row><Key>m110</Key> <Meaning>Sales total year to date</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m111</Key> <Meaning>Total children</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m112</Key> <Meaning>Number of children at home</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m113</Key> <Meaning>Education</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m114</Key> <Meaning>Occupation</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m115</Key> <Meaning>House owner flag</Meaning> <Standard> </Standard> <Formula>0 = No, 1 = Yes</Formula> <Units> </Units></Row>
+<Row><Key>m116</Key> <Meaning>Number of cars owned</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m117</Key> <Meaning>First street address line</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m118</Key> <Meaning>Second street address line</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m119</Key> <Meaning>Date of the first purchase</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m120</Key> <Meaning>Commute distance</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+</Rows>

@@ -33,7 +33,7 @@
 | 27  | Phone                    | nvarchar(20) |          |            |                       |             |
 | 28  | DateFirstPurchase        | date         |          |            |                       |             |
 | 29  | CommuteDistance          | nvarchar(15) |          |            |                       |             | 
-| 30  | Occupation               | nvarchar(100)|          |            |                       |             |
+| 30  | Occupation               | nvarchar(100)|          |            |                       | deprecated  |
 
    <p><br></p>  
 
@@ -60,30 +60,31 @@ _SQL Server source in SQL Server Management studio_
 
 | Key | Name                     | Data type              | Not null | Attributes | References            | Description  | Metadata |
 | :-: | :----------------------- | :--------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-| 1   | CustomerKey              | integer                | X        | Identity   |                       | PK           |          |
-| 2   | GeographyKey             | integer                |          |            | dbo.DimGeography      | FK           |          |
-| 3   | CustomerAlternateKey     | Character variying(15) |          |            |                       |              |          |
-| 4   | Title                    | Character variying(8)  |          |            |                       |              |          |
-| 5   | FirstName                | Character variying(50) |          |            |                       |              |          |
-| 6   | MiddleName               | Character variying(50) |          |            |                       |              |          |
-| 7   | LastName                 | Character variying(50) |          |            |                       |              |          |
-| 10  | MaritalStatus            | Character variying(1)  |          |            |                       |              |          |
-| 11  | Suffix                   | Character variying(10) |          |            |                       |              |          |
-| 12  | Gender                   | Character variying(1)  |          |            |                       |              |          |
-| 13  | EmailAddress             | Character variying(50) |          |            |                       |              |          |
-| 14  | YearlyIncome             | real                   |          |            |                       |              |          |
-| 15  | TotalChildren            | integer                |          |            |                       |              |          |
-| 16  | NumberChildrenAtHome     | integer                |          |            |                       |              |          |
-| 17  | Education                | Character variying(40) |          |            |                       |              |          |
-| 20  | Occupation               | Character variying(100)|          |            |                       |              |          |
-| 23  | HouseOwnerFlag           | Character variying(1)  |          |            |                       |              |          |
-| 24  | NumberCarsOwned          | integer                |          |            |                       |              |          |
-| 25  | AddressLine1             | Character variying(120)|          |            |                       |              |          |
-| 26  | AddressLine2             | Character variying(120)|          |            |                       |              |          |
-| 27  | Phone                    | Character variying(20) |          |            |                       |              |          |
-| 28  | DateFirstPurchase        | date                   |          |            |                       |              |          |
-| 29  | CommuteDistance          | Character variying(15) |          |            |                       |              |          |
-| 30  | Occupation               | Character variying(100)|          |            |                       |              |          |
+| 1   | CustomerKey              | integer                | X        |            |                       | PK           | m060     |
+| 2   | GeographyKey             | integer                |          |            | dbo.DimGeography      | FK           | m107     |
+| 3   | CustomerAlternateKey     | Character variying(15) |          |            |                       |              | m108     |
+| 4   | Title                    | Character variying(8)  |          |            |                       |              | m109     |
+| 5   | FirstName                | Character variying(50) |          |            |                       |              | m034     |
+| 6   | MiddleName               | Character variying(50) |          |            |                       |              | m036     |
+| 7   | LastName                 | Character variying(50) |          |            |                       |              | m035     |
+| 8   | MaritalStatus            | Character variying(1)  |          |            |                       |              | m044     |
+| 9   | BirthDate                | date                   |          |            |                       |              | m040     |
+| 10  | Suffix                   | Character variying(10) |          |            |                       |              | m045     |
+| 11  | Gender                   | Character variying(1)  |          |            |                       |              | m048     |
+| 12  | EmailAddress             | Character variying(50) |          |            |                       |              | m042     |
+| 13  | YearlyIncome             | real                   |          |            |                       |              | m110     |
+| 14  | TotalChildren            | integer                |          |            |                       |              | m111     |
+| 15  | NumberChildrenAtHome     | integer                |          |            |                       |              | m112     |
+| 16  | Education                | Character variying(40) |          |            |                       |              | m113     |
+| 17  | Occupation               | Character variying(100)|          |            |                       |              | m114     |
+| 18  | HouseOwnerFlag           | Character variying(1)  |          |            |                       |              | m115     |
+| 19  | NumberCarsOwned          | integer                |          |            |                       |              | m116     |
+| 20  | AddressLine1             | Character variying(120)|          |            |                       |              | m117     |
+| 21  | AddressLine2             | Character variying(120)|          |            |                       |              | m118     |
+| 22  | Phone                    | Character variying(20) |          |            |                       |              | m043     |
+| 23  | DateFirstPurchase        | date                   |          |            |                       |              | m119     |
+| 24  | CommuteDistance          | Character variying(15) |          |            |                       |              | m120     |
+| 25  | NameStyle                | Boolean                |          |            |                       |              | m037     |
   
    <p><br></p>  
  
