@@ -40,6 +40,7 @@
           - [dbo.DimCurrency](docs/bo.DimCurrency.md)  
           - [DimCurrencies Metadata](docs/DimCurrencies_Metadata.md)  
           - [dbo.DimCustomer](docs/dbo.DimCustomer.md)  
+          - [DimCustomer Metadata](docs/DimCustomer_Metadata.md)  
           - [dbo.DimGeography](docs/dbo.DimGeography.md)    
           - [dbo.DimSalesTerritory](docs/dbo.DimSalesTerritory.md)  
           - [dbo.DimProduct](docs/dbo.DimProduct.md)  

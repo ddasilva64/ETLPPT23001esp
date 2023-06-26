@@ -19,10 +19,11 @@
   - **_[dbo.DimCurrency](dbo.DimCurrency.md)_**  
   - **_[DimCurrencies Metadata](DimCurrencies_Metadata.md)_**  
   - **_[dbo.DimCustomer](dbo.DimCustomer.md)_**  
+  - **_[DimCustomer Metadata](DimCustomer_Metadata.md)_**  
   - **_[dbo.DimGeography](dbo.DimGeography.md)_**  
   - **_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
   - **_[dbo.DimProduct](dbo.DimProduct.md)_**  
-  - **_[DimProduct Metadata](DimProduct_Metadata.md)_**
+  - **_[DimProduct Metadata](DimProduct_Metadata.md)_**  
   - **_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
   - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_**  
   - **_[dbo.FactInternetSalesReason](dbo.FactInternetSalesReason.md)_**  
