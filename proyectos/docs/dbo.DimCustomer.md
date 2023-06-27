@@ -59,7 +59,7 @@ _SQL Server source in SQL Server Management studio_
 ### **_<p><br>DimCustomer layout (Postgre SQL)</p>_**  
 
 | Key | Name                     | Data type              | Not null | Attributes | References            | Description  | Metadata |
-| :-: | :----------------------- | :--------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+| :-: | :----------------------- | :--------------------: | :------: | :--------- | :-------------------- | :----------- | :------: |
 | 1   | CustomerKey              | integer                | X        |            |                       | PK           | m060     |
 | 2   | GeographyKey             | integer                |          |            | dbo.DimGeography      | FK           | m107     |
 | 3   | CustomerAlternateKey     | Character variying(15) |          |            |                       |              | m108     |

@@ -33,10 +33,10 @@ _SQL Server source in SQL Server Management studio_
 
 ### **_<p><br>DimProductCategory layout (Postgre SQL)</p>_**  
 
-| Key	| Name                        | Data type             | Not null | Attributes | References            | Description         |
-| :-: | :-------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :------------------ |
-| 1   | ProductCategoryKey          | integer               | X        |            |                       | PK                  |
-| 2   | ProductCategory             | character varying(50) | X        |            |                       |                     |
+| Key	| Name                        | Data type             | Not null | Attributes | References            | Description         | Metadata |
+| :-: | :-------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :------------------ | :------: |
+| 1   | ProductCategoryKey          | integer               | X        |            |                       | PK                  | m121     |
+| 2   | ProductCategory             | character varying(50) | X        |            |                       |                     | m122     |
 
    <p><br></p>  
  
