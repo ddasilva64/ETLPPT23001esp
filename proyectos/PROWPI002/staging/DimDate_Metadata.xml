@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m123</Key> <Meaning>Full date</Meaning> <Standard> </Standard> <Formula></Formula> <Units> </Units></Row>
+<Row><Key>m124</Key> <Meaning>Day number of week</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m125</Key> <Meaning>Day name of week</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m126</Key> <Meaning>Day number of month</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m127</Key> <Meaning>Day number of year</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m128</Key> <Meaning>Week number of year</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m129</Key> <Meaning>Month name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m130</Key> <Meaning>Month number of year</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m131</Key> <Meaning>Calendar quarter</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m132</Key> <Meaning>Calendar year</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m133</Key> <Meaning>Calendar semester</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m134</Key> <Meaning>Fiscal quarter</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m135</Key> <Meaning>Fiscal year</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m136</Key> <Meaning>Fiscal semester</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m137</Key> <Meaning>Weekend</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m138</Key> <Meaning>Holiday weekend</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+</Rows>

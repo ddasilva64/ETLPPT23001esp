@@ -12,27 +12,36 @@
 - **_[Internet Sales Subsystem ERD](Internet_Sales_Subsystem_ERD.md)_**  
 
 - **_Internet Sales Subsystem tables transformations_**   
-  - **_[dbo.DimCurrency](dbo.DimCurrency.md)_**  
-  - **_[DimCurrencies Metadata](DimCurrencies_Metadata.md)_**  
+  - **_[dbo.DimCurrency](dbo.DimCurrency.md)_**    
   - **_[dbo.DimCustomer](dbo.DimCustomer.md)_**  
-  - **_[DimCustomer Metadata](DimCustomer_Metadata.md)_**  
   - **_[dbo.DimDate -deprecated-](dbo.DimDate.md)_**  
   - **_[dbo.DimEmployee](dbo.DimEmployee.md)_**  
-  - **_[DimEmployees Metadata](DimEmployees_Metadata.md)_**  
   - **_[dbo.DimGeography](dbo.DimGeography.md)_**  
   - **_[dbo.DimProduct](dbo.DimProduct.md)_**  
-  - **_[DimProduct Metadata](DimProduct_Metadata.md)_**  
   - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_**  
-  - **_[DimProductCategory Metadata](DimProductCategory_Metadata.md)_**  
   - **_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
   - **_[dbo.DimPromotion](dbo.DimPromotion.md)_**  
   - **_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
   - **_[dbo.DimReseller](dbo.DimReseller.md)_**  
   - **_[dbo.FactInternetSales](dbo.FactInternetSales.md)_**  
-  - **_[FactInternetSales Metadata](FactInternetSales_Metadata.md)_**  
   - **_[dbo.FactInternetSalesReason](dbo.FactInternetSalesReason.md)_**  
   - **_[dbo.FactProductInventory](dbo.FactProductInventory.md)_**  
   - **_[dbo.FactResellerSales](dbo.FactResellerSales.md)_**  
+  - **_[DimCurrencies Metadata](DimCurrencies_Metadata.md)_**  
+  - **_[DimCustomer Metadata](DimCustomer_Metadata.md)_**  
+  - **_[DimDate Metadata](DimDate_Metadata.md)_**  
+  - **_[DimEmployees Metadata](DimEmployees_Metadata.md)_**  
+  - **_DimGeography Metadata_**  
+  - **_[DimProduct Metadata](DimProduct_Metadata.md)_**  
+  - **_[DimProductCategory Metadata](DimProductCategory_Metadata.md)_**  
+  - **_DimProductSubcategory Metadata_**
+  - **_DimPromotion Metadata_**  
+  - **_DimSalesTerritory Metadata_**  
+  - **_DimReseller Metadata_**  
+  - **_[FactInternetSales Metadata](FactInternetSales_Metadata.md)_**  
+  - **_FactInternetSalesReason Metadata_**
+  - **_FactProductInventory Metadata_**
+  - **_FactResellerSales Metadata_**
 
   **_Warning_**!: Remember that field names are standard (the first character of the word is uppercase, and no spaces between words). That means that in the output table name and table field names (in POI), we need to write them (table and fields) in double quotes  
 

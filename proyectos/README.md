@@ -34,26 +34,35 @@
           - [Source DB's ERD (SQL Server)](docs/Source_SQL_Server_DB.md)  
           - [Internet Sales Subsystem ERD](docs/Internet_Sales_Subsystem_ERD.md)  
           - [dbo.DimCurrency](docs/bo.DimCurrency.md)  
-          - [DimCurrencies Metadata](docs/DimCurrencies_Metadata.md)  
-          - [dbo.DimCustomer](docs/dbo.DimCustomer.md)  
-          - [DimCustomer Metadata](docs/DimCustomer_Metadata.md)  
+          - [dbo.DimCustomer](docs/dbo.DimCustomer.md)    
           - [dbo.DimDate -deprecated-](docs/dbo.DimDate.md)  
           - [dbo.DimEmployee](docs/dbo.DimEmployee.md)  
-          - [DimEmployees Metadata](docs/DimEmployees_Metadata.md)  
           - [dbo.DimGeography](docs/dbo.DimGeography.md)    
           - [dbo.DimProduct](docs/dbo.DimProduct.md)  
-          - [DimProduct Metadata](docs/DimProduct_Metadata.md)  
           - [dbo.DimProductCategory](docs/dbo.DimProductCategory.md)  
-          - [DimProductCategory Metadata](docs/DimProductCategory_Metadata.md)  
           - [dbo.DimProductSubcategory](docs/dbo.DimProductSubcategory.md)  
           - [dbo.DimPromotion](docs/dbo.DimPromotion.md)  
           - [dbo.DimReseller](docs/bo.DimReseller.md)  
           - [dbo.DimSalesTerritory](docs/dbo.DimSalesTerritory.md)  
           - [dbo.FactInternetSales](docs/dbo.FactInternetSales.md)  
-          - [FactInternetSales Metadata](docs/FactInternetSales_Metadata.md)  
           - [dbo.FactInternetSalesReason](docs/dbo.FactInternetSalesReason.md)  
           - [dbo.FactProductInventory](docs/dbo.FactProductInventory.md)  
           - [dbo.FactResellerSales](docs/dbo.FactResellerSales.md)  
+          - [DimCurrencies Metadata](docs/DimCurrencies_Metadata.md)  
+          - [DimCustomer Metadata](docs/DimCustomer_Metadata.md)  
+          - [DimDate Metadata](docs/DimDate_Metadata.md)  
+          - [DimEmployees Metadata](docs/DimEmployees_Metadata.md)  
+          - DimGeography Metadata
+          - [DimProduct Metadata](docs/DimProduct_Metadata.md)  
+          - [DimProductCategory Metadata](docs/DimProductCategory_Metadata.md)  
+          - DimProductSubcategory Metadata  
+          - DimPromotion Metadata  
+          - DimReseller Metadata  
+          - DimSalesTerritory Metadata  
+          - [FactInternetSales Metadata](docs/FactInternetSales_Metadata.md)  
+          - FactInternetSalesReason Metadata  
+          - FactProductInventory Metadata  
+          - FactResellerSales  Metadata  
         - [PROWPI002 ETL (parametric data)](docs/prowpi002_etl_parametric_data.md)  
 - [DWH (Data Warehouse)](docs/dwh.md)
 - [Metrics](docs/metrics.md)
