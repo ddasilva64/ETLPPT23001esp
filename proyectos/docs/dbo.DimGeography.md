@@ -43,9 +43,9 @@ _SQL Server source in SQL Server Management studio_
 
   | Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | StateProvinceCode     | Character variying(2) | X        |            |                       | PK           |          |  
-  | 2   | CountryCode           | Character variying(3) | X        |            |                       | FK           |          |
-  | 3   | StateProvince         | Character variying(60)|          |            |                       |              |          |
+  | 1   | StateProvinceCode     | Character variying(2) | X        |            |                       | PK           |  m139    |  
+  | 2   | CountryCode           | Character variying(3) | X        |            |                       | FK           |  m001    |
+  | 3   | StateProvince         | Character variying(60)|          |            |                       |              |  m140    |
   
    <p><br></p>  
  
@@ -74,12 +74,12 @@ _SQL Server source in SQL Server Management studio_
 
   | Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | GeographyKey          | Integer               | X        |            |                       | PK           |          |  
-  | 2   | CountryCode           | Character variying(3) | X        |            |                       | FK           |          |
-  | 3   | StateProvinceCode     | Character variying(2) | X        |            |                       | FK           |          |
-  | 4   | SalesTerritoryKey     | Integer               |          |            |                       | FK           |          |
-  | 5   | City                  | Character variying(60)|          |            |                       |              |          |
-  | 6   | PostalCode            | Character variying(10)|          |            |                       |              |          |
+  | 1   | GeographyKey          | Integer               | X        |            |                       | PK           | m141     |  
+  | 2   | CountryCode           | Character variying(3) | X        |            |                       | FK           | m001     |
+  | 3   | StateProvinceCode     | Character variying(2) | X        |            |                       | FK           | m139     |
+  | 4   | SalesTerritoryKey     | Integer               |          |            |                       | FK           | m142     |
+  | 5   | City                  | Character variying(60)|          |            |                       |              | m143     |
+  | 6   | PostalCode            | Character variying(10)|          |            |                       |              | m144     |
   
    <p><br></p>  
  

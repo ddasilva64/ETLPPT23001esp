@@ -52,7 +52,7 @@
           - [DimCustomer Metadata](docs/DimCustomer_Metadata.md)  
           - [DimDate Metadata](docs/DimDate_Metadata.md)  
           - [DimEmployees Metadata](docs/DimEmployees_Metadata.md)  
-          - DimGeography Metadata
+          - [DimGeography Metadata](docs/DimGeography_Metadata.md) 
           - [DimProduct Metadata](docs/DimProduct_Metadata.md)  
           - [DimProductCategory Metadata](docs/DimProductCategory_Metadata.md)  
           - DimProductSubcategory Metadata  

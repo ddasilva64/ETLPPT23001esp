@@ -31,7 +31,7 @@
   - **_[DimCustomer Metadata](DimCustomer_Metadata.md)_**  
   - **_[DimDate Metadata](DimDate_Metadata.md)_**  
   - **_[DimEmployees Metadata](DimEmployees_Metadata.md)_**  
-  - **_DimGeography Metadata_**  
+  - **_[DimGeography Metadata](DimGeography_Metadata.md)_**  
   - **_[DimProduct Metadata](DimProduct_Metadata.md)_**  
   - **_[DimProductCategory Metadata](DimProductCategory_Metadata.md)_**  
   - **_DimProductSubcategory Metadata_**
