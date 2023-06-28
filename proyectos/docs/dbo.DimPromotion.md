@@ -44,17 +44,17 @@ _SQL Server source in SQL Server Management studio_
 
 ### **_<p><br>DimPromotion layout (Postgre SQL)</p>_**  
 
-| Key	| Name                     | Data type               | Not null | Attributes | References            | Description       |
-| :-: | :----------------------- | :---------------------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | PromotionKey             | integer                 | X        |            |                       | PK                |
-| 3   | Promotion                | character varying(255)  |          |            |                       |                   |
-| 6   | DiscountPct              | real                    |          |            |                       |                   |
-| 7   | PromotionType            | character varying(50)   |          |            |                       |                   |
-| 10  | PromotionCategory        | character varying(50)   |          |            |                       |                   |
-| 13  | StartDate                | date                    | X        |            |                       |                   |
-| 14  | EndDate                  | date                    | X        |            |                       |                   |
-| 15  | MinQty                   | integer                 |          |            |                       |                   |
-| 16  | MaxQty                   | integer                 |          |            |                       |                   |
+| Key	| Name                     | Data type               | Not null | Attributes | References            | Description       | Metadata |
+| :-: | :----------------------- | :---------------------: | :------: | :--------- | :-------------------- | :---------------- | :------: |
+| 1   | PromotionKey             | integer                 | X        |            |                       | PK                | m150     |
+| 3   | Promotion                | character varying(255)  |          |            |                       |                   | m151     |
+| 6   | DiscountPct              | real                    |          |            |                       |                   | m152     |
+| 7   | PromotionType            | character varying(50)   |          |            |                       |                   | m153     |
+| 10  | PromotionCategory        | character varying(50)   |          |            |                       |                   | m154     |
+| 13  | StartDate                | date                    | X        |            |                       |                   | m155     |
+| 14  | EndDate                  | date                    | X        |            |                       |                   | m156     |
+| 15  | MinQty                   | integer                 |          |            |                       |                   | m157     |
+| 16  | MaxQty                   | integer                 |          |            |                       |                   | m158     |
   
    <p><br></p>  
  

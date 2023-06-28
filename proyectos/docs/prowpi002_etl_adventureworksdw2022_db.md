@@ -35,7 +35,7 @@
   - **_[DimProduct Metadata](DimProduct_Metadata.md)_**  
   - **_[DimProductCategory Metadata](DimProductCategory_Metadata.md)_**  
   - **_[DimProductSubcategory Metadata](DimProductSubcategory_Metadata.md)_**
-  - **_DimPromotion Metadata_**  
+  - **_[DimPromotion Metadata](DimPromotion_Metadata.md)_**  
   - **_DimSalesTerritory Metadata_**  
   - **_DimReseller Metadata_**  
   - **_[FactInternetSales Metadata](FactInternetSales_Metadata.md)_**  

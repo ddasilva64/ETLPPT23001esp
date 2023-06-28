@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m150</Key> <Meaning>Primary key for SpecialOffer records</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m151</Key> <Meaning>Discount description</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m152</Key> <Meaning>Discount precentage</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m153</Key> <Meaning>Discount type category</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m154</Key> <Meaning>Group the discount applies to such as Reseller or Customer</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m155</Key> <Meaning>Discount start date</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m156</Key> <Meaning>Discount end date</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m157</Key> <Meaning>Minimum discount percent allowed</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m158</Key> <Meaning>Maximum discount percent allowed</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+</Rows>

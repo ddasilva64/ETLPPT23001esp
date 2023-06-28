@@ -56,7 +56,7 @@
           - [DimProduct Metadata](docs/DimProduct_Metadata.md)  
           - [DimProductCategory Metadata](docs/DimProductCategory_Metadata.md)  
           - [DimProductSubcategory Metadata](docs/DimProductSubcategory_Metadata.md)  
-          - DimPromotion Metadata  
+          - [DimPromotion Metadata](docs/DimPromotion_Metadata.md)  
           - DimReseller Metadata  
           - DimSalesTerritory Metadata  
           - [FactInternetSales Metadata](docs/FactInternetSales_Metadata.md)  
