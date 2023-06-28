@@ -34,7 +34,7 @@
   - **_[DimGeography Metadata](DimGeography_Metadata.md)_**  
   - **_[DimProduct Metadata](DimProduct_Metadata.md)_**  
   - **_[DimProductCategory Metadata](DimProductCategory_Metadata.md)_**  
-  - **_DimProductSubcategory Metadata_**
+  - **_[DimProductSubcategory Metadata](DimProductSubcategory_Metadata.md)_**
   - **_DimPromotion Metadata_**  
   - **_DimSalesTerritory Metadata_**  
   - **_DimReseller Metadata_**  

@@ -34,11 +34,11 @@ _SQL Server source in SQL Server Management studio_
 
 ### **_<p><br>DimProductSubcategory layout (Postgre SQL)</p>_**  
 
-| Key	| Name                           | Data type             | Not null | Attributes | References            | Description            |
-| :-: | :----------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :--------------------- |
-| 1   | ProductSubcategoryKey          | integer               | X        |            |                       | PK                     |
-| 2   | ProductSubcategory             | character varying(50) | X        |            |                       |                        |
-| 3   | ProductCategoryKey             | integer               |          |            | dbo.DimProductCategory| FK                     |	
+| Key	| Name                           | Data type             | Not null | Attributes | References            | Description            | Metadata |
+| :-: | :----------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :--------------------- | :------: |
+| 1   | ProductSubcategoryKey          | integer               | X        |            |                       | PK                     | m145     |
+| 2   | ProductSubcategory             | character varying(50) | X        |            |                       |                        | m146     |
+| 3   | ProductCategoryKey             | integer               |          |            | dbo.DimProductCategory| FK                     |	m121     |
 
    <p><br></p>  
  

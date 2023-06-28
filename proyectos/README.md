@@ -55,7 +55,7 @@
           - [DimGeography Metadata](docs/DimGeography_Metadata.md) 
           - [DimProduct Metadata](docs/DimProduct_Metadata.md)  
           - [DimProductCategory Metadata](docs/DimProductCategory_Metadata.md)  
-          - DimProductSubcategory Metadata  
+          - [DimProductSubcategory Metadata](docs/DimProductSubcategory_Metadata.md)  
           - DimPromotion Metadata  
           - DimReseller Metadata  
           - DimSalesTerritory Metadata  

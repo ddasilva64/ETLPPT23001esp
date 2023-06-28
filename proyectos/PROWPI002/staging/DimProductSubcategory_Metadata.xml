@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m145</Key> <Meaning>Primary key for ProductSubcategory records</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m146</Key> <Meaning>Subcategory description</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+</Rows>
