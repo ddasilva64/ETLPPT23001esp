@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>DimProductSubcategory_Metadata</name>
+    <name>DimEmployees_Metadata</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -529,7 +529,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI002/staging/DimProductSubcategory_Metadata.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI002/staging/DimCurrencies_Metadata.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -742,7 +742,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>736</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>

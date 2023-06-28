@@ -39,7 +39,7 @@
   - **_DimSalesTerritory Metadata_**  
   - **_DimReseller Metadata_**  
   - **_[FactInternetSales Metadata](FactInternetSales_Metadata.md)_**  
-  - **_FactInternetSalesReason Metadata_**
+  - **_[FactInternetSalesReason Metadata](FactInternetSalesReason_Metadata.md)_**
   - **_FactProductInventory Metadata_**
   - **_FactResellerSales Metadata_**
 

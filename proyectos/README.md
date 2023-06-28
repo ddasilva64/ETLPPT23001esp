@@ -33,7 +33,7 @@
         - [PROWPI002 ETL (AdventureWorksDW2022 DB)](docs/prowpi002_etl_adventureworksdw2022_db.md)  
           - [Source DB's ERD (SQL Server)](docs/Source_SQL_Server_DB.md)  
           - [Internet Sales Subsystem ERD](docs/Internet_Sales_Subsystem_ERD.md)  
-          - [dbo.DimCurrency](docs/bo.DimCurrency.md)  
+          - [dbo.DimCurrency](docs/dbo.DimCurrency.md)  
           - [dbo.DimCustomer](docs/dbo.DimCustomer.md)    
           - [dbo.DimDate -deprecated-](docs/dbo.DimDate.md)  
           - [dbo.DimEmployee](docs/dbo.DimEmployee.md)  
@@ -42,7 +42,7 @@
           - [dbo.DimProductCategory](docs/dbo.DimProductCategory.md)  
           - [dbo.DimProductSubcategory](docs/dbo.DimProductSubcategory.md)  
           - [dbo.DimPromotion](docs/dbo.DimPromotion.md)  
-          - [dbo.DimReseller](docs/bo.DimReseller.md)  
+          - [dbo.DimReseller](docs/dbo.DimReseller.md)  
           - [dbo.DimSalesTerritory](docs/dbo.DimSalesTerritory.md)  
           - [dbo.FactInternetSales](docs/dbo.FactInternetSales.md)  
           - [dbo.FactInternetSalesReason](docs/dbo.FactInternetSalesReason.md)  
@@ -60,7 +60,7 @@
           - DimReseller Metadata  
           - DimSalesTerritory Metadata  
           - [FactInternetSales Metadata](docs/FactInternetSales_Metadata.md)  
-          - FactInternetSalesReason Metadata  
+          - [FactInternetSalesReason Metadata](docs/FactInternetSalesReason_Metadata.md)  
           - FactProductInventory Metadata  
           - FactResellerSales  Metadata  
         - [PROWPI002 ETL (parametric data)](docs/prowpi002_etl_parametric_data.md)  
