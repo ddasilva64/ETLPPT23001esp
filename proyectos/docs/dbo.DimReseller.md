@@ -6,7 +6,7 @@
 | :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :---------------- |
 | 1   | ResellerKey              | int          | X        | Identity   |                       | PK                |
 | 2   | GeographyKey             | int          |          |            | dbo.DimGeography      | FK                |
-| 3   | ResellerAlternateKey     | nvarchar(15) |          |            |                       |                   |
+| 3   | ResellerAlternateKey     | nvarchar(15) |          |            |                       | deprecated        |
 | 4   | Phone                    | nvarchar(25) |          |            |                       |                   |
 | 5   | BusinessType             | nvarchar(20) | X        |            |                       |                   |
 | 6   | ResellerName             | nvarchar(50) | X        |            |                       |                   |
@@ -48,28 +48,27 @@ _SQL Server source in SQL Server Management studio_
 
 ### **_<p><br>DimReseller layout (Postgre SQL)</p>_**  
 
-| Key	| Name                     | Data type             | Not null | Attributes | References            | Description       |
-| :-: | :----------------------- | :-------------------: | :------: | :--------- | :-------------------- | :---------------- |
-| 1   | ResellerKey              | integer               | X        |            |                       | PK                |
-| 2   | GeographyKey             | integer               |          |            | dbo.DimGeography      | FK                |
-| 3   | ResellerAlternateKey     | character varying(15) |          |            |                       |                   |
-| 4   | Phone                    | character varying(25) |          |            |                       |                   |
-| 5   | BusinessType             | character varying(20) | X        |            |                       |                   |
-| 6   | ResellerName             | character varying(50) | X        |            |                       |                   |
-| 7   | NumberEmployees          | integer               |          |            |                       |                   |
-| 8   | OrderFrequency           | character varying(1)  |          |            |                       |                   |
-| 9   | OrderMonth               | integer               |          |            |                       |                   |
-| 10  | FirstOrderYear           | integer               |          |            |                       |                   |
-| 11  | LastOrderYear            | integer               |          |            |                       |                   |
-| 12  | ProductLine              | character varying(50) |          |            |                       |                   |
-| 13  | AddressLine1             | character varying(60) |          |            |                       |                   |
-| 14  | AddressLine2             | character varying(60) |          |            |                       |                   |
-| 15  | AnnualSales              | real                  |          |            |                       |                   |
-| 16  | BankName                 | character varying(50) |          |            |                       |                   |
-| 17  | MinPaymentType           | integer               |          |            |                       |                   |
-| 18  | MinPaymentAmount         | real                  |          |            |                       |                   |
-| 19  | AnnualRevenue            | real                  |          |            |                       |                   |	
-| 20  | YearOpened               | integer               |          |            |                       |                   |
+| Key	| Name                     | Data type             | Not null | Attributes | References            | Description       | Metadata |
+| :-: | :----------------------- | :-------------------: | :------: | :--------- | :-------------------- | :---------------- | :------: |
+| 1   | ResellerKey              | integer               | X        |            |                       | PK                | m159     |
+| 2   | GeographyKey             | integer               |          |            | dbo.DimGeography      | FK                | m141     |
+| 3   | Phone                    | character varying(25) |          |            |                       |                   | m043     |
+| 4   | BusinessType             | character varying(20) | X        |            |                       |                   | m160     |
+| 6   | ResellerName             | character varying(50) | X        |            |                       |                   | m161     |
+| 7   | NumberEmployees          | integer               |          |            |                       |                   | m162     |
+| 8   | OrderFrequency           | character varying(1)  |          |            |                       |                   | m163     |
+| 9   | OrderMonth               | integer               |          |            |                       |                   | m164     |
+| 10  | FirstOrderYear           | integer               |          |            |                       |                   | m165     |
+| 11  | LastOrderYear            | integer               |          |            |                       |                   | m166     |
+| 12  | ProductLine              | character varying(50) |          |            |                       |                   | m098     |
+| 13  | AddressLine1             | character varying(60) |          |            |                       |                   | m117     |
+| 14  | AddressLine2             | character varying(60) |          |            |                       |                   | m118     |
+| 15  | AnnualSales              | real                  |          |            |                       |                   | m167     |
+| 16  | BankName                 | character varying(50) |          |            |                       |                   | m168     |
+| 17  | MinPaymentType           | integer               |          |            |                       |                   | m169     |
+| 18  | MinPaymentAmount         | real                  |          |            |                       |                   | m170     |
+| 19  | AnnualRevenue            | real                  |          |            |                       |                   | m171     |
+| 20  | YearOpened               | integer               |          |            |                       |                   | m172     |
 
    <p><br></p>  
  
