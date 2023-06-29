@@ -45,6 +45,6 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 
 ### Tests
 
-### [**_Test #001_**](tests/#001)
+### [**_Test #001_**](tests/#001.md)
 
 [Back to Table of contents :arrow_double_up:](../README.md)
