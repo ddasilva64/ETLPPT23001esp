@@ -9,12 +9,34 @@
 
 | Key      	| Meaning                                 | Standard              | Formula                                                                  | Units |
 | :-------: | :-------------------------------------- | :-------------------: | :----------------------------------------------------------------------- | :---: |
-|           |                                         |                       |                                                                          |       |
-|           |                                         |                       |                                                                          |       |
+| m084      | Primary key for Product records         |                       |                                                                          |       |
+| m159      | Primary key of Reseller records         |                       |                                                                          |       |
+| m029      | Primary key for Employee records        |                       |                                                                          |       |
+| m150      | Primary key for SpecialOffer records    |                       |                                                                          |       |
+| m082      | Primary key of Currency records | The ISO code for the Currency |                                                                          |       |
+| m063      | Primary key for SalesTerritory records  |                       |                                                                          |       |
+| m064      | Primary key. Unique sales order identification number |         |                                                                          |       |
+| m065      | Primary key. One incremental unique number per product sold |   |                                                                          |       |
+| m066      | Incremental number to track changes to the sales order over time | |                                                                       |       |
+| m067      | Quantity ordered per product            |                       |                                                                          |       |
+| m068      | Selling price of a single product       |                       |                                                                          |       |
+| m069      | Per product subtotal                    |                       | UnitPrice * (1 - UnitPriceDiscount) * OrderQty                           |       |
+| m070      | Unit price discount                     |                       |                                                                          |       |
+| m071      | Discount amount                         |                       |                                                                          |       |
+| m072      | Standard cost of the product            |                       |                                                                          |       |
+| m073      | Selling price                           |                       |                                                                          |       |
+| m074      | Sales subtotal                          |                       | SUM(SalesOrderDetail.LineTotal) for the appropriate SalesOrderID         |       |
+| m075      | Tax amount                              |                       |                                                                          |       |
+| m076      | Shipping cost                           |                       |                                                                          |       |
+| m077      | Shipment tracking number supplied by the shipper |              |                                                                          |       |
+| m078      | Customer purchase order number reference|                       |                                                                          |       |
+| m079      | Dates the sales order was created       |                       |                                                                          |       |
+| m080      | Date the order is due to the customer   |                       |                                                                          |       |
+| m081      | Date the order was shipped to the customer |                    |                                                                          |       |
 
    <p><br></p>  
  
-  ![XML file checking](https://i.imgur.com/sypBcKm.png)  
+  ![XML file checking](https://i.imgur.com/nXYQ53K.png)  
   _XML file checking_  
 
   **_QA_**: You can download data sources, and **_PDI_** transformations to chek it  
@@ -29,12 +51,12 @@
 
    <p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/3kGFaki.png)  
+  ![PDI transform](https://i.imgur.com/5w17vsW.png)  
   _PDI transform_  
 
   <p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/to31caF.png)  
+  ![PDI execution](https://i.imgur.com/8p6Yqiq.png)  
   _PDI execution_ 
 
 ### **_<p><br>Metadata layout</p>_**  
@@ -49,7 +71,7 @@
 
    <p><br></p>  
  
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/PtianLe.png)  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/mBSL7E8.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
 
   **_QA_**: You can download data sources, and **_PDI_** transformations to chek it  

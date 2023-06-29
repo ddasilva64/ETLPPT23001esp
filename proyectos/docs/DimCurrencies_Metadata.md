@@ -9,7 +9,7 @@
 
 | Key      	| Meaning                                 | Standard              | Formula                                                                  | Units |
 | :-------: | :-------------------------------------- | :-------------------: | :----------------------------------------------------------------------- | :---: |
-| m082      | Primary key of Currency records         | The ISO code for the Currency |                                                                          |       |
+| m082      | Primary key of Currency records | The ISO code for the Currency |                                                                          |       |
 | m083      | Currency name                           |                       |                                                                          |       |
 
    <p><br></p>  

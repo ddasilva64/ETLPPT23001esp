@@ -12,11 +12,11 @@
 | m059      | Primary key for Product records         |                       |                                                                          |       |
 | m060      | Primary key for Customer records        |                       |                                                                          |       |
 | m061      | Primary key for Promotion records       |                       |                                                                          |       |
-| m062      | Primary key for Currency records        | The ISO code for the Currency |                                                                          |       |
+| m062      | Primary key for Currency records        | The ISO code for the Currency |                                                                  |       |
 | m063      | Primary key for SalesTerritory records  |                       |                                                                          |       |
-| m064      | Primary key. Unique sales order identification number |                       |                                                                          |       |
-| m065      | Primary key. One incremental unique number per product sold |                       |                                                                          |       |
-| m066      | Incremental number to track changes to the sales order over time |                       |                                                                          |       |
+| m064      | Primary key. Unique sales order identification number |         |                                                                          |       |
+| m065      | Primary key. One incremental unique number per product sold |   |                                                                          |       |
+| m066      | Incremental number to track changes to the sales order over time | |                                                                       |       |
 | m067      | Quantity ordered per product            |                       |                                                                          |       |
 | m068      | Selling price of a single product       |                       |                                                                          |       |
 | m069      | Per product subtotal                    |                       | UnitPrice * (1 - UnitPriceDiscount) * OrderQty                           |       |
@@ -24,14 +24,14 @@
 | m071      | Discount amount                         |                       |                                                                          |       |
 | m072      | Standard cost of the product            |                       |                                                                          |       |
 | m073      | Selling price                           |                       |                                                                          |       |
-| m074      | Sales subtotal                          |                       | SUM(SalesOrderDetail.LineTotal)for the appropriate SalesOrderID          |       |
+| m074      | Sales subtotal                          |                       | SUM(SalesOrderDetail.LineTotal) for the appropriate SalesOrderID         |       |
 | m075      | Tax amount                              |                       |                                                                          |       |
 | m076      | Shipping cost                           |                       |                                                                          |       |
-| m077      | Shipment tracking number supplied by the shipper |                       |                                                                          |       |
+| m077      | Shipment tracking number supplied by the shipper |              |                                                                          |       |
 | m078      | Customer purchase order number reference|                       |                                                                          |       |
 | m079      | Dates the sales order was created       |                       |                                                                          |       |
 | m080      | Date the order is due to the customer   |                       |                                                                          |       |
-| m081      | Date the order was shipped to the customer |                       |                                                                          |       |
+| m081      | Date the order was shipped to the customer |                    |                                                                          |       |
 
    <p><br></p>  
  
