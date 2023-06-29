@@ -11,37 +11,39 @@
 
 - **_[Internet Sales Subsystem ERD](Internet_Sales_Subsystem_ERD.md)_**  
 
-- **_Internet Sales Subsystem tables transformations_**   
-  - **_[dbo.DimCurrency](dbo.DimCurrency.md)_**    
-  - **_[dbo.DimCustomer](dbo.DimCustomer.md)_**  
-  - **_[dbo.DimDate -deprecated-](dbo.DimDate.md)_**  
-  - **_[dbo.DimEmployee](dbo.DimEmployee.md)_**  
-  - **_[dbo.DimGeography](dbo.DimGeography.md)_**  
-  - **_[dbo.DimProduct](dbo.DimProduct.md)_**  
-  - **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_**  
-  - **_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
-  - **_[dbo.DimPromotion](dbo.DimPromotion.md)_**  
-  - **_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
-  - **_[dbo.DimReseller](dbo.DimReseller.md)_**  
-  - **_[dbo.FactInternetSales](dbo.FactInternetSales.md)_**  
-  - **_[dbo.FactInternetSalesReason](dbo.FactInternetSalesReason.md)_**  
-  - **_[dbo.FactProductInventory](dbo.FactProductInventory.md)_**  
-  - **_[dbo.FactResellerSales](dbo.FactResellerSales.md)_**  
-  - **_[DimCurrencies Metadata](DimCurrencies_Metadata.md)_**  
-  - **_[DimCustomer Metadata](DimCustomer_Metadata.md)_**  
-  - **_[DimDate Metadata](DimDate_Metadata.md)_**  
-  - **_[DimEmployees Metadata](DimEmployees_Metadata.md)_**  
-  - **_[DimGeography Metadata](DimGeography_Metadata.md)_**  
-  - **_[DimProduct Metadata](DimProduct_Metadata.md)_**  
-  - **_[DimProductCategory Metadata](DimProductCategory_Metadata.md)_**  
-  - **_[DimProductSubcategory Metadata](DimProductSubcategory_Metadata.md)_**
-  - **_[DimPromotion Metadata](DimPromotion_Metadata.md)_**  
-  - **_[DimSalesTerritory Metadata](DimReseller_Metadata.md)_**  
-  - **_DimReseller Metadata_**  
-  - **_[FactInternetSales Metadata](FactInternetSales_Metadata.md)_**  
-  - **_[FactInternetSalesReason Metadata](FactInternetSalesReason_Metadata.md)_**
-  - **_FactProductInventory Metadata_**
-  - **_FactResellerSales Metadata_**
+- **_Internet Sales Subsystem tables transformations_** 
+  - **_SQL Server tables_**  
+  1. **_[dbo.DimCurrency](dbo.DimCurrency.md)_**    
+  2. **_[dbo.DimCustomer](dbo.DimCustomer.md)_**  
+  3. **_[dbo.DimDate -deprecated-](dbo.DimDate.md)_**  
+  4. **_[dbo.DimEmployee](dbo.DimEmployee.md)_**  
+  5. **_[dbo.DimGeography](dbo.DimGeography.md)_**  
+  6. **_[dbo.DimProduct](dbo.DimProduct.md)_**  
+  7. **_[dbo.DimProductCategory](dbo.DimProductCategory.md)_**  
+  8. **_[dbo.DimProductSubcategory](dbo.DimProductSubcategory.md)_**  
+  9. **_[dbo.DimPromotion](dbo.DimPromotion.md)_**  
+  10. **_[dbo.DimSalesTerritory](dbo.DimSalesTerritory.md)_**  
+  11. **_[dbo.DimReseller](dbo.DimReseller.md)_**  
+  12. **_[dbo.FactInternetSales](dbo.FactInternetSales.md)_**  
+  13. **_[dbo.FactInternetSalesReason](dbo.FactInternetSalesReason.md)_**  
+  14. **_[dbo.FactProductInventory](dbo.FactProductInventory.md)_**  
+  15. **_[dbo.FactResellerSales](dbo.FactResellerSales.md)_**  
+  - **_Metadata_**
+  1. **_[DimCurrencies Metadata](DimCurrencies_Metadata.md)_**  
+  2. **_[DimCustomer Metadata](DimCustomer_Metadata.md)_**  
+  3. **_[DimDate Metadata](DimDate_Metadata.md)_**  
+  4. **_[DimEmployees Metadata](DimEmployees_Metadata.md)_**  
+  5. **_[DimGeography Metadata](DimGeography_Metadata.md)_**  
+  6. **_[DimProduct Metadata](DimProduct_Metadata.md)_**  
+  7. **_[DimProductCategory Metadata](DimProductCategory_Metadata.md)_**  
+  8. **_[DimProductSubcategory Metadata](DimProductSubcategory_Metadata.md)_**
+  9. **_[DimPromotion Metadata](DimPromotion_Metadata.md)_**  
+  10. **_[DimSalesTerritory Metadata](DimSalesTerritory_Metadata.md)_**  
+  11. **_[DimReseller Metadata](DimReseller_Metadata.md)_**  
+  12. **_[FactInternetSales Metadata](FactInternetSales_Metadata.md)_**  
+  13. **_[FactInternetSalesReason Metadata](FactInternetSalesReason_Metadata.md)_**
+  14. **_[FactProductInventory Metadata](FactProductInventory_Metadata.md)_**
+  15. **_[FactResellerSales Metadata](FactResellerSales_Metadata.md)_**
 
   **_Warning_**!: Remember that field names are standard (the first character of the word is uppercase, and no spaces between words). That means that in the output table name and table field names (in POI), we need to write them (table and fields) in double quotes  
 

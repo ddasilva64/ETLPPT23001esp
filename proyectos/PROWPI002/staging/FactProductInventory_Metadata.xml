@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m176</Key> <Meaning>Date the record was last updated</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m177</Key> <Meaning>Standard cost of the product</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m178</Key> <Meaning>Units in</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m179</Key> <Meaning>Units out</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m180</Key> <Meaning>Quantity of products in the inventory</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+</Rows>

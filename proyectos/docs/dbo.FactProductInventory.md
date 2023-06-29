@@ -35,14 +35,14 @@ _SQL Server source in SQL Server Management studio_
 
 ### **_<p><br>FactProductInventory layout (Postgre SQL)</p>_**  
 
-| Key	| Name                     | Data type    | Not null | Attributes | References            | Description      |
-| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :--------------- |
-| 1   | ProductKey               | integer      | X        |            | dbo.DimProduct        | PK,FK            |
-| 2   | MovementDate             | date         | X        |            |                       | PK,FK            |
-| 3   | UnitCost                 | real         | X        |            |                       |                  |
-| 4   | UnitsIn                  | integer      | X        |            |                       |                  |
-| 5   | UnitsOut                 | integer      | X        |            |                       |                  |
-| 6   | UnitsBalance             | integer      | X        |            |                       |                  |              
+| Key	| Name                     | Data type    | Not null | Attributes | References            | Description      | Metadata |
+| :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :--------------- | :------: |
+| 1   | ProductKey               | integer      | X        |            | dbo.DimProduct        | PK,FK            | m084     |
+| 2   | MovementDate             | date         | X        |            |                       | PK,FK            | m176     |
+| 3   | UnitCost                 | real         | X        |            |                       |                  | m177     |
+| 4   | UnitsIn                  | integer      | X        |            |                       |                  | m178     |
+| 5   | UnitsOut                 | integer      | X        |            |                       |                  | m179     |
+| 6   | UnitsBalance             | integer      | X        |            |                       |                  | m180     |             
 
    <p><br></p>  
  

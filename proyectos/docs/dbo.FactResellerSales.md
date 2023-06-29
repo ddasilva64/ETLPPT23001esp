@@ -56,8 +56,8 @@ _SQL Server source in SQL Server Management studio_
 
 ### **_<p><br>FactResellerSales layout (Postgre SQL)</p>_**  
 
-| Key	| Name                     | Data type             | Not null | Attributes | References            | Description  |
-| :-: | :----------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- |
+| Key	| Name                     | Data type             | Not null | Attributes | References            | Description  | Metadata |
+| :-: | :----------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------: |
 | 1   | ProductKey               | integer               | X        |            | dbo.DimProduct        | FK           |
 | 2   | ResellerKey              | integer               | X        |            | dbo.DimReseller       | FK           |
 | 3   | EmployeeKey              | integer               | X        |            | dbo.DimEmployee       | FK           |

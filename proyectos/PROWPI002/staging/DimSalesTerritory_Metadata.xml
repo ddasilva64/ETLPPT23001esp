@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Rows>
+<Row><Key>m173</Key> <Meaning>Region sales name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m174</Key> <Meaning>Country sales name</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+<Row><Key>m175</Key> <Meaning>Geographic area to which the sales territory belong</Meaning> <Standard> </Standard> <Formula> </Formula> <Units> </Units></Row>
+</Rows>
