@@ -17,7 +17,7 @@
   ![XML file checking](https://i.imgur.com/NM0HLU7.png)  
   _XML file checking_  
 
-  **_QA_**: You can download data sources, and **_PDI_** transformations to chek it  
+  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
 [PROWPI002 ETL :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
@@ -52,7 +52,7 @@
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/kAMTRgM.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
 
-  **_QA_**: You can download data sources, and **_PDI_** transformations to chek it  
+  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
 [PROWPI002 ETL :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

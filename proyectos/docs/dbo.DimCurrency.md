@@ -51,7 +51,7 @@ By the way, we will use the next public domain data sources, for this task:
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/vldaeUm.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
 
-  **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
+  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
@@ -92,7 +92,7 @@ By the way, we will use the next public domain data sources, for this task:
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/XHFHV1e.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
 
-  **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
+  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
@@ -127,7 +127,7 @@ By the way, we will use the next public domain data sources, for this task:
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/K0L1MjX.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
 
-  **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
+  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
   
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
@@ -163,7 +163,7 @@ By the way, we will use the next public domain data sources, for this task:
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/xGo96rl.png) 
   _Postgres SQL's transactions checking in PgAdmin_  
 
-  **_QA_**: You can download data sources, **_SQL Server_** tables, and **_PDI_** transformations to chek it  
+  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

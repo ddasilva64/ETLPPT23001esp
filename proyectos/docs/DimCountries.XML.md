@@ -36,7 +36,7 @@
   ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/5wh3IhK.png)  
   _Postgres SQL's transactions checking in PgAdmin_ 
 
-  **_QA_**: You can download data sources, and **_PDI_** transformations to chek it  
+  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
 [PROWPI001 ETL :arrow_up:](prowpi001_etl.md)  
 

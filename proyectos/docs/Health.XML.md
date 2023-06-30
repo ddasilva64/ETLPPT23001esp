@@ -35,7 +35,7 @@
   ![XML file checking](https://i.imgur.com/7gcWnrz.png)  
   _XML file checking_  
 
-  **_QA_**: You can download data sources, and **_PDI_** transformations to chek it  
+  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**t  
 
 [PROWPI001 ETL :arrow_up:](prowpi001_etl.md)  
 
