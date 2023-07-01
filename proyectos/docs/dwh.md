@@ -28,7 +28,7 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 | Test                                                                                  | Check | Bug                               | Fix                               |
 | :------------------------------------------------------------------------------------ | :---: | :-------------------------------- | :-------------------------------- |
 | Metadata is completed (no one field empty)                                            |       |                                   |                                   |
-| No repeating metadata content                                                         |       |                                   |                                   |
+| There is no repeated metadata content                                                 |       |                                   |                                   |
 | Primary Keys are well defined                                                         |       |                                   |                                   |
 | Foreign keys are well defined                                                         |       |                                   |                                   |
 
@@ -85,6 +85,7 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 <p><br></p>
 
 ### [**_Test #001_**](tests/t001.md)
+### [**_Test #002_**](tests/t002.md)
 
 <p><br></p>
 
