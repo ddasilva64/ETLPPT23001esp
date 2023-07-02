@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>PROWPI002_FactInternetSales_003</name>
+    <name>PROWPI002_FactResellerSales_003</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -552,23 +552,23 @@
   </connection>
   <order>
     <hop>
+      <from>Table input #01</from>
+      <to>sort #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>sort #01</from>
       <to>columns #01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Table input</from>
-      <to>sort #01</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Table input 2</from>
-      <to>String operations #01</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>String operations #01</from>
       <to>sort #02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Table input #02</from>
+      <to>String operations #01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -578,61 +578,31 @@
     </hop>
     <hop>
       <from>columns #01</from>
-      <to>left join #01</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>columns #02</from>
-      <to>left join #01</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>left join #01</from>
-      <to>columns #03</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>#raw_15</from>
-      <to>columns #06</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>columns #05</from>
       <to>inner join #01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>columns #06</from>
+      <from>columns #02</from>
       <to>inner join #01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>inner join #01</from>
-      <to>columns #07</to>
+      <to>columns #03</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>columns #03</from>
-      <to>Filter rows #01</to>
+      <to>sort #03</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Filter rows #01</from>
-      <to>columns #05</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows #01</from>
-      <to>columns #04</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>columns #07</from>
+      <from>sort #03</from>
       <to>Calculator #01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>columns #07</from>
+      <from>sort #03</from>
       <to>inner join #02</to>
       <enabled>Y</enabled>
     </hop>
@@ -643,278 +613,15 @@
     </hop>
     <hop>
       <from>inner join #02</from>
-      <to>columns #07_1</to>
+      <to>columns #03_1</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>columns #07_1</from>
-      <to>output #02</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>columns #04</from>
-      <to>Calculator #02</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>columns #04</from>
-      <to>inner join #03</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Calculator #02</from>
-      <to>inner join #03</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>inner join #03</from>
-      <to>columns #04_1</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>columns #04_1</from>
+      <from>columns #03_1</from>
       <to>output #01</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <step>
-    <name>#raw_15</name>
-    <type>getXMLData</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <include>N</include>
-    <include_field/>
-    <rownum>N</rownum>
-    <addresultfile>N</addresultfile>
-    <namespaceaware>N</namespaceaware>
-    <ignorecomments>N</ignorecomments>
-    <readurl>N</readurl>
-    <validating>N</validating>
-    <usetoken>N</usetoken>
-    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
-    <doNotFailIfNoFile>N</doNotFailIfNoFile>
-    <rownum_field/>
-    <encoding>UTF-8</encoding>
-    <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI002/arrangements/XML currencies - euro.XML</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>CurrencyKey</name>
-        <xpath>CurrencyKey</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>CurrencyKey1</name>
-        <xpath>CurrencyKey1</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <loopxpath>/Rows/Row</loopxpath>
-    <IsInFields>N</IsInFields>
-    <IsAFile>N</IsAFile>
-    <XmlField/>
-    <prunePath/>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>992</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Calculator #01</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>FactInternetSalesPK</field_name>
-      <calc_type>ADD</calc_type>
-      <field_a>SalesOrderNumber</field_a>
-      <field_b>SalesOrderLineNumber</field_b>
-      <field_c/>
-      <value_type>String</value_type>
-      <value_length>30</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1232</xloc>
-      <yloc>480</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Calculator #02</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>FactInternetSalesPK</field_name>
-      <calc_type>ADD</calc_type>
-      <field_a>SalesOrderNumber</field_a>
-      <field_b>SalesOrderLineNumber</field_b>
-      <field_c/>
-      <value_type>String</value_type>
-      <value_length>30</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1456</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Filter rows #01</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <send_true_to>columns #05</send_true_to>
-    <send_false_to>columns #04</send_false_to>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <conditions>
-          <condition>
-            <negated>N</negated>
-            <leftvalue>CurrencyKey</leftvalue>
-            <function>=</function>
-            <rightvalue/>
-            <value>
-              <name>constant</name>
-              <type>String</type>
-              <text>dem</text>
-              <length>-1</length>
-              <precision>-1</precision>
-              <isnull>N</isnull>
-              <mask/>
-            </value>
-          </condition>
-          <condition>
-            <negated>N</negated>
-            <operator>OR</operator>
-            <leftvalue>CurrencyKey</leftvalue>
-            <function>=</function>
-            <rightvalue/>
-            <value>
-              <name>constant</name>
-              <type>String</type>
-              <text>frf</text>
-              <length>-1</length>
-              <precision>-1</precision>
-              <isnull>N</isnull>
-              <mask/>
-            </value>
-          </condition>
-        </conditions>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>944</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>String operations #01</name>
     <type>StringOperations</type>
@@ -956,7 +663,7 @@
     </GUI>
   </step>
   <step>
-    <name>Table input</name>
+    <name>Table input #01</name>
     <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
@@ -972,7 +679,8 @@
 , OrderDateKey
 , DueDateKey
 , ShipDateKey
-, CustomerKey
+, ResellerKey
+, EmployeeKey
 , PromotionKey
 , CurrencyKey
 , SalesTerritoryKey
@@ -994,7 +702,7 @@
 , OrderDate
 , DueDate
 , ShipDate
-FROM dbo.FactInternetSales
+FROM dbo.FactResellerSales
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -1098,11 +806,34 @@ FROM dbo.FactInternetSales
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>CustomerKey</name>
+        <name>ResellerKey</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>CustomerKey</comments>
+        <comments>ResellerKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>EmployeeKey</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>EmployeeKey</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1611,13 +1342,13 @@ FROM dbo.FactInternetSales
       </output>
     </remotesteps>
     <GUI>
-      <xloc>80</xloc>
+      <xloc>96</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Table input 2</name>
+    <name>Table input #02</name>
     <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
@@ -1720,7 +1451,7 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>80</xloc>
+      <xloc>96</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1741,7 +1472,10 @@ FROM dbo.DimCurrency
         <name>ProductKey</name>
       </field>
       <field>
-        <name>CustomerKey</name>
+        <name>ResellerKey</name>
+      </field>
+      <field>
+        <name>EmployeeKey</name>
       </field>
       <field>
         <name>PromotionKey</name>
@@ -1807,57 +1541,6 @@ FROM dbo.DimCurrency
         <name>ShipDate</name>
       </field>
       <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>OrderDate</name>
-        <rename>OrderDate</rename>
-        <type>Date</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>MM/dd/yyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>DueDate</name>
-        <rename>DueDate</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>MM/dd/yyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>ShipDate</name>
-        <rename>ShipDate</rename>
-        <type>None</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>MM/dd/yyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1868,7 +1551,7 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>496</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1905,7 +1588,7 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>496</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1926,7 +1609,10 @@ FROM dbo.DimCurrency
         <name>ProductKey</name>
       </field>
       <field>
-        <name>CustomerKey</name>
+        <name>ResellerKey</name>
+      </field>
+      <field>
+        <name>EmployeeKey</name>
       </field>
       <field>
         <name>PromotionKey</name>
@@ -2003,534 +1689,8 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>800</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #04</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ProductKey</name>
-      </field>
-      <field>
-        <name>CustomerKey</name>
-      </field>
-      <field>
-        <name>PromotionKey</name>
-      </field>
-      <field>
-        <name>CurrencyKey</name>
-      </field>
-      <field>
-        <name>SalesTerritoryKey</name>
-      </field>
-      <field>
-        <name>SalesOrderNumber</name>
-      </field>
-      <field>
-        <name>SalesOrderLineNumber</name>
-      </field>
-      <field>
-        <name>RevisionNumber</name>
-      </field>
-      <field>
-        <name>OrderQuantity</name>
-      </field>
-      <field>
-        <name>UnitPrice</name>
-      </field>
-      <field>
-        <name>ExtendedAmount</name>
-      </field>
-      <field>
-        <name>UnitPriceDiscountPct</name>
-      </field>
-      <field>
-        <name>DiscountAmount</name>
-      </field>
-      <field>
-        <name>ProductStandardCost</name>
-      </field>
-      <field>
-        <name>TotalProductCost</name>
-      </field>
-      <field>
-        <name>SalesAmount</name>
-      </field>
-      <field>
-        <name>TaxAmt</name>
-      </field>
-      <field>
-        <name>Freight</name>
-      </field>
-      <field>
-        <name>CarrierTrackingNumber</name>
-      </field>
-      <field>
-        <name>CustomerPONumber</name>
-      </field>
-      <field>
-        <name>OrderDate</name>
-      </field>
-      <field>
-        <name>DueDate</name>
-      </field>
-      <field>
-        <name>ShipDate</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1312</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #04_1</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ProductKey</name>
-      </field>
-      <field>
-        <name>CustomerKey</name>
-      </field>
-      <field>
-        <name>PromotionKey</name>
-      </field>
-      <field>
-        <name>CurrencyKey</name>
-      </field>
-      <field>
-        <name>SalesTerritoryKey</name>
-      </field>
-      <field>
-        <name>SalesOrderNumber</name>
-      </field>
-      <field>
-        <name>SalesOrderLineNumber</name>
-      </field>
-      <field>
-        <name>RevisionNumber</name>
-      </field>
-      <field>
-        <name>OrderQuantity</name>
-      </field>
-      <field>
-        <name>UnitPrice</name>
-      </field>
-      <field>
-        <name>ExtendedAmount</name>
-      </field>
-      <field>
-        <name>UnitPriceDiscountPct</name>
-      </field>
-      <field>
-        <name>DiscountAmount</name>
-      </field>
-      <field>
-        <name>ProductStandardCost</name>
-      </field>
-      <field>
-        <name>TotalProductCost</name>
-      </field>
-      <field>
-        <name>SalesAmount</name>
-      </field>
-      <field>
-        <name>TaxAmt</name>
-      </field>
-      <field>
-        <name>Freight</name>
-      </field>
-      <field>
-        <name>CarrierTrackingNumber</name>
-      </field>
-      <field>
-        <name>CustomerPONumber</name>
-      </field>
-      <field>
-        <name>OrderDate</name>
-      </field>
-      <field>
-        <name>DueDate</name>
-      </field>
-      <field>
-        <name>ShipDate</name>
-      </field>
-      <field>
-        <name>FactInternetSalesPK</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1392</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #05</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ProductKey</name>
-      </field>
-      <field>
-        <name>CustomerKey</name>
-      </field>
-      <field>
-        <name>PromotionKey</name>
-      </field>
-      <field>
-        <name>CurrencyKey</name>
-      </field>
-      <field>
-        <name>SalesTerritoryKey</name>
-      </field>
-      <field>
-        <name>SalesOrderNumber</name>
-      </field>
-      <field>
-        <name>SalesOrderLineNumber</name>
-      </field>
-      <field>
-        <name>RevisionNumber</name>
-      </field>
-      <field>
-        <name>OrderQuantity</name>
-      </field>
-      <field>
-        <name>UnitPrice</name>
-      </field>
-      <field>
-        <name>ExtendedAmount</name>
-      </field>
-      <field>
-        <name>UnitPriceDiscountPct</name>
-      </field>
-      <field>
-        <name>DiscountAmount</name>
-      </field>
-      <field>
-        <name>ProductStandardCost</name>
-      </field>
-      <field>
-        <name>TotalProductCost</name>
-      </field>
-      <field>
-        <name>SalesAmount</name>
-      </field>
-      <field>
-        <name>TaxAmt</name>
-      </field>
-      <field>
-        <name>Freight</name>
-      </field>
-      <field>
-        <name>CarrierTrackingNumber</name>
-      </field>
-      <field>
-        <name>CustomerPONumber</name>
-      </field>
-      <field>
-        <name>OrderDate</name>
-      </field>
-      <field>
-        <name>DueDate</name>
-      </field>
-      <field>
-        <name>ShipDate</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1088</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #06</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>CurrencyKey</name>
-      </field>
-      <field>
-        <name>CurrencyKey1</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1088</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #07</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ProductKey</name>
-      </field>
-      <field>
-        <name>CustomerKey</name>
-      </field>
-      <field>
-        <name>PromotionKey</name>
-      </field>
-      <field>
-        <name>CurrencyKey1</name>
-        <rename>CurrencyKey</rename>
-      </field>
-      <field>
-        <name>SalesTerritoryKey</name>
-      </field>
-      <field>
-        <name>SalesOrderNumber</name>
-      </field>
-      <field>
-        <name>SalesOrderLineNumber</name>
-      </field>
-      <field>
-        <name>RevisionNumber</name>
-      </field>
-      <field>
-        <name>OrderQuantity</name>
-      </field>
-      <field>
-        <name>UnitPrice</name>
-      </field>
-      <field>
-        <name>ExtendedAmount</name>
-      </field>
-      <field>
-        <name>UnitPriceDiscountPct</name>
-      </field>
-      <field>
-        <name>DiscountAmount</name>
-      </field>
-      <field>
-        <name>ProductStandardCost</name>
-      </field>
-      <field>
-        <name>TotalProductCost</name>
-      </field>
-      <field>
-        <name>SalesAmount</name>
-      </field>
-      <field>
-        <name>TaxAmt</name>
-      </field>
-      <field>
-        <name>Freight</name>
-      </field>
-      <field>
-        <name>CarrierTrackingNumber</name>
-      </field>
-      <field>
-        <name>CustomerPONumber</name>
-      </field>
-      <field>
-        <name>OrderDate</name>
-      </field>
-      <field>
-        <name>DueDate</name>
-      </field>
-      <field>
-        <name>ShipDate</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1232</xloc>
-      <yloc>336</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #07_1</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ProductKey</name>
-      </field>
-      <field>
-        <name>CustomerKey</name>
-      </field>
-      <field>
-        <name>PromotionKey</name>
-      </field>
-      <field>
-        <name>CurrencyKey</name>
-      </field>
-      <field>
-        <name>SalesTerritoryKey</name>
-      </field>
-      <field>
-        <name>SalesOrderNumber</name>
-      </field>
-      <field>
-        <name>SalesOrderLineNumber</name>
-      </field>
-      <field>
-        <name>RevisionNumber</name>
-      </field>
-      <field>
-        <name>OrderQuantity</name>
-      </field>
-      <field>
-        <name>UnitPrice</name>
-      </field>
-      <field>
-        <name>ExtendedAmount</name>
-      </field>
-      <field>
-        <name>UnitPriceDiscountPct</name>
-      </field>
-      <field>
-        <name>DiscountAmount</name>
-      </field>
-      <field>
-        <name>ProductStandardCost</name>
-      </field>
-      <field>
-        <name>TotalProductCost</name>
-      </field>
-      <field>
-        <name>SalesAmount</name>
-      </field>
-      <field>
-        <name>TaxAmt</name>
-      </field>
-      <field>
-        <name>Freight</name>
-      </field>
-      <field>
-        <name>CarrierTrackingNumber</name>
-      </field>
-      <field>
-        <name>CustomerPONumber</name>
-      </field>
-      <field>
-        <name>OrderDate</name>
-      </field>
-      <field>
-        <name>DueDate</name>
-      </field>
-      <field>
-        <name>ShipDate</name>
-      </field>
-      <field>
-        <name>FactInternetSalesPK</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>944</xloc>
-      <yloc>400</yloc>
+      <xloc>768</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2546,112 +1706,6 @@ FROM dbo.DimCurrency
       <schema_name/>
     </partitioning>
     <join_type>INNER</join_type>
-    <step1>columns #05</step1>
-    <step2>columns #06</step2>
-    <keys_1>
-      <key>CurrencyKey</key>
-    </keys_1>
-    <keys_2>
-      <key>CurrencyKey</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1232</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>inner join #02</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>columns #07</step1>
-    <step2>Calculator #01</step2>
-    <keys_1>
-      <key>SalesOrderNumber</key>
-      <key>SalesOrderLineNumber</key>
-    </keys_1>
-    <keys_2>
-      <key>SalesOrderNumber</key>
-      <key>SalesOrderLineNumber</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1104</xloc>
-      <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>inner join #03</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>columns #04</step1>
-    <step2>Calculator #02</step2>
-    <keys_1>
-      <key>SalesOrderNumber</key>
-      <key>SalesOrderLineNumber</key>
-    </keys_1>
-    <keys_2>
-      <key>SalesOrderNumber</key>
-      <key>SalesOrderLineNumber</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1392</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>left join #01</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>LEFT OUTER</join_type>
     <step1>columns #01</step1>
     <step2>columns #02</step2>
     <keys_1>
@@ -2669,8 +1723,8 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>96</yloc>
+      <xloc>624</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2687,7 +1741,7 @@ FROM dbo.DimCurrency
     </partitioning>
     <connection>datawarehouse</connection>
     <schema>target</schema>
-    <table>"FactInternetSales"</table>
+    <table>"FactResellerSales"</table>
     <commit>100</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -2708,8 +1762,12 @@ FROM dbo.DimCurrency
         <stream_name>ProductKey</stream_name>
       </field>
       <field>
-        <column_name>"CustomerKey"</column_name>
-        <stream_name>CustomerKey</stream_name>
+        <column_name>"ResellerKey"</column_name>
+        <stream_name>ResellerKey</stream_name>
+      </field>
+      <field>
+        <column_name>"EmployeeKey"</column_name>
+        <stream_name>EmployeeKey</stream_name>
       </field>
       <field>
         <column_name>"PromotionKey"</column_name>
@@ -2796,8 +1854,8 @@ FROM dbo.DimCurrency
         <stream_name>ShipDate</stream_name>
       </field>
       <field>
-        <column_name>"FactInternetSalesPK"</column_name>
-        <stream_name>FactInternetSalesPK</stream_name>
+        <column_name>"FactResellerSalesPK"</column_name>
+        <stream_name>FactResellerSalesPK</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -2809,148 +1867,8 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1392</xloc>
-      <yloc>368</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>output #02</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>datawarehouse</connection>
-    <schema>target</schema>
-    <table>"FactInternetSales"</table>
-    <commit>100</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>"ProductKey"</column_name>
-        <stream_name>ProductKey</stream_name>
-      </field>
-      <field>
-        <column_name>"CustomerKey"</column_name>
-        <stream_name>CustomerKey</stream_name>
-      </field>
-      <field>
-        <column_name>"PromotionKey"</column_name>
-        <stream_name>PromotionKey</stream_name>
-      </field>
-      <field>
-        <column_name>"CurrencyKey"</column_name>
-        <stream_name>CurrencyKey</stream_name>
-      </field>
-      <field>
-        <column_name>"SalesTerritoryKey"</column_name>
-        <stream_name>SalesTerritoryKey</stream_name>
-      </field>
-      <field>
-        <column_name>"SalesOrderNumber"</column_name>
-        <stream_name>SalesOrderNumber</stream_name>
-      </field>
-      <field>
-        <column_name>"SalesOrderLineNumber"</column_name>
-        <stream_name>SalesOrderLineNumber</stream_name>
-      </field>
-      <field>
-        <column_name>"RevisionNumber"</column_name>
-        <stream_name>RevisionNumber</stream_name>
-      </field>
-      <field>
-        <column_name>"OrderQuantity"</column_name>
-        <stream_name>OrderQuantity</stream_name>
-      </field>
-      <field>
-        <column_name>"UnitPrice"</column_name>
-        <stream_name>UnitPrice</stream_name>
-      </field>
-      <field>
-        <column_name>"ExtendedAmount"</column_name>
-        <stream_name>ExtendedAmount</stream_name>
-      </field>
-      <field>
-        <column_name>"UnitPriceDiscountPct"</column_name>
-        <stream_name>UnitPriceDiscountPct</stream_name>
-      </field>
-      <field>
-        <column_name>"DiscountAmount"</column_name>
-        <stream_name>DiscountAmount</stream_name>
-      </field>
-      <field>
-        <column_name>"ProductStandardCost"</column_name>
-        <stream_name>ProductStandardCost</stream_name>
-      </field>
-      <field>
-        <column_name>"TotalProductCost"</column_name>
-        <stream_name>TotalProductCost</stream_name>
-      </field>
-      <field>
-        <column_name>"SalesAmount"</column_name>
-        <stream_name>SalesAmount</stream_name>
-      </field>
-      <field>
-        <column_name>"TaxAmt"</column_name>
-        <stream_name>TaxAmt</stream_name>
-      </field>
-      <field>
-        <column_name>"Freight"</column_name>
-        <stream_name>Freight</stream_name>
-      </field>
-      <field>
-        <column_name>"CarrierTrackingNumber"</column_name>
-        <stream_name>CarrierTrackingNumber</stream_name>
-      </field>
-      <field>
-        <column_name>"CustomerPONumber"</column_name>
-        <stream_name>CustomerPONumber</stream_name>
-      </field>
-      <field>
-        <column_name>"OrderDate"</column_name>
-        <stream_name>OrderDate</stream_name>
-      </field>
-      <field>
-        <column_name>"DueDate"</column_name>
-        <stream_name>DueDate</stream_name>
-      </field>
-      <field>
-        <column_name>"ShipDate"</column_name>
-        <stream_name>ShipDate</stream_name>
-      </field>
-      <field>
-        <column_name>"FactInternetSalesPK"</column_name>
-        <stream_name>FactInternetSalesPK</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>400</yloc>
+      <xloc>1296</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2958,7 +1876,7 @@ FROM dbo.DimCurrency
     <name>sort #01</name>
     <type>SortRows</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -2977,7 +1895,7 @@ FROM dbo.DimCurrency
         <name>CurrencyKey</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
-        <collator_enabled>Y</collator_enabled>
+        <collator_enabled>N</collator_enabled>
         <collator_strength>0</collator_strength>
         <presorted>N</presorted>
       </field>
@@ -2991,7 +1909,7 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
+      <xloc>368</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3033,7 +1951,262 @@ FROM dbo.DimCurrency
       </output>
     </remotesteps>
     <GUI>
-      <xloc>384</xloc>
+      <xloc>368</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort #03</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>SalesOrderNumber</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>SalesOrderLineNumber</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calculator #01</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>FactResellerSalesPK</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>SalesOrderNumber</field_a>
+      <field_b>SalesOrderLineNumber</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>30</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>880</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>inner join #02</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>sort #03</step1>
+    <step2>Calculator #01</step2>
+    <keys_1>
+      <key>SalesOrderNumber</key>
+      <key>SalesOrderLineNumber</key>
+    </keys_1>
+    <keys_2>
+      <key>SalesOrderNumber</key>
+      <key>SalesOrderLineNumber</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1008</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #03_1</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ResellerKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EmployeeKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PromotionKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CurrencyKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesTerritoryKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesOrderLineNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>RevisionNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderQuantity</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPrice</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ExtendedAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitPriceDiscountPct</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DiscountAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ProductStandardCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TotalProductCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesAmount</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TaxAmt</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Freight</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CarrierTrackingNumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CustomerPONumber</name>
+        <rename/>
+      </field>
+      <field>
+        <name>OrderDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DueDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ShipDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>FactResellerSalesPK</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1152</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>

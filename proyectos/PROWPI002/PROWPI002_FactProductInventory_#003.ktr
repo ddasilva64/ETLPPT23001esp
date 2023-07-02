@@ -593,6 +593,47 @@
     </hop>
   </order>
   <step>
+    <name>Calculator #01</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>FactProductInventoryPK</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>MovementDateStr</field_a>
+      <field_b>ProductKey</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>20</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Table input</name>
     <type>TableInput</type>
     <description/>
@@ -811,27 +852,21 @@ FROM dbo.FactProductInventory
     <fields>
       <field>
         <name>ProductKey</name>
-        <rename/>
       </field>
       <field>
         <name>MovementDate</name>
-        <rename/>
       </field>
       <field>
         <name>UnitCost</name>
-        <rename/>
       </field>
       <field>
         <name>UnitsIn</name>
-        <rename/>
       </field>
       <field>
         <name>UnitsOut</name>
-        <rename/>
       </field>
       <field>
         <name>UnitsBalance</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -863,6 +898,162 @@ FROM dbo.FactProductInventory
     <GUI>
       <xloc>368</xloc>
       <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #01_1</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+      </field>
+      <field>
+        <name>MovementDate</name>
+      </field>
+      <field>
+        <name>UnitCost</name>
+      </field>
+      <field>
+        <name>UnitsIn</name>
+      </field>
+      <field>
+        <name>UnitsOut</name>
+      </field>
+      <field>
+        <name>UnitsBalance</name>
+      </field>
+      <field>
+        <name>MovementDate</name>
+        <rename>MovDate</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>MovementDate</name>
+        <rename>MovementDateStr</rename>
+        <type>String</type>
+        <length>8</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyyMMdd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #01_2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+      </field>
+      <field>
+        <name>MovDate</name>
+        <rename>MovementDate</rename>
+      </field>
+      <field>
+        <name>UnitCost</name>
+      </field>
+      <field>
+        <name>UnitsIn</name>
+      </field>
+      <field>
+        <name>UnitsOut</name>
+      </field>
+      <field>
+        <name>UnitsBalance</name>
+      </field>
+      <field>
+        <name>MovDate</name>
+      </field>
+      <field>
+        <name>FactProductInventoryPK</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>inner join #01</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>columns #01_1</step1>
+    <step2>Calculator #01</step2>
+    <keys_1>
+      <key>ProductKey</key>
+      <key>MovDate</key>
+    </keys_1>
+    <keys_2>
+      <key>ProductKey</key>
+      <key>MovDate</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -985,216 +1176,6 @@ FROM dbo.FactProductInventory
     <GUI>
       <xloc>240</xloc>
       <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #01_1</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ProductKey</name>
-        <rename/>
-      </field>
-      <field>
-        <name>MovementDate</name>
-        <rename/>
-      </field>
-      <field>
-        <name>UnitCost</name>
-        <rename/>
-      </field>
-      <field>
-        <name>UnitsIn</name>
-        <rename/>
-      </field>
-      <field>
-        <name>UnitsOut</name>
-        <rename/>
-      </field>
-      <field>
-        <name>UnitsBalance</name>
-        <rename/>
-      </field>
-      <field>
-        <name>MovementDate</name>
-        <rename>MovDate</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>MovementDate</name>
-        <rename>MovementDateStr</rename>
-        <type>String</type>
-        <length>8</length>
-        <precision>-2</precision>
-        <conversion_mask>yyyyMMdd</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Calculator #01</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>FactProductInventoryPK</field_name>
-      <calc_type>ADD</calc_type>
-      <field_a>MovementDateStr</field_a>
-      <field_b>ProductKey</field_b>
-      <field_c/>
-      <value_type>String</value_type>
-      <value_length>20</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>496</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>inner join #01</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>columns #01_1</step1>
-    <step2>Calculator #01</step2>
-    <keys_1>
-      <key>ProductKey</key>
-      <key>MovDate</key>
-    </keys_1>
-    <keys_2>
-      <key>ProductKey</key>
-      <key>MovDate</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>640</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #01_2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ProductKey</name>
-        <rename/>
-      </field>
-      <field>
-        <name>MovDate</name>
-        <rename>MovementDate</rename>
-      </field>
-      <field>
-        <name>UnitCost</name>
-        <rename/>
-      </field>
-      <field>
-        <name>UnitsIn</name>
-        <rename/>
-      </field>
-      <field>
-        <name>UnitsOut</name>
-        <rename/>
-      </field>
-      <field>
-        <name>UnitsBalance</name>
-        <rename/>
-      </field>
-      <field>
-        <name>MovDate</name>
-        <rename/>
-      </field>
-      <field>
-        <name>FactProductInventoryPK</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>816</xloc>
-      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
