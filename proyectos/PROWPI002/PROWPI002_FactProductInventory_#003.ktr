@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>PROWPI002_FactInternetSalesReason_003</name>
+    <name>PROWPI002_FactProductInventory_003</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -563,11 +563,16 @@
     </hop>
     <hop>
       <from>columns #01</from>
+      <to>columns #01_1</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #01_1</from>
       <to>Calculator #01</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>columns #01</from>
+      <from>columns #01_1</from>
       <to>inner join #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -578,56 +583,15 @@
     </hop>
     <hop>
       <from>inner join #01</from>
-      <to>columns #01_1</to>
+      <to>columns #01_2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>columns #01_1</from>
+      <from>columns #01_2</from>
       <to>output #01</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <step>
-    <name>Calculator #01</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>FactInternetSalesReasonPK</field_name>
-      <calc_type>ADD3</calc_type>
-      <field_a>SalesOrderNumber</field_a>
-      <field_b>SalesOrderLineNumber</field_b>
-      <field_c>SalesReasonKey</field_c>
-      <value_type>String</value_type>
-      <value_length>30</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>352</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>Table input</name>
     <type>TableInput</type>
@@ -641,10 +605,14 @@
     </partitioning>
     <connection>AdventureWorks</connection>
     <sql>SELECT
-  SalesOrderNumber
-, SalesOrderLineNumber
-, SalesReasonKey
-FROM dbo.FactInternetSalesReason
+  ProductKey
+, DateKey
+, MovementDate
+, UnitCost
+, UnitsIn
+, UnitsOut
+, UnitsBalance
+FROM dbo.FactProductInventory
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -654,36 +622,13 @@ FROM dbo.FactInternetSalesReason
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>SalesOrderNumber</name>
-        <length>20</length>
-        <precision>-1</precision>
-        <origin>Table input</origin>
-        <comments>SalesOrderNumber</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>ca_ES</date_format_locale>
-        <date_format_timezone>Europe/Paris</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>SalesOrderLineNumber</name>
-        <length>2</length>
+        <name>ProductKey</name>
+        <length>9</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>SalesOrderLineNumber</comments>
+        <comments>ProductKey</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -702,11 +647,126 @@ FROM dbo.FactInternetSalesReason
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>SalesReasonKey</name>
+        <name>DateKey</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Table input</origin>
-        <comments>SalesReasonKey</comments>
+        <comments>DateKey</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Date</type>
+        <storagetype>normal</storagetype>
+        <name>MovementDate</name>
+        <length>-1</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>MovementDate</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>UnitCost</name>
+        <length>19</length>
+        <precision>4</precision>
+        <origin>Table input</origin>
+        <comments>UnitCost</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>UnitsIn</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>UnitsIn</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>UnitsOut</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>UnitsOut</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>ca_ES</date_format_locale>
+        <date_format_timezone>Europe/Paris</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>UnitsBalance</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>UnitsBalance</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -750,15 +810,47 @@ FROM dbo.FactInternetSalesReason
     </partitioning>
     <fields>
       <field>
-        <name>SalesOrderNumber</name>
+        <name>ProductKey</name>
+        <rename/>
       </field>
       <field>
-        <name>SalesOrderLineNumber</name>
+        <name>MovementDate</name>
+        <rename/>
       </field>
       <field>
-        <name>SalesReasonKey</name>
+        <name>UnitCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsIn</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsOut</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsBalance</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>MovementDate</name>
+        <rename>MovementDate</rename>
+        <type>Date</type>
+        <length>10</length>
+        <precision>-2</precision>
+        <conversion_mask>MM/dd/yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -769,86 +861,8 @@ FROM dbo.FactInternetSalesReason
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>368</xloc>
       <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>columns #01_1</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>SalesOrderNumber</name>
-      </field>
-      <field>
-        <name>SalesOrderLineNumber</name>
-      </field>
-      <field>
-        <name>SalesReasonKey</name>
-      </field>
-      <field>
-        <name>FactInternetSalesReasonPK</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>624</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>inner join #01</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>columns #01</step1>
-    <step2>Calculator #01</step2>
-    <keys_1>
-      <key>SalesOrderNumber</key>
-      <key>SalesOrderLineNumber</key>
-      <key>SalesReasonKey</key>
-    </keys_1>
-    <keys_2>
-      <key>SalesOrderNumber</key>
-      <key>SalesOrderLineNumber</key>
-      <key>SalesReasonKey</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>480</xloc>
-      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -865,7 +879,7 @@ FROM dbo.FactInternetSalesReason
     </partitioning>
     <connection>datawarehouse</connection>
     <schema>target</schema>
-    <table>"FactInternetSalesReason"</table>
+    <table>"FactProductInventory"</table>
     <commit>100</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -882,20 +896,32 @@ FROM dbo.FactInternetSalesReason
     <return_field/>
     <fields>
       <field>
-        <column_name>"SalesOrderNumber"</column_name>
-        <stream_name>SalesOrderNumber</stream_name>
+        <column_name>"ProductKey"</column_name>
+        <stream_name>ProductKey</stream_name>
       </field>
       <field>
-        <column_name>"SalesOrderLineNumber"</column_name>
-        <stream_name>SalesOrderLineNumber</stream_name>
+        <column_name>"MovementDate"</column_name>
+        <stream_name>MovementDate</stream_name>
       </field>
       <field>
-        <column_name>"SalesReasonKey"</column_name>
-        <stream_name>SalesReasonKey</stream_name>
+        <column_name>"UnitCost"</column_name>
+        <stream_name>UnitCost</stream_name>
       </field>
       <field>
-        <column_name>"FactInternetSalesReasonPK"</column_name>
-        <stream_name>FactInternetSalesReasonPK</stream_name>
+        <column_name>"UnitsIn"</column_name>
+        <stream_name>UnitsIn</stream_name>
+      </field>
+      <field>
+        <column_name>"UnitsOut"</column_name>
+        <stream_name>UnitsOut</stream_name>
+      </field>
+      <field>
+        <column_name>"UnitsBalance"</column_name>
+        <stream_name>UnitsBalance</stream_name>
+      </field>
+      <field>
+        <column_name>"FactProductInventoryPK"</column_name>
+        <stream_name>FactProductInventoryPK</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -907,8 +933,8 @@ FROM dbo.FactInternetSalesReason
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
-      <yloc>112</yloc>
+      <xloc>992</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -932,7 +958,7 @@ FROM dbo.FactInternetSalesReason
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>SalesReasonKey</name>
+        <name>ProductKey</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -940,15 +966,7 @@ FROM dbo.FactInternetSalesReason
         <presorted>N</presorted>
       </field>
       <field>
-        <name>SalesOrderNumber</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-      <field>
-        <name>SalesOrderLineNumber</name>
+        <name>DateKey</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -967,6 +985,216 @@ FROM dbo.FactInternetSalesReason
     <GUI>
       <xloc>240</xloc>
       <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #01_1</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>MovementDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsIn</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsOut</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsBalance</name>
+        <rename/>
+      </field>
+      <field>
+        <name>MovementDate</name>
+        <rename>MovDate</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>MovementDate</name>
+        <rename>MovementDateStr</rename>
+        <type>String</type>
+        <length>8</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyyMMdd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Calculator #01</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>FactProductInventoryPK</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>MovementDateStr</field_a>
+      <field_b>ProductKey</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>20</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>inner join #01</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>columns #01_1</step1>
+    <step2>Calculator #01</step2>
+    <keys_1>
+      <key>ProductKey</key>
+      <key>MovDate</key>
+    </keys_1>
+    <keys_2>
+      <key>ProductKey</key>
+      <key>MovDate</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #01_2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ProductKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>MovDate</name>
+        <rename>MovementDate</rename>
+      </field>
+      <field>
+        <name>UnitCost</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsIn</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsOut</name>
+        <rename/>
+      </field>
+      <field>
+        <name>UnitsBalance</name>
+        <rename/>
+      </field>
+      <field>
+        <name>MovDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>FactProductInventoryPK</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
