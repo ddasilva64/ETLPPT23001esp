@@ -72,14 +72,6 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 
 <p><br></p>
 
-### **_Cases_**:
-
-- **_ETL mismatch 01_**: We forgot to create the metadata corresponding to this field. Need to repeat **_ETL_**, but with another name because trazabily  
-- **_ETL mismatch 02_**: We do not was removed a deprecated field in the final layout. Need to repeat **_ETL_**, but with another name because trazabily   
-- **_DWH mismatch 01_**: The metadata value was inserted into the metadata table at **_DWH_**, but the **_Comment_** property was not updated. We just need to update field property in **_DWH_**, because that was an oversight. No need to repeat **_ETL_**  
-
-<p><br></p>
-
 ### Tests
 
 ### [**_Test #001_**](tests/t001.md)
