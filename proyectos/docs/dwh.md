@@ -31,6 +31,7 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 | There is no repeated metadata content                                                 |       |                                   |                                   |
 | Primary Keys are well defined                                                         |       |                                   |                                   |
 | Foreign keys are well defined                                                         |       |                                   |                                   |
+| Relationships are well defined                                                        |       |                                   |                                   |
 
 <p><br></p>
 
