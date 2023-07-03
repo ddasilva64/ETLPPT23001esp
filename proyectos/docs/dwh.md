@@ -78,6 +78,7 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 ### [**_Test #001_**](tests/t001.md)
 ### [**_Test #002_**](tests/t002.md)
 ### [**_Test #003_**](tests/t003.md)
+### [**_Test #004_**](tests/t004.md)
 
 <p><br></p>
 

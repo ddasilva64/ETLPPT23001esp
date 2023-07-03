@@ -38,7 +38,7 @@ _SQL Server source in SQL Server Management studio_
 | Key	| Name                     | Data type    | Not null | Attributes | References            | Description      | Metadata |
 | :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :--------------- | :------: |
 | 1   | ProductKey               | integer      | X        |            | dbo.DimProduct        | PK,FK            | m084     |
-| 2   | MovementDate             | date         | X        |            |                       | PK,FK            | m176     |
+| 2   | MovementDate             | date         | X        |            |                       | PK               | m176     |
 | 3   | UnitCost                 | real         | X        |            |                       |                  | m177     |
 | 4   | UnitsIn                  | integer      | X        |            |                       |                  | m178     |
 | 5   | UnitsOut                 | integer      | X        |            |                       |                  | m179     |

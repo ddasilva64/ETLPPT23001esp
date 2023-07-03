@@ -83,8 +83,8 @@ By the way, we will use the next public domain data sources, for this task:
   | 3   | Capital               | Character variying(60)|          |            |                       |              |          |
   | 4   | RegionCode            | Integer               |          |            |                       | FK           |          |
   | 5   | SubregionCode         | Integer               |          |            |                       | FK           |          |
-  | 6   | CurrencyKey01         | Character variying(3) |          |            |                       | FK           |          |
-  | 7   | CurrencyKey02         | Character variying(3) |          |            |                       | FK           |          |
+  | 6   | CurrencyKey01         | Character variying(3) |          |            | DimCurrencies         | FK           |          |
+  | 7   | CurrencyKey02         | Character variying(3) |          |            | DimCurrencies         | FK           |          |
   | 8   | Area                  | Integer               |          |            |                       |              |          |
   
    <p><br></p>  
