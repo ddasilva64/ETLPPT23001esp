@@ -129,7 +129,7 @@ Meetings will be held (in person or by **_Microsoft Teams_**), between **_Advent
 
 #### **_Steps_**  
 
-1. Get data from data sources **_PROWPI001_**. Not categorical like (**_PROWPI001_** project), but numerical  
+1. Get data from data sources **_PROWPI001_**. Not categorical (like [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) project), but numerical  
 2. Get data from **_AdventureWorksDW2022_** (only from **_ISS - Internet Sales Subsystem -_**), and integrate production of **_PROWPI001_**. This will be **_PROWPI002_**  
 3. Get data from **_ISS.xls_** (from a shared server folder), and will be integrated into **_PROWPI002_**  
 4. **_Power BI BSC (Balanced Scorecard)_**, called **_ISS.pbix_** ,will get data from **_PROWPI002_**, and it will show metrics based on data  
