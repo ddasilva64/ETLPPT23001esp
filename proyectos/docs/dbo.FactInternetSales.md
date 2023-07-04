@@ -60,11 +60,11 @@ _SQL Server source in SQL Server Management studio_
 
   | Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | ProductKey            | integer               | X        |            | dbo.DimProduct        | FK           | m059     |
-  | 2   | CustomerKey           | integer               | X        |            | dbo.DimCustomer       | FK           | m060     |
-  | 3   | PromotionKey          | integer               | X        |            | dbo.DimPromotion      | FK           | m061     |
-  | 4   | CurrencyKey           | integer               | X        |            | dbo.DimCurrency	     | FK           | m062     |
-  | 5   | SalesTerritoryKey     | integer               | X        |            | dbo.DimSalesTerritory | FK           | m063     |
+  | 1   | ProductKey            | integer               | X        |            | DimProduct            | FK           | m059     |
+  | 2   | CustomerKey           | integer               | X        |            | DimCustomer           | FK           | m060     |
+  | 3   | PromotionKey          | integer               | X        |            | DimPromotion          | FK           | m061     |
+  | 4   | CurrencyKey           | integer               | X        |            | DimCurrencies 	     | FK           | m062     |
+  | 5   | SalesTerritoryKey     | integer               | X        |            | DimSalesTerritory     | FK           | m063     |
   | 6   | SalesOrderNumber      | Character variying(20)| X        |            |                       | PK           | m064     |
   | 7   | SalesOrderLineNumber  | integer               | X        |            |                       | PK           | m065     |
   | 8   | RevisionNumber        | integer               | X        |            |                       |              | m066     |
