@@ -103,77 +103,56 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
 ### **_Solution_**  
 
+The **_ETL_** process will generate tables (**_Facts_**, **_Dimensions_** and **_Metadata_**) in an **_DB OLTP_** (**_Postgre SQL_**). This will be our **_DWH_**  
+
+The reason to build **_DWH_** in **_Postgre SQL_**, but not **_SQL Server_** (corporate **_DB_**) is because they do not will interfere, and will live separately  
+
+The **_Metadata_** content will get the necessary **_business rules_**  
+
+**_DWH_** will follow the rules of a **_DBRMS_**, although it will have a **_snowflake_** structure   
+
+**_DWH_** will also pull parametric data from an **_Excel_** file (**_ISS.xls_**). These data may change over time (historical)  
+
+In addition, there will be a system of tables that will make it possible to forecast the future, to see how it has evolved, and if the forecast has been fulfilled  
+
+In the future, advanced **_AI_** modules will be incorporated into the **_ISS (Internet Sales Subsystem)_** as a **_Forecasting Subsystem_**  
+
+The metrics shown in the output **_Dashboard_** will help **_AdventureWorksDW2022_**, to make decisions to project the company internationally and quickly increase sales in new markets worldwide  
+
+Necessary **_QA_** will be reflected in **_DWH_**  
+
+All departments of **_Adventure Works Cycles, Inc._** undertake to transfer, quickly and with absolute transparency, the data necessary for the current process
+
+Also the management of **_Adventure Works Cycles, Inc._** agree to provide the necessary feedback to obtain the best information and **_UX (User eXperience)_** of the final **_BSC_**. This will be done as many times as necessary  
+
+Meetings will be held (in person or by **_Microsoft Teams_**), between **_Adventure Works Cycles, Inc._** and **_3DoWoCo_**, including the administrators and concerned employees  
+
 #### **_Steps_**  
 
-- **_ETL_** from **_PROWPI001_**, will be ported from **_Python_** to **_PDI_**  
-
-- Each table from different **raw (raw data source files)_** of **_PROWPI001_**, will generate a **_.KTR_** file (**_Transformation file_**), that is our client will be able to check transformation results, easily. Later, we will integrate transform tables from **_PROWPI001_** project in a **_fact table_** or in a **_dimension table_** (only one)   
-
-- The operational data, which as we have said, is in **_SQL Server_** (**_AdventureWorksDW2022_** DB), we will complete it with **_Excel_** parametric tables. These tables will be part of **_PROWPI002_**. Some of these parametric tables will be historic data   
-
-- **_Adventure Works Cycles, Inc._** provided us, in the DB, **_dimension tables (Dim prefix)_** and **_fact tables (fact prefix)_**  
-
-- They also need the following transformations:  
-
-  1. Each table will be a different **_.KTR_** file, just as we will do in our **_PROWPI001 raw_**  
-
-  2. All **_country data_** will be transformed to **_iso3 standard_** adopted in **_PROWPI001_** (**_more efficient and standard_**)  
-
-  3. **_All other geographic data will be replaced_** by standard names and geographic coordinates, and nothing else  
-
-  4. **_Each parametric table_** will be a different **_.KTR_** file, just as DB tables  
-
-  5. **_All multilingual references will be removed from the DB_** for two reasons:  
-    5.1. They will be external resources to the transactional applications, therefore, they must not be in the DB  
-    5.2. In a DS or BI application, they are not required  
-
-  6. For the same reasons, **_binary fields (such as images) will be removed from the DB_**  
-
-- **_PROWPI002 will focus on obtaining the productivity metrics of the Sales Dept. (Sales Department)_**, which will be able to obtain **_KPI (Key Performance Indicatos)_** from the **_HR Dept. (Human Resources Department_**)  
-
-- **_Sales Dept._** of **_Adventure Works Cycles, Inc._** commits to transfer, **_quickly and with absolute transparency_**, the **_data necessary to generate historical_** parametric data
-
-- **_HR Dept._** of **_Adventure Works Cycles, Inc._** undertakes to transfer, **_quickly and with absolute transparency_**, the **_data necessary and metrics desired for the control of the productivity of the Sales Dept._**  
-
-- The **_Adventure Works Cycles, Inc. Management_** agrees t**_o provide the necessary feedback_**, to obtain the best information and **_UX (User eXperience)_** of the final **_BSC_**. **_This will be done, as many times as it goes off_**  
-
-- Meetings (in person or by **_Microsoft Teams_**), between **_Adventure Works Cycles, Inc._**, and **_3DoWoCo_**, including to concerned Managers or employees    
+1. Get data from data sources **_PROWPI001_**. Not categorical like (**_PROWPI001_** project), but numerical  
+2. Get data from **_AdventureWorksDW2022_** (only from **_ISS - Internet Sales Subsystem -_**), and integrate production of **_PROWPI001_**. This will be **_PROWPI002_**  
+3. Get data from **_ISS.xls_** (from a shared server folder), and will be integrated into **_PROWPI002_**  
+4. **_Power BI BSC (Balanced Scorecard)_**, called **_ISS.pbix_** ,will get data from **_PROWPI002_**, and it will show metrics based on data  
+5. **_ISS.pbix_** will be deployed in corporate **_Power BI Service_** of **_Adventure Works Cycles, Inc._**  
 
 [Back to Table of contents :arrow_double_up:](../README.md)
 
 #### **_Goals_**  
 
-**_PROWPI001 ETL (from [PROWPI001](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) data sources)_**  
+1. **_PROWPI001 ETL_**  
+2. **_PROWPI002 ETL_**  
+3. **_DWH QA & optimizations_**  
+  - **_-> Meeting_**  
+4. **_Parametric data ETL_**  
+5. **_DWH QA & optimizations_**  
+  - **_-> Meeting_**  
+6. **_Metrics definitions (from the data contained in the fact tables)**_  
+7. **_Build BSC in Power BI_**  
+8. **_BSC deployment in Power BI Service_**  
+  - **_-> Deployment presentation_**  
+9. **_Final acceptance_**  
 
-It will generate, and check **_QA_** of the next staging tables (**_Postgre SQL_**):  
-
-  1. **_Countries_** (dimension and fact table)  
-  2. **_Metadata_** (metadata table)  
-
-**_Atention!_**: While the importance of metadata cannot be overstated, the reason to use it is to help drive reporting accuracy, validate data transformation, and ensure calculation accuracy. Metadata also imposes the definition of terms such as indicators, standards, etc. In the development of the DWH, metadata appears, and with it arises the need to create a table with this content  
-
-**_PROWPI002 ETL (from AdventureWorksDW2022 DB)_**  
-
-It will generate, and check **_QA_** of the next staging clean dimension tables (**_Postgre SQL_**):  
-
-  1. **_Dates_**  
-  2. **_Promotions_**  
-  3. **_Currencies_**  
-  4. **_Customers_**  
-  5. **_Geographyc_** (main geographyc data will be in **_PROWPI001 ETL_**)  
-  6. **_Sales_**  
-  7. **_Products_**  
-  8. **_Promotions_**  
-  9. **_Employees_**  
-  10. **_Resellers_**  
-
-It will generate, and check **_QA_** of the next staging clean fact tables (**_Postgre SQL_**):   
-
-  1. **_Internet sales_**  
-  2. **_Reseller sales_**  
-  3. **_Product inventory_**  
-
-**_Notice_**: **_Adventure Works Cycles, Inc._** has decided that multilingual capabilities into the DB (in general) are pointless. In addition, specifically for DS, and BI, since the users are internal and at managerial level, they must have worldwide pro knowledge of English. Also, binary picture fields are deprecated in DB  
+**_Notice_**: DWH optimizations will do though dimensional reductions in DB views, but not in tables directly. The reason is because of the information traceability   
 
 [Back to Table of contents :arrow_double_up:](../README.md)
 
