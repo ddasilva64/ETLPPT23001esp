@@ -1314,67 +1314,51 @@ FROM dbo.DimCustomer
     <fields>
       <field>
         <name>CustomerKey</name>
-        <rename/>
       </field>
       <field>
         <name>GeographyKey</name>
-        <rename/>
       </field>
       <field>
         <name>CustomerAlternateKey</name>
-        <rename/>
       </field>
       <field>
         <name>Title</name>
-        <rename/>
       </field>
       <field>
         <name>FirstName</name>
-        <rename/>
       </field>
       <field>
         <name>MiddleName</name>
-        <rename/>
       </field>
       <field>
         <name>LastName</name>
-        <rename/>
       </field>
       <field>
         <name>NameStyle</name>
-        <rename/>
       </field>
       <field>
         <name>BirthDate</name>
-        <rename/>
       </field>
       <field>
         <name>MaritalStatus</name>
-        <rename/>
       </field>
       <field>
         <name>Suffix</name>
-        <rename/>
       </field>
       <field>
         <name>Gender</name>
-        <rename/>
       </field>
       <field>
         <name>EmailAddress</name>
-        <rename/>
       </field>
       <field>
         <name>YearlyIncome</name>
-        <rename/>
       </field>
       <field>
         <name>TotalChildren</name>
-        <rename/>
       </field>
       <field>
         <name>NumberChildrenAtHome</name>
-        <rename/>
       </field>
       <field>
         <name>EnglishEducation</name>
@@ -1386,31 +1370,24 @@ FROM dbo.DimCustomer
       </field>
       <field>
         <name>HouseOwnerFlag</name>
-        <rename/>
       </field>
       <field>
         <name>NumberCarsOwned</name>
-        <rename/>
       </field>
       <field>
         <name>AddressLine1</name>
-        <rename/>
       </field>
       <field>
         <name>AddressLine2</name>
-        <rename/>
       </field>
       <field>
         <name>Phone</name>
-        <rename/>
       </field>
       <field>
         <name>DateFirstPurchase</name>
-        <rename/>
       </field>
       <field>
         <name>CommuteDistance</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -1458,48 +1435,6 @@ FROM dbo.DimCustomer
     </remotesteps>
     <GUI>
       <xloc>352</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>sort #01</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory/>
-    <compress>N</compress>
-    <compress_variable/>
-    <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>CustomerKey</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1644,6 +1579,48 @@ FROM dbo.DimCustomer
     </remotesteps>
     <GUI>
       <xloc>464</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sort #01</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CustomerKey</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>

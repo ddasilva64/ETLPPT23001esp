@@ -845,7 +845,7 @@
     </remotesteps>
     <GUI>
       <xloc>784</xloc>
-      <yloc>128</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1317,7 +1317,7 @@ FROM dbo.DimGeography
     </remotesteps>
     <GUI>
       <xloc>640</xloc>
-      <yloc>128</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1406,7 +1406,7 @@ FROM dbo.DimGeography
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1248</xloc>
+      <xloc>1264</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1475,7 +1475,7 @@ FROM dbo.DimGeography
     </remotesteps>
     <GUI>
       <xloc>1040</xloc>
-      <yloc>128</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1499,7 +1499,7 @@ FROM dbo.DimGeography
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>SpanishCountryRegionName</name>
+        <name>EnglishCountryRegionName</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1643,7 +1643,7 @@ FROM dbo.DimGeography
     </remotesteps>
     <GUI>
       <xloc>928</xloc>
-      <yloc>128</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
