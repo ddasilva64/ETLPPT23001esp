@@ -51,7 +51,7 @@ _SQL Server source in SQL Server Management studio_
 | Key	| Name                     | Data type             | Not null | Attributes | References            | Description       | Metadata |
 | :-: | :----------------------- | :-------------------: | :------: | :--------- | :-------------------- | :---------------- | :------: |
 | 1   | ResellerKey              | integer               | X        |            |                       | PK                | m159     |
-| 2   | GeographyKey             | integer               |          |            | dbo.DimGeography      | FK                | m141     |
+| 2   | GeographyKey             | integer               |          |            | DimGeography          | FK                | m141     |
 | 3   | Phone                    | character varying(25) |          |            |                       |                   | m043     |
 | 4   | BusinessType             | character varying(20) | X        |            |                       |                   | m160     |
 | 6   | ResellerName             | character varying(50) | X        |            |                       |                   | m161     |

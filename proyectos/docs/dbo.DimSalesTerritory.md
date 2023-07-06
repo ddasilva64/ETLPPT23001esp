@@ -42,7 +42,7 @@ _SQL Server source in SQL Server Management studio_
   | 1   | SalesTerritoryKey     | Integer               | X        |            |                       | PK           | m063     |  
   | 2   | SalesTerritoryRegion  | Character variying(60)|          |            |                       |              | m173     |
   | 3   | SalesTerritoryGroup   | Character variying(60)|          |            |                       |              | m175     |
-  | 4   | CountryCode           | Character variying(3) |          |            |                       | FK           | m174     |
+  | 4   | CountryCode           | Character variying(3) |          |            | DimCountries          | FK           | m174     |
   
    <p><br></p>  
  

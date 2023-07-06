@@ -68,7 +68,7 @@
           15. [FactResellerSales  Metadata](docs/FactResellerSales_Metadata.md)  
           - **_Postgre SQL ERDs_**  
           1. [Internet Sales Subsystem - DWH - ERD](docs/ISS_DWH_ERD.md)  
-          2. [Additional tables - DWH - ERD]  
+          2. [Additional tables - DWH - ERD](https://i.imgur.com/Hx93TgT.png)    
         - [PROWPI002 ETL (parametric data)](docs/prowpi002_etl_parametric_data.md)  
 - [DWH (Data Warehouse)](docs/dwh.md)
 - [Metrics](docs/metrics.md)

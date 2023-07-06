@@ -1,5 +1,7 @@
 ## **_dbo.DimEmployee (SQL Server table)_**  
 
+**_Warning!_**: In this case, **_Adventure Works Cycles, Inc._** had **_NA_** values for empty **_SalesTerritoryKey_**. This is a wrong strategy, we will replace it with a **_null string_** because it will be a **_FK_** in **_DWH_**, and we do not need **_NA_** into DS or BI target system, for proper operation  
+
 ### Columns  
 
 | Key	| Name                                 | Data type      | Not null | Attributes | References            | Description | Metadata |
@@ -49,12 +51,12 @@ _SQL Server source in SQL Server Management studio_
  
    <p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/zNZQe71.png)  
+  ![PDI transform](https://i.imgur.com/TBdZX5j.png)  
   _PDI transform_  
 
   <p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/ZPtSCO0.png)  
+  ![PDI execution](https://i.imgur.com/WIP4TZJ.png)  
   _PDI execution_ 
 
 ### **_<p><br>DimEmployee layout (Postgre SQL)</p>_**  
@@ -62,10 +64,10 @@ _SQL Server source in SQL Server Management studio_
 | Key	| Name                                 | Data type             | Not null | Attributes | References            | Description       | Metadata |
 | :-: | :----------------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :---------------- | :------- |
 | 1   | EmployeeKey                          | integer               | X        |            |                       | PK                | m029     |
-| 2   | ParentEmployeeKey                    | integer               |          |            | dbo.DimEmployee       | FK                | m030     |
+| 2   | ParentEmployeeKey                    | integer               |          |            | DimEmployee           | FK                | m030     |
 | 3   | EmployeeNationalIDAlternateKey       | character varying(15) |          |            |                       |                   | m031     |
 | 4   | ParentEmployeeNationalIDAlternateKey | character varying(15) |          |            |                       |                   | m032     |
-| 5   | SalesTerritoryKey                    | integer               |          |            | dbo.DimSalesTerritory | FK                | m033     |
+| 5   | SalesTerritoryKey                    | integer               |          |            | DimSalesTerritory     | FK                | m033     |
 | 6   | FirstName                            | character varying(50) | X        |            |                       |                   | m034     |
 | 7   | LastName                             | character varying(50) | X        |            |                       |                   | m035     |
 | 8   | MiddleName                           | character varying(50) |          |            |                       |                   | m036     |
@@ -94,7 +96,7 @@ _SQL Server source in SQL Server Management studio_
 
    <p><br></p>  
  
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/k4oWdG0.png)  
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/3GM3vhj.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
 
   **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  

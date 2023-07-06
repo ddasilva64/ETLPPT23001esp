@@ -563,6 +563,16 @@
     </hop>
     <hop>
       <from>columns #01</from>
+      <to>Null if #01</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Null if #01</from>
+      <to>columns #02</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>columns #02</from>
       <to>output #01</to>
       <enabled>Y</enabled>
     </hop>
@@ -1362,123 +1372,93 @@ FROM dbo.DimEmployee
     <fields>
       <field>
         <name>EmployeeKey</name>
-        <rename/>
       </field>
       <field>
         <name>ParentEmployeeKey</name>
-        <rename/>
       </field>
       <field>
         <name>EmployeeNationalIDAlternateKey</name>
-        <rename/>
       </field>
       <field>
         <name>ParentEmployeeNationalIDAlternateKey</name>
-        <rename/>
       </field>
       <field>
         <name>SalesTerritoryKey</name>
-        <rename/>
       </field>
       <field>
         <name>FirstName</name>
-        <rename/>
       </field>
       <field>
         <name>LastName</name>
-        <rename/>
       </field>
       <field>
         <name>MiddleName</name>
-        <rename/>
       </field>
       <field>
         <name>NameStyle</name>
-        <rename/>
       </field>
       <field>
         <name>Title</name>
-        <rename/>
       </field>
       <field>
         <name>HireDate</name>
-        <rename/>
       </field>
       <field>
         <name>BirthDate</name>
-        <rename/>
       </field>
       <field>
         <name>LoginID</name>
-        <rename/>
       </field>
       <field>
         <name>EmailAddress</name>
-        <rename/>
       </field>
       <field>
         <name>Phone</name>
-        <rename/>
       </field>
       <field>
         <name>MaritalStatus</name>
-        <rename/>
       </field>
       <field>
         <name>EmergencyContactName</name>
-        <rename/>
       </field>
       <field>
         <name>EmergencyContactPhone</name>
-        <rename/>
       </field>
       <field>
         <name>SalariedFlag</name>
-        <rename/>
       </field>
       <field>
         <name>Gender</name>
-        <rename/>
       </field>
       <field>
         <name>PayFrequency</name>
-        <rename/>
       </field>
       <field>
         <name>BaseRate</name>
-        <rename/>
       </field>
       <field>
         <name>VacationHours</name>
-        <rename/>
       </field>
       <field>
         <name>SickLeaveHours</name>
-        <rename/>
       </field>
       <field>
         <name>CurrentFlag</name>
-        <rename/>
       </field>
       <field>
         <name>SalesPersonFlag</name>
-        <rename/>
       </field>
       <field>
         <name>DepartmentName</name>
-        <rename/>
       </field>
       <field>
         <name>StartDate</name>
-        <rename/>
       </field>
       <field>
         <name>EndDate</name>
-        <rename/>
       </field>
       <field>
         <name>Status</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -1723,7 +1703,7 @@ FROM dbo.DimEmployee
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>768</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1766,6 +1746,301 @@ FROM dbo.DimEmployee
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>columns #02</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>EmployeeKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ParentEmployeeKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EmployeeNationalIDAlternateKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ParentEmployeeNationalIDAlternateKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesTerritoryKey</name>
+        <rename/>
+      </field>
+      <field>
+        <name>FirstName</name>
+        <rename/>
+      </field>
+      <field>
+        <name>LastName</name>
+        <rename/>
+      </field>
+      <field>
+        <name>MiddleName</name>
+        <rename/>
+      </field>
+      <field>
+        <name>NameStyle</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Title</name>
+        <rename/>
+      </field>
+      <field>
+        <name>HireDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>BirthDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>LoginID</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EmailAddress</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Phone</name>
+        <rename/>
+      </field>
+      <field>
+        <name>MaritalStatus</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EmergencyContactName</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EmergencyContactPhone</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalariedFlag</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Gender</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PayFrequency</name>
+        <rename/>
+      </field>
+      <field>
+        <name>BaseRate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>VacationHours</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SickLeaveHours</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CurrentFlag</name>
+        <rename/>
+      </field>
+      <field>
+        <name>SalesPersonFlag</name>
+        <rename/>
+      </field>
+      <field>
+        <name>DepartmentName</name>
+        <rename/>
+      </field>
+      <field>
+        <name>StartDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>EndDate</name>
+        <rename/>
+      </field>
+      <field>
+        <name>Status</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Null if #01</name>
+    <type>NullIf</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>EmployeeKey</name>
+        <value/>
+      </field>
+      <field>
+        <name>ParentEmployeeKey</name>
+        <value/>
+      </field>
+      <field>
+        <name>EmployeeNationalIDAlternateKey</name>
+        <value/>
+      </field>
+      <field>
+        <name>ParentEmployeeNationalIDAlternateKey</name>
+        <value/>
+      </field>
+      <field>
+        <name>SalesTerritoryKey</name>
+        <value>11</value>
+      </field>
+      <field>
+        <name>FirstName</name>
+        <value/>
+      </field>
+      <field>
+        <name>LastName</name>
+        <value/>
+      </field>
+      <field>
+        <name>MiddleName</name>
+        <value/>
+      </field>
+      <field>
+        <name>NameStyle</name>
+        <value/>
+      </field>
+      <field>
+        <name>Title</name>
+        <value/>
+      </field>
+      <field>
+        <name>HireDate</name>
+        <value/>
+      </field>
+      <field>
+        <name>BirthDate</name>
+        <value/>
+      </field>
+      <field>
+        <name>LoginID</name>
+        <value/>
+      </field>
+      <field>
+        <name>EmailAddress</name>
+        <value/>
+      </field>
+      <field>
+        <name>Phone</name>
+        <value/>
+      </field>
+      <field>
+        <name>MaritalStatus</name>
+        <value/>
+      </field>
+      <field>
+        <name>EmergencyContactName</name>
+        <value/>
+      </field>
+      <field>
+        <name>EmergencyContactPhone</name>
+        <value/>
+      </field>
+      <field>
+        <name>SalariedFlag</name>
+        <value/>
+      </field>
+      <field>
+        <name>Gender</name>
+        <value/>
+      </field>
+      <field>
+        <name>PayFrequency</name>
+        <value/>
+      </field>
+      <field>
+        <name>BaseRate</name>
+        <value/>
+      </field>
+      <field>
+        <name>VacationHours</name>
+        <value/>
+      </field>
+      <field>
+        <name>SickLeaveHours</name>
+        <value/>
+      </field>
+      <field>
+        <name>CurrentFlag</name>
+        <value/>
+      </field>
+      <field>
+        <name>SalesPersonFlag</name>
+        <value/>
+      </field>
+      <field>
+        <name>DepartmentName</name>
+        <value/>
+      </field>
+      <field>
+        <name>StartDate</name>
+        <value/>
+      </field>
+      <field>
+        <name>EndDate</name>
+        <value/>
+      </field>
+      <field>
+        <name>Status</name>
+        <value/>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>

@@ -22,7 +22,7 @@
 
   | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK        | m001     |
+  | 1   | CountryCode           | Character variying(3) | X        |            | DimCountries          | PK,FK        | m001     |
   | 2   | Population            | integer               |          |            |                       |              | m005     |
   | 3   | PDR                   | real                  |          |            |                       |              | m006     |
   | 4   | PGR                   | real                  |          |            |                       |              | m007     |  

@@ -61,7 +61,7 @@ _SQL Server source in SQL Server Management studio_
 | Key | Name                     | Data type              | Not null | Attributes | References            | Description  | Metadata |
 | :-: | :----------------------- | :--------------------: | :------: | :--------- | :-------------------- | :----------- | :------: |
 | 1   | CustomerKey              | integer                | X        |            |                       | PK           | m060     |
-| 2   | GeographyKey             | integer                |          |            | dbo.DimGeography      | FK           | m107     |
+| 2   | GeographyKey             | integer                |          |            | DimGeography          | FK           | m107     |
 | 3   | CustomerAlternateKey     | Character variying(15) |          |            |                       |              | m108     |
 | 4   | Title                    | Character variying(8)  |          |            |                       |              | m109     |
 | 5   | FirstName                | Character variying(50) |          |            |                       |              | m034     |
