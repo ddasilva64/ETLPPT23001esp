@@ -58,12 +58,12 @@ _SQL Server source in SQL Server Management studio_
 
 | Key	| Name                     | Data type             | Not null | Attributes | References            | Description  | Metadata |
 | :-: | :----------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------: |
-| 1   | ProductKey               | integer               | X        |            | dbo.DimProduct        | FK           | m084     |
-| 2   | ResellerKey              | integer               | X        |            | dbo.DimReseller       | FK           | m159     |
-| 3   | EmployeeKey              | integer               | X        |            | dbo.DimEmployee       | FK           | m029     |
-| 4   | PromotionKey             | integer               | X        |            | dbo.DimPromotion      | FK           | m150     |
-| 5   | CurrencyKey              | character varying(3)  | X        |            | dbo.DimCurrency       | FK           | m082     |
-| 6   | SalesTerritoryKey        | integer               | X        |            | dbo.DimSalesTerritory | FK           | m063     |
+| 1   | ProductKey               | integer               | X        |            | DimProduct            | FK           | m084     |
+| 2   | ResellerKey              | integer               | X        |            | DimReseller           | FK           | m159     |
+| 3   | EmployeeKey              | integer               | X        |            | DimEmployee           | FK           | m029     |
+| 4   | PromotionKey             | integer               | X        |            | DimPromotion          | FK           | m150     |
+| 5   | CurrencyKey              | character varying(3)  | X        |            | DimCurrency           | FK           | m082     |
+| 6   | SalesTerritoryKey        | integer               | X        |            | DimSalesTerritory     | FK           | m063     |
 | 7   | SalesOrderNumber         | character varying(20) | X        |            |                       | PK           | m064     |
 | 8   | SalesOrderLineNumber     | integer               | X        |            |                       | PK           | m065     |
 | 9   | RevisionNumber           | integer               | X        |            |                       |              | m066     |

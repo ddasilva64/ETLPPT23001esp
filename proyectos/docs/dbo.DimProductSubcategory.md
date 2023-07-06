@@ -38,7 +38,7 @@ _SQL Server source in SQL Server Management studio_
 | :-: | :----------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :--------------------- | :------: |
 | 1   | ProductSubcategoryKey          | integer               | X        |            |                       | PK                     | m145     |
 | 2   | ProductSubcategory             | character varying(50) | X        |            |                       |                        | m146     |
-| 3   | ProductCategoryKey             | integer               |          |            | dbo.DimProductCategory| FK                     |	m121     |
+| 3   | ProductCategoryKey             | integer               |          |            | DimProductCategory    | FK                     |	m121     |
 
    <p><br></p>  
  

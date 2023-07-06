@@ -33,9 +33,9 @@ _SQL Server source in SQL Server Management studio_
 
 | Key	| Name                        | Data type             | Not null | Attributes | References            | Description         | Metadata |
 | :-: | :-------------------------- | :-------------------: | :------: | :--------- | :-------------------- | :------------------ | :------: |
-| 1   | SalesOrderNumber            | character varying(20) | X        |            | dbo.FactInternetSales | PK,FK               | m147     |
-| 2   | SalesOrderLineNumber        | integer               | X        |            | dbo.FactInternetSales | PK,FK               | m148     |
-| 3   | SalesReasonKey              | integer               | X        |            | dbo.DimSalesReason    | PK,FK               | m149     |
+| 1   | SalesOrderNumber            | character varying(20) | X        |            | FactInternetSales     | PK,FK               | m147     |
+| 2   | SalesOrderLineNumber        | integer               | X        |            | FactInternetSales     | PK,FK               | m148     |
+| 3   | SalesReasonKey              | integer               | X        |            | DimSalesReason        | PK,FK               | m149     |
 
    <p><br></p>  
  

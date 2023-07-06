@@ -19,7 +19,7 @@
 
   | Key	| Name                  | Data type             | Not null | Attributes | References            | Description | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :-----------| :------- |
-  | 1   | CountryCode           | Character variying(3) | X        |            |                       | PK,FK       | m001     |
+  | 1   | CountryCode           | Character variying(3) | X        |            | DimCountries          | PK,FK       | m001     |
   | 2   | EYS                   | real                  |          |            |                       |             | m017     |
   | 3   | FEYS                  | real                  |          |            |                       |             | m018     |
   | 4   | MEYS                  | real                  |          |            |                       |             | m019     |

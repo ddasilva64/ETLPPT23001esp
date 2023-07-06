@@ -69,7 +69,7 @@ _SQL Server source in SQL Server Management studio_
 | :-: | :----------------------- | :-------------------: | :------: | :--------- | :------------------------ | :---------- | :------: |
 | 1   | ProductKey               | integer               | X        |            |                           | PK          | m084     |
 | 2   | ProductAlternateKey      | character varying(25) |          |            |                           |             | m085     |
-| 3   | ProductSubcategoryKey    | integer               |          |            | dbo.DimProductSubcategory | FK          | m086     |   
+| 3   | ProductSubcategoryKey    | integer               |          |            | DimProductSubcategory     | FK          | m086     |   
 | 4   | WeightUnitMeasureCode    | character varying(3)  |          |            |                           |             | m087     |
 | 5   | SizeUnitMeasureCode      | character varying(3)  |          |            |                           |             | m088     |
 | 6   | ProductName              | character varying(50) | X        |            |                           |             | m089     |
