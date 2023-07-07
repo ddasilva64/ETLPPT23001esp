@@ -1,0 +1,194 @@
+"CountryCode","Country","Capital","RegionCode","SubregionCode","CurrencyKey01","CurrencyKey02","Area"
+"afg","Afghanistan","Kabul",142,34,"afn",NULL,652230
+"ago","Angola","Luanda",2,202,"aoa",NULL,1246700
+"alb","Albania","Tirana",150,39,"all",NULL,28748
+"and","Andorra","Andorra la Vella",150,39,"eur",NULL,468
+"are","United Arab Emirates","Abu Dhabi",142,145,"aed",NULL,83600
+"arg","Argentina","Buenos Aires",19,419,"ars",NULL,2780400
+"arm","Armenia","Yerevan",142,145,"amd",NULL,29743
+"atg","Antigua and Barbuda","St. John's",19,419,"xcd",NULL,442
+"aus","Australia","Canberra",9,53,"aud",NULL,7692024
+"aut","Austria","Vienna",150,155,"eur",NULL,83871
+"aze","Azerbaijan","Baku",142,145,"azn",NULL,86600
+"bdi","Burundi","Bujumbura",2,202,"bif",NULL,27834
+"bel","Belgium","Brussels",150,155,"eur",NULL,30528
+"ben","Benin","Porto-Novo",2,202,"xof",NULL,112622
+"bfa","Burkina Faso","Ouagadougou",2,202,"xof",NULL,272967
+"bgd","Bangladesh","Dhaka",142,34,"bdt",NULL,147570
+"bgr","Bulgaria","Sofia",150,151,"bgn",NULL,110879
+"bhr","Bahrain","Manama",142,145,"bhd",NULL,765
+"bhs","Bahamas","Nassau",19,419,"bsd",NULL,13943
+"bih","Bosnia and Herzegovina","Sarajevo",150,39,"bam",NULL,51209
+"blr","Belarus","Minsk",150,151,"byn",NULL,207600
+"blz","Belize","Belmopan",19,419,"bzd",NULL,22966
+"bol","Bolivia (Plurinational State of)","Sucre",19,419,"bob",NULL,1098581
+"bra","Brazil","Brasilia",19,419,"brl",NULL,8515767
+"brb","Barbados","Bridgetown",19,419,"bbd",NULL,430
+"brn","Brunei Darussalam","Bandar Seri Begawan",142,35,"bnd",NULL,5765
+"bwa","Botswana","Gaborone",2,202,"bwp",NULL,582000
+"caf","Central African Republic","Bangui",2,202,"xaf",NULL,622984
+"can","Canada","Ottawa",19,21,"cad",NULL,9984670
+"che","Switzerland","Bern",150,155,"chf",NULL,41284
+"chl","Chile","Santiago",19,419,"clp",NULL,756102
+"chn","China","Beijing",142,30,"cny",NULL,9706961
+"civ","Cote d'Ivoire","Yamoussoukro",2,202,"xof",NULL,322463
+"cmr","Cameroon","Yaounde",2,202,"xaf",NULL,475442
+"cod","Congo, Democratic Republic of the","Kinshasa",2,202,"cdf",NULL,2345000
+"cog","Congo","Brazzaville",2,202,"xaf",NULL,342000
+"col","Colombia","Bogota",19,419,"cop",NULL,1141748
+"com","Comoros","Moroni",2,202,"kmf",NULL,1862
+"cpv","Cabo Verde","Praia",2,202,"cve",NULL,4033
+"cri","Costa Rica","San Jose",19,419,"crc",NULL,51100
+"cyp","Cyprus","Nicosia",142,145,"eur",NULL,9251
+"cze","Czechia","Prague",150,151,"czk",NULL,78865
+"deu","Germany","Berlin",150,155,"eur",NULL,357114
+"dji","Djibouti","Djibouti",2,202,"djf",NULL,23200
+"dma","Dominica","Roseau",19,419,"xcd",NULL,751
+"dnk","Denmark","Copenhagen",150,154,"dkk",NULL,43094
+"dom","Dominican Republic","Santo Domingo",19,419,"dop",NULL,48671
+"dza","Algeria","Algiers",2,15,"dzd",NULL,2381741
+"ecu","Ecuador","Quito",19,419,"usd",NULL,276841
+"egy","Egypt","Cairo",2,15,"egp",NULL,1002450
+"eri","Eritrea","Asmara",2,202,"ern",NULL,117600
+"esp","Spain","Madrid",150,39,"eur",NULL,505992
+"est","Estonia","Tallinn",150,154,"eur",NULL,45227
+"eth","Ethiopia","Addis Ababa",2,202,"etb",NULL,1104300
+"fin","Finland","Helsinki",150,154,"eur",NULL,338424
+"fji","Fiji","Suva",9,54,"fjd",NULL,18272
+"fra","France","Paris",150,155,"eur",NULL,551695
+"fsm","Micronesia (Federated States of)","Palikir",9,57,"usd",NULL,702
+"gab","Gabon","Libreville",2,202,"xaf",NULL,267668
+"gbr","United Kingdom of Great Britain and Northern Ireland","London",150,154,"gbp",NULL,242900
+"geo","Georgia","Tbilisi",142,145,"gel",NULL,69700
+"gha","Ghana","Accra",2,202,"ghs",NULL,238533
+"gin","Guinea","Conakry",2,202,"gnf",NULL,245857
+"gmb","Gambia","Banjul",2,202,"gmd",NULL,10689
+"gnb","Guinea-Bissau","Bissau",2,202,"xof",NULL,36125
+"gnq","Equatorial Guinea","Malabo",2,202,"xaf",NULL,28051
+"grc","Greece","Athens",150,39,"eur",NULL,131990
+"grd","Grenada","St. George's",19,419,"xcd",NULL,344
+"gtm","Guatemala","Guatemala City",19,419,"gtq",NULL,108889
+"guy","Guyana","Georgetown",19,419,"gyd",NULL,214969
+"hnd","Honduras","Tegucigalpa",19,419,"hnl",NULL,112492
+"hrv","Croatia","Zagreb",150,39,"hrk",NULL,56594
+"hun","Hungary","Budapest",150,151,"huf",NULL,93028
+"idn","Indonesia","Jakarta",142,35,"idr",NULL,1904569
+"ind","India","New Delhi",142,34,"inr",NULL,3287590
+"irl","Ireland","Dublin",150,154,"eur",NULL,70273
+"irn","Iran (Islamic Republic of)","Tehran",142,34,"irr",NULL,1648195
+"irq","Iraq","Baghdad",142,145,"iqd",NULL,438317
+"isl","Iceland","Reykjavik",150,154,"isk",NULL,103000
+"isr","Israel","Jerusalem",142,145,"ils",NULL,20770
+"ita","Italy","Rome",150,39,"eur",NULL,301336
+"jam","Jamaica","Kingston",19,419,"jmd",NULL,10991
+"jor","Jordan","Amman",142,145,"jod",NULL,89342
+"jpn","Japan","Tokyo",142,30,"jpy",NULL,377930
+"kaz","Kazakhstan","Astana",142,143,"kzt",NULL,2724900
+"ken","Kenya","Nairobi",2,202,"kes",NULL,580367
+"kgz","Kyrgyzstan","Bishkek",142,143,"kgs",NULL,199951
+"khm","Cambodia","Phnom Penh",142,35,"khr",NULL,181035
+"kir","Kiribati","Tarawa",9,57,"aud",NULL,811
+"kna","Saint Kitts and Nevis","Basseterre",19,419,"xcd",NULL,261
+"kor","Korea, Republic of","Seoul",142,30,"krw",NULL,100210
+"kwt","Kuwait","Kuwait City",142,145,"kwd",NULL,17818
+"lao","Lao People's Democratic Republic","Vientiane",142,35,"lak",NULL,236800
+"lbn","Lebanon","Beirut",142,145,"lbp",NULL,10452
+"lbr","Liberia","Monrovia",2,202,"lrd",NULL,111369
+"lby","Libya","Tripoli",2,15,"lyd",NULL,1759540
+"lca","Saint Lucia","Castries",19,419,"xcd",NULL,616
+"lie","Liechtenstein","Vaduz",150,155,"chf",NULL,160
+"lka","Sri Lanka","Colombo",142,34,"lkr",NULL,65610
+"ltu","Lithuania","Vilnius",150,154,"eur",NULL,65300
+"lux","Luxembourg","Luxembourg",150,155,"eur",NULL,2586
+"lva","Latvia","Riga",150,154,"eur",NULL,64559
+"mar","Morocco","Rabat",2,15,"mad",NULL,446550
+"mco","Monaco","Monaco",150,155,"eur",NULL,2
+"mda","Moldova, Republic of","Chisinau",150,151,"mdl",NULL,33846
+"mdg","Madagascar","Antananarivo",2,202,"mga",NULL,587041
+"mdv","Maldives","Male",142,34,"mvr",NULL,300
+"mex","Mexico","Mexico City",19,419,"mxn",NULL,1964375
+"mhl","Marshall Islands","Majuro",9,57,"usd",NULL,181
+"mkd","North Macedonia","Skopje",150,39,"mkd",NULL,25713
+"mli","Mali","Bamako",2,202,"xof",NULL,1240192
+"mlt","Malta","Valletta",150,39,"eur",NULL,316
+"mmr","Myanmar","Nay Pyi Taw",142,35,"mmk",NULL,676578
+"mne","Montenegro","Podgorica",150,39,"eur",NULL,13812
+"mng","Mongolia","Ulan Bator",142,30,"mnt",NULL,1564110
+"moz","Mozambique","Maputo",2,202,"mzn",NULL,801590
+"mrt","Mauritania","Nouakchott",2,202,"mru",NULL,1030700
+"mus","Mauritius","Port Louis",2,202,"mur",NULL,2040
+"mwi","Malawi","Lilongwe",2,202,"mwk",NULL,118484
+"mys","Malaysia","Kuala Lumpur",142,35,"myr",NULL,330803
+"ner","Niger","Niamey",2,202,"xof",NULL,1267000
+"nga","Nigeria","Abuja",2,202,"ngn",NULL,923768
+"nic","Nicaragua","Managua",19,419,"nio",NULL,130373
+"nld","Netherlands","Amsterdam",150,155,"eur",NULL,41850
+"nor","Norway","Oslo",150,154,"nok",NULL,323802
+"npl","Nepal","Kathmandu",142,34,"npr",NULL,147181
+"nru","Nauru","Yaren",9,57,"aud",NULL,21
+"nzl","New Zealand","Wellington",9,53,"nzd",NULL,270467
+"omn","Oman","Muscat",142,145,"omr",NULL,309500
+"pak","Pakistan","Islamabad",142,34,"pkr",NULL,881912
+"per","Peru","Lima",19,419,"pen",NULL,1285216
+"phl","Philippines","Manila",142,35,"php",NULL,342353
+"plw","Palau","Melekeok",9,57,"usd",NULL,459
+"png","Papua New Guinea","Port Moresby",9,54,"pgk",NULL,462840
+"pol","Poland","Warsaw",150,151,"pln",NULL,312679
+"prk","Korea (Democratic People's Republic of)","Pyongyang",142,30,"kpw",NULL,120538
+"prt","Portugal","Lisbon",150,39,"eur",NULL,92090
+"pry","Paraguay","Asuncion",19,419,"pyg",NULL,406752
+"qat","Qatar","Doha",142,145,"qar",NULL,11586
+"rou","Romania","Bucharest",150,151,"ron",NULL,238391
+"rus","Russian Federation","Moscow",150,151,"rub",NULL,17098242
+"rwa","Rwanda","Kigali",2,202,"rwf",NULL,26338
+"sau","Saudi Arabia","Riyadh",142,145,"sar",NULL,2149690
+"sdn","Sudan","Khartoum",2,15,"sdg",NULL,1886068
+"sen","Senegal","Dakar",2,202,"xof",NULL,196722
+"sgp","Singapore","Singapore",142,35,"sgd",NULL,710
+"slb","Solomon Islands","Honiara",9,54,"sbd",NULL,28896
+"sle","Sierra Leone","Freetown",2,202,"sll",NULL,71740
+"smr","San Marino","San Marino",150,39,"eur",NULL,61
+"som","Somalia","Mogadishu",2,202,"sos",NULL,637657
+"srb","Serbia","Belgrade",150,39,"rsd",NULL,88361
+"ssd","South Sudan","Juba",2,202,"ssp",NULL,619745
+"stp","Sao Tome and Principe","Sao Tome",2,202,"stn",NULL,964
+"sur","Suriname","Paramaribo",19,419,"srd",NULL,163820
+"svk","Slovakia","Bratislava",150,151,"eur",NULL,49037
+"svn","Slovenia","Ljubljana",150,39,"eur",NULL,20273
+"swe","Sweden","Stockholm",150,154,"sek",NULL,450295
+"swz","Eswatini","Mbabane",2,202,"szl",NULL,17364
+"syc","Seychelles","Victoria",2,202,"scr",NULL,452
+"syr","Syrian Arab Republic","Damascus",142,145,"syp",NULL,185180
+"tcd","Chad","N'Djamena",2,202,"xaf",NULL,1284000
+"tgo","Togo","Lome",2,202,"xof",NULL,56785
+"tha","Thailand","Bangkok",142,35,"thb",NULL,513120
+"tjk","Tajikistan","Dushanbe",142,143,"tjs",NULL,143100
+"tkm","Turkmenistan","Ashgabat",142,143,"tmt",NULL,488100
+"tls","Timor-Leste","Dili",142,35,"usd",NULL,14874
+"ton","Tonga","Nuku'alofa",9,61,"top",NULL,747
+"tto","Trinidad and Tobago","Port of Spain",19,419,"ttd",NULL,5130
+"tun","Tunisia","Tunis",2,15,"tnd",NULL,163610
+"tur","Turkiye","Ankara",142,145,"try",NULL,783562
+"tuv","Tuvalu","Funafuti",9,61,"aud",NULL,26
+"tza","Tanzania, United Republic of","Dodoma",2,202,"tzs",NULL,945087
+"uga","Uganda","Kampala",2,202,"ugx",NULL,241550
+"ukr","Ukraine","Kyiv",150,151,"uah",NULL,603500
+"ury","Uruguay","Montevideo",19,419,"uyu",NULL,181034
+"usa","United States of America","Washington",19,21,"usd",NULL,9372610
+"uzb","Uzbekistan","Tashkent",142,143,"uzs",NULL,447400
+"vct","Saint Vincent and the Grenadines","Kingstown",19,419,"xcd",NULL,387
+"ven","Venezuela (Bolivarian Republic of)","Caracas",19,419,"ves",NULL,916445
+"vnm","Viet Nam","Hanoi",142,35,"vnd",NULL,331212
+"vut","Vanuatu","Port Vila",9,54,"vuv",NULL,12189
+"wsm","Samoa","Apia",9,61,"wst",NULL,2842
+"yem","Yemen","Sanaa",142,145,"yer",NULL,527968
+"zaf","South Africa","Pretoria",2,202,"zar",NULL,1221037
+"zmb","Zambia","Lusaka",2,202,"zmw",NULL,752612
+"zwe","Zimbabwe","Harare",2,202,"zwl",NULL,390757
+"btn","Bhutan","Thimphu",142,34,"inr","btn",38394
+"cub","Cuba","Havana",19,419,"cup","cuc",109884
+"hti","Haiti","Port-au-Prince",19,419,"htg","usd",27750
+"lso","Lesotho","Maseru",2,202,"lsl","zar",30355
+"nam","Namibia","Windhoek",2,202,"nad","zar",825615
+"pan","Panama","Panama City",19,419,"pab","usd",75417
+"slv","El Salvador","San Salvador",19,419,"svc","usd",21041
