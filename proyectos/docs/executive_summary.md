@@ -13,7 +13,7 @@ _3DoWoCo logo_
 
 **_PROWPI002_** (**_based on_** our worldwide well-known standard project, [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb))  
 
-Our client is **_Adventure Works Cycles, Inc._**, which is a large, multinational manufacturing company that produces and distributes bicycles, parts, and accessories for commercial markets in North America, Europe, and Asia. The company employs 500 workers. Additionally, Adventure Works employs several regional sales teams throughout its market base. They want to expand their business worldwide, but they need the best good BI & DS to take good decisions   
+Our client is **_Adventure Works Cycles, Inc._**, which is a large, multinational manufacturing company that produces and distributes bicycles, parts, and accessories for commercial markets in North America, Europe, and Asia. The company employs 500 workers. Additionally, Adventure Works employs several regional sales teams throughout its market base. They want to expand their business worldwide, but they need the best good **_BI_** & **_DS_** to take good decisions   
 
 ![Adventure Works Cycles logo](https://i.imgur.com/8dpUmbD.png)  
 _Adventure Works Cycles logo_  
@@ -28,7 +28,7 @@ Especially, as far as we (**_3DoWoCo_**) are concerned, our work must focus on t
 
 4. There will be **_data in the parameters (Excel)_**, which will evolve (temporarily). That is, **_there will be historical data, outside the DB (AdventureWorksDW2022)_**  
 
-5. All the **_ETL_** steps will be stored in a **_DWH (Data Warehouse)_**, which we will build with a different **_RDBS_** from the company's corporate **_RDBS_**. The reason for this is not to interfere with the normal functioning of the corporate database  
+5. All the **_ETL_** steps will be stored in a **_DWH (Data Warehouse)_**, which we will build with a different **_RDBMS_** from the company's corporate **_RDBMS_**. The reason for this is not to interfere with the normal functioning of the corporate DB  
 
 5. Also, they need that we **_create a tabular model for sales and marketing users to analyze Internet sales_** data in the **_AdventureWorksDW2022_** DB, to expand their business worldwide, and to other business models  
 
@@ -44,7 +44,7 @@ Especially, as far as we (**_3DoWoCo_**) are concerned, our work must focus on t
 
 2. The **_ETL_** process will be built in **_PDI (Pentaho Data Integrator)_**. [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) was built in Python, but current **_PROWPI001_** will be deployed in **_PDI_**  
 
-3. **_AdventureWorksDW2022_** DB is built in **_Microsoft SQL Server_** (their corporate RDBS)  
+3. **_AdventureWorksDW2022_** DB is built in **_Microsoft SQL Server_** (their corporate **_RDBMS_**)  
 
 4. Staged tables and final DB, that is the **_DWH_** will be built in **_Postgre SQL_** (to assure absolute independence between the two DB)
 
@@ -57,7 +57,7 @@ Especially, as far as we (**_3DoWoCo_**) are concerned, our work must focus on t
 ### **_3DoWoCo contact_**
 
 - email: fake.it@till.you.make.it.com  
-- URL: https://mary-had-a-little-lamb-what-the-fuck.htm
+- URL: https://mary-had-a-little-lamb-wtf.htm
 
 [Back to Table of contents :arrow_double_up:](../README.md)
 
@@ -103,7 +103,7 @@ _DS & BI needs are like an iceberg (80% not visible)_
 
 ### **_Solution_**  
 
-The **_ETL_** process will generate tables (**_Facts_**, **_Dimensions_** and **_Metadata_**) in an **_DB OLTP_** (**_Postgre SQL_**). This will be our **_DWH_**  
+The **_ETL_** process will generate tables (**_Facts_**, **_Dimensions_** and **_Metadata_**) in an **_OLTP DB_** (**_Postgre SQL_**). This will be our **_DWH_**  
 
 The reason to build **_DWH_** in **_Postgre SQL_**, but not **_SQL Server_** (corporate **_DB_**) is because they do not will interfere, and will live separately  
 
@@ -111,11 +111,11 @@ The **_Metadata_** content will get the necessary **_business rules_**
 
 **_DWH_** will follow the rules of a **_DBRMS_**, although it will have a **_snowflake_** structure   
 
-**_DWH_** will also pull parametric data from an **_Excel_** file (**_ISS.xls_**). These data may change over time (historical)  
+**_DWH_** will also pull parametric data from an **_Excel_** file (**_ISS.xlsx_**). These data may change over time (historical)  
 
 In addition, there will be a system of tables that will make it possible to forecast the future, to see how it has evolved, and if the forecast has been fulfilled  
 
-In the future, advanced **_AI_** modules will be incorporated into the **_ISS (Internet Sales Subsystem)_** as a **_Forecasting Subsystem_**  
+In the future, advanced **_AI_** modules will be incorporated into the **_ISS (Internet Sales Subsystem)_** as a **_Forecasting Subsystem_**. Now we will incorporate forecast elaborated by **_Adventure Works Cycles, Inc._**  
 
 The metrics shown in the output **_Dashboard_** will help **_AdventureWorksDW2022_**, to make decisions to project the company internationally and quickly increase sales in new markets worldwide  
 
@@ -131,7 +131,7 @@ Meetings will be held (in person or by **_Microsoft Teams_**), between **_Advent
 
 1. Get data from data sources **_PROWPI001_**. Not categorical (like [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) project), but numerical  
 2. Get data from **_AdventureWorksDW2022_** (only from **_ISS - Internet Sales Subsystem -_**), and integrate production of **_PROWPI001_**. This will be **_PROWPI002_**  
-3. Get data from **_ISS.xls_** (from a shared server folder), and will be integrated into **_PROWPI002_**  
+3. Get data from **_ISS.xlsx_** (from a shared server folder), and will be integrated into **_PROWPI002_**  
 4. **_Power BI BSC (Balanced Scorecard)_**, called **_ISS.pbix_** ,will get data from **_PROWPI002_**, and it will show metrics based on data  
 5. **_ISS.pbix_** will be deployed in corporate **_Power BI Service_** of **_Adventure Works Cycles, Inc._**  
 
