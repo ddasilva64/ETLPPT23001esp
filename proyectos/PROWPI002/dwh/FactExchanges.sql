@@ -1,10 +1,16 @@
-SELECT fi."OrderDate", fi."FactInternetSalesPK", fi."ProductKey", fi."SalesTerritoryKey", fi."OrderQuantity", fi."UnitPrice", fi."DiscountAmount", 
-       fi."ExtendedAmount", dc."Country", dr."CurrencyKey", dr."Currency"
-FROM target."FactInternetSales" fi,
-     target."DimSalesTerritory" ds,
-	 target."DimCountries" dc, 
-	 target."DimCurrencies" dr
-WHERE fi."SalesTerritoryKey" = ds."SalesTerritoryKey" AND
-      dc."CountryCode" = ds."CountryCode" AND
-	  fi."CurrencyKey" = dr."CurrencyKey"
-ORDER BY fi."OrderDate", fi."FactInternetSalesPK", dr."Currency"
+-- Table: target.FactExchanges
+
+-- DROP TABLE IF EXISTS target."FactExchanges";
+
+CREATE TABLE IF NOT EXISTS target."FactExchanges"
+(
+    "Date" date NOT NULL,
+    "CurrencyKey" character varying(3) COLLATE pg_catalog."default" NOT NULL,
+    "Exchange" real,
+    CONSTRAINT "FactExchanges_pkey" PRIMARY KEY ("Date", "CurrencyKey")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS target."FactExchanges"
+    OWNER to postgres;

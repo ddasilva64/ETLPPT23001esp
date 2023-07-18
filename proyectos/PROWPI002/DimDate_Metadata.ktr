@@ -501,6 +501,11 @@
     <hop>
       <from>columns #01</from>
       <to>output #01</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>#staging_07</from>
+      <to>CPython Script Executor</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -635,7 +640,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>160</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
@@ -786,6 +791,47 @@
     <GUI>
       <xloc>368</xloc>
       <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CPython Script Executor</name>
+    <type>CPythonScriptExecutor</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <rows_to_process>ALL</rows_to_process>
+    <rows_to_process_size/>
+    <reservoir_sampling>N</reservoir_sampling>
+    <reservoir_sampling_size/>
+    <reservoir_sampling_seed>1</reservoir_sampling_seed>
+    <include_input_as_output>N</include_input_as_output>
+    <py_script># python script</py_script>
+    <load_script_at_runtime>Y</load_script_at_runtime>
+    <script_to_load>D:\temp\Platzi\###resums\03_OUT - COURSES -\Fundamentos de ETL con Python y Pentaho\GitHub\ETLPPT23001esp-master\proyectos\PROWPI002\pyhton_script.py</script_to_load>
+    <continue_on_unset_vars>N</continue_on_unset_vars>
+    <py_vars_to_get/>
+    <include_frame_row_index>N</include_frame_row_index>
+    <frame_names>
+    </frame_names>
+    <incoming_step_names>
+   </incoming_step_names>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

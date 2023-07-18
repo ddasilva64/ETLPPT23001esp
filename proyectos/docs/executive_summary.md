@@ -24,9 +24,9 @@ Especially, as far as we (**_3DoWoCo_**) are concerned, our work must focus on t
 
 2. We need **_to transform the DB that is transferred to us (AdventureWorksDW2022)_**, into a system that integrates our DB (**_PROWPI002_**) and **_that is the base of their DS and BI system_**  
 
-3. There will be **_parametric data_** in the form of sheets (tables) **_in Excel spreadsheets_**. **_This info not exists in the source DB_**, provided by our client  
+3. There will be **_parametric data_** in the form of sheets (tables) **_in spreadsheets_**. **_This info not exists in the source DB_**, provided by our client  
 
-4. There will be **_data in the parameters (Excel)_**, which will evolve (temporarily). That is, **_there will be historical data, outside the DB (AdventureWorksDW2022)_**  
+4. There will be **_data in the parameters (spreadsheets)_**, which will evolve (temporarily). That is, **_there will be historical data, outside the DB (AdventureWorksDW2022)_**  
 
 5. All the **_ETL_** steps will be stored in a **_DWH (Data Warehouse)_**, which we will build with a different **_RDBMS_** from the company's corporate **_RDBMS_**. The reason for this is not to interfere with the normal functioning of the corporate DB  
 
@@ -51,6 +51,8 @@ Especially, as far as we (**_3DoWoCo_**) are concerned, our work must focus on t
 5. To compare forecast & current, in the **_DWH_**, forecast tables will be like **_snapshots_** of last year projection data. That is, **_forecast & current will have the same layout_**  
 
 5. Final **_BSC (Balanced Scorecard)_** will be built in **_PBI (Microsoft Power BI)_**, and will collect the requested metrics  
+
+**_Notice_**: A small part of this project (**_ETL_** Currency Exchanges), will be done in **_Python_** on **_Jupyter Notebooks_** on **_Google Colaboratory_**  
 
 [Back to Table of contents :arrow_double_up:](../README.md)
 
@@ -111,7 +113,7 @@ The **_Metadata_** content will get the necessary **_business rules_**
 
 **_DWH_** will follow the rules of a **_DBRMS_**, although it will have a **_snowflake_** structure   
 
-**_DWH_** will also pull parametric data from an **_Excel_** file (**_ISS.xlsx_**). These data may change over time (historical)  
+**_DWH_** will also pull parametric data from a **_spreadsheet_** file (**_ISS.ods_**). These data may change over time (historical)  
 
 In addition, there will be a system of tables that will make it possible to forecast the future, to see how it has evolved, and if the forecast has been fulfilled  
 
@@ -131,7 +133,7 @@ Meetings will be held (in person or by **_Microsoft Teams_**), between **_Advent
 
 1. Get data from data sources **_PROWPI001_**. Not categorical (like [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) project), but numerical  
 2. Get data from **_AdventureWorksDW2022_** (only from **_ISS - Internet Sales Subsystem -_**), and integrate production of **_PROWPI001_**. This will be **_PROWPI002_**  
-3. Get data from **_ISS.xlsx_** (from a shared server folder), and will be integrated into **_PROWPI002_**  
+3. Get data from **_ISS.ods_** (from a shared server folder), and will be integrated into **_PROWPI002_**  
 4. **_Power BI BSC (Balanced Scorecard)_**, called **_ISS.pbix_** ,will get data from **_PROWPI002_**, and it will show metrics based on data  
 5. **_ISS.pbix_** will be deployed in corporate **_Power BI Service_** of **_Adventure Works Cycles, Inc._**  
 
