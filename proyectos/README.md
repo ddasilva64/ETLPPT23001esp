@@ -71,6 +71,7 @@
           2. [Additional tables - DWH - ERD](https://i.imgur.com/Hx93TgT.png)    
         - [PROWPI002 ETL (parametric data)](docs/prowpi002_etl_parametric_data.md)  
           1. [FactExchanges](docs/FactExchanges.md)
+          2. [Forecast](docs/Forecast.md)
 - [DWH (Data Warehouse)](docs/dwh.md)
 - [Metrics](docs/metrics.md)
 - [UX (User Experience)](docs/ux.md)

@@ -1,4 +1,4 @@
-## **_FactExchanges (Parameters of currency value exchanges)_**
+## **_Forecast_**
 
 **_Warning!_**: **_Adventure Works Cycles, Inc._** currently does not have any forecasts. **_PROWPI002_** will build a first forecasting system based on the following principles:  
 1. **_Ceteris paribus_**, that is, if everything else remains the same; all other things being equal. We only consider the sales figure, we do not imagine anything regarding the products (new, obsolete), nor regarding promotions, and so on    
