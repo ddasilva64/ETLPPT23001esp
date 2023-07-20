@@ -80,6 +80,7 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 ### [**_Test #003_**](tests/t003.md)
 ### [**_Test #004_**](tests/t004.md)
 ### [**_Test #005_**](tests/t005.md)
+### [**_Test #006_**](tests/t006.md)
 
 <p><br></p> 
 
