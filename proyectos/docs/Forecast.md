@@ -14,7 +14,7 @@ That means that:
 
 ### Goals  
 
-1. The tables involved are **_FactInternetSales_**, and **_DimReseller_**. The forecasting system tables will be FactInternetSalesForecast, and DimResellerForecast  
+1. The table involved is **_FactInternetSales_**. The forecasting system tables will be FactInternetSalesForecast  
 2. We will generate the new tables and in **_DWH_** we will check properties and values  
 
 ### Proposed spreadsheet columns  
@@ -25,7 +25,7 @@ That means that:
 4. Months difference: (Forecast year - Accounting year) * 12
 
 ### **_PROWPI002\_FORECAST\_FactInternetSales.KTR_**  
-  1. #staging_53: staging\ISS_param.XLS           -> FORECAST (INPUT)  
+  1. #staging_53: staging\ISS_param.XLS          -> FORECAST (INPUT)  
   2. #staging_54: **_FactInternetSales_**         -> (Postgre SQL INPUT table) 
   2. #staging_08: **_FactInternetSalesForecast_** -> (Postgre SQL OUTPUT table)  
    
@@ -41,8 +41,18 @@ That means that:
 
    <p><br></p>  
  
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/PgP0TQ1.png) 
+  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/PgP0TQ1.png)  
   _Postgres SQL's transactions checking in PgAdmin_  
+
+   <p><br></p>  
+ 
+  ![Recalculated quantities for forecasting](https://i.imgur.com/xSKwjxi.png)  
+  _Recalculated quantities for forecasting_  
+
+   <p><br></p>  
+ 
+  ![Recalculated dates for forecasting](https://i.imgur.com/5WgsSwr.png)  
+  _Recalculated dates for forecasting_  
 
   **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
