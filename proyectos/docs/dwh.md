@@ -79,6 +79,7 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 ### [**_Test #002_**](tests/t002.md)
 ### [**_Test #003_**](tests/t003.md)
 ### [**_Test #004_**](tests/t004.md)
+### [**_Test #005_**](tests/t005.md)
 
 <p><br></p> 
 
@@ -132,6 +133,10 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 16. **_FactInternetSalesReason available running by original cloud backup_**  
 17. **_FactProductInventory available running by original cloud backup_**  
 18. [Available Metadata run](../PROWPI002/dwh/Metadata.csv)  
+
+**_DWH parameter tables (.SQL)_**
+
+1. [FactInternetSalesForecast](../PROWPI002/dwh/FactInternetSalesForecast.sql)  
 
 <p><br></p>
 
