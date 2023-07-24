@@ -1,0 +1,14 @@
+﻿DimCurrency;105
+DimCustomer;18484
+DimEmployee;296
+DimGeography;655
+DimProduct;606
+DimProductCategory;4
+DimProductSubcategory;37
+DimPromotion;16
+DimReseller;701
+DimSalesTerritory;11
+FactInternetSales;60398
+FactInternetSalesReason;64515
+FactProductInventory;776286
+FactResellerSales;60855

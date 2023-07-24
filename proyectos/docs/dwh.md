@@ -50,7 +50,7 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 | :-------------: | :------------------------------------------------------------------ | :---: | :-------------------------------- | :-------------------------------- |
 | Completeness    | number of records in data sources = number of records in DWH table  |       |                                   |                                   |
 |                 | data loaded into each DW field = data loaded into each source field |       |                                   |                                   |
-| Quality         | type of fields in data sources = type of fields in DWH table        |       |                                   |                                   |
+| Quality         | type of data fields in data sources = type of data fields in DWH table        |       |                                   |                                   |
 | User Acceptance | data into DWH is complete and consistent with business rules        |       |                                   |                                   |
 |                 | all is OK                                                           |       |                                   |                                   |
 
