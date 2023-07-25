@@ -6,8 +6,8 @@
 <a id="table-of-contents"></a>
 
 - [Executive Summary](docs/executive_summary.md)
-    - [Business](docs/executive_summary.md#business)
-    - [Project](docs/executive_summary.md#project)
+    - [Business](docs/executive_summary_business.md)
+    - [Project](docs/executive_summary_project.md)
     - [3DoWoCo contact](docs/executive_summary.md#3dowoco-contact)
     - [Client pains](docs/executive_summary.md#client-pains)
     - [Opportunity](docs/executive_summary.md#opportunity)
