@@ -8,16 +8,16 @@
 - [Executive Summary](docs/executive_summary.md)
     - [Business](docs/executive_summary_business.md)
     - [Project](docs/executive_summary_project.md)
-    - [3DoWoCo contact](docs/executive_summary.md#3dowoco-contact)
-    - [Client pains](docs/executive_summary.md#client-pains)
-    - [Opportunity](docs/executive_summary.md#opportunity)
-    - [Solution](docs/executive_summary.md#solution)
-        - [Steps](docs/executive_summary.md#steps)
-        - [Goals](docs/executive_summary.md#goals)
-    - [Value proposition](docs/executive_summary.md#value-proposition)  
-        - [Return on Investment (ROI) of the proposed solution](docs/executive_summary.md#return-on-investment-roi-of-the-proposed-solution)
-        - [The improved service delivery and customer experience](docs/executive_summary.md#the-improved-service-delivery-and-customer-experience)  
-    - [Conclusion](docs/executive_summary.md#conclusion)  
+    - [3DoWoCo contact](docs/executive_summary_3dowoco_contact.md#)
+    - [Client pains](docs/executive_summary_client_pains.md)
+    - [Opportunity](docs/executive_summary_opportunity.md)
+    - [Solution](docs/executive_summary_solution.md)
+        - [Steps](docs/executive_summary_solution.md#steps)
+        - [Goals](docs/executive_summary_solution.md#goals)
+    - [Value proposition](docs/executive_summary_value_proposition.md)  
+        - [Return on Investment (ROI) of the proposed solution](docs/executive_summary_value_proposition.md#return-on-investment-roi-of-the-proposed-solution)
+        - [The improved service delivery and customer experience](docs/executive_summary_value_proposition.md#the-improved-service-delivery-and-customer-experience)  
+    - [Conclusion](docs/executive_summary_conclusion.md)  
 - [DE (Data Engineering)](#poject-prowpi002-project-world-population-indicators-002)  
     - [Prework](docs/prework.md)  
     - [Source tables](#poject-prowpi002-project-world-population-indicators-002)  
@@ -79,6 +79,7 @@
 - [Storytelling notice](#storytelling-notice)
 - [Author](#author)
 - [License](#license)
+- [ChatGPT 3.5 usage](#chatgpt-35-usage)
 - [eof](#eof)
 <!-- /TOC -->
 
@@ -111,6 +112,10 @@ That's all folks!!!
 ##  License  
 
 [This project is under MIT license](LICENSE.md)
+
+## ChatGPT 3.5 usage  
+
+[This project was checked using ChatGPT 3.5](CHATGPT_USE.md)
 
 ## eof
 

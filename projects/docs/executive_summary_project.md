@@ -1,48 +1,54 @@
-## Executive Summary  
+## Executive Summary
 
-### **_Project_**  
+### **_Project_**
 
-**_PROWPI002_** (**_based on_** our worldwide well-known standard project, [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb))  
+**_PROWPI002_** (**_based on_** our worldwide well-known standard project, [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb))
 
-Our client is **_Adventure Works Cycles, Inc._**, which is a large, multinational manufacturing company that produces and distributes bicycles, parts, and accessories for commercial markets in North America, Europe, and Asia. The company employs 500 workers. Additionally, Adventure Works employs several regional sales teams throughout its market base. They want to expand their business worldwide, but they need the best good **_BI_** & **_DS_** to take good decisions   
+Our client is **_Adventure Works Cycles, Inc._**, which is a large, multinational manufacturing company that produces and distributes bicycles, parts, and accessories for commercial markets in North America, Europe, and Asia. The company employs 500 workers. Additionally, Adventure Works employs several regional sales teams throughout its market base. They want to expand their business worldwide, but they need the best **_BI_** (Business Intelligence) & **_DS_** (Data Science) to make informed decisions.
 
 ![Adventure Works Cycles logo](https://i.imgur.com/8dpUmbD.png)  
-_Adventure Works Cycles logo_  
+_Adventure Works Cycles logo_
 
-Especially, as far as we (**_3DoWoCo_**) are concerned, our work must focus on the next objectives:  
+In particular, as far as we (**_3DoWoCo_**) are concerned, our work must focus on the following objectives:
 
-1. We are taking, as a base our project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb), and transform it, according to our client requirements. That is, firstly, we need to do the **_ETL (Extract, Transform & Load)_**, and quality assurance, **_according to their needs_**  
+1. We are starting with our project [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) as a base and transforming it to meet our client's requirements. Firstly, we need to perform the **_ETL (Extract, Transform & Load)_** process and ensure quality assurance according to their needs.
 
-2. We need **_to transform the DB that is transferred to us (AdventureWorksDW2022)_**, into a system that integrates our DB (**_PROWPI002_**) and **_that is the base of their DS and BI system_**  
+2. We need to transform the database transferred to us (**_AdventureWorksDW2022_**) into a system that integrates our own database (**_PROWPI002_**) and serves as the foundation for their Data Science and Business Intelligence system.
 
-3. There will be **_parametric data_** in the form of sheets (tables) **_in spreadsheets_**. **_This info not exists in the source DB_**, provided by our client  
+3. There will be parametric data in the form of sheets (tables) in spreadsheets that do not exist in the source database provided by our client.
 
-4. There will be **_data in the parameters (spreadsheets)_**, which will evolve (temporarily). That is, **_there will be historical data, outside the DB (AdventureWorksDW2022)_**  
+4. There will be data in the parameters (spreadsheets) that will evolve temporarily, including historical data that exists outside the **_AdventureWorksDW2022_** database.
 
-5. All the **_ETL_** steps will be stored in a **_DWH (Data Warehouse)_**, which we will build with a different **_RDBMS_** from the company's corporate **_RDBMS_**. The reason for this is not to interfere with the normal functioning of the corporate DB  
+5. All the **_ETL_** steps will be stored in a **_Data Warehouse (DWH)_**, which we will build with a different **_Relational Database Management System (RDBMS)_** from the company's corporate **_RDBMS_**. The reason for this is to avoid interfering with the normal functioning of the corporate database.
 
-5. Also, they need that we **_create a tabular model for sales and marketing users to analyze Internet sales_** data in the **_AdventureWorksDW2022_** DB, to expand their business worldwide, and to other business models  
+6. Additionally, they need us to create a tabular model for sales and marketing users to analyze Internet sales data in the **_AdventureWorksDW2022_** database, enabling them to expand their business worldwide and explore other business models.
 
-5. Finally, in the **_DWH_**, we will build a **_sales yearly forecast_** that we will compare with currents sales results  
+7. Finally, in the **_DWH_**, we will build a sales yearly forecast that we will compare with current sales results.
 
-6. Additionally, we commit ourselves to propose **_metrics_** and a **_BSC (Balanced Scorecard)_** to represent and verify the results  
+8. Additionally, we commit ourselves to propose metrics and a **_Balanced Scorecard (BSC)_** to represent and verify the results.
 
-**_Notice_**: **_AdventureWorksDW2022_** (2022 version), is a work DB of the original and is an adaptation to **_BI (Business Intelligence)_** & **_DS (Data Science)_**, which is made by themselves (**_Adventure Works Cycles, Inc._**). _Maybe in the future, if the current project success, we will be able to access the main BD & work together on new & exciting ones..._    
+**_Notice_**: **_AdventureWorksDW2022_** (2022 version) is a work database made by **_Adventure Works Cycles, Inc._**, and adapted to **_Business Intelligence (BI) & Data Science (DS)_**. If the current project succeeds, there may be opportunities to access the main database and collaborate on new and exciting projects in the future.
 
-**_3DoWoCo_** undertakes with **_Adventure Works Cycles, Inc._**, through this document (**_covenant_**) to:
+**_3DoWoCo_** undertakes with **_Adventure Works Cycles, Inc._**, through this document (**_covenant_**), to:
 
-1. **_For each single step we will assure quality_**, and our client (**_Adventure Works Cycles, Inc._**), **_will be able to check it_**   
+1. Ensure quality for each step, and our client (**_Adventure Works Cycles, Inc._**) will have the opportunity to verify it.
 
-2. The **_ETL_** process will be built in **_PDI (Pentaho Data Integrator)_**. [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) was built in Python, but current **_PROWPI001_** will be deployed in **_PDI_**  
+2. The **_ETL_** process will be built in **_Pentaho Data Integrator (PDI)_**. [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) was built in **_Python_**, but the current **_PROWPI001_** will be deployed in **_PDI_**.
 
-3. **_AdventureWorksDW2022_** DB is built in **_Microsoft SQL Server_** (their corporate **_RDBMS_**)  
+3. **_AdventureWorksDW2022_** database is built in **_Microsoft SQL Server_**, their corporate **_RDBMS_**.
 
-4. Staged tables and final DB, that is the **_DWH_** will be built in **_Postgre SQL_** (to assure absolute independence between the two DB)
+4. Staged tables and the final **_Data Warehouse (DWH)_** will be built in **_Postgre SQL_** to ensure complete independence between the two databases.
 
-5. To compare forecast & current, in the **_DWH_**, forecast tables will be like **_snapshots_** of last year projection data. That is, **_forecast & current will have the same layout_**  
+5. To compare forecast and current data in the **_DWH_**, forecast tables will be like snapshots of last year's projection data, ensuring a consistent layout for both forecast and current data.
 
-5. Final **_BSC (Balanced Scorecard)_** will be built in **_PBI (Microsoft Power BI)_**, and will collect the requested metrics  
+6. The final **_Balanced Scorecard (BSC)_** will be built in **_Microsoft Power BI (PBI)_** and will collect the requested metrics.
 
-**_Notice_**: A small part of this project (**_ETL_** Currency Exchanges and Forecast), will be done in **_Python_** on **_Jupyter Notebooks_** on **_Google Colaboratory_**  
+**_Notice_**: A small part of this project (**_ETL_** Foreign Exchanges and Forecast), will be done in **_Python_** on **_Jupyter Notebooks_** on **_Google Colaboratory_**.
+
+### ChatGPT 3.5 usage  
+
+[This project was checked using ChatGPT 3.5](..\CHATGPT_USE.md)
+
+<p><br></p> 
 
 [Back to Table of contents :arrow_double_up:](../README.md)
