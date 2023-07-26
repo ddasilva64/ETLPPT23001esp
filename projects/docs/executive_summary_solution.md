@@ -36,7 +36,7 @@ Meetings will be held (in person or by **_Microsoft Teams_**), between **_Advent
 
 ### ChatGPT 3.5 usage  
 
-[This project was checked using ChatGPT 3.5](..\CHATGPT_USE.md)  
+[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
 
 <p><br></p> 
 
@@ -62,7 +62,7 @@ Meetings will be held (in person or by **_Microsoft Teams_**), between **_Advent
   
 ### ChatGPT 3.5 usage  
 
-[This project was checked using ChatGPT 3.5](..\CHATGPT_USE.md)
+[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)
 
 <p><br></p> 
 

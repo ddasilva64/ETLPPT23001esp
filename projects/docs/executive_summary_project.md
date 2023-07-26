@@ -47,7 +47,7 @@ In particular, as far as we (**_3DoWoCo_**) are concerned, our work must focus o
 
 ### ChatGPT 3.5 usage  
 
-[This project was checked using ChatGPT 3.5](..\CHATGPT_USE.md)
+[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)
 
 <p><br></p> 
 
