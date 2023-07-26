@@ -5,7 +5,7 @@
 
 <a id="table-of-contents"></a>
 
-- [Executive Summary](docs/executive_summary.md)
+- **_Executive Summary_**
     - [Business](docs/executive_summary_business.md)
     - [Project](docs/executive_summary_project.md)
     - [3DoWoCo contact](docs/executive_summary_3dowoco_contact.md#)
@@ -18,7 +18,7 @@
         - [Return on Investment (ROI) of the proposed solution](docs/executive_summary_value_proposition.md#return-on-investment-roi-of-the-proposed-solution)
         - [The improved service delivery and customer experience](docs/executive_summary_value_proposition.md#the-improved-service-delivery-and-customer-experience)  
     - [Conclusion](docs/executive_summary_conclusion.md)  
-- [DE (Data Engineering)](#poject-prowpi002-project-world-population-indicators-002)  
+- **_DE (Data Engineering)_**  
     - [Prework](docs/prework.md)  
     - [Source tables](#poject-prowpi002-project-world-population-indicators-002)  
         - [PROWPI001 ETL](docs/prowpi001_etl.md)  
