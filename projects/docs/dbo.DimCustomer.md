@@ -1,4 +1,4 @@
-## **_dbo.DimCustomer (SQL Server table)_**
+## **_dbo.DimCustomer (SQL Server)_**
 
 ### Columns
 
@@ -56,7 +56,9 @@ _PDI transform_
 ![PDI execution](https://i.imgur.com/hXiQLHz.png)  
 _PDI execution_
 
-### **_<p><br>DimCustomer layout (Postgre SQL)</p>_**  
+<p><br></p>  
+
+### **_DimCustomer layout (Postgre SQL)_**  
 
 | Key | Name                  | Data type              | Not null | Attributes | References       | Description  | Metadata |
 | :-: | :-------------------- | :--------------------: | :------: | :--------- | :--------------- | :----------- | :------: |
@@ -91,13 +93,15 @@ _PDI execution_
 ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/YZVEb6s.png)  
 _Postgres SQL's transactions checking in PgAdmin_
 
+<p><br></p>  
+
 **_QA_**: Go to [DWH (Data Warehouse)](dwh.md)  
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
-
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

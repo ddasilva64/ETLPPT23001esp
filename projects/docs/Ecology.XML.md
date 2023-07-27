@@ -5,11 +5,17 @@
 2. #raw_02: countries_eng.CSV
 3. #staging_03: **_staging\Ecology.XML_**
 
+<p><br></p> 
+
 ![PDI transform](https://i.imgur.com/ROtuoqS.png)
 _PDI transform_
 
+<p><br></p> 
+
 ![PDI execution](https://i.imgur.com/xmuK1GA.png)
 _PDI execution_
+
+<p><br></p> 
 
 ### **_Ecology.XML layout_**
 
@@ -22,13 +28,15 @@ _PDI execution_
 ![XML file checking](https://i.imgur.com/6HS55VU.png)
 _XML file checking_
 
-**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**
-  
-### ChatGPT 3.5 usage  
+<p><br></p> 
 
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**
 
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI001 ETL :arrow_up:](prowpi001_etl.md)  
 

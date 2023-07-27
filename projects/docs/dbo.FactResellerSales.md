@@ -1,4 +1,4 @@
-## **_dbo.FactResellerSales (SQL Server table)_**  
+## **_dbo.FactResellerSales (SQL Server)_**  
 
 ### Columns  
 
@@ -32,29 +32,31 @@
 | 26  | DueDate                  | datetime     |          |            |                       |              |
 | 27  | ShipDate                 | datetime     |          |            |                       |              |
 
-   <p><br></p>  
+<p><br></p>  
 
 ![SQL Server source in SQL Server Management studio](https://i.imgur.com/dKALxGH.png)  
 _SQL Server source in SQL Server Management studio_  
 
-   <p><br></p>   
+<p><br></p>   
 
 ### **_PROWPI002\_FactResellerSales.KTR (PDI)_**   
 1. #Table input #01: **_dbo.FactResellerSales_** (SQL Server)  
 2. #Table input #02: **_dbo.DimCurrency_** (SQL Server)  
 2. staging_14: **_FactResellerSales_** (Postgre SQL table)
  
-   <p><br></p>  
+<p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/vnjRSHD.png)  
-  _PDI transform_  
+![PDI transform](https://i.imgur.com/vnjRSHD.png)  
+_PDI transform_  
 
-  <p><br></p>  
+<p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/zL66SMC.png)  
-  _PDI execution_ 
+![PDI execution](https://i.imgur.com/zL66SMC.png)  
+_PDI execution_ 
 
-### **_<p><br>FactResellerSales layout (Postgre SQL)</p>_**  
+<p><br></p>  
+
+### **_FactResellerSales layout (Postgre SQL)_**  
 
 | Key	| Name                     | Data type             | Not null | Attributes | References            | Description  | Metadata |
 | :-: | :----------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------: |
@@ -83,12 +85,20 @@ _SQL Server source in SQL Server Management studio_
 | 23  | DueDate                  | date                  |          |            |                       | FK           | m080     |
 | 24  | ShipDate                 | date                  |          |            |                       | FK           | m081     |
 
-   <p><br></p>  
- 
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/dK2rjRe.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
+<p><br></p>  
 
-  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/dK2rjRe.png)  
+_Postgres SQL's transactions checking in PgAdmin_  
+
+<p><br></p> 
+
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p> 
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

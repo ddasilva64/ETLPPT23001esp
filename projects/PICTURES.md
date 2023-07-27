@@ -6,4 +6,8 @@
 
 - **_#pic003_**: ["Iceberg, Encima y Agua" in pixabay](https://pixabay.com/es/illustrations/iceberg-encima-agua-blanco-fr%c3%ado-3273216/), free pic by [**_MoteOo_**](https://pixabay.com/es/users/moteoo-466065/)
 
-[Back to Table of contents :arrow_double_up:](../README.md)
+[ChatGPT usage](CHATGPT_USAGE.md)
+
+<p><br></p>
+
+[Back to Table of contents :arrow_double_up:](README.md/#table-of-contents)

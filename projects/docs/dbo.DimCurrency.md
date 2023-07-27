@@ -1,4 +1,4 @@
-## **_dbo.DimCurrency (SQL Server table)_**
+## **_dbo.DimCurrency (SQL Server)_**
 
 ### Columns
 
@@ -8,8 +8,12 @@
 | 2   | CurrencyAlternateKey | nchar(3)           | X        |            |            |             |
 | 3   | CurrencyName         | nvarchar(50)       | X        |            |            |             |
 
+<p><br></p> 
+
 ![SQL Server source in SQL Server Management Studio](https://i.imgur.com/i77wbIq.png)
 _SQL Server source in SQL Server Management Studio_
+
+<p><br></p> 
 
 **Notice**: Some currency keys are deprecated. For example, the currency key for Afghanistan until 2003 in **_ISO 4217_** (currency alphabetic code) was AFA, but since then it has been AFN. In our **_DWH_**, we will adopt the **_ISO 4217_** currency alphabetic code standard, which means that:
 1. We will only use the ISO3 standard.
@@ -17,6 +21,8 @@ _SQL Server source in SQL Server Management Studio_
 
 By the way, we will use the next public domain data sources for this task: 
 - [Comprehensive country codes: ISO 3166, ITU, ISO 4217 currency codes, and many more](https://datahub.io/core/country-codes)  
+
+<p><br></p> 
 
 ### **_PROWPI002_DimCurrency.KTR (PDI)_**   
 1. #Table input: **_dbo.DimCurrency_** (**_SQL Server_**)  
@@ -26,33 +32,45 @@ By the way, we will use the next public domain data sources for this task:
 5. #staging_02: arrangements/XML currencies.XML  
 6. output #01 & output #02: **_DimCurrencies_** (**_Postgre SQL_**)  
 
+<p><br></p> 
+
 ![PDI transform](https://i.imgur.com/mBUqgU4.png)  
 _PDI transform_  
+
+<p><br></p> 
 
 ![PDI execution](https://i.imgur.com/dpHuZHP.png)  
 _PDI execution_
 
-### **_<p><br>DimCurrencies layout (PostgreSQL)</p>_**  
+<p><br></p> 
+
+### **_DimCurrencies layout (PostgreSQL)_**  
 
 | Key | Name          | Data type            | Not null | Attributes | References | Description | Metadata |
 | :-: | :------------ | :------------------: | :------: | :--------- | :--------  | :---------- | :------- |
 | 1   | CurrencyKey   | Character varying(3) | X        |            |            | PK          | m082     |
 | 2   | Currency      | Character varying(60)|          |            |            |             | m083     |
 
+<p><br></p>  
+
 ![PostgreSQL's transactions checking in PgAdmin](https://i.imgur.com/vldaeUm.png)  
 _PostgreSQL's transactions checking in PgAdmin_
 
+<p><br></p> 
+
 **QA**: Go to [DWH (Data Warehouse)](dwh.md)  
 
-### ChatGPT 3.5 usage  
+<p><br></p> 
 
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
+[ChatGPT usage](../CHATGPT_USAGE.md)  
 
 <p><br></p> 
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
 [Back to Table of contents :arrow_double_up:](../README.md)  
+
+<p><br></p> 
 
 ### **_PROWPI002\_DimCountries.KTR (PDI)_**   
 1. #Table input: **_dbo.DimCurrency_** (**_SQL Server_**)  
@@ -61,14 +79,20 @@ _PostgreSQL's transactions checking in PgAdmin_
 4. #staging_07: arrangements/XML dimcountries.XML 
 5. output #01 & output #02: **_DimCountries_** (**_Postgre SQL_**)  
 
+<p><br></p> 
+
 ![PDI transform](https://i.imgur.com/P2diJfD.png)  
 _PDI transform_  
+
+<p><br></p> 
 
 ![PDI execution](https://i.imgur.com/lW3BKb7.png)  
 _PDI execution_
 
-**_<p><br>DimCountries layout</p>_**  
- 
+<p><br></p>
+
+### **_DimCountries layout_**  
+
 | Key	| Name         | Data type             | Not null | Attributes | References      | Description | Metadata |
 | :-: | :----------- | :-------------------: | :------: | :--------- | :-------------- | :-----------| :------- |
 | 1   | CountryCode  | Character varying(3)  | X        |            |                 | PK          |          |  
@@ -80,20 +104,26 @@ _PDI execution_
 | 7   | CurrencyKey02| Character varying(3)  |          |            | DimCurrencies   | FK          |          |
 | 8   | Area         | Integer               |          |            |                 |             |          |
 
+<p><br></p>  
+
 ![PostgreSQL's transactions checking in PgAdmin](https://i.imgur.com/XHFHV1e.png)  
 _PostgreSQL's transactions checking in PgAdmin_
 
+<p><br></p> 
+
 **QA**: Go to [DWH (Data Warehouse)](dwh.md)  
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
-
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
 [Back to Table of contents :arrow_double_up:](../README.md)  
+
+<p><br></p>
 
 ### **_PROWPI002\_DimRegions.KTR (PDI)_**   
 1. #Table input: **_dbo.DimCurrency_** (**_SQL Server_**)  
@@ -102,33 +132,41 @@ _PostgreSQL's transactions checking in PgAdmin_
 4. #staging_07: arrangements/XML dimcountries.XML   
 5. output #03: **_DimRegions_** (**_Postgre SQL_**)  
 
+<p><br></p>
+
 ![PDI transform](https://i.imgur.com/WqVby2s.png)  
 _PDI transform_  
+
+<p><br></p>
 
 ![PDI execution](https://i.imgur.com/EZU1wxq.png)  
 _PDI execution_
 
-### **_<p><br>DimRegions layout</p>_**  
+<p><br></p>
+
+### **_DimRegions layout_**  
 
 | Key	| Name       | Data type             | Not null | Attributes | References  | Description | Metadata |
 | :-: | :--------- | :-------------------: | :------: | :--------- | :---------- | :---------- | :------- |
 | 1   | RegionCode | Integer               | X        |            |             | PK          |          |  
 | 2   | Region     | Character varying(20) |          |            |             |             |          |
 
+<p><br></p> 
+
 ![PostgreSQL's transactions checking in PgAdmin](https://i.imgur.com/K0L1MjX.png)  
 _PostgreSQL's transactions checking in PgAdmin_
 
 **QA**: Go to [DWH (Data Warehouse)](dwh.md)  
 
-### ChatGPT 3.5 usage  
+[ChatGPT usage](../CHATGPT_USAGE.md)  
 
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
+<p><br></p>
 
-<p><br></p> 
-  
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
-[Back to Table of contents :arrow_double_up:](../README.md)  
+[Back to Table of contents :arrow_double_up:](../README.md)   
+
+<p><br></p>
 
 ### **_PROWPI002\_DimSubregions.KTR (PDI)_**  
 1. #Table input: **_dbo.DimCurrency_** (**_SQL Server_**)  
@@ -137,30 +175,40 @@ _PostgreSQL's transactions checking in PgAdmin_
 4. #staging_07: arrangements/XML dimcountries.XML   
 5. output #03: **_DimSubregions_** **_(Postgre SQL_**)
 
+<p><br></p> 
+
 ![PDI transform](https://i.imgur.com/dtSpYpf.png)  
 _PDI transform_  
+
+<p><br></p> 
 
 ![PDI execution](https://i.imgur.com/606h01P.png)  
 _PDI execution_
 
-### **_<p><br>DimSubregions layout</p>_**  
+<p><br></p> 
+
+### **_DimSubregions layout_**  
 
 | Key	| Name         | Data type             | Not null | Attributes | References  | Description | Metadata |
 | :-: | :----------- | :-------------------: | :------: | :--------- | :---------- | :---------- | :------- |
 | 1   | SubregionCode| Integer               | X        |            |             | PK          |          |  
 | 2   | Subregion    | Character varying(20) |          |            |             |             |          |
 
+<p><br></p> 
+
 ![PostgreSQL's transactions checking in PgAdmin](https://i.imgur.com/xGo96rl.png)  
 _PostgreSQL's transactions checking in PgAdmin_
 
+<p><br></p> 
+
 **QA**: Go to [DWH (Data Warehouse)](dwh.md)  
-
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
 
 <p><br></p> 
 
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
+
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 
-[Back to Table of contents :arrow_double_up:](../README.md)
+[Back to Table of contents :arrow_double_up:](../README.md)   

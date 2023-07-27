@@ -4,10 +4,14 @@
 
 **_Attention!_**: While the importance of metadata cannot be overstated, the reason to use it is to help drive reporting accuracy, validate data transformation, and ensure calculation accuracy. Metadata also imposes the definition of terms such as indicators, standards, etc. In the development of the **_DWH_**, metadata appears, and with it arises the need to create a table with this content.  
 
+<p><br></p> 
+
 ### **_Metadata.XML (values)_**  
 1. #staging_07: **_staging\Metadata.XML_** (values, but not layout)  
 
-### **_<p><br>Metadata.XML layout</p>_**  
+<p><br></p> 
+
+### **_Metadata.XML layout_**  
 
 | Key      	| Meaning                                 | Standard              | Formula                                                                  | Units |
 | :-------: | :-------------------------------------- | :-------------------: | :----------------------------------------------------------------------- | :---: |
@@ -40,14 +44,18 @@
 | m027      | Maternal Mortality Rate                 |                       | number of maternal deaths in a year / number of live births for the same period x 100,000 | %      |
 | m028      | Teen Birth Rate                         |                       | number of resident live births to mothers ages 15-19 / number of resident women aged 15-19 | %      |
 
+<p><br></p> 
+
 ![XML file checking](https://i.imgur.com/4dVYoaD.png)  
 _XML file checking_  
 
+<p><br></p> 
+
 **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
-### ChatGPT 3.5 usage  
+<p><br></p> 
 
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
+[ChatGPT usage](../CHATGPT_USAGE.md)  
 
 <p><br></p> 
 
@@ -55,6 +63,7 @@ _XML file checking_
 
 [Back to Table of contents :arrow_double_up:](../README.md)  
 
+<p><br></p>
 
 ### **_PROWPI001\_Metadata.KTR_**  
 1. #staging_07: **_staging\Metadata.XML_**  
@@ -69,7 +78,9 @@ _PDI transform_
 ![PDI execution](https://i.imgur.com/YBlCsl3.png)  
 _PDI execution_
 
-### **_<p><br>Metadata layout</p>_**  
+<p><br></p> 
+
+### **_Metadata layout_**  
 
 | Key	| Name                  | Data type              | Not null | Attributes | References            | Description |
 | :-: | :-------------------- | :--------------------: | :------: | :--------- | :-------------------- | :-----------| 
@@ -84,13 +95,15 @@ _PDI execution_
 ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/pE5JLH2.png)  
 _Postgres SQL's transactions checking in PgAdmin_  
 
+<p><br></p> 
+
 **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
-
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI001 ETL :arrow_up:](prowpi001_etl.md)  
 

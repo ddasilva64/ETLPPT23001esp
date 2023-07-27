@@ -1,4 +1,4 @@
-## **_dbo.FactProductInventory (SQL Server table)_**  
+## **_dbo.FactProductInventory (SQL Server)_**  
 
 ### Columns  
 
@@ -12,28 +12,30 @@
 | 6   | UnitsOut                 | int          | X        |            |                       |                  |
 | 7   | UnitsBalance             | int          | X        |            |                       |                  |
 
-   <p><br></p>  
+<p><br></p>  
 
 ![SQL Server source in SQL Server Management studio](https://i.imgur.com/VBjkFc0.png)  
 _SQL Server source in SQL Server Management studio_  
 
-   <p><br></p>   
+<p><br></p>   
 
 ### **_PROWPI002\_FactProductInventory.KTR (PDI)_**   
 1. #Table input: **_dbo.FactProductInventory_** (SQL Server)  
 2. staging_15: **_FactProductInventory_** (Postgre SQL table)
  
-   <p><br></p>  
+<p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/E0Y7nA4.png)  
-  _PDI transform_  
+![PDI transform](https://i.imgur.com/E0Y7nA4.png)  
+_PDI transform_  
 
-  <p><br></p>  
+<p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/zXfPnoN.png)  
-  _PDI execution_ 
+![PDI execution](https://i.imgur.com/zXfPnoN.png)  
+_PDI execution_ 
 
-### **_<p><br>FactProductInventory layout (Postgre SQL)</p>_**  
+<p><br></p>  
+
+### **_FactProductInventory layout (Postgre SQL)_**  
 
 | Key	| Name                     | Data type    | Not null | Attributes | References            | Description      | Metadata |
 | :-: | :----------------------- | :----------: | :------: | :--------- | :-------------------- | :--------------- | :------: |
@@ -44,12 +46,20 @@ _SQL Server source in SQL Server Management studio_
 | 5   | UnitsOut                 | integer      | X        |            |                       |                  | m179     |
 | 6   | UnitsBalance             | integer      | X        |            |                       |                  | m180     |             
 
-   <p><br></p>  
- 
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/hTBF0bl.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
+<p><br></p>  
 
-  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/hTBF0bl.png)  
+_Postgres SQL's transactions checking in PgAdmin_  
+
+<p><br></p>  
+
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p> 
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

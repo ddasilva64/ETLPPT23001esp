@@ -1,4 +1,4 @@
-## **_dbo.DimGeography (SQL Server table)_**  
+## **_dbo.DimGeography (SQL Server)_**  
 
 ### Columns  
 
@@ -16,12 +16,12 @@
 | 10  | SalesTerritoryKey        | int          |          |            | dbo.DimSalesTerritory	| FK                |
 | 11  | IpAddressLocator         | nvarchar(15) |          |            |                       | deprecated        |
 
-   <p><br></p>  
+<p><br></p>  
 
 ![SQL Server source in SQL Server Management studio](https://i.imgur.com/atjnzdn.png)  
 _SQL Server source in SQL Server Management studio_  
 
-   <p><br></p>  
+<p><br></p>  
 
 ### **_PROWPI002\_DimGeography.KTR (PDI)_**   
 
@@ -29,30 +29,32 @@ _SQL Server source in SQL Server Management studio_
 2. #raw_14: arrangements/XML countries geography.XML  
 3. #staging_09: **_DimStatesProvinces_** (Postgre SQL table) 
  
-   <p><br></p>  
+<p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/04qTBND.png)  
-  _PDI transform_  
+![PDI transform](https://i.imgur.com/04qTBND.png)  
+_PDI transform_  
 
-  <p><br></p>  
+<p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/abg4gca.png)  
-  _PDI execution_ 
+![PDI execution](https://i.imgur.com/abg4gca.png)  
+_PDI execution_ 
 
-###   **_<p><br>DimStatesProvinces layout</p>_**  
+<p><br></p>  
 
-  | Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
-  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | StateProvinceCode     | Character variying(3) | X        |            |                       | PK           |  m139    |  
-  | 2   | CountryCode           | Character variying(3) | X        |            | DimCountries          | FK           |  m001    |
-  | 3   | StateProvince         | Character variying(60)|          |            |                       |              |  m140    |
-  
-   <p><br></p>  
- 
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/Dar3bXc.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
+### **_DimStatesProvinces layout_**  
 
-   <p><br></p>  
+| Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+| 1   | StateProvinceCode     | Character variying(3) | X        |            |                       | PK           |  m139    |  
+| 2   | CountryCode           | Character variying(3) | X        |            | DimCountries          | FK           |  m001    |
+| 3   | StateProvince         | Character variying(60)|          |            |                       |              |  m140    |
+
+<p><br></p>  
+
+![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/Dar3bXc.png)  
+_Postgres SQL's transactions checking in PgAdmin_  
+
+<p><br></p>  
   
 ### **_PROWPI002\_DimGeography.KTR (PDI)_**   
 
@@ -60,33 +62,41 @@ _SQL Server source in SQL Server Management studio_
 2. #raw_14: arrangements/XML countries geography.XML 
 3. #staging_09: **_"DimGeography"_** (Postgre SQL table) 
 
-   <p><br></p>  
+<p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/04qTBND.png)  
-  _PDI transform_  
+![PDI transform](https://i.imgur.com/04qTBND.png)  
+_PDI transform_  
 
-  <p><br></p>  
+<p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/XUGP6sR.png)  
-  _PDI execution_ 
+![PDI execution](https://i.imgur.com/XUGP6sR.png)  
+_PDI execution_ 
 
-  **_<p><br>DimGeography layout</p>_**  
+### **_<p><br>DimGeography layout</p>_**  
 
-  | Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
-  | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
-  | 1   | GeographyKey          | Integer               | X        |            |                       | PK           | m141     |  
-  | 2   | CountryCode           | Character variying(3) | X        |            | DimCountries          | FK           | m001     |
-  | 3   | StateProvinceCode     | Character variying(3) | X        |            | DimStatesProvinces    | FK           | m139     |
-  | 4   | SalesTerritoryKey     | Integer               |          |            | DimSalesterritory     | FK           | m142     |
-  | 5   | City                  | Character variying(60)|          |            |                       |              | m143     |
-  | 6   | PostalCode            | Character variying(10)|          |            |                       |              | m144     |
-  
-   <p><br></p>  
- 
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/KNp4OlJ.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
+| Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
+| :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
+| 1   | GeographyKey          | Integer               | X        |            |                       | PK           | m141     |  
+| 2   | CountryCode           | Character variying(3) | X        |            | DimCountries          | FK           | m001     |
+| 3   | StateProvinceCode     | Character variying(3) | X        |            | DimStatesProvinces    | FK           | m139     |
+| 4   | SalesTerritoryKey     | Integer               |          |            | DimSalesterritory     | FK           | m142     |
+| 5   | City                  | Character variying(60)|          |            |                       |              | m143     |
+| 6   | PostalCode            | Character variying(10)|          |            |                       |              | m144     |
 
-  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+<p><br></p>  
+
+![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/KNp4OlJ.png)  
+_Postgres SQL's transactions checking in PgAdmin_  
+
+<p><br></p>  
+
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

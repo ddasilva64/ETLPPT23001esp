@@ -17,13 +17,15 @@
    - The **_IT_** staff is very professional and efficient, but they are **_too specialized_** in their technology stack.
    - The management staff of our client **_do not have the necessary skills_** to face **_BI_** and **_DS_** projects. To solve this problem, we have contacted **_Adventure Works Cycles, Inc._** with our training partner: [**_Platzi_**](https://en.wikipedia.org/wiki/Platzi) (**_One of the best Technology of Information Systems Training companies worldwide_**).
 
+<p><br></p> 
+
 ![Platzi logo](https://i.imgur.com/sG9GhiB.jpg)  
 _(Platzi logo, from [Platzi Team](https://courses.platzi.com/), [public domain](https://commons.wikimedia.org/w/index.php?curid=93410933))_  
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)
-
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [Back to Table of contents :arrow_double_up:](../README.md)

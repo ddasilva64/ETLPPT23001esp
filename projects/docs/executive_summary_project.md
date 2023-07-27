@@ -6,8 +6,12 @@
 
 Our client is **_Adventure Works Cycles, Inc._**, which is a large, multinational manufacturing company that produces and distributes bicycles, parts, and accessories for commercial markets in North America, Europe, and Asia. The company employs 500 workers. Additionally, Adventure Works employs several regional sales teams throughout its market base. They want to expand their business worldwide, but they need the best **_BI_** (Business Intelligence) & **_DS_** (Data Science) to make informed decisions.
 
+<p><br></p> 
+
 ![Adventure Works Cycles logo](https://i.imgur.com/8dpUmbD.png)  
 _Adventure Works Cycles logo_
+
+<p><br></p> 
 
 In particular, as far as we (**_3DoWoCo_**) are concerned, our work must focus on the following objectives:
 
@@ -43,12 +47,14 @@ In particular, as far as we (**_3DoWoCo_**) are concerned, our work must focus o
 
 6. The final **_Balanced Scorecard (BSC)_** will be built in **_Microsoft Power BI (PBI)_** and will collect the requested metrics.
 
+<p><br></p> 
+
 **_Notice_**: A small part of this project (**_ETL_** Foreign Exchanges and Forecast), will be done in **_Python_** on **_Jupyter Notebooks_** on **_Google Colaboratory_**.
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)
-
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [Back to Table of contents :arrow_double_up:](../README.md)

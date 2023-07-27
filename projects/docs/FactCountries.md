@@ -1,4 +1,4 @@
-## **_FactCountries (Postgre SQL table)_**  
+## **_FactCountries (Postgre SQL)_**  
 
 ### **_PROWPI001\_FactCountries.KTR_**  
 1. #staging_02: staging\demography  
@@ -8,13 +8,19 @@
 5. #staging_06: staging\FactCountries 
 6. output #01: **_FactCountries_** (**_Postgre SQL_** table)  
 
+<p><br></p>
+
 ![PDI transform](https://i.imgur.com/x1cya1l.png)
 _PDI transform_
+
+<p><br></p>
 
 ![PDI execution](https://i.imgur.com/DBRLP8z.png)
 _PDI execution_
 
-### **_<p><br>FactCountries layout</p>_**  
+<p><br></p>
+
+### **_FactCountries layout_**  
 
 | Key	| Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
 | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
@@ -44,14 +50,18 @@ _PDI execution_
 | 24  | MMR                   | integer               |          |            |                       |              | m027     |
 | 25  | TBR                   | real                  |          |            |                       |              | m028     |
 
+<p><br></p> 
+
 ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/kmDllqX.png) 
 _Postgres SQL's transactions checking in PgAdmin_  
 
+<p><br></p> 
+
 **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
-### ChatGPT 3.5 usage  
+<p><br></p> 
 
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
+[ChatGPT usage](../CHATGPT_USAGE.md)  
 
 <p><br></p> 
 

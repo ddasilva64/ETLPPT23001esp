@@ -26,6 +26,8 @@ Also, the management of **_Adventure Works Cycles, Inc._** agrees to provide the
 
 Meetings will be held (in person or by **_Microsoft Teams_**), between **_Adventure Works Cycles, Inc._** and **_3DoWoCo_**, including the administrators and concerned employees.
 
+<p><br></p> 
+
 #### **_Steps_**
 
 1. Get data from data sources **_PROWPI001_**. Not categorical (like [**_PROWPI001_**](https://github.com/ddasilva64/MTDPDN23001esp/blob/master/proyectos/PROWPI001.ipynb) project), but numerical.
@@ -34,13 +36,15 @@ Meetings will be held (in person or by **_Microsoft Teams_**), between **_Advent
 4. **_Power BI BSC_**, called **_ISS.pbix_**, will get data from **_PROWPI002_**, and it will show metrics based on data.
 5. **_ISS.pbix_** will be deployed in the corporate **_Power BI Service_** of **_Adventure Works Cycles, Inc._**.  
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
-
 <p><br></p> 
 
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
+
 [Back to Table of contents :arrow_double_up:](../README.md)
+
+<p><br></p>
 
 #### **_Goals_**
 
@@ -58,11 +62,13 @@ Meetings will be held (in person or by **_Microsoft Teams_**), between **_Advent
    - **_-> Deployment presentation_**
 9. **_Final acceptance_**
 
+<p><br></p>
+
 **_Notice_**: **_DWH_** optimizations will be done through dimensional reductions in DB views, but not in tables directly. The reason is because of information traceability.
   
-### ChatGPT 3.5 usage  
+<p><br></p> 
 
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)
+[ChatGPT usage](../CHATGPT_USAGE.md)  
 
 <p><br></p> 
 

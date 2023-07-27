@@ -7,11 +7,17 @@
 4. #raw_04: arrangements/XML country areas not match input.XML
 5. #staging_07: arrangements/**_XML DimCountries.XML_** (staging file)
 
+<p><br></p> 
+
 ![PDI transform](https://i.imgur.com/2H7IdFy.png)
 _PDI transform_
 
+<p><br></p> 
+
 ![PDI execution](https://i.imgur.com/QQ5erJu.png)
 _PDI execution_
+
+<p><br></p> 
 
 ### **_DimCountries layout_**
 
@@ -22,17 +28,23 @@ _PDI execution_
 | 3   | Area                  | integer               |          |            |                       |              | m003     |
 | 4   | Region                | Character varying(30) |          |            |                       |              | m004     |
 
+<p><br></p> 
+
 ![XML file checking](https://i.imgur.com/ja9Mxa1.png)
 _XML file checking_
+
+<p><br></p> 
 
 ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/5wh3IhK.png)
 _Postgres SQL's transactions checking in PgAdmin_
 
+<p><br></p> 
+
 **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
-### ChatGPT 3.5 usage  
+<p><br></p> 
 
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
+[ChatGPT usage](../CHATGPT_USAGE.md)  
 
 <p><br></p> 
 

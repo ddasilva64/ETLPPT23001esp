@@ -15,16 +15,22 @@ That means that:
 3.3. Export data to **_Postgre SQL_** in **_PDI_**  
 4. Our **_BSC_** will allow us to estimate business strategies, to increase it, compared to the forecast  
 
+<p><br></p> 
+
 ### Goals  
 
 1. The table involved is **_FactInternetSales_**. The forecasting system tables will be **_FactInternetSalesForecast_**  
 2. We will generate the new tables and in **_DWH_** we will check properties and values  
+
+<p><br></p> 
 
 ### Proposed spreadsheet columns  
 
 1. Sales factor: Usually greater than 1 and less than 2  
 2. Accounting year: The accounting year that we will take for forecast  
 3. Forecast year: Forecast year in which we will compare results. Normally it will be the year following the current year  
+
+<p><br></p> 
 
 ### **_FORECAST\_FactInternetSales01.KTR_**  
   1. #staging_53: **_FactInternetSales_**          -> (Postgre SQL INPUT table) 
@@ -55,37 +61,45 @@ That means that:
   1. #staging_09: **_CSV\_FactInternetSales.CSV_** -> (CSV INPUT)   
   2. #staging_56: **_FactInternetSalesForecast_**  -> (Postgre SQL OUTPUT table)  
    
+<p><br></p>  
+
+![PDI transform](https://i.imgur.com/6GrqLBW.png)  
+_PDI transform_   
+
+<p><br></p>  
+
+![PDI execution](https://i.imgur.com/csOBMgt.png)  
+_PDI execution_  
+
+<p><br></p>  
+
+![PDI metrics](https://i.imgur.com/BBJ0bBo.png)  
+_PDI metrics_ 
+
   <p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/6GrqLBW.png)  
-  _PDI transform_   
+![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/fC00j86.png)  
+_Postgres SQL's transactions checking in PgAdmin_  
 
   <p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/csOBMgt.png)  
-  _PDI execution_  
+![Recalculated quantities for forecasting](https://i.imgur.com/6PzfD5Y.png)  
+_Recalculated quantities for forecasting_  
 
   <p><br></p>  
 
-  ![PDI metrics](https://i.imgur.com/BBJ0bBo.png)  
-  _PDI metrics_ 
+![Recalculated dates for forecasting](https://i.imgur.com/2lI4OaG.png)  
+_Recalculated dates for forecasting_  
 
-   <p><br></p>  
- 
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/fC00j86.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
+<p><br></p> 
 
-   <p><br></p>  
- 
-  ![Recalculated quantities for forecasting](https://i.imgur.com/6PzfD5Y.png)  
-  _Recalculated quantities for forecasting_  
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
-   <p><br></p>  
- 
-  ![Recalculated dates for forecasting](https://i.imgur.com/2lI4OaG.png)  
-  _Recalculated dates for forecasting_  
+<p><br></p> 
 
-  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI002 ETL :arrow_up:](prowpi002_etl.md)  
 

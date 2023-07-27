@@ -1,4 +1,4 @@
-## **_dbo.DimProduct (SQL Server table)_**  
+## **_dbo.DimProduct (SQL Server)_**  
 
 ### Columns  
 
@@ -41,29 +41,32 @@
 | 35  | EndDate                  | datetime      |          |            |                           |             |
 | 36  | Status                   | nvarchar(7)   |          |            |                           |             |
 
-   <p><br></p>  
+<p><br></p>  
 
 ![SQL Server source in SQL Server Management studio](https://i.imgur.com/x7cgtyT.png)  
 _SQL Server source in SQL Server Management studio_  
 
-   <p><br></p>  
+<p><br></p>  
 
 **_Notice!_**: **_SizeRange_**, and **_Color_** fields have NA value, of course deprecated  
+
+<p><br></p>  
 
 ### **_PROWPI002\_DimProduct.KTR (PDI)_**   
 1. #Table input: **_dbo.DimProduct_** (SQL Server)  
 2. staging_11: **_DimProduct_** (Postgre SQL table)
  
-   <p><br></p>  
+<p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/rp8gt5P.png) 
-  _PDI transform_  
+![PDI transform](https://i.imgur.com/rp8gt5P.png) 
+_PDI transform_  
 
-  <p><br></p>  
+<p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/xOzKVjn.png)  
-  _PDI execution_ 
+![PDI execution](https://i.imgur.com/xOzKVjn.png)  
+_PDI execution_ 
 
+<p><br></p>  
 
 | Key	| Name                     | Data type             | Not null | Attributes | References                | Description | Metadata |
 | :-: | :----------------------- | :-------------------: | :------: | :--------- | :------------------------ | :---------- | :------: |
@@ -93,12 +96,18 @@ _SQL Server source in SQL Server Management studio_
 | 24  | EndDate                  | date                  |          |            |                           |             | m105     |
 | 25  | Status                   | character varying(7)  |          |            |                           |             | m106     |
 
-   <p><br></p>  
- 
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/zh8bxLN.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
+<p><br></p>  
 
-  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/zh8bxLN.png)  
+_Postgres SQL's transactions checking in PgAdmin_  
+
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

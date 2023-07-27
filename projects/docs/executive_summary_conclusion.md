@@ -8,12 +8,14 @@ The new system:
 - It is **_much more efficient_** than the previous system
 - **_It allows making decisions_** and not just making presentations or automating reports.
 
+<p><br></p> 
+
 By the way, as the British adage goes, "**_the proof of the pudding is in the eating! That is, let's go_**."
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)
-
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [Back to Table of contents :arrow_double_up:](../README.md)

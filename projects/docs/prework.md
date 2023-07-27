@@ -19,8 +19,12 @@
    8. **_Use integrated security_**: Yes
    9. **_Native JDBC_**: True
 
-![Test connection to SQL Server in PDI](https://i.imgur.com/xAfQCsH.png)  
-_Test connection to SQL Server in PDI_
+   <p><br></p>
+
+   ![Test connection to SQL Server in PDI](https://i.imgur.com/xAfQCsH.png)  
+   _Test connection to SQL Server in PDI_
+
+   <p><br></p>
 
    10. Additional settings (**_JDBC driver_**)
        1. Configure **_JDBC driver_**
@@ -44,13 +48,15 @@ _Test connection to SQL Server in PDI_
    6. **_Password_**: [password]
    7. **_Native JDBC_**: True
 
+<p><br></p>
+
 ![Test connection to Postgre SQL in PDI](https://i.imgur.com/cMX1qei.png)  
 _Test connection to Postgre SQL in PDI_  
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
-
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [Back to Table of contents :arrow_double_up:](../README.md)

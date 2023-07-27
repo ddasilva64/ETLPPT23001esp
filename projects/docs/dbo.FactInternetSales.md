@@ -31,14 +31,16 @@
 | 25  | DueDate               | datetime     |          |            |                       |              |
 | 26  | ShipDate              | datetime     |          |            |                       |              |  
 
-   <p><br></p>  
+<p><br></p>  
 
 ![SQL Server source in SQL Server Management studio](https://i.imgur.com/Zdn6jCp.png)  
 _SQL Server source in SQL Server Management studio_  
 
-   <p><br></p>  
+<p><br></p>  
 
 **_Warning!_**: In their database, **_Adventure Works Cycles, Inc._**, they count sales (in France and Germany), in € since January 1, 1999, but have not changed the value of CurrencyKey. At this time **_3DoWoCo_** will change **_"dem"_** and **_"frf"_** to **_"eur"_**
+
+<p><br></p> 
 
 ### **_PROWPI002\_FactInternetSales.KTR (PDI)_**   
 1. #Table input: **_dbo.FactInternetSales_** (SQL Server)  
@@ -46,17 +48,19 @@ _SQL Server source in SQL Server Management studio_
 3. #raw_15: arrangements/XML currencies - euro.xml  
 4. staging_08: **_FactInternetSales_** (Postgre SQL table)
  
-   <p><br></p>  
+<p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/1m28Di2.png)  
-  _PDI transform_  
+![PDI transform](https://i.imgur.com/1m28Di2.png)  
+_PDI transform_  
 
-  <p><br></p>  
+<p><br></p>  
 
-  ![PDI execution](https://i.imgur.com/3x62USi.png)  
-  _PDI execution_ 
+![PDI execution](https://i.imgur.com/3x62USi.png)  
+_PDI execution_ 
 
-### **_<p><br>FactInternetSales layout (Postgre SQL)</p>_**  
+<p><br></p> 
+
+### **_FactInternetSales layout (Postgre SQL)_**  
 
   | Key | Name                  | Data type             | Not null | Attributes | References            | Description  | Metadata |
   | :-: | :-------------------- | :-------------------: | :------: | :--------- | :-------------------- | :----------- | :------- |
@@ -84,12 +88,20 @@ _SQL Server source in SQL Server Management studio_
   | 22  | DueDate               | date                  |          |            |                       |              | m080     |
   | 23  | ShipDate              | date                  |          |            |                       |              | m081     |
   
-   <p><br></p>  
- 
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/GQ64tqU.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
+<p><br></p>  
 
-  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/GQ64tqU.png)  
+_Postgres SQL's transactions checking in PgAdmin_  
+
+<p><br></p>  
+
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p> 
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

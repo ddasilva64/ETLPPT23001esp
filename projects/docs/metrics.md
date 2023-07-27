@@ -7,11 +7,15 @@ A simple quote:
 > I have been struck again and again by how important measurement is to improving the human condition  
 >(Bill Gates)
 
+<p><br></p>
+
 ### **_Vanity metrics and Actionable metrics_**  
 
 **_Vanity metrics_** (the opposite of actionable metrics), are metrics that make we look good to others but **_do not help we understand our own performance in a way that informs future strategies_**. Any metric can be a vanity metric  
 
 **_Actionable metrics_** (the opposite of vanity metrics), are metrics that **_helps we make decisions and helps our business reach its goals or grow_**. See SMART metrics  
+
+<p><br></p>
 
 ### **_How to identify vanity metrics_**  
 
@@ -83,6 +87,8 @@ A simple quote:
 | **_Sales performance by rep_** | It creates friendly competition by publicly tracking how each salesperson is performing | We pick our sales metrics based on the behavior we want to promote; for example, if we are trying to increase our team’s real sales efforts, we might display total sales by rep |
 | **_Sales management_** | Sales managers must know how the team is trending | We track the value of new opportunities compared to the previous month or quarter, the weighted value of our pipeline, total sales versus our target, and/or close rate by the salesperson |
 
+<p><br></p>
+
 ### **_KPIs proposed into BSC_**  
 
 | KPI             | Meaning                                  |
@@ -96,9 +102,13 @@ A simple quote:
 | **_Revenue churn_** | The amount of revenue that is lost in a month, quarter, or year |
 | **_Employee turnover rate_** | The percentage of sales reps who leave our team |
 
+<p><br></p>
+
 ### **_Proposed updating frequency of BSC data_**  
 
 **_Monthly_**
+
+<p><br></p>
 
 ### **_Target users of the BSC_**  
 
@@ -108,6 +118,8 @@ A simple quote:
 **_Note_**: **_Row-level security (RLS)_** within **_Power BI_** can be used to restrict data access for given users. Filters restrict data access at the row level, and we can define filters within roles  
 
 **_Notice_**: **_RLS_** will be deployed in future deployments, but not in **_PROWPI002_**  
+
+<p><br></p>
 
 ### **_Other cross metrics implemented in BSC_**  
 
@@ -140,9 +152,15 @@ A simple quote:
 | **_MMR_**        | m027 | Maternal mortality rate  | number of maternal deaths in a year / number of live births for the same period x 100,000 |
 | **_TBR_**        | m028 | Teen birth rate | number of resident live births to mothers ages 15-19 / number of resident women aged 15-19 |
 
+<p><br></p>
+
 ### **_User Acceptance_**   
 
 **_Adventure Works Cycles, Inc._** certifies that **_PROWPI002_** the data project is well done pending BSC, as of the current date  
+
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
 
 <p><br></p>
 

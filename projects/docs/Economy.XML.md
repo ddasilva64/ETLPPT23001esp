@@ -8,11 +8,17 @@
 5. #raw_09: WEO_Data_02.CSV
 6. #staging_04: **_staging\Economy.XML_**
 
+<p><br></p>
+
 ![PDI transform](https://i.imgur.com/GZ8ZExc.png)
 _PDI transform_
 
+<p><br></p>
+
 ![PDI execution](https://i.imgur.com/XXMKcs1.png)
 _PDI execution_
+
+<p><br></p>
 
 ### **_Economy.XML layout_**
 
@@ -27,16 +33,20 @@ _PDI execution_
 | 7   | MLFPR       | real                 |          |            |              |             | m015     |
 | 8   | PDGDP       | real                 |          |            |              |             | m016     |
 
+<p><br></p>
+
 ![XML file checking](https://i.imgur.com/LJmQj4T.png)
 _XML file checking_
 
-**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+<p><br></p>
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**    
 
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI001 ETL :arrow_up:](prowpi001_etl.md)  
 

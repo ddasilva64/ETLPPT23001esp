@@ -139,6 +139,10 @@ This is the process of creating and executing end-to-end test cases, to ensure t
 
 1. [FactInternetSalesForecast](../PROWPI002/dwh/FactInternetSalesForecast.sql)  
 
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
 <p><br></p>
 
 [Back to Table of contents :arrow_double_up:](../README.md)

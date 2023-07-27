@@ -1,4 +1,4 @@
-## **_dbo.DimReseller (SQL Server table)_**  
+## **_dbo.DimReseller (SQL Server)_**  
 
 ### Columns  
 
@@ -25,28 +25,30 @@
 | 19  | AnnualRevenue            | money        |          |            |                       |                   |	
 | 20  | YearOpened               | int          |          |            |                       |                   |	
 
-   <p><br></p>  
+<p><br></p>  
 
 ![SQL Server source in SQL Server Management studio](https://i.imgur.com/VJWCr15.png)  
 _SQL Server source in SQL Server Management studio_  
 
-   <p><br></p>   
+<p><br></p>   
 
 ### **_PROWPI002\_DimReseller.KTR (PDI)_**   
 1. #Table input: **_dbo.DimReseller_** (SQL Server)  
 2. staging_16: **_DimReseller_** (Postgre SQL table)
- 
-   <p><br></p>  
 
-  ![PDI transform](https://i.imgur.com/POU5Qzp.png)  
-  _PDI transform_  
+<p><br></p>  
 
-  <p><br></p>  
+![PDI transform](https://i.imgur.com/POU5Qzp.png)  
+_PDI transform_  
 
-  ![PDI execution](https://i.imgur.com/7c1DcvM.png)  
-  _PDI execution_ 
+<p><br></p>  
 
-### **_<p><br>DimReseller layout (Postgre SQL)</p>_**  
+![PDI execution](https://i.imgur.com/7c1DcvM.png)  
+_PDI execution_ 
+
+<p><br></p>  
+
+### **_DimReseller layout (Postgre SQL)_**  
 
 | Key	| Name                     | Data type             | Not null | Attributes | References            | Description       | Metadata |
 | :-: | :----------------------- | :-------------------: | :------: | :--------- | :-------------------- | :---------------- | :------: |
@@ -70,12 +72,20 @@ _SQL Server source in SQL Server Management studio_
 | 19  | AnnualRevenue            | real                  |          |            |                       |                   | m171     |
 | 20  | YearOpened               | integer               |          |            |                       |                   | m172     |
 
-   <p><br></p>  
- 
-  ![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/r16xcW7.png)  
-  _Postgres SQL's transactions checking in PgAdmin_  
+<p><br></p>  
 
-  **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+![Postgres SQL's transactions checking in PgAdmin](https://i.imgur.com/r16xcW7.png)  
+_Postgres SQL's transactions checking in PgAdmin_  
+
+<p><br></p>
+
+**_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
+
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p> 
 
 [PROWPI002 ETL (AdventureWorksDW2022 DB) :arrow_up:](prowpi002_etl_adventureworksdw2022_db.md)  
 

@@ -10,4 +10,10 @@
 
 By the way, we always build parametric data according to the needs of our clients  
 
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
+
 [Back to Table of contents :arrow_double_up:](../README.md)

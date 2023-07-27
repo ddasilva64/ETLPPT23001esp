@@ -5,11 +5,17 @@
 2. #raw_02: countries_eng.CSV
 3. #staging_05: **_staging\Education.XML_**
 
+<p><br></p> 
+
 ![PDI transform](https://i.imgur.com/E1pOonB.png)
 _PDI transform_
 
+<p><br></p> 
+
 ![PDI execution](https://i.imgur.com/eczLhvU.png)
 _PDI execution_
+
+<p><br></p> 
 
 ### **_Education.XML layout_**
 
@@ -22,16 +28,20 @@ _PDI execution_
 | 5   | FSSE        | real                 |          |            |              |             | m020     |
 | 6   | MSSE        | real                 |          |            |              |             | m021     |
 
+<p><br></p> 
+
 ![XML file checking](https://i.imgur.com/zfeATj9.png)
 _XML file checking_
 
+<p><br></p> 
+
 **_QA_**: Go to **_[DWH (Data Warehouse)](dwh.md)_**  
 
-### ChatGPT 3.5 usage  
-
-[This project was checked using ChatGPT 3.5](../CHATGPT_USE.md)  
-
 <p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
 
 [PROWPI001 ETL :arrow_up:](prowpi001_etl.md)  
 
