@@ -38,5 +38,4 @@ CREATE VIEW target."LTV_view"  AS
  	FROM target."DimCustomer" c 
       LEFT JOIN target."FactInternetSales" s
 	  ON s."CustomerKey" = c."CustomerKey"
-	GROUP BY c."CustomerKey"
-	order by sum(s."ExtendedAmount")
+	GROUP BY c."CustomerKey";
