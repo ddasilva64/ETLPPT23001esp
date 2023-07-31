@@ -1,6 +1,6 @@
 CREATE VIEW target."RPB_view"  AS 
 	SELECT
-       COUNT(*), p."ProductKey", MIN(s."CurrencyKey") "CurrencyKey",
+       COUNT(*), p."ProductKey", 
 	   MIN(s."SalesTerritoryKey") "SalesTerritoryKey",
 	   MIN(p."ProductName") "ProductName", MIN(p."Description") "Description", MIN(p."ProductSubcategoryKey") "ProductSubcategoryKey", 
 	   MIN(p."StandardCost") "StandardCost", MIN(p."SafetyStockLevel") "SafetyStockLevel", MIN(p."ReorderPoint") "ReorderPoint",

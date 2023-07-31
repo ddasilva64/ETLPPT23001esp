@@ -47,6 +47,25 @@
 
 <p><br></p> 
 
+* For us FactInternetSales and FactInternetSalesForecast is the same Fact table
+
+````SQL
+CREATE VIEW target."ISS_view"  AS 
+	SELECT "ProductKey", "CustomerKey", "PromotionKey", "CurrencyKey", "SalesTerritoryKey", "SalesOrderNumber", "SalesOrderLineNumber", 
+		   "RevisionNumber", "OrderQuantity", "UnitPrice", "ExtendedAmount", "UnitPriceDiscountPct", "DiscountAmount", "ProductStandardCost", 
+		   "TotalProductCost", "SalesAmount", "TaxAmt", "Freight", "CarrierTrackingNumber", "CustomerPONumber", "OrderDate", "DueDate", 
+		   "ShipDate", "FactInternetSalesPK" "ISSKey"
+	FROM target."FactInternetSales"
+	UNION
+	SELECT "ProductKey", "CustomerKey", "PromotionKey", "CurrencyKey", "SalesTerritoryKey", "SalesOrderNumber", "SalesOrderLineNumber", 
+		   "RevisionNumber", "OrderQuantity", "UnitPrice", "ExtendedAmount", "UnitPriceDiscountPct", "DiscountAmount", "ProductStandardCost", 
+		   "TotalProductCost", "SalesAmount", "TaxAmt", "Freight", "CarrierTrackingNumber", "CustomerPONumber", "OrderDate", "DueDate", "ShipDate", 
+		   "FactInternetSalesForecastPK"  "ISSKey"
+	FROM target."FactInternetSalesForecast"
+````
+
+* **_CLV_view_** replace **_FactInternetSales_** and **_DimCustomer_**. Also, we do not need Geo dimension tables, bause we incorpore it from **_PROWPI001_**
+
 ````SQL
 CREATE VIEW target."CLV_view"  AS 
 	SELECT
@@ -86,10 +105,11 @@ CREATE VIEW target."CLV_view"  AS
 	   MIN("Phone") "Phone", MIN("DateFirstPurchase") "DateFirstPurchase", MIN("CommuteDistance") "CommuteDistance", 
 	   MIN("Occupation") "Occupation"
  	FROM target."DimCustomer" c 
-      LEFT JOIN target."FactInternetSales" s
+      LEFT JOIN target."ISS_view" s
 	  ON s."CustomerKey" = c."CustomerKey"
 	GROUP BY c."CustomerKey";
 ````
+* Functions needed in **_Postgre SQL_**
 
 ````SQL
 CREATE OR REPLACE FUNCTION target."MonthsFunc" (double precision,double precision,double precision) RETURNS int AS '
@@ -140,10 +160,12 @@ CREATE OR REPLACE FUNCTION target."CLV_CACFunc" (double precision, double precis
 ' LANGUAGE 'plpgsql';
 ````
 
+* **_PB_view_** replace DimProduct
+
 ````SQL 
 CREATE VIEW target."RPB_view"  AS 
 	SELECT
-       COUNT(*), p."ProductKey", MIN(s."CurrencyKey") "CurrencyKey",
+       COUNT(*), p."ProductKey", 
 	   MIN(s."SalesTerritoryKey") "SalesTerritoryKey",
 	   MIN(p."ProductName") "ProductName", MIN(p."Description") "Description", MIN(p."ProductSubcategoryKey") "ProductSubcategoryKey", 
 	   MIN(p."StandardCost") "StandardCost", MIN(p."SafetyStockLevel") "SafetyStockLevel", MIN(p."ReorderPoint") "ReorderPoint",
