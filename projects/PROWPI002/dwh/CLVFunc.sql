@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION target."LTVFunc" (double precision, double precision, double precision, double precision,double precision,double precision,double precision) RETURNS double precision AS '
+CREATE OR REPLACE FUNCTION target."CLVFunc" (double precision, double precision, double precision, double precision,double precision,double precision,double precision) RETURNS double precision AS '
 	DECLARE
 		ExtendedAmount 		ALIAS FOR $1;
 		ProductStandardCost ALIAS FOR $2;

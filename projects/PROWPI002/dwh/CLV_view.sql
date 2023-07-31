@@ -1,4 +1,4 @@
-CREATE VIEW target."LTV_view"  AS 
+CREATE VIEW target."CLV_view"  AS 
 	SELECT
        COUNT(*), c."CustomerKey", MIN(c."GeographyKey") "GeographyKey", MIN(s."CurrencyKey") "CurrencyKey",
 	   MIN(s."SalesTerritoryKey") "SalesTerritoryKey",
@@ -14,19 +14,19 @@ CREATE VIEW target."LTV_view"  AS
 				DATE_PART('MONTH',AGE(MAX(s."OrderDate"), MIN(s."OrderDate"))),
 		   		DATE_PART('DAY',AGE(MAX(s."OrderDate"), MIN(s."OrderDate")))
 		   		) "MonthsNo",
-	   target."LTVFunc"(
+	   target."CLVFunc"(
 		   		SUM(s."ExtendedAmount"),SUM(s."ProductStandardCost"),SUM(s."TaxAmt"),SUM(s."Freight"),
 				DATE_PART('YEAR',AGE(MAX(s."OrderDate"), MIN(s."OrderDate"))),
 				DATE_PART('MONTH',AGE(MAX(s."OrderDate"), MIN(s."OrderDate"))),
 		   		DATE_PART('DAY',AGE(MAX(s."OrderDate"), MIN(s."OrderDate")))
-		   		) "LTV",
+		   		) "CLV",
 	   10.00 "CAC",
-	   target."LTV_CACFunc"(
+	   target."CLV_CACFunc"(
 			SUM(s."ExtendedAmount"),SUM(s."ProductStandardCost"),SUM(s."TaxAmt"),SUM(s."Freight"),
 			DATE_PART('YEAR',AGE(MAX(s."OrderDate"), MIN(s."OrderDate"))),
 			DATE_PART('MONTH',AGE(MAX(s."OrderDate"), MIN(s."OrderDate"))),
 			DATE_PART('DAY',AGE(MAX(s."OrderDate"), MIN(s."OrderDate"))), 10.0
-			) "LTV_CAC",
+			) "CLV_CAC",
 	   MIN("BirthDate") "BirthDate", DATE_PART('year',AGE("BirthDate")) "Age", 
 	   MIN("MaritalStatus") "MaritalStatus", min("Suffix") "Suffix", 
 	   MIN("Gender") "Gender", min("YearlyIncome") "YearlyIncome", 
