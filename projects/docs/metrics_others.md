@@ -31,6 +31,9 @@
 | **_MMR_**        | m027      | Maternal mortality rate                   | number of maternal deaths in a year / number of live births for the same period x 100,000                       |
 | **_TBR_**        | m028      | Teen birth rate                           | number of resident live births to mothers ages 15-19 / number of resident women aged 15-19                      |
 
+<p><br></p> 
+
+[Disclaimer](../DISCLAIMER.md)
 
 <p><br></p> 
 

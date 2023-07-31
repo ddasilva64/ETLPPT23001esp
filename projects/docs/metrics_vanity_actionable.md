@@ -14,6 +14,9 @@
 2. What can we do to intentionally **_reproduce the result_**?  
 3. Is the data a real **_reflection of the truth_**? 
  
+<p><br></p> 
+
+[Disclaimer](../DISCLAIMER.md)
 
 <p><br></p> 
 

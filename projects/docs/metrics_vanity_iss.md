@@ -9,8 +9,11 @@
 | Cost per view         | It reflects the cost of reaching each potential customer, but it doesn't account for whether those viewers actually engage with the content. |
 | Keyword rankings (without context) | These rankings don't offer the bigger picture in any kind of meaningful way. |
 
-
 <p><br></p> 
+
+[Disclaimer](../DISCLAIMER.md)
+
+<p><br></p>  
 
 [ChatGPT usage](../CHATGPT_USAGE.md)  
 

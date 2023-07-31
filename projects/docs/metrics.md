@@ -35,6 +35,10 @@ A simple quote:
 
 <p><br></p> 
 
+[Disclaimer](../DISCLAIMER.md)
+
+<p><br></p> 
+
 [ChatGPT usage](../CHATGPT_USAGE.md)  
 
 <p><br></p>

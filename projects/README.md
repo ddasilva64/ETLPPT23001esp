@@ -76,6 +76,7 @@
 - [Metrics](docs/metrics.md)
 - [UX (User Experience)](docs/ux.md)
 - [Picture list](PICTURES.md)
+- [Disclaimer](DISCLAIMER.md)
 - [ChatGPT 3.5 usage](CHATGPT_USAGE.md)
 - [License](LICENSE.md)
 - [Author](AUTHOR.md)

@@ -9,7 +9,11 @@
 
 **_Notice_**: **_RLS_** will be deployed in future deployments, but not in **_PROWPI002_**.
 
-<p><br></p>
+<p><br></p> 
+
+[Disclaimer](../DISCLAIMER.md)
+
+<p><br></p> 
 
 [ChatGPT usage](../CHATGPT_USAGE.md)  
 

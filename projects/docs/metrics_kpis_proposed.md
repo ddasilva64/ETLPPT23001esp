@@ -12,7 +12,7 @@
 | **_Customer retention rate_** | The percentage of customers who stay with our business.                                                          | 
 | **_Revenue churn_**           | The amount of revenue that is lost in a month, quarter, or year.                                                 |
 
-Warnings!: 
+**_Warnings!_**: 
 
 - In the **_DimPromotions_** table, there are 16 records:
 1. 1 record (**_6.25%_**) corresponds to sales without discounts. All sales made to customers are without discounts. This is very concerning and indicates that **_Adventure Works Cycles, Inc._** has not made any efforts to promote its sales to customers, while the competition continues to do so. The **_Board of Directors of Adventure Works Cycles, Inc. commits to exponentially increasing promotions to customers, especially in the ISS_** (International Sales Segment).
@@ -20,6 +20,10 @@ Warnings!:
 - There is no relevant data related to promotions for customers, as the business is primarily oriented towards resellers. It is strongly advised that **_Adventure Works Cycles, Inc._** changes its business model to increase sales to customers significantly, while still maintaining sales to resellers, especially through the **_ISS_**. The **_Board of Directors of Adventure Works Cycles, Inc. commits to designing a three-year plan to ensure that 80% of their customers are end consumers_**, which will require exploring new markets. Currently, sales are only made to **_UK, France, and Germany within the EU_**.
 - We cannot make any assurances about customer retention since there have been no subscription sales in the **_ISS_** until now. As previously mentioned, the **_Board of Directors of Adventure Works Cycles, Inc. commits to changing the functioning of this subsystem_**.
 - Due to the same reasons as with customer retention, we cannot determine if we are losing customers. **_We can only measure sales within a specific period_**.
+
+<p><br></p> 
+
+[Disclaimer](../DISCLAIMER.md)
 
 <p><br></p> 
 

@@ -10,6 +10,10 @@ By the way, this frequency means that the minimum segmentation in the time dimen
 
 <p><br></p> 
 
+[Disclaimer](../DISCLAIMER.md)
+
+<p><br></p>  
+
 [ChatGPT usage](../CHATGPT_USAGE.md)  
 
 <p><br></p>

@@ -9,7 +9,11 @@
 
 **_Notice!_**: Until now, sales from representatives were made over the Internet, with representative ID. From now on, the **_Board of Directors_** of **_Adventure Works Cycles, Inc._** has decided that **_ISS_** sales will only refer to sales that are made without the intervention of any representative. Therefore, metrics like Sales performance by rep or Sales management do not make sense for the **_ISS_** process anymore.
 
-<p><br></p>
+<p><br></p> 
+
+[Disclaimer](../DISCLAIMER.md)
+
+<p><br></p> 
 
 [ChatGPT usage](../CHATGPT_USAGE.md)  
 

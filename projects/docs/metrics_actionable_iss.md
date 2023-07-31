@@ -38,7 +38,11 @@
 - Identified an issue in the **_DimCustomers_** table, where a field named **_YearlyIncome_** showed an annual income of 90,000 currency units, even though we have calculated a calculated **_LTV_** of 94.56 currency units . The **_Board of Directors_** acknowledges that it was a computer error and not their responsibility. However, we also noted that an investor brochure mentioned an annual revenue range of 60,000 to 90,000 currency units (for a single client), which could mislead investors in the company. The **_Board of Directors_** of **_Adventure Works Cycles, Inc._** assures that this data will be removed immediately from the **_Database_**, and suggested metrics will be incorporated after verification. Additionally, investors will be informed of the error and of the mentioned corrective actions.
 - Additionally, the **_Board of Directors_** will enforce a policy **_prohibiting alcohol and other substances during work meetings_**.
 
-<p><br></p>
+<p><br></p> 
+
+[Disclaimer](../DISCLAIMER.md)
+
+<p><br></p> 
 
 [ChatGPT usage](../CHATGPT_USAGE.md)  
 
