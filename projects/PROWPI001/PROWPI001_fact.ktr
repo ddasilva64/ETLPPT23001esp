@@ -614,7 +614,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/demography.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/projects/PROWPI001/staging/demography.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -735,7 +735,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/ecology.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/projects/PROWPI001/staging/ecology.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -841,7 +841,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/economy.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/projects/PROWPI001/staging/economy.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -868,13 +868,13 @@
         <xpath>GDPG</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>#,###.##########################</format>
         <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>30</length>
+        <precision>25</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
@@ -883,13 +883,13 @@
         <xpath>GNIPC</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>###,###.######################</format>
         <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>30</length>
+        <precision>22</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
@@ -898,13 +898,13 @@
         <xpath>FGNIPC</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>###,###.######################</format>
         <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>30</length>
+        <precision>22</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
@@ -913,13 +913,13 @@
         <xpath>MGNIPC</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>###,###.######################</format>
         <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>30</length>
+        <precision>22</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
@@ -929,12 +929,12 @@
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
-        <format/>
+        <format>###,###.######################</format>
         <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>30</length>
+        <precision>22</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
@@ -944,12 +944,12 @@
         <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>Number</type>
-        <format/>
+        <format>###,###.######################</format>
         <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>30</length>
+        <precision>22</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
@@ -958,13 +958,13 @@
         <xpath>PDGDP</xpath>
         <element_type>node</element_type>
         <result_type>valueof</result_type>
-        <type>Integer</type>
-        <format/>
+        <type>Number</type>
+        <format>###,###.######################</format>
         <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>30</length>
+        <precision>22</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
       </field>
@@ -1022,7 +1022,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/education.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/projects/PROWPI001/staging/education.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1173,7 +1173,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/proyectos/PROWPI001/staging/health.XML</name>
+      <name>D:/temp/Platzi/###resums/03_OUT - COURSES -/Fundamentos de ETL con Python y Pentaho/GitHub/ETLPPT23001esp-master/projects/PROWPI001/staging/health.XML</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1348,27 +1348,21 @@
     <fields>
       <field>
         <name>CountryCode</name>
-        <rename/>
       </field>
       <field>
         <name>Population</name>
-        <rename/>
       </field>
       <field>
         <name>PDR</name>
-        <rename/>
       </field>
       <field>
         <name>PGR</name>
-        <rename/>
       </field>
       <field>
         <name>CO2PC</name>
-        <rename/>
       </field>
       <field>
         <name>MFPC</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -1417,35 +1411,27 @@
     <fields>
       <field>
         <name>CountryCode</name>
-        <rename/>
       </field>
       <field>
         <name>GDPG</name>
-        <rename/>
       </field>
       <field>
         <name>GNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>FGNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>MGNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>FLFPR</name>
-        <rename/>
       </field>
       <field>
         <name>MLFPR</name>
-        <rename/>
       </field>
       <field>
         <name>PDGDP</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -1545,55 +1531,42 @@
     <fields>
       <field>
         <name>CountryCode</name>
-        <rename/>
       </field>
       <field>
         <name>Population</name>
-        <rename/>
       </field>
       <field>
         <name>PDR</name>
-        <rename/>
       </field>
       <field>
         <name>PGR</name>
-        <rename/>
       </field>
       <field>
         <name>CO2PC</name>
-        <rename/>
       </field>
       <field>
         <name>MFPC</name>
-        <rename/>
       </field>
       <field>
         <name>GDPG</name>
-        <rename/>
       </field>
       <field>
         <name>GNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>FGNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>MGNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>FLFPR</name>
-        <rename/>
       </field>
       <field>
         <name>MLFPR</name>
-        <rename/>
       </field>
       <field>
         <name>PDGDP</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1625,27 +1598,21 @@
     <fields>
       <field>
         <name>CountryCode</name>
-        <rename/>
       </field>
       <field>
         <name>EYS</name>
-        <rename/>
       </field>
       <field>
         <name>FEYS</name>
-        <rename/>
       </field>
       <field>
         <name>MEYS</name>
-        <rename/>
       </field>
       <field>
         <name>FSSE</name>
-        <rename/>
       </field>
       <field>
         <name>MSSE</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1677,75 +1644,57 @@
     <fields>
       <field>
         <name>CountryCode</name>
-        <rename/>
       </field>
       <field>
         <name>Population</name>
-        <rename/>
       </field>
       <field>
         <name>PDR</name>
-        <rename/>
       </field>
       <field>
         <name>PGR</name>
-        <rename/>
       </field>
       <field>
         <name>CO2PC</name>
-        <rename/>
       </field>
       <field>
         <name>MFPC</name>
-        <rename/>
       </field>
       <field>
         <name>GDPG</name>
-        <rename/>
       </field>
       <field>
         <name>GNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>FGNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>MGNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>FLFPR</name>
-        <rename/>
       </field>
       <field>
         <name>MLFPR</name>
-        <rename/>
       </field>
       <field>
         <name>PDGDP</name>
-        <rename/>
       </field>
       <field>
         <name>EYS</name>
-        <rename/>
       </field>
       <field>
         <name>FEYS</name>
-        <rename/>
       </field>
       <field>
         <name>MEYS</name>
-        <rename/>
       </field>
       <field>
         <name>FSSE</name>
-        <rename/>
       </field>
       <field>
         <name>MSSE</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1777,35 +1726,27 @@
     <fields>
       <field>
         <name>CountryCode</name>
-        <rename/>
       </field>
       <field>
         <name>CHEGDP</name>
-        <rename/>
       </field>
       <field>
         <name>CHEPCUSD</name>
-        <rename/>
       </field>
       <field>
         <name>LE</name>
-        <rename/>
       </field>
       <field>
         <name>FLE</name>
-        <rename/>
       </field>
       <field>
         <name>MLE</name>
-        <rename/>
       </field>
       <field>
         <name>MMR</name>
-        <rename/>
       </field>
       <field>
         <name>TBR</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -1837,103 +1778,78 @@
     <fields>
       <field>
         <name>CountryCode</name>
-        <rename/>
       </field>
       <field>
         <name>Population</name>
-        <rename/>
       </field>
       <field>
         <name>PDR</name>
-        <rename/>
       </field>
       <field>
         <name>PGR</name>
-        <rename/>
       </field>
       <field>
         <name>CO2PC</name>
-        <rename/>
       </field>
       <field>
         <name>MFPC</name>
-        <rename/>
       </field>
       <field>
         <name>GDPG</name>
-        <rename/>
       </field>
       <field>
         <name>GNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>FGNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>MGNIPC</name>
-        <rename/>
       </field>
       <field>
         <name>FLFPR</name>
-        <rename/>
       </field>
       <field>
         <name>MLFPR</name>
-        <rename/>
       </field>
       <field>
         <name>PDGDP</name>
-        <rename/>
       </field>
       <field>
         <name>EYS</name>
-        <rename/>
       </field>
       <field>
         <name>FEYS</name>
-        <rename/>
       </field>
       <field>
         <name>MEYS</name>
-        <rename/>
       </field>
       <field>
         <name>FSSE</name>
-        <rename/>
       </field>
       <field>
         <name>MSSE</name>
-        <rename/>
       </field>
       <field>
         <name>CHEGDP</name>
-        <rename/>
       </field>
       <field>
         <name>CHEPCUSD</name>
-        <rename/>
       </field>
       <field>
         <name>LE</name>
-        <rename/>
       </field>
       <field>
         <name>FLE</name>
-        <rename/>
       </field>
       <field>
         <name>MLE</name>
-        <rename/>
       </field>
       <field>
         <name>MMR</name>
-        <rename/>
       </field>
       <field>
         <name>TBR</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

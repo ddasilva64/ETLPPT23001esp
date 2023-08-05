@@ -1,5 +1,0 @@
-check spelling, sytantic, and content and generate md file of the next content
-
-=> md content
-
-if necessary write: generate md file

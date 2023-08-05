@@ -614,7 +614,7 @@
     <hop>
       <from>sort #04</from>
       <to>output #02</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>sort #03</from>
@@ -629,7 +629,7 @@
     <hop>
       <from>sort #05</from>
       <to>output #01</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
   </order>
   <step>

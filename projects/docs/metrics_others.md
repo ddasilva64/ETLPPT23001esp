@@ -17,7 +17,7 @@
 | **_MGNIPC_**     | m013      | Male gross national income per capita     |                                                                                                                  |
 | **_FLFPR_**      | m014      | Female labor force participation rate     | flf / twap x 100; flf=female labor force; twap=total working-age population                                       |
 | **_MLFPR_**      | m015      | Male labor force participation rate       |                                                                                                                  |
-| **_FDGDP_**      | m016      | Public debt as % of GDP                   |                                                                                                                  |
+| **_PDGDP_**      | m016      | Public debt as % of GDP                   |                                                                                                                  |
 | **_EYS_**        | m017      | Expected years of schooling               | years a child of school entrance age is expected to spend at school, or university, including years spent on repetition |
 | **_FEYS_**       | m018      | Female years of schooling                 |                                                                                                                  |
 | **_MEYS_**       | m019      | Male years of schooling                   |                                                                                                                  |

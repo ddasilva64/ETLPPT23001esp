@@ -2,7 +2,7 @@ CREATE VIEW target."ISS_Customer_Product_view"  AS
 	SELECT
        c."CustomerKey", c."GeographyKey", s."CurrencyKey", s."SalesTerritoryKey", c."Title", c."FirstName", 
 	   c."MiddleName", c."LastName", s."OrderDate", 
-	   target."NetIncomeFunc"(s."ExtendedAmount",s."ProductStandardCost",s."TaxAmt",s."Freight") "NetIncome",
+	   s."ExtendedAmount",s."ProductStandardCost",s."TaxAmt",s."Freight",
 	   10.00 "CAC",
 	   "BirthDate", DATE_PART('year',AGE("BirthDate")) "Age", 
 	   "MaritalStatus","Suffix","Gender","TotalChildren", "NumberChildrenAtHome", 

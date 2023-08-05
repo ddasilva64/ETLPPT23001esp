@@ -1,0 +1,181 @@
+## Customers  
+
+**_Notice!_**: In this section, we will present the metrics and KPIs related to customers, guided by our previous research work. Our next step is to collaborate with **_Adventure Works Cycles, Inc._** to finalize the UX for this topic section.
+
+![LTV for all the countries](https://i.imgur.com/JCsXWir.png)  
+
+<p><br></p>
+
+### Geography
+
+GeoVisual shows geographical information about countries and states/provinces. Users can drill down on the map to access more detailed information. For instance, the Western Europe region displays the following countries:
+
+- Germany
+- France
+- Netherlands
+- Belgium
+- Austria
+- Switzerland
+- Luxembourg
+- Monaco
+- Liechtenstein
+
+![Imgur](https://i.imgur.com/jkuygvf.png)
+
+<p><br></p>
+
+If you select a country in the countries slicer or click on a country region (for instance, Germany), you will see this country in our **_BSC_**. Additionally, you can access tip text with metrics such as **_LTV_**, **_LTV/CAC_**, and **_indicator_**.
+
+![Germany selected](https://i.imgur.com/0DEjFwX.png)
+_Germany selected_
+
+<p><br></p>
+
+On the other hand, if you perform a **_drill-down_**, you will see the states (or provinces in other countries) where **_Adventure Works Cycles, Inc._** had any sales. Similarly, you will receive a tip text with relevant information for each state or province.
+
+![Bandenburg State selected](https://i.imgur.com/CMZy3Xm.png)
+_Bandenburg State selected_
+
+![Bandenburg State selected with slicers](https://i.imgur.com/eay7Gnx.png)
+_Bandenburg State selected with slicers_
+
+<p><br></p>
+
+Anyway, at any moment, you can select a single customer, and all **_BSC_** information adapts to him/her.
+
+![Customer selected by clicking in grids](https://i.imgur.com/0hZvFgA.png)
+_Customer selected by clicking in grids_
+
+![Searching by som part of customer nam in slicer](https://i.imgur.com/KLnULh6.png)
+_Searching by som part of customer name in slicer_
+
+![We will get the same segmentation by slicers](https://i.imgur.com/Kc0vIdZ.png)
+_We will get the same segmentation by slicers_
+
+![Clearing slicer segmentation](https://i.imgur.com/L2zBZYy.png)
+_Clearing slicer segmentation_
+
+![Slicer cleared](https://i.imgur.com/eay7Gnx.png)
+_Slicer cleared_
+
+<p><br></p>
+
+By the way, until now, we had data; now we have information, and **_you will gain knowledge about the company to make performance decisions_**. **_That is the reason for our work_**.
+
+### LTV and CLV
+
+As we said, **_LTV_** and **_CLV_** are the same **_KPI_**. **_CLV_** is for a single customer, but **_LTV_** is for all the customers. For instance:
+ 
+- Relation **_LTC/CAC_** (a)= 1.99
+- Target **_LTV/CAC_** (b)= 3
+- **_LTV_** indicator = a/b ~ 66%
+
+**_Indicator level (gauge)_**:
+1. From 0 to 64.9% is <span style="color:red">very bad</span>
+2. From 65 to 84.9% is good <span style="color:yellow">bad</span>
+3. From 85 to 100% is <span style="color:green">good</span>  
+4. From greater than 100% is <span style="color:green">excelent</span> 
+
+Nowadays **_Adventure Works Cycles, Inc._** sells in:
+
+| Region    | Subregion        | Country   | State / Province | Net income     | Customers no | Orders | LTV         | LTV/CAC | LTV Indicator | Level    |
+| :-------- | :--------------- | :-------- | :--------------- | :------------- | -----------: | -----: |----------: | ------: | ------------: | :------- |
+| ALL      |                          |           |                  | $62,043,773.59 | 18,484       |113,199 | $367,122.92 | 1.99    | 66.21%  | <span style="color:yellow">bad</span>     |
+| Americas | Northern America         |           |                  | $22,225,918.40 | 9,390        | 54,759 | $131,514.31 | 1.40    | 46.69%  | <span style="color:red">very bad</span>   |
+|          |                          | US        |                  | $18,383,378.50 | 7,819        | 40,273 | $108,777.39 | 1.39    | 46.37%  | <span style="color:red">very bad</span>   |
+|          |                          | Canada    |                  | $3,842,539.90  | 1,571        | 14,483 | $22,736.92  | 1.45    | 48.24%  | <span style="color:red">very bad</span>   |
+| Oceania  | Australia and New Zeland | Australia |                  | $16,828,102,22 | 3,591        | 24,399 | $99,574.57  | 2.77    | 92.43%  | <span style="color:green">good</span>     |
+| Europe   | Northern Europe          | UK        |                  | $11,745,918.08 | 1,913        | 13,041 | $69,502.47  | 3.63    | 121.11% | <span style="color:green">excelent</span> |
+|          | Western Europe           |           |                  | $11,243,834.89 | 3,590        | 21,000 | $66,531.57  | 1.85    | 61.77%  | <span style="color:red">very bad</span>   |
+|          |                          | France    |                  | $5,329,667.94  | 1,810        | 10,438 | $31,536.50  | 1.74    | 50.08%  | <span style="color:red">very bad</span>   |
+|          |                          | Germany   |                  | $5,914,166.95  | 1,780        | 10,562 | $35,203.37  | 1.98    | 65.92%  | <span style="color:yellow">bad</span>     |
+
+<p><br></p> 
+
+![US forecasting LTV indicator](https://i.imgur.com/WGjNxGg.png)
+_US forecasting LTV indicator_
+
+<p><br></p> 
+
+![Canada forecasting LTV indicator](https://i.imgur.com/emmWzRC.png)
+_Canada forecasting LTV indicator_
+
+<p><br></p> 
+
+![Australia forecasting LTV indicator](https://i.imgur.com/jZyNTRD.png)
+_Australia forecasting LTV indicator_
+
+<p><br></p> 
+
+![UK forecasting LTV indicator](https://i.imgur.com/c3RCyvZ.png)
+_UK forecasting LTV indicator_
+
+<p><br></p> 
+
+![France forecasting LTV indicator](https://i.imgur.com/TfD6acx.png)
+_France forecasting LTV indicator_
+
+<p><br></p> 
+
+![Germany forecasting LTV indicator](https://i.imgur.com/OIOANwh.png)
+_Germany forecasting LTV indicator_
+
+<p><br></p> 
+
+Forecasting of selling **_Adventure Works Cycles, Inc._** in:
+
+| Region    | Subregion        | Country   | State / Province | Net income     | Customers no | Orders | LTV         | LTV/CAC | LTV Indicator | Level    |
+| :-------- | :--------------- | :-------- | :--------------- | :------------- | -----------: | -----: |----------: | ------: | ------------: | :------- |
+| ALL      |                          |           |                  | $62,043,773.59 | 18,484       |113,199 | $367,122.92 | 1.99    | 66.21%  | <span style="color:yellow">bad</span>     |
+| Americas | Northern America         |           |                  | $22,225,918.40 | 9,390        | 54,759 | $131,514.31 | 1.40    | 46.69%  | <span style="color:red">very bad</span>   |
+|          |                          | US        |                  | $18,383,378.50 | 7,819        | 40,273 | $108,777.39 | 1.39    | 46.37%  | <span style="color:red">very bad</span>   |
+|          |                          | Canada    |                  | $3,842,539.90  | 1,571        | 14,483 | $22,736.92  | 1.45    | 48.24%  | <span style="color:red">very bad</span>   |
+| Oceania  | Australia and New Zeland | Australia |                  | $16,828,102,22 | 3,591        | 24,399 | $99,574.57  | 2.77    | 92.43%  | <span style="color:green">good</span>     |
+| Europe   | Northern Europe          | UK        |                  | $11,745,918.08 | 1,913        | 13,041 | $69,502.47  | 3.63    | 121.11% | <span style="color:green">excelent</span> |
+|          | Western Europe           |           |                  | $11,243,834.89 | 3,590        | 21,000 | $66,531.57  | 1.85    | 61.77%  | <span style="color:red">very bad</span>   |
+|          |                          | France    |                  | $5,329,667.94  | 1,810        | 10,438 | $31,536.50  | 1.74    | 50.08%  | <span style="color:red">very bad</span>   |
+|          |                          | Germany   |                  | $5,914,166.95  | 1,780        | 10,562 | $35,203.37  | 1.98    | 65.92%  | <span style="color:yellow">bad</span>     |
+
+<p><br></p> 
+
+![US forecasting LTV indicator](https://i.imgur.com/WGjNxGg.png)
+_US forecasting LTV indicator_
+
+<p><br></p> 
+
+![Canada forecasting LTV indicator](https://i.imgur.com/emmWzRC.png)
+_Canada forecasting LTV indicator_
+
+<p><br></p> 
+
+![Australia forecasting LTV indicator](https://i.imgur.com/jZyNTRD.png)
+_Australia forecasting LTV indicator_
+
+<p><br></p> 
+
+![UK forecasting LTV indicator](https://i.imgur.com/c3RCyvZ.png)
+_UK forecasting LTV indicator_
+
+<p><br></p> 
+
+![France forecasting LTV indicator](https://i.imgur.com/TfD6acx.png)
+_France forecasting LTV indicator_
+
+<p><br></p> 
+
+![Germany forecasting LTV indicator](https://i.imgur.com/OIOANwh.png)
+_Germany forecasting LTV indicator_
+
+<p><br></p> 
+
+[Disclaimer](../DISCLAIMER.md)
+
+<p><br></p> 
+
+[ChatGPT usage](../CHATGPT_USAGE.md)  
+
+<p><br></p>
+
+[UX:arrow_up:](ux.md)  
+
+[Back to Table of contents :arrow_double_up:](../README.md)

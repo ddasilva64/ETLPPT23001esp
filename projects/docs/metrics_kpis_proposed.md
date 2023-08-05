@@ -207,7 +207,7 @@ CREATE VIEW target."ISS_Customer_Product_view"  AS
 	SELECT
        c."CustomerKey", c."GeographyKey", s."CurrencyKey", s."SalesTerritoryKey", c."Title", c."FirstName", 
 	   c."MiddleName", c."LastName", s."OrderDate", 
-	   target."NetIncomeFunc"(s."ExtendedAmount",s."ProductStandardCost",s."TaxAmt",s."Freight") "NetIncome",
+	   s."ExtendedAmount",s."ProductStandardCost",s."TaxAmt",s."Freight",
 	   10.00 "CAC",
 	   "BirthDate", DATE_PART('year',AGE("BirthDate")) "Age", 
 	   "MaritalStatus","Suffix","Gender","TotalChildren", "NumberChildrenAtHome", 
@@ -220,6 +220,8 @@ CREATE VIEW target."ISS_Customer_Product_view"  AS
 	  LEFT JOIN target."DimProduct" p
 	  ON s."ProductKey" = p."ProductKey"
 ````
+
+**_Warning!_**: **_ExtendedAmount_** is in the sales currency, whereas **_ProductStandardCost_**, **_TaxAmt_**, and **_Freight_** are always expressed in USD.
 
 <p><br></p> 
 
