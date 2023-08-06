@@ -2,7 +2,19 @@
 
 ### Demography
 
-**_Warning!_**: Today we have war in Europe. There are three countries involved (Russian Federation, Belarus, and Ucraine). Europe total population (except countries at war) is 548,836,669 people. Europe, with sales currently, population is 217,896,925 people.
+#### Europe
+
+**_Warnings!_**: 
+
+- Today, Europe is at war again. There are three countries involved: the Russian Federation, Belarus, and Ukraine.
+- The total population of Europe (excluding countries at war) is 548,836,669 people.
+- The current **_Adventure Works Cycles, Inc._** market in Europe has a population of 217,896,925 people.
+- **_Adventure Works Cycles, Inc._** decides to expand markets to all the countries of Europe (except for the three countries indicated before).
+- **_Adventure Works Cycles, Inc._** decides to adopt additive manufacturing for 100% of its products in a three-year plan.
+- This will make it possible to manufacture according to the needs of very few people or just one, absolutely placing the customer at the center.
+- These measures will make marginal costs and fixed costs such as storage disappear.
+- As already mentioned, a usage and subscription spending model will be implemented that will eliminate the need for structural costs of the sales subsystem. These new business models should account for 80% of the business in the 3 years indicated.
+- Finally, it is decided that **_Adventure Works Cycles, Inc._** must be a data-driven company and must have software at its core.
 
 Atending to population (only) we have: 
 
@@ -10,13 +22,13 @@ Atending to population (only) we have:
 
 <p><br></p>
 
-![Europe population, with sales currently](https://i.imgur.com/gkoH48B.png)
-_Europe population, with sales currently_
+![Current European market](https://i.imgur.com/gkoH48B.png)
+_Current European market_
 
 <p><br></p> 
 
-![Total Europe population](https://i.imgur.com/4D3w3yj.png)
-_Total Europe population_
+![New European market](https://i.imgur.com/4D3w3yj.png)
+_New European market_
 
 <p><br></p> 
 
@@ -51,9 +63,9 @@ Atending to Demography, and preserving business model, and attending to current 
 - **_Indicator_** = 4.75 / 3 ~ 158% (excelent)  
 - **_New Indicator_** = 4.75 / 3 ~ **_158% (excelent)_**  
 
-**_Notice!_**: Aditive fabrication will make that marginal cost -> 0, but we will contract (few) workers in situ to fabrication. ISS will increment profit with subscription service and sales.
-
 <p><br></p>
+
+#### Americas
 
 Similar growth will be able in Americas.
 
@@ -61,15 +73,17 @@ Similar growth will be able in Americas.
 
 <p><br></p>
 
-![Old Americas markets](https://i.imgur.com/6RMBith.png)
-_Old Americas markets_
+![Current American market](https://i.imgur.com/6RMBith.png)
+_Current American market_
 
 <p><br></p>
 
-![New Americas markets](https://i.imgur.com/OQC5ais.png)
-_New Americas markets_
+![New American market](https://i.imgur.com/OQC5ais.png)
+_New American market_
 
 <p><br></p>
+
+#### Oceania
 
 Also, similar growth will be able in Oceania.
 
@@ -77,15 +91,17 @@ Also, similar growth will be able in Oceania.
 
 <p><br></p>
 
-![Old Oceania markets](https://i.imgur.com/Wz7ZTuk.png)
-_Old Oceania markets_
+![Current Oceanian market](https://i.imgur.com/Wz7ZTuk.png)
+_Current Oceanian market_
 
 <p><br></p>
 
-![New Oceania markets](https://i.imgur.com/KVJw2cl.png)
-_New Oceania markets_
+![New Oceanian market](https://i.imgur.com/KVJw2cl.png)
+_New Oceanian market_
 
 <p><br></p> 
+
+#### Asia and Africa
 
 Asia and Africa are enterely new markets.
 
