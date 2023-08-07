@@ -4,18 +4,20 @@
 
 #### Europe
 
-**_Notices!_**: 
+##### Important Notices and Information
 
-- **_Adventure Works Cycles, Inc._** will consider all European countries, except the three countries currently involved in the war, as we said.
-- As we mentioned earlier (see [PROWPI001 metadata](prowpi001_Metadata.md)), **_CO2 emissions per capita_** represent the tons of CO2 emissions per year for each person in each country.
-- Also, as we said (see [PROWPI001 metadata](prowpi001_Metadata.md)), the **_material footprint per capita_** represents the tons of domestic extraction of materials plus the raw material equivalent of imports minus the raw material equivalents of exports per year for each person in each country.
-- **_Adventure Works Cycles, Inc._** is committed to reducing the material footprint by using recycled materials and ensuring the recycling of all its products in the aforementioned three-year plan.
-- Additionally, **_Adventure Works Cycles, Inc._** is dedicated to reducing CO2 emissions. The company aims to consume 80% of the energy from renewable sources, especially solar and green hydrogen (produced locally), as part of the aforementioned plan.
-- **_Adventure Works Cycles, Inc._** will communicate adequate information to its users/customers about its commitment to the environment and its efforts in fighting against climate change.
-- The total **_CO2 emissions per capita_** of Europe (excluding countries at war) is 209.82 tons per capita.
+**_Notices:_**
+
+- **_Adventure Works Cycles, Inc._** will consider all European countries, except the three countries currently involved in the war, as previously mentioned.
+- As previously mentioned (see [PROWPI001 metadata](prowpi001_Metadata.md)), **_CO2 emissions per capita_** represent the tons of CO2 emissions per year for each person in each country.
+- Additionally, as mentioned earlier (see [PROWPI001 metadata](prowpi001_Metadata.md)), the **_material footprint per capita_** represents the tons of domestic extraction of materials plus the raw material equivalent of imports minus the raw material equivalents of exports per year for each person in each country.
+- **_Adventure Works Cycles, Inc._** is committed to reducing the material footprint by using recycled materials and ensuring the recycling of all its products within the aforementioned three-year plan.
+- Furthermore, **_Adventure Works Cycles, Inc._** is dedicated to reducing CO2 emissions. The company aims to consume 80% of the energy from renewable sources, especially solar and green hydrogen (produced locally), as part of the aforementioned plan.
+- **_Adventure Works Cycles, Inc._** will communicate appropriate information to its users/customers regarding its commitment to the environment and its efforts in the fight against climate change.
+- The total **_CO2 emissions per capita_** for Europe (excluding countries at war) is 209.82 tons per capita.
 - The current European market has a **_CO2 emissions per capita_** of 16.78 tons per capita.
-- The population ratio obtained before (see [UX Costomers Demography](ux_customers_demography.md)), was ~ 2.52, but ratio of **_CO2 emissions per capita_** is 209.82 / 16.78 = 12.50417163289631 ~ 12.50. **_Adventure Works Cycles, Inc._** is committed to do public campaigns to reduce this ratio, especially in South and Eastern Europe.
-- **_Adventure Works Cycles, Inc._** will communicate adequate information to its users/customers about its commitment to the **_use of nuclear energy in Europe while advocating against the use of coal_**. They need help with the data on this issue because it's challenging to communicate; that is, it's counter-intuitive.
+- The population ratio calculated earlier (see [UX Costumers Demography](ux_customers_demography.md)) was ~ 2.52, while the ratio of **_CO2 emissions per capita_** is 209.82 / 16.78 = 12.50417163289631 ~ 12.50. **_Adventure Works Cycles, Inc._** is committed to conducting public campaigns to reduce this ratio, particularly in South and Eastern Europe.
+- **_Adventure Works Cycles, Inc._** will provide adequate information to its users/customers regarding its commitment to the **_use of nuclear energy in Europe while advocating against the use of coal_**. The company seeks assistance with data on this issue, as it's challenging to communicate; in other words, it's counter-intuitive.
 
 <p><br></p>
 

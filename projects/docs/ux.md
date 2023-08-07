@@ -3,7 +3,9 @@
 
 ## Metrics  
 
-**_Notice!_**: **_PROWPI02_** will show data through the BSC. If we make a good job with data we will get successfully BSC.
+### Connecting Data and Achieving Balanced Scorecard (BSC) Success
+
+**_Notice:_** The **_PROWPI02_** module is designed to present data within the framework of the Balanced Scorecard (**_BSC_**). If we effectively manage and utilize our data, we will successfully realize the potential of the **_BSC_**.
 
 <p><br></p>
 

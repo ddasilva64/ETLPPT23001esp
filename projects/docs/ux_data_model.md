@@ -1,6 +1,12 @@
 ## Data model in BSC  
 
-**_Notice!_**: We are delighted to announce significant advancements in our project. The dimensions have been successfully reduced to their minimum expression, and we have seamlessly integrated the **_PROWPI001_** indicators. Our approach has been strictly focused on achieving the desired indicators.
+### Exciting Progress in Our Project: Integration and Optimization
+
+**_Notice:_** We are delighted to share the latest developments in our project. We have achieved significant advancements that bring us closer to our goals. Here are the highlights:
+
+- The dimensions of our project have been successfully reduced to their minimum expression, optimizing efficiency and effectiveness.
+- We are thrilled to announce the seamless integration of the **_PROWPI001_** indicators into our project framework.
+- Our approach has been unwaveringly focused on attaining the desired indicators and delivering exceptional outcomes.
 
 <p><br></p>
 

@@ -12,7 +12,9 @@ _Connection parameters_
 ![Connection stablished](https://i.imgur.com/nsc9bw3.png)  
 _Connection stablished_
 
-**_Notice!_**: **_Power BI_** imports the name of **_table or view with schema name_**. We will clean the name, eliminating the **_schema name_**. For instance, **_target DimCountries -> DimCountries_**
+### Streamlining Table Names in Power BI
+
+**_Notice:_** When working with **_Power BI_**, the tool imports the names of **_tables or views with schema names_**. To enhance clarity, we will simplify the names by removing the **_schema name_**. For example, the transformation will result in **_target DimCountries -> DimCountries_**.
 
 ![Before claning schema name](https://i.imgur.com/Dnt1ZKW.png)  
 _Before claning schema name_

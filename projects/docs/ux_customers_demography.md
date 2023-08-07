@@ -4,19 +4,21 @@
 
 #### Europe
 
-**_Warnings!_**: 
+##### Important Notices and Information
 
-- Today, Europe is at war again. There are three countries involved: the Russian Federation, Belarus, and Ukraine.
+**_Warnings:_**
+
+- Currently, Europe is experiencing another conflict. The countries involved are the Russian Federation, Belarus, and Ukraine.
 - The total population of Europe (excluding countries at war) is 548,836,669 people.
-- The current **_Adventure Works Cycles, Inc._** market in Europe has a population of 217,896,925 people.
-- **_Adventure Works Cycles, Inc._** decides to expand markets to all the countries of Europe (except for the three countries indicated before).
-- **_Adventure Works Cycles, Inc._** decides to adopt additive manufacturing for 100% of its products in a three-year plan.
-- This will make it possible to manufacture according to the needs of very few people or just one, absolutely placing the customer at the center.
-- These measures will make marginal costs and fixed costs such as storage disappear.
-- As already mentioned, a usage and subscription spending model will be implemented that will eliminate the need for structural costs of the sales subsystem. These new business models should account for 80% of the business in the 3 years indicated.
-- Finally, it is decided that **_Adventure Works Cycles, Inc._** must be a data-driven company and must have software at its core.
+- The current market for **_Adventure Works Cycles, Inc._** in Europe comprises a population of 217,896,925 people.
+- **_Adventure Works Cycles, Inc._** has decided to expand its markets to all countries in Europe (except for the three countries mentioned earlier).
+- **_Adventure Works Cycles, Inc._** has also decided to adopt additive manufacturing for 100% of its products in a three-year plan.
+- This strategic move will enable manufacturing tailored to the needs of even very few individuals or just one person, placing the customer at the forefront.
+- These measures will lead to the elimination of marginal costs and fixed expenses, such as storage costs.
+- As previously mentioned, a usage-based and subscription spending model will be implemented, rendering the structural costs of the sales subsystem unnecessary. These new business models are expected to account for 80% of the business within the indicated three-year timeframe.
+- Ultimately, **_Adventure Works Cycles, Inc._** has resolved to become a data-driven company with software at its core.
 
-Atending to population (only) we have: 
+Considering the population alone:
 
 548,836,669 / 217,896,925 = 2.518790336302359 ~ 2.52
 
@@ -32,9 +34,11 @@ _New European market_
 
 <p><br></p> 
 
-**_Notice!_**: To select more than one choice in any slicer, use the **_Control key_** and click.
+##### Important Notice and Analysis
 
-Atending to Demography, and preserving business model, and attending to current sales (not forecast) ressult will be:
+**_Notice:_** To select more than one choice in any slicer, use the **_Control key_** and click.
+
+Considering demography and preserving the business model, and taking into account current sales (not forecasts), the result will be:
 
 | Region    | Subregion        | Country   | State / Province | Net income     | Customers no | Orders | LTV         | LTV/CAC | LTV Indicator | Level    |
 | :-------- | :--------------- | :-------- | :--------------- | :------------- | -----------: | -----: |----------: | ------: | ------------: | :------- |

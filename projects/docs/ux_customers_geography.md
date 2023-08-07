@@ -2,7 +2,9 @@
 
 ### Geography
 
-GeoVisual shows geographical information about countries and states/provinces. Users can drill down on the map to access more detailed information. For instance, the Western Europe region displays the following countries:
+#### GeoVisual: Geographic Information Exploration
+
+GeoVisual provides users with geographical information about countries and states/provinces. Users have the ability to drill down on the map to access more detailed information. For example, the Western Europe region showcases the following countries:
 
 - Germany
 - France
@@ -21,14 +23,24 @@ _Western Europe picture_
 
 <p><br></p>
 
-If you select a country in the countries slicer or click on a country region (for instance, Germany), you will see this country in our **_BSC_**. Additionally, you can access tip text with metrics such as **_LTV_**, **_LTV/CAC_**, and **_indicator_**.
+#### Exploring Country Data in GeoVisual
+
+When using GeoVisual, you can explore country-specific information and metrics in a convenient way. Here's how it works:
+
+- If you select a country in the countries slicer or click on a country region (for instance, Germany), you will see this country reflected in our **_BSC_** (Balanced Scorecard).
+- Additionally, you can access tooltip text that provides key metrics such as **_LTV_** (Customer Lifetime Value), **_LTV/CAC_** (LTV to Customer Acquisition Cost ratio), and **_indicators_**.
 
 ![Germany selected](https://i.imgur.com/0DEjFwX.png)
 _Germany selected_
 
 <p><br></p>
 
-On the other hand, if you perform a **_drill-down_**, you will see the states (or provinces in other countries) where **_Adventure Works Cycles, Inc._** had any sales. Similarly, you will receive a tip text with relevant information for each state or province.
+#### Exploring States and Provinces in GeoVisual
+
+When utilizing GeoVisual, you can delve deeper into geographical information by performing a **_drill-down_**. Here's how it works:
+
+- If you perform a **_drill-down_**, you will uncover the states (or provinces in other countries) where **_Adventure Works Cycles, Inc._** has made sales. This provides insight into the regional distribution of sales.
+- Furthermore, during this drill-down, you will receive tooltip text containing pertinent information for each state or province.
 
 ![Bandenburg State selected](https://i.imgur.com/CMZy3Xm.png)
 _Bandenburg State selected_
@@ -40,7 +52,9 @@ _Bandenburg State selected with slicers_
 
 <p><br></p>
 
-Anyway, at any moment, you can select a single customer, and all **_BSC_** information adapts to him/her.
+#### Personalized BSC Information for Individual Customers
+
+No matter the scenario, you have the ability to select a single customer at any given moment, and all **_BSC_** (Balanced Scorecard) information will automatically adjust to match that individual.
 
 ![Customer selected by clicking in grids](https://i.imgur.com/0hZvFgA.png)
 _Customer selected by clicking in grids_
@@ -67,7 +81,9 @@ _Slicer cleared_
 
 <p><br></p>
 
-By the way, until now, we had data; now we have information, and **_you will gain knowledge about the company to make performance decisions_**. **_That is the reason for our work_**.
+#### Transitioning from Data to Knowledge: Your Informed Decision-making Journey
+
+As we progress, it's important to note that while we've previously dealt with data, we now possess valuable information. Through this journey, **_you will attain knowledge about the company, enabling you to make well-informed decisions that drive performance_**. **_This forms the foundation of our endeavor_**.
 
 <p><br></p>
 

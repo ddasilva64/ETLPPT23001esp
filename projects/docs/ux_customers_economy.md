@@ -4,26 +4,27 @@
 
 #### Europe
 
-**_Notices!_**: 
+##### Important Notices and Information
 
-- **_Adventure Works Cycles, Inc._** will consider all European countries, except the three countries currently involved in the war, as we said.
-- As we mentioned earlier (see [PROWPI001 metadata](prowpi001_Metadata.md)), **_CO2 emissions per capita_** represent the tons of CO2 emissions per year for each person in each country.
-- Also, as we said (see [PROWPI001 metadata](prowpi001_Metadata.md)):
-1. The **_Gross Domestic Product (GDP)_** represents private consumption plus gross private investment plus government investment plus government spending plus difference between exports and imports for each country, and the **_Gross Domestic Product Growth (GDPG)_** represents difference between **_GDP_** current year and **_GDP_** last year divided by **_GDP_** last year, for each country. Remember that we do no consider inflation, because **_ceteris paribus_** hypotesis.
-2. The **_Gross National Income Per Capita (GNIPC)_** represents **_GDP_** plus the difference between inward remittances by businesses and individuals and outward remittance by the foreigners residing in the country divided by the population for each country.
-3. The **_Public Debt as % of GDP (PDPGDP)_** represents the public debt divided by **_GDP_**, at the end of a 12-month period, for each country.
-- **_Adventure Works Cycles, Inc._** says to know:
-1. World public debt is impossible to pay by countries. NEVER!. **_Public debt limits economic growth_**.
-2. The fighting of FED and BCE against inflation is ABSOLUTELY INEFFICIENT!, because current inflation is because problems is supply chain, but not in heating Economy. **_Additive manufacturing largely removes supply chain problems_**.
-3. Bitcoin fights against inflation but next CBDC (like electronic Euro), generates public control, and dead the economic liberty. **_Adventure Works Cycles, Inc. will support, to the extent possible, Bitcoin transactions and Smart Contracts_**.
-4. IA changes will produce unemployed workers worldwide, and amazing opportunities to do business. **_Adventure Works Cycles, Inc. will create an AI business unit and open pay-as-you-go to individuals and businesses_**.
-- **_Adventure Works Cycles, Inc._** is commited to create new economy over its products and services, for instance resselling or opening to new complementary arounds their business. This can help people to build wealth and earn a living.
-- In their three years plan **_Adventure Works Cycles, Inc._** will build this new opportunities for all the people. 
-- **_Adventure Works Cycles, Inc._** wants to be a leading industry that generates economic and social growth.
-- In **_GDPG_** case, in current European market, the average is (7.44 + 6.96 + 2.89) / 3 ~ 5.77%, but new European Market is 6.49%. That is, **_GDPG is simmilar in all European countries_**.
-- In **_GNIPC_** case, in current European market, the total is 54,534.22 + 45,937.05 + 45,224.77 = $145,696.04, but new European Market is $1,170,129.19. That is, $1,170,129.19 / $145,696.04 = 8.031304007988137 ~ 8.03.
-- The population ratio obtained before (see [UX Costomers Demography](ux_customers_demography.md)), was ~ 2.52, but GNIPC is ~ 8.03. That is, many European countries have a **_GNIPC_** greather than we will expect.
-- In **_PDPGDP_** case, in current European market, the total is (112.58 + 95.35 + 69.64) / 3 = 92.52333333333333 ~ 92.52%, but new European Market is 68.53%. That is, many European countries have **_PDPGDP_** low, but some countries hight. **_Adventure Works Cycles, Inc._** consider the border of acceptable **_PDPGDP_** a 80%, if any acountry has a **_PDPGDP_** greater than this **_Adventure Works Cycles, Inc._** will do not collaborate with public companies or governments (local or general). By the way, in 2021 was in bad position:
+**_Notices:_**
+
+- **_Adventure Works Cycles, Inc._** will consider all European countries, except the three countries currently involved in the war, as previously stated.
+- As mentioned earlier (see [PROWPI001 metadata](prowpi001_Metadata.md)):
+1. The **_Gross Domestic Product (GDP)_** represents private consumption plus gross private investment plus government investment plus government spending plus the difference between exports and imports for each country. The **_Gross Domestic Product Growth (GDPG)_** represents the difference between the current year's **_GDP_** and the previous year's **_GDP_** divided by the previous year's **_GDP_** for each country. Remember that we do not consider inflation, following the **_ceteris paribus_** hypothesis.
+2. The **_Gross National Income Per Capita (GNIPC)_** represents **_GDP_** plus the difference between inward remittances by businesses and individuals and outward remittances by foreigners residing in the country divided by the population for each country.
+3. The **_Public Debt as % of GDP (PDPGDP)_** represents the public debt divided by **_GDP_** at the end of a 12-month period for each country.
+- **_Adventure Works Cycles, Inc._** states the following:
+1. It is impossible for countries to pay off the world public debt. **_Public debt limits economic growth_**.
+2. The efforts of the FED and BCE against inflation are ABSOLUTELY INEFFICIENT because current inflation results from supply chain issues, not an overheating economy. **_Additive manufacturing largely mitigates supply chain problems_**.
+3. While Bitcoin fights against inflation, the introduction of Central Bank Digital Currencies (CBDC), like the electronic Euro, generates public control and threatens economic liberty. **_Adventure Works Cycles, Inc. will support, to the extent possible, Bitcoin transactions and Smart Contracts_**.
+4. Changes due to Artificial Intelligence will result in global unemployment but also present remarkable opportunities for business. **_Adventure Works Cycles, Inc. will create an AI business unit and offer pay-as-you-go services to individuals and businesses_**.
+- **_Adventure Works Cycles, Inc._** is committed to creating a new economy around its products and services, such as reselling or introducing new complementary offerings. This can help individuals build wealth and earn a living.
+- In their three-year plan, **_Adventure Works Cycles, Inc._** will develop these new opportunities for all people.
+- **_Adventure Works Cycles, Inc._** aims to become a leading industry that generates economic and social growth.
+- In the case of **_GDPG_**, the current European market has an average of (7.44 + 6.96 + 2.89) / 3 ~ 5.77%, whereas the new European Market average is 6.49%. This indicates that **_GDPG is similar across all European countries_**.
+- In the case of **_GNIPC_**, the total for the current European market is $145,696.04, while the new European Market is $1,170,129.19. This results in a ratio of $1,170,129.19 / $145,696.04 = 8.031304007988137 ~ 8.03.
+- The population ratio calculated earlier (see [UX Customers Demography](ux_customers_demography.md)) was ~ 2.52, while the **_GNIPC_** ratio is ~ 8.03. This indicates that many European countries have a **_GNIPC_** greater than what we initially expected.
+- In the case of **_PDPGDP_**, the current European market has a total of (112.58 + 95.35 + 69.64) / 3 = 92.52333333333333 ~ 92.52%, while the new European Market is 68.53%. This implies that many European countries have a low **_PDPGDP_**, but some countries have higher values. **_Adventure Works Cycles, Inc._** considers an acceptable **_PDPGDP_** threshold to be 80%. If any country's **_PDPGDP_** exceeds this threshold, **_Adventure Works Cycles, Inc._** will not collaborate with public companies or governments (local or national). In 2021, the following countries were in unfavorable positions:
 
 1. Greece
 2. Italy
@@ -50,12 +51,16 @@ _New European market_
 
 #### Americas
 
-Similar situation is happened in Americas.
+Similar Situations in the Americas
 
-- In **_GDPG_** case, in current American market, the average is ~ 5.12%, but new American Market is 6.89%. That is, **_GDPG is simmilar in all American countries_**.
-- In **_GNIPC_** case, in current American market, the total is $111,573.20, but new American Market is $581,995.05. That is, $581,995.05 / $111,573.20 = 5.216262059347585 ~ 5.22.
-- The population ratio obtained before (see [UX Costomers Demography](ux_customers_demography.md)), was ~ 2.77, but GNIPC is ~ 5.22. That is, many American countries have a **_GNIPC_** greather than we will expect.
-- In **_PDPGDP_** case, in current American market, the total is ~ 120.49%, but new American Market is 78.92%. That is, many American countries have **_PDPGDP_** low, but some countries hight. **_Adventure Works Cycles, Inc._** consider the border of acceptable **_PDPGDP_** a 80%, if any acountry has a **_PDPGDP_** greater than this **_Adventure Works Cycles, Inc._** will do not collaborate with public companies or governments (local or general). By the way, in 2021 was in bad position:
+**_Notice:_**
+
+Similar situations are occurring in the Americas region:
+
+- In the case of **_GDPG_**, in the current American market, the average is approximately 5.12%, while the new American Market average is 6.89%. This indicates that **_GDPG is similar across all American countries_**.
+- For the **_GNIPC_** case, the total for the current American market is $111,573.20, whereas the new American Market is $581,995.05. This results in a ratio of $581,995.05 / $111,573.20 = 5.216262059347585 ~ 5.22.
+- The population ratio calculated earlier (see [UX Customers Demography](ux_customers_demography.md)) was approximately 2.77, while the **_GNIPC_** ratio is around 5.22. This suggests that many American countries have a **_GNIPC_** greater than what we initially expected.
+- In terms of **_PDPGDP_**, the current American market has a total of approximately 120.49%, while the new American Market is at 78.92%. This implies that many American countries have a low **_PDPGDP_**, but some countries have higher values. **_Adventure Works Cycles, Inc._** considers an acceptable **_PDPGDP_** threshold to be 80%. If any country's **_PDPGDP_** exceeds this threshold, **_Adventure Works Cycles, Inc._** will not collaborate with public companies or governments (local or national). In 2021, the following countries were in unfavorable positions:
 
 1. Venezuela
 2. Barbados
@@ -63,12 +68,12 @@ Similar situation is happened in Americas.
 4. Suriname
 5. Canada
 6. Bahamas
-7. Diminica
+7. Dominica
 8. Antigua and Barbuda
 9. Brazil
 10. Jamaica
 11. Saint Lucia
-12. Saint Vicent and the Grenadines
+12. Saint Vincent and the Grenadines
 13. El Salvador
 14. Belize
 15. Argentina
@@ -88,12 +93,16 @@ _New American market_
 
 #### Oceania
 
-Also, similar situation is happened in Oceania.
+# A Similar Situation in Oceania
 
-- In **_GDPG_** case, in current Oceanian market, the average is ~ 1.48%, but new Oceanian Market is -0.49%. That is, **_GDPG is almost zero in many Oceanian countries_**.
-- In **_GNIPC_** case, in current Oceanian market, the total is $49,238.43, but new Oceanian Market is $175,259.54. That is, $175,259.54 / $49,238.43 = 3.559405529380202 ~ 3.56.
-- The population ratio obtained before (see [UX Costomers Demography](ux_customers_demography.md)), was ~ 1.64, but GNIPC is ~ 3.56. That is, the Oceanian countries have a **_GNIPC_** greather than we will expect.
-- In **_PDPGDP_** case, in current Oceanian market, the total is ~ 58.38%, but new Oceanian Market is 37.46%. That is, all the Oceanian countries have **_PDPGDP_** low. **_Adventure Works Cycles, Inc._** consider the border of acceptable **_PDPGDP_** a 80%, if any acountry has a **_PDPGDP_** greater than this **_Adventure Works Cycles, Inc._** will do not collaborate with public companies or governments (local or general). By the way, in 2021 was in bad position:
+**_Notice:_**
+
+A similar situation has also occurred in Oceania:
+
+- In the **_GDPG_** case, in the current Oceanian market, the average is approximately 1.48%, while the new Oceanian Market average is -0.49%. This indicates that **_GDPG is almost zero in many Oceanian countries_**.
+- For the **_GNIPC_** case, the total for the current Oceanian market is $49,238.43, whereas the new Oceanian Market is $175,259.54. This results in a ratio of $175,259.54 / $49,238.43 = 3.559405529380202 ~ 3.56.
+- The population ratio calculated earlier (see [UX Customers Demography](ux_customers_demography.md)) was approximately 1.64, while the **_GNIPC_** ratio is around 3.56. This indicates that the Oceanian countries have a **_GNIPC_** greater than what we initially expected.
+- In terms of **_PDPGDP_**, the current Oceanian market has a total of approximately 58.38%, while the new Oceanian Market is at 37.46%. This implies that all the Oceanian countries have a **_PDPGDP_** on the lower side. **_Adventure Works Cycles, Inc._** considers an acceptable **_PDPGDP_** threshold to be 80%. If any country's **_PDPGDP_** exceeds this threshold, **_Adventure Works Cycles, Inc._** will not collaborate with public companies or governments (local or national). In 2021, the following country was in an unfavorable position:
 
 1. Fiji
 

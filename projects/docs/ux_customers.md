@@ -1,10 +1,10 @@
 ## Customers  
 
-**_Notice!_**: In this section, we will present the metrics and KPIs related to customers, guided by our previous research work. Our next step is to collaborate with **_Adventure Works Cycles, Inc._** to finalize the UX for this topic section.
+**_Notice:_** In this section, we will present the metrics and KPIs related to customers, guided by our previous research work. Our next step is to collaborate with **_Adventure Works Cycles, Inc._** to finalize the UX for this topic section.
 
-**_Warnings!_**: 
-- Remember that our hypothesis is **_"ceteris paribus"_**. That is, we applied the forecast factor to extended amounts and quantities but not to costs. That is the reason why **_net income is not net income multiplied by the factor_**. Also, **_we used only 2013 orders_**.
-- Additionally, **_some customers buyed in more than one currency_**, for instance, when they travel to another country.
+**_Warnings:_** 
+- Remember that our hypothesis is **_"ceteris paribus"_**, meaning that we applied the forecast factor to extended amounts and quantities but not to costs. Hence, **_net income is not net income multiplied by the factor_**. Additionally, **_we used only 2013 orders_**.
+- Furthermore, **_some customers bought in more than one currency_**, for instance, when they traveled to another country.
 
 ![LTV for all the countries](https://i.imgur.com/QdXHEj4.png)  
 _LTV for all the countries_

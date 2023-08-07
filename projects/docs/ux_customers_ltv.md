@@ -10,7 +10,7 @@ As we said, **_LTV_** and **_CLV_** are the same **_KPI_**. **_CLV_** is for a s
 
 **_Indicator level (gauge)_**:  
 1. From 0 to 64.9% is <span style="color:red">very bad</span>
-2. From 65 to 84.9% is good <span style="color:yellow">bad</span>
+2. From 65 to 84.9% is <span style="color:yellow">bad</span>
 3. From 85 to 100% is <span style="color:green">good</span>  
 4. From greater than 100% is <span style="color:green">excelent</span> 
 
