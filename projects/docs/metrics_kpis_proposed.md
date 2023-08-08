@@ -43,7 +43,7 @@
 2. **_Start date, end date and status have no sense_**. The **_Board of Directors_** acknowledges this mistake and commits to Production Management to delete start and end date from Database, and to control product status.
 3. Now **_it is impossible to calculate the Marginal Revenue Product (MRP)_**, because it goes to stock, and **_we must make it tend to 0_**. Marginal revenue product (MRP) is the marginal revenue created by using one additional unit of resource.
 4. Similarly to **_CLV\_view_** we build a **_RBP\_view_**.
-5. To calculate **_RBP_** we need the stock cost of the product. **_Adventure Works Cycles, Inc._**, cannot calculate, we assume 25.0 USD.
+5. To calculate **_RBP_** we need the stock cost of the product. **_Adventure Works Cycles, Inc._**, cannot calculate, we assume it is into Product Standard Cost.
 
 <p><br></p> 
 
