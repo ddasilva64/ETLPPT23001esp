@@ -63,10 +63,10 @@ How do customers perceive **_Adventure Works Cycles, Inc._**?
 | :-------- | :----------: | :------------------------------------------ |
 | Time      | Slow         | Immediate response                          |
 | Quality   | Very High    | Good, but with high sustainability and social consciousness (brand image)            |
-| Performance | Limited*    | Performance of business units needs improvement (orders, deliveries, returns)      |
-| Service   | Very Limited*| Explore new business models. Customer should be at the core of our business, with software|
+| Performance | Limited (1)    | Performance of business units needs improvement (orders, deliveries, returns)      |
+| Service   | Very Limited (1)| Explore new business models. Customer should be at the core of our business, with software|
 
-(*) according to the business model.
+(1) according to the business model.  
 
 ## Internal Perspective of the Organization
 
@@ -84,8 +84,8 @@ In what aspects is **_Adventure Works Cycles, Inc._** not the best company?
 | Manufacturing Cycle  | Very Slow    | Immediate response                          |
 | Lead Time            | Very Slow    | Immediate response                          |
 | Quality              | Very High    | Good, but incorporating other social and sustainability values into brand image |
-| Administrative Skills| Very Limited | Lack ecological awareness, language skills, and international knowledge (*) |
-| IT Skills            | Very Limited | No understanding of the importance of new technologies (**) |
+| Administrative Skills| Very Limited | Lack ecological awareness, language skills, and international knowledge (2) |
+| IT Skills            | Very Limited | No understanding of the importance of new technologies (3) |
 | Management Skills    | Very Limited | No awareness of changing business models in
 
 ## Perspective of Innovation and Learning
@@ -101,22 +101,22 @@ Can **_Adventure Works Cycles, Inc._** continue to improve and create value?
 
 | Category             | Value        | Challenges                                  |
 | :-------------------- | :----------: | :------------------------------------------ |
-| Innovation           | Taylorist Manufacturing   | Ad-hoc. Manufacturing not for stock, but to satisfy specific customer needs (*) |
-| Skills               | Minimal      | Maximum. Embracing positive contributions from everyone. Anyone trying to pose as **_Adventure Works Cycles, Inc._** should be immediately dismissed. (**)|
+| Innovation           | Taylorist Manufacturing   | Ad-hoc. Manufacturing not for stock, but to satisfy specific customer needs (2) |
+| Skills               | Minimal      | Maximum. Embracing positive contributions from everyone. Anyone trying to pose as **_Adventure Works Cycles, Inc._** should be immediately dismissed. (3)|
 
-(*) Customer at the center.
-(**) This type of employee is detrimental to the company. Keep in mind that sometimes, they are Managers or Directors.
+(2) Customer at the center.  
+(3) This type of employee is detrimental to the company. Keep in mind that sometimes, they are Managers or Directors.  
 
 ## Financial Perspective
 
 How do shareholders perceive **_Adventure Works Cycles, Inc._**?
-- Providing false or confusing information (*).
-- Not evolving (**).
-- At most, providing stability to their investments, but not growth. We cannot (***).
+- Providing false or confusing information (4).  
+- Not evolving (5).  
+- At most, providing stability to their investments, but not growth. We cannot (6).  
 
-(*) As previously indicated, we cannot provide absurd EVER!!! performance per product or customer. Everything must be measured (what is not measured does not exist), and figures must be supported (even forecasts) by calculations, not absurd intuitions or wishes.
-(**) We cannot continue to support (as previously indicated) business lines that require significant effort and are ruinous.
-(***) IF WE DON'T GROW, WE DIE.
+(4) As previously indicated, we cannot provide absurd EVER!!! performance per product or customer. Everything must be measured (what is not measured does not exist), and figures must be supported (even forecasts) by calculations, not absurd intuitions or wishes.  
+(5) We cannot continue to support (as previously indicated) business lines that require significant effort and are ruinous.  
+(6) IF WE DON'T GROW, WE DIE.  
 
 | Category             | Value        | Challenges                                  |
 | :-------------------- | :----------: | :------------------------------------------ |
